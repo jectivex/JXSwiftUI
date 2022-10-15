@@ -1,34 +1,26 @@
-//
-//  ListView.swift
-//
-//  Created by Abe White on 9/28/22.
-//
-
 import SwiftUI
 
-public protocol ListInfo: ScriptElementInfo {
-    var contentInfo: [ScriptElementInfo] { get throws }
+protocol ListInfo: ElementInfo {
+    var contentInfo: [ElementInfo] { get throws }
 }
 
-/**
- A view whose body is a `SwiftUI.List` view.
- */
-public struct ListView: View {
-    private let _info: ListInfo
+/// A view whose body is a `SwiftUI.List` view.
+struct ListView: View {
+    private let info: ListInfo
 
-    public init(_ info: ListInfo) {
-        _info = info
+    init(_ info: ListInfo) {
+        self.info = info
     }
 
-    public var body: some View {
+    var body: some View {
         List {
-            TypeSwitchView.content(for: _contentInfo)
+            contentInfo.containerView
         }
     }
 
-    private var _contentInfo: [ScriptElementInfo] {
+    private var contentInfo: [ElementInfo] {
         do {
-            return try _info.contentInfo
+            return try info.contentInfo
         } catch {
             // TODO: Error handling
             return []

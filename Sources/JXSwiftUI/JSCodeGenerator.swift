@@ -1,28 +1,9 @@
-import JXKit // TODO: Temporary for testing
-
-// TODO: Temporarily public for testing in PlaygroundApp
-public struct CodeGenerator {
+struct JSCodeGenerator {
     static let elementTypeProperty = "_jxuiType"
     static let observerProperty = "observer"
     static let bodyFunction = "body"
-
-    // TODO: Temporarily here for testing
-    public static func defineInitialFunctions(in jxContext: JXContext) throws {
-        let willChangeFunction = JXValue(newFunctionIn: jxContext) { jxContext, this, args in
-            guard args.count == 1 else {
-                // TODO: error
-                return jxContext.undefined()
-            }
-            let observerValue = args[0]
-            if let observer = observerValue.peer as? JSUIObserver {
-                observer.willChange()
-            }
-            return jxContext.undefined()
-        }
-        try jxContext.global.setProperty("_jxuiWillChange", willChangeFunction)
-    }
     
-    public static func defineUIFunctions() -> String {
+    static func defineUIFunctions() -> String {
         return """
 class JXElement {
     _jxuiType;
@@ -45,14 +26,14 @@ class JXView extends JXElement {
     observer; // TODO: Make this auto-triggered by any 'state' change
 
     constructor() {
-        super('\(ScriptElementType.custom.rawValue)');
+        super('\(ElementType.custom.rawValue)');
         this.state = {}; // TODO: Use JS's Proxy to detect changes
         this.observer = null;
     }
 }
 
 function Button(actionOrLabel, actionOrContentFunction) {
-    const e = new JXElement('\(ScriptElementType.button.rawValue)');
+    const e = new JXElement('\(ElementType.button.rawValue)');
     if (typeof(actionOrLabel) == 'string') {
         e.action = actionOrContentFunction;
         e.content = Text(actionOrLabel);
@@ -64,7 +45,7 @@ function Button(actionOrLabel, actionOrContentFunction) {
 }
 
 function ForEach(items, idFunction, contentFunction) {
-    const e = new JXElement('\(ScriptElementType.foreach.rawValue)');
+    const e = new JXElement('\(ElementType.foreach.rawValue)');
     e.items = items;
     e.idFunction = idFunction;
     e.contentFunction = contentFunction;
@@ -72,13 +53,13 @@ function ForEach(items, idFunction, contentFunction) {
 }
 
 function HStack(content) {
-    const e = new JXElement('\(ScriptElementType.hstack.rawValue)');
+    const e = new JXElement('\(ElementType.hstack.rawValue)');
     e.content = content;
     return e;
 }
 
 function If(isTrue, ifFunction, elseFunction=null) {
-    const e = new JXElement('\(ScriptElementType.if.rawValue)');
+    const e = new JXElement('\(ElementType.if.rawValue)');
     e.isTrue = isTrue;
     e.ifFunction = ifFunction;
     e.elseFunction = elseFunction;
@@ -86,24 +67,24 @@ function If(isTrue, ifFunction, elseFunction=null) {
 }
 
 function List(content) {
-    const e = new JXElement('\(ScriptElementType.list.rawValue)');
+    const e = new JXElement('\(ElementType.list.rawValue)');
     e.content = content;
     return e;
 }
 
 function Spacer() {
-    const e = new JXElement('\(ScriptElementType.spacer.rawValue)');
+    const e = new JXElement('\(ElementType.spacer.rawValue)');
     return e;
 }
 
 function Text(text) {
-    const e = new JXElement('\(ScriptElementType.text.rawValue)');
+    const e = new JXElement('\(ElementType.text.rawValue)');
     e.text = text;
     return e;
 }
 
 function VStack(content) {
-    const e = new JXElement('\(ScriptElementType.vstack.rawValue)');
+    const e = new JXElement('\(ElementType.vstack.rawValue)');
     e.content = content;
     return e;
 }
@@ -111,14 +92,14 @@ function VStack(content) {
 // Modifiers
 
 function FontModifier(target, fontName) {
-    const e = new JXElement('\(ScriptElementType.fontModifier.rawValue)');
+    const e = new JXElement('\(ElementType.fontModifier.rawValue)');
     e.target = target;
     e.fontName = fontName;
     return e;
 }
 
 function TapGestureModifier(target, action) {
-    const e = new JXElement('\(ScriptElementType.tapGestureModifier.rawValue)');
+    const e = new JXElement('\(ElementType.tapGestureModifier.rawValue)');
     e.target = target;
     e.action = action;
     return e;

@@ -1,34 +1,26 @@
-//
-//  VStackView.swift
-//
-//  Created by Abe White on 9/26/22.
-//
-
 import SwiftUI
 
-public protocol VStackInfo: ScriptElementInfo {
-    var contentInfo: [ScriptElementInfo] { get throws }
+protocol VStackInfo: ElementInfo {
+    var contentInfo: [ElementInfo] { get throws }
 }
 
-/**
- A view whose body is a `SwiftUI.VStack` view.
- */
-public struct VStackView: View {
-    private let _info: VStackInfo
+/// A view whose body is a `SwiftUI.VStack` view.
+struct VStackView: View {
+    private let info: VStackInfo
 
-    public init(_ info: VStackInfo) {
-        _info = info
+    init(_ info: VStackInfo) {
+        self.info = info
     }
 
-    public var body: some View {
+    var body: some View {
         VStack {
-            TypeSwitchView.content(for: _contentInfo)
+            contentInfo.containerView
         }
     }
 
-    private var _contentInfo: [ScriptElementInfo] {
+    private var contentInfo: [ElementInfo] {
         do {
-            return try _info.contentInfo
+            return try info.contentInfo
         } catch {
             // TODO: Error handling
             return []

@@ -1,45 +1,37 @@
-//
-//  TapGestureModifierView.swift
-//
-//  Created by Abe White on 9/26/22.
-//
-
 import SwiftUI
 
-public protocol TapGestureModifierInfo: ScriptElementInfo {
-    var targetInfo: ScriptElementInfo { get throws }
+protocol TapGestureModifierInfo: ElementInfo {
+    var targetInfo: ElementInfo { get throws }
     func onTapGesture() throws
 }
 
-/**
- A view that adds a tap gesture to its target view.
- */
-public struct TapGestureModifierView: View {
-    private let _info: TapGestureModifierInfo
+/// A view that adds a tap gesture to its target view.
+struct TapGestureModifierView: View {
+    private let info: TapGestureModifierInfo
 
-    public init(_ info: TapGestureModifierInfo) {
-        _info = info
+    init(_ info: TapGestureModifierInfo) {
+        self.info = info
     }
 
-    public var body: some View {
-        TypeSwitchView(_targetInfo)
+    var body: some View {
+        targetInfo.view
             .onTapGesture {
-                _onTapGesture()
+                onTapGesture()
             }
     }
 
-    private var _targetInfo: ScriptElementInfo {
+    private var targetInfo: ElementInfo {
         do {
-            return try _info.targetInfo
+            return try info.targetInfo
         } catch {
             // TODO: Error handling
-            return EmptyElementInfo()
+            return EmptyInfo()
         }
     }
 
-    private func _onTapGesture() {
+    private func onTapGesture() {
         do {
-            try _info.onTapGesture()
+            try info.onTapGesture()
         } catch {
             // TODO: Error handling
         }

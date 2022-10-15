@@ -1,32 +1,24 @@
-//
-//  TextView.swift
-//
-//  Created by Abe White on 9/26/22.
-//
-
 import SwiftUI
 
-public protocol TextInfo: ScriptElementInfo {
+protocol TextInfo: ElementInfo {
     var text: String { get throws }
 }
 
-/**
- A view whose body is a `SwiftUI.Text` view.
- */
-public struct TextView: View {
-    private let _info: TextInfo
+/// A view whose body is a `SwiftUI.Text` view.
+struct TextView: View {
+    private let info: TextInfo
 
-    public init(_ info: TextInfo) {
-        _info = info
+    init(_ info: TextInfo) {
+        self.info = info
     }
 
-    public var body: some View {
-        Text(_text)
+    var body: some View {
+        Text(text)
     }
 
-    private var _text: String {
+    private var text: String {
         do {
-            return try _info.text
+            return try info.text
         } catch {
             // TODO: Error handler
             return ""

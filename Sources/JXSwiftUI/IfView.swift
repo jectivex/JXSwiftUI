@@ -1,56 +1,48 @@
-//
-//  IfView.swift
-//
-//  Created by Abe White on 9/25/22.
-//
-
 import SwiftUI
 
-public protocol IfInfo: ScriptElementInfo {
+protocol IfInfo: ElementInfo {
     var isTrue: Bool { get throws }
-    var ifContentInfo: ScriptElementInfo { get throws }
-    var elseContentInfo: ScriptElementInfo? { get throws }
+    var ifContentInfo: ElementInfo { get throws }
+    var elseContentInfo: ElementInfo? { get throws }
 }
 
-/**
- A view that includes 'if' or 'else' content depending on a boolean condition.
- */
-public struct IfView: View {
-    private let _info: IfInfo
+/// A view that includes 'if' or 'else' content depending on a boolean condition.
+struct IfView: View {
+    private let info: IfInfo
 
-    public init(_ info: IfInfo) {
-        _info = info
+    init(_ info: IfInfo) {
+        self.info = info
     }
 
-    public var body: some View {
-        if _isTrue {
-            TypeSwitchView(_ifContentInfo)
-        } else if let elseContentInfo = _elseContentInfo {
-            TypeSwitchView(elseContentInfo)
+    var body: some View {
+        if isTrue {
+            ifContentInfo.view
+        } else if let elseContentInfo = self.elseContentInfo {
+            elseContentInfo.view
         }
     }
 
-    private var _isTrue: Bool {
+    private var isTrue: Bool {
         do {
-            return try _info.isTrue
+            return try info.isTrue
         } catch {
             // TODO: Error handling
             return false
         }
     }
 
-    private var _ifContentInfo: ScriptElementInfo {
+    private var ifContentInfo: ElementInfo {
         do {
-            return try _info.ifContentInfo
+            return try info.ifContentInfo
         } catch {
             // TODO: Error handling
-            return EmptyElementInfo()
+            return EmptyInfo()
         }
     }
 
-    private var _elseContentInfo: ScriptElementInfo? {
+    private var elseContentInfo: ElementInfo? {
         do {
-            return try _info.elseContentInfo
+            return try info.elseContentInfo
         } catch {
             // TODO: Error handling
             return nil

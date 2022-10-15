@@ -1,53 +1,45 @@
-//
-//  CustomView.swift
-//
-//  Created by Abe White on 9/25/22.
-//
-
 import Combine
 import SwiftUI
 
-public protocol CustomInfo: ScriptElementInfo {
+protocol CustomInfo: ElementInfo {
     var onChange: AnyPublisher<Void, Never> { get throws }
-    var contentInfo: ScriptElementInfo { get throws }
+    var contentInfo: ElementInfo { get throws }
 }
 
-/**
- A view with custom content defined by a script.
- */
-public struct CustomView: View {
-    private let _info: CustomInfo
-    @StateObject private var _trigger = _Trigger()
+/// A view with custom content defined by a script.
+struct CustomView: View {
+    private let info: CustomInfo
+    @StateObject private var trigger = Trigger()
 
-    public init(_ info: CustomInfo) {
-        _info = info
+    init(_ info: CustomInfo) {
+        self.info = info
     }
 
-    public var body: some View {
-        TypeSwitchView(_contentInfo)
-            .onReceive(_onChange) {
-                withAnimation { _trigger.objectWillChange.send() }
+    var body: some View {
+        contentInfo.view
+            .onReceive(onChange) {
+                withAnimation { trigger.objectWillChange.send() }
             }
     }
 
-    private var _onChange: AnyPublisher<Void, Never> {
+    private var onChange: AnyPublisher<Void, Never> {
         do {
-            return try _info.onChange
+            return try info.onChange
         } catch {
             // TODO: Error handling
             return PassthroughSubject().eraseToAnyPublisher()
         }
     }
 
-    private var _contentInfo: ScriptElementInfo {
+    private var contentInfo: ElementInfo {
         do {
-            return try _info.contentInfo
+            return try info.contentInfo
         } catch {
             // TODO: Error handling
-            return EmptyElementInfo()
+            return EmptyInfo()
         }
     }
 }
 
-private class _Trigger: ObservableObject {
+private class Trigger: ObservableObject {
 }

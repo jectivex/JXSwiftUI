@@ -1,36 +1,36 @@
 import SwiftUI
 
-public protocol ButtonInfo: ScriptElementInfo {
-    var contentInfo: ScriptElementInfo { get throws }
+protocol ButtonInfo: ElementInfo {
+    var contentInfo: ElementInfo { get throws }
     func onAction() throws
 }
 
 /// A view whose body is a `SwiftUI.Button` view.
-public struct ButtonView: View {
-    private let _info: ButtonInfo
+struct ButtonView: View {
+    private let info: ButtonInfo
 
-    public init(_ info: ButtonInfo) {
-        _info = info
+    init(_ info: ButtonInfo) {
+        self.info = info
     }
 
-    public var body: some View {
-        Button(action: _onAction) {
-            TypeSwitchView(_contentInfo)
+    var body: some View {
+        Button(action: onAction) {
+            contentInfo.view
         }
     }
 
-    private var _contentInfo: ScriptElementInfo {
+    private var contentInfo: ElementInfo {
         do {
-            return try _info.contentInfo
+            return try info.contentInfo
         } catch {
             // TODO: Error handling
-            return EmptyElementInfo()
+            return EmptyInfo()
         }
     }
 
-    private func _onAction() {
+    private func onAction() {
         do {
-            try _info.onAction()
+            try info.onAction()
         } catch {
             // TODO: Error handling
         }

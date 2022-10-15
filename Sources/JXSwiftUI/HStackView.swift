@@ -1,34 +1,26 @@
-//
-//  HStackView.swift
-//
-//  Created by Abe White on 9/28/22.
-//
-
 import SwiftUI
 
-public protocol HStackInfo: ScriptElementInfo {
-    var contentInfo: [ScriptElementInfo] { get throws }
+protocol HStackInfo: ElementInfo {
+    var contentInfo: [ElementInfo] { get throws }
 }
 
-/**
- A view whose body is a `SwiftUI.HStack` view.
- */
-public struct HStackView: View {
-    private let _info: HStackInfo
+/// A view whose body is a `SwiftUI.HStack` view.
+struct HStackView: View {
+    private let info: HStackInfo
 
-    public init(_ info: HStackInfo) {
-        _info = info
+    init(_ info: HStackInfo) {
+        self.info = info
     }
 
-    public var body: some View {
+    var body: some View {
         HStack {
-            TypeSwitchView.content(for: _contentInfo)
+            contentInfo.containerView
         }
     }
 
-    private var _contentInfo: [ScriptElementInfo] {
+    private var contentInfo: [ElementInfo] {
         do {
-            return try _info.contentInfo
+            return try info.contentInfo
         } catch {
             // TODO: Error handling
             return []

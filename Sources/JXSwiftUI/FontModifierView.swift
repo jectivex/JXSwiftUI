@@ -1,43 +1,35 @@
-//
-//  FontModifierView.swift
-//
-//  Created by Abe White on 9/28/22.
-//
-
 import SwiftUI
 
-public protocol FontModifierInfo: ScriptElementInfo {
-    var targetInfo: ScriptElementInfo { get throws }
+protocol FontModifierInfo: ElementInfo {
+    var targetInfo: ElementInfo { get throws }
     var font: Font { get throws }
 }
 
-/**
- A view that specifies a font for its target view.
- */
-public struct FontModifierView: View {
-    private let _info: FontModifierInfo
+/// A view that specifies a font for its target view.
+struct FontModifierView: View {
+    private let info: FontModifierInfo
 
-    public init(_ info: FontModifierInfo) {
-        _info = info
+    init(_ info: FontModifierInfo) {
+        self.info = info
     }
 
-    public var body: some View {
-        TypeSwitchView(_targetInfo)
-            .font(_font)
+    var body: some View {
+        targetInfo.view
+            .font(font)
     }
 
-    private var _targetInfo: ScriptElementInfo {
+    private var targetInfo: ElementInfo {
         do {
-            return try _info.targetInfo
+            return try info.targetInfo
         } catch {
             // TODO: Error handling
-            return EmptyElementInfo()
+            return EmptyInfo()
         }
     }
 
-    private var _font: Font {
+    private var font: Font {
         do {
-            return try _info.font
+            return try info.font
         } catch {
             // TODO: Error handling
             return .body
