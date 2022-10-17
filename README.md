@@ -1,3 +1,3 @@
-# JXBridge
+# JXSwiftUI
 
-A `JXKit` addition to bridge ObjectiveC and Swift classes and structs to JavaScript.
+A `JXKit` addition to create SwiftUI user interfaces in JavaScript.
