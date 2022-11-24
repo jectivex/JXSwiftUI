@@ -1,9 +1,5 @@
+import JXKit
 import SwiftUI
-
-protocol NavigationTitleModifierInfo: ElementInfo {
-    var targetInfo: ElementInfo { get throws }
-    var title: String { get throws }
-}
 
 /// A view that specifies a navigation title forr its target view.
 struct NavigationTitleModifierView: View {
@@ -11,25 +7,22 @@ struct NavigationTitleModifierView: View {
     let errorHandler: ErrorHandler?
 
     var body: some View {
-        targetInfo.view(errorHandler: errorHandler)
-            .navigationTitle(title)
+        info.targetInfo.view(errorHandler: errorHandler)
+            .navigationTitle(info.title)
+    }
+}
+
+struct NavigationTitleModifierInfo: ElementInfo {
+    init(jxValue: JXValue) throws {
+        self.targetInfo = try Self.info(for: jxValue["target"], in: .navigationTitleModifier)
+        self.title = try jxValue["title"].string
     }
 
-    private var targetInfo: ElementInfo {
-        do {
-            return try info.targetInfo
-        } catch {
-            errorHandler?(error)
-            return EmptyInfo()
-        }
+    var elementType: ElementType {
+        return .navigationTitleModifier
     }
 
-    private var title: String {
-        do {
-            return try info.title
-        } catch {
-            errorHandler?(error)
-            return ""
-        }
-    }
+    let targetInfo: ElementInfo
+
+    let title: String
 }

@@ -34,7 +34,7 @@ public struct JXView: View {
     private var bodyInfo: ElementInfo {
         do {
             let value = try bodyJX(context)
-            return try JXElementInfo.info(for: value, in: "JXView")
+            return try CustomInfo.info(for: value, in: "JXView")
         } catch {
             errorHandler?(error)
             return EmptyInfo()

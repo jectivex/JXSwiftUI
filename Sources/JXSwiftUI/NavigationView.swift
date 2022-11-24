@@ -1,8 +1,5 @@
+import JXKit
 import SwiftUI
-
-protocol NavigationViewInfo: ElementInfo {
-    var contentInfo: ElementInfo { get throws }
-}
 
 /// A view whose body is a `SwiftUI.NavigationView` view.
 struct NavigationView: View {
@@ -11,17 +8,20 @@ struct NavigationView: View {
 
     var body: some View {
         SwiftUI.NavigationView {
-            contentInfo.view(errorHandler: errorHandler)
+            info.contentInfo.view(errorHandler: errorHandler)
         }
+    }
+}
+
+struct NavigationViewInfo: ElementInfo {
+    init(jxValue: JXValue) throws {
+        self.contentInfo = try Self.info(for: jxValue["content"], in: .navigationView)
     }
 
-    private var contentInfo: ElementInfo {
-        do {
-            return try info.contentInfo
-        } catch {
-            errorHandler?(error)
-            return EmptyInfo()
-        }
+    var elementType: ElementType {
+        return .navigationView
     }
+
+    let contentInfo: ElementInfo
 }
 

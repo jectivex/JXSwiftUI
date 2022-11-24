@@ -1,7 +1,5 @@
+import JXKit
 import SwiftUI
-
-protocol SpacerInfo: ElementInfo {
-}
 
 /// A view whose body is a `SwiftUI.Spacer` view.
 struct SpacerView: View {
@@ -10,5 +8,14 @@ struct SpacerView: View {
 
     var body: some View {
         Spacer()
+    }
+}
+
+struct SpacerInfo: ElementInfo {
+    init(jxValue: JXValue) throws {
+    }
+
+    var elementType: ElementType {
+        return .spacer
     }
 }

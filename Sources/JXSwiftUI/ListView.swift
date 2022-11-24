@@ -1,8 +1,5 @@
+import JXKit
 import SwiftUI
-
-protocol ListInfo: ElementInfo {
-    var contentInfo: [ElementInfo] { get throws }
-}
 
 /// A view whose body is a `SwiftUI.List` view.
 struct ListView: View {
@@ -11,16 +8,19 @@ struct ListView: View {
 
     var body: some View {
         List {
-            contentInfo.containerView(errorHandler: errorHandler)
+            info.contentInfo.containerView(errorHandler: errorHandler)
         }
+    }
+}
+
+struct ListInfo: ElementInfo {
+    init(jxValue: JXValue) throws {
+        self.contentInfo = try Self.infoArray(for: jxValue["content"], in: .list)
     }
 
-    private var contentInfo: [ElementInfo] {
-        do {
-            return try info.contentInfo
-        } catch {
-            errorHandler?(error)
-            return []
-        }
+    var elementType: ElementType {
+        return .list
     }
+
+    let contentInfo: [ElementInfo]
 }

@@ -1,9 +1,5 @@
+import JXKit
 import SwiftUI
-
-protocol ButtonInfo: ElementInfo {
-    var contentInfo: ElementInfo { get throws }
-    func onAction() throws
-}
 
 /// A view whose body is a `SwiftUI.Button` view.
 struct ButtonView: View {
@@ -17,12 +13,7 @@ struct ButtonView: View {
     }
 
     private var contentInfo: ElementInfo {
-        do {
-            return try info.contentInfo
-        } catch {
-            errorHandler?(error)
-            return EmptyInfo()
-        }
+        return info.contentInfo
     }
 
     private func onAction() {
@@ -31,5 +22,24 @@ struct ButtonView: View {
         } catch {
             errorHandler?(error)
         }
+    }
+}
+
+struct ButtonInfo: ElementInfo {
+    private let actionFunction: JXValue
+
+    init(jxValue: JXValue) throws {
+        self.contentInfo = try Self.info(for: jxValue["content"], in: .button)
+        self.actionFunction = try jxValue["action"]
+    }
+
+    var elementType: ElementType {
+        return .button
+    }
+
+    let contentInfo: ElementInfo
+
+    func onAction() throws {
+        try actionFunction.call(withArguments: [])
     }
 }

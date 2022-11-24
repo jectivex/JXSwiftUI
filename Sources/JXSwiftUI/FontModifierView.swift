@@ -1,9 +1,5 @@
+import JXKit
 import SwiftUI
-
-protocol FontModifierInfo: ElementInfo {
-    var targetInfo: ElementInfo { get throws }
-    var font: Font { get throws }
-}
 
 /// A view that specifies a font for its target view.
 struct FontModifierView: View {
@@ -11,25 +7,36 @@ struct FontModifierView: View {
     let errorHandler: ErrorHandler?
 
     var body: some View {
-        targetInfo.view(errorHandler: errorHandler)
-            .font(font)
+        info.targetInfo.view(errorHandler: errorHandler)
+            .font(info.font)
+    }
+}
+
+struct FontModifierInfo: ElementInfo {
+    init(jxValue: JXValue) throws {
+        self.targetInfo = try Self.info(for: jxValue["target"], in: .fontModifier)
+        let fontName = try jxValue["fontName"].string
+        self.font = try Self.font(for: fontName)
     }
 
-    private var targetInfo: ElementInfo {
-        do {
-            return try info.targetInfo
-        } catch {
-            errorHandler?(error)
-            return EmptyInfo()
-        }
+    var elementType: ElementType {
+        return .fontModifier
     }
 
-    private var font: Font {
-        do {
-            return try info.font
-        } catch {
-            errorHandler?(error)
+    let targetInfo: ElementInfo
+
+    let font: Font
+
+    private static func font(for fontString: String) throws -> Font {
+        switch fontString {
+        case "title":
+            return .title
+        case "body":
             return .body
+        case "caption":
+            return .caption
+        default:
+            throw JXSwiftUIErrors.unknownValue(ElementType.fontModifier.rawValue, fontString)
         }
     }
 }

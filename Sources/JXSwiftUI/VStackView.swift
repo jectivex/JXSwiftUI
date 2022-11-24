@@ -1,8 +1,5 @@
+import JXKit
 import SwiftUI
-
-protocol VStackInfo: ElementInfo {
-    var contentInfo: [ElementInfo] { get throws }
-}
 
 /// A view whose body is a `SwiftUI.VStack` view.
 struct VStackView: View {
@@ -11,16 +8,19 @@ struct VStackView: View {
 
     var body: some View {
         VStack {
-            contentInfo.containerView(errorHandler: errorHandler)
+            info.contentInfo.containerView(errorHandler: errorHandler)
         }
+    }
+}
+
+struct VStackInfo: ElementInfo {
+    init(jxValue: JXValue) throws {
+        self.contentInfo = try Self.infoArray(for: jxValue["content"], in: .vstack)
     }
 
-    private var contentInfo: [ElementInfo] {
-        do {
-            return try info.contentInfo
-        } catch {
-            errorHandler?(error)
-            return []
-        }
+    var elementType: ElementType {
+        return .vstack
     }
+
+    let contentInfo: [ElementInfo]
 }
