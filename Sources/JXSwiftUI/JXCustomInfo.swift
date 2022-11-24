@@ -4,19 +4,20 @@ import SwiftUI
 
 struct JXCustomInfo: CustomInfo {
     private let jxValue: JXValue
-    private let observer = JXUIObserver()
+    private let observer = WillChangeObserver()
 
     init(jxValue: JXValue) throws {
         self.jxValue = jxValue
+        // Set an observer that will be triggered on JS JXView.state changes
         let observerValue = jxValue.context.object(peer: self.observer)
-        try jxValue.setProperty(JSCodeGenerator.observerProperty, observerValue)
+        try jxValue[JSCodeGenerator.stateProperty].setProperty(JSCodeGenerator.observerProperty, observerValue)
     }
 
     var elementType: ElementType {
         return .custom
     }
 
-    var onChange: AnyPublisher<Void, Never> {
+    var onJSStateWillChange: AnyPublisher<Void, Never> {
         return observer.objectWillChange.eraseToAnyPublisher()
     }
 

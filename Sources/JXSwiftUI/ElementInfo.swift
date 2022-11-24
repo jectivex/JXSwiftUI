@@ -1,40 +1,22 @@
 import SwiftUI
 
-/// All supported UI element types.
-enum ElementType: String {
-    // Views
-    case button
-    case custom
-    case empty
-    case foreach
-    case hstack
-    case list
-    case `if`
-    case spacer
-    case text
-    case vstack
-    case unknown
-
-    // Modifiers
-    case fontModifier
-    case tapGestureModifier
-}
+typealias ErrorHandler = (Error) -> Void
 
 /// Information from the script's representation of a UI element.
 protocol ElementInfo {
     var elementType: ElementType { get }
-    var view: TypeSwitchView { get }
+    func view(errorHandler: ErrorHandler?) -> TypeSwitchView
 }
 
 extension ElementInfo {
-    var view: TypeSwitchView {
-        return TypeSwitchView(self)
+    func view(errorHandler: ErrorHandler?) -> TypeSwitchView {
+        return TypeSwitchView(info: self, errorHandler: errorHandler)
     }
 }
 
 extension Array where Element == ElementInfo {
     @ViewBuilder
-    var containerView: some View {
+    func containerView(errorHandler: ErrorHandler?) -> some View {
         // NOTE: ForEach caused a blank view followed by a crash after minutes
         // of no activity, so fallback to brute force
         switch self.count {
@@ -42,92 +24,90 @@ extension Array where Element == ElementInfo {
             Group {
             }
         case 1:
-            self[0].view
+            self[0].view(errorHandler: errorHandler)
         case 2:
-            Group  {
-                self[0].view
-                self[1].view
+            Group {
+                self[0].view(errorHandler: errorHandler)
+                self[1].view(errorHandler: errorHandler)
             }
         case 3:
-            Group  {
-                self[0].view
-                self[1].view
-                self[2].view
+            Group {
+                self[0].view(errorHandler: errorHandler)
+                self[1].view(errorHandler: errorHandler)
+                self[2].view(errorHandler: errorHandler)
             }
         case 4:
-            Group  {
-                self[0].view
-                self[1].view
-                self[2].view
-                self[3].view
+            Group {
+                self[0].view(errorHandler: errorHandler)
+                self[1].view(errorHandler: errorHandler)
+                self[2].view(errorHandler: errorHandler)
+                self[3].view(errorHandler: errorHandler)
             }
         case 5:
-            Group  {
-                self[0].view
-                self[1].view
-                self[2].view
-                self[3].view
-                self[4].view
+            Group {
+                self[0].view(errorHandler: errorHandler)
+                self[1].view(errorHandler: errorHandler)
+                self[2].view(errorHandler: errorHandler)
+                self[3].view(errorHandler: errorHandler)
+                self[4].view(errorHandler: errorHandler)
             }
         case 6:
-            Group  {
-                self[0].view
-                self[1].view
-                self[2].view
-                self[3].view
-                self[4].view
-                self[5].view
+            Group {
+                self[0].view(errorHandler: errorHandler)
+                self[1].view(errorHandler: errorHandler)
+                self[2].view(errorHandler: errorHandler)
+                self[3].view(errorHandler: errorHandler)
+                self[4].view(errorHandler: errorHandler)
+                self[5].view(errorHandler: errorHandler)
             }
         case 7:
-            Group  {
-                self[0].view
-                self[1].view
-                self[2].view
-                self[3].view
-                self[4].view
-                self[5].view
-                self[6].view
+            Group {
+                self[0].view(errorHandler: errorHandler)
+                self[1].view(errorHandler: errorHandler)
+                self[2].view(errorHandler: errorHandler)
+                self[3].view(errorHandler: errorHandler)
+                self[4].view(errorHandler: errorHandler)
+                self[5].view(errorHandler: errorHandler)
+                self[6].view(errorHandler: errorHandler)
             }
         case 8:
-            Group  {
-                self[0].view
-                self[1].view
-                self[2].view
-                self[3].view
-                self[4].view
-                self[5].view
-                self[6].view
-                self[7].view
+            Group {
+                self[0].view(errorHandler: errorHandler)
+                self[1].view(errorHandler: errorHandler)
+                self[2].view(errorHandler: errorHandler)
+                self[3].view(errorHandler: errorHandler)
+                self[4].view(errorHandler: errorHandler)
+                self[5].view(errorHandler: errorHandler)
+                self[6].view(errorHandler: errorHandler)
+                self[7].view(errorHandler: errorHandler)
             }
         case 9:
-            Group  {
-                self[0].view
-                self[1].view
-                self[2].view
-                self[3].view
-                self[4].view
-                self[5].view
-                self[6].view
-                self[7].view
-                self[8].view
+            Group {
+                self[0].view(errorHandler: errorHandler)
+                self[1].view(errorHandler: errorHandler)
+                self[2].view(errorHandler: errorHandler)
+                self[3].view(errorHandler: errorHandler)
+                self[4].view(errorHandler: errorHandler)
+                self[5].view(errorHandler: errorHandler)
+                self[6].view(errorHandler: errorHandler)
+                self[7].view(errorHandler: errorHandler)
+                self[8].view(errorHandler: errorHandler)
             }
         case 10:
-            Group  {
-                self[0].view
-                self[1].view
-                self[2].view
-                self[3].view
-                self[4].view
-                self[5].view
-                self[6].view
-                self[7].view
-                self[8].view
-                self[9].view
+            Group {
+                self[0].view(errorHandler: errorHandler)
+                self[1].view(errorHandler: errorHandler)
+                self[2].view(errorHandler: errorHandler)
+                self[3].view(errorHandler: errorHandler)
+                self[4].view(errorHandler: errorHandler)
+                self[5].view(errorHandler: errorHandler)
+                self[6].view(errorHandler: errorHandler)
+                self[7].view(errorHandler: errorHandler)
+                self[8].view(errorHandler: errorHandler)
+                self[9].view(errorHandler: errorHandler)
             }
         default:
-            // TODO: Error handling
-            Group {
-            }
+            EmptyView()
         }
     }
 }

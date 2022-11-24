@@ -10,10 +10,11 @@ let package = Package(
         .library(name: "JXSwiftUI", targets: ["JXSwiftUI"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/jectivex/JXKit.git", from: "3.2.0"),
+        .package(url: "https://github.com/jectivex/JXBridge.git", branch: "main"),
+        .package(url: "https://github.com/jectivex/JXKit.git", branch: "main"),
     ],
     targets: [
-        .target(name: "JXSwiftUI", dependencies: ["JXKit"]),
+        .target(name: "JXSwiftUI", dependencies: ["JXBridge", "JXKit"]),
         .testTarget(name: "JXSwiftUITests", dependencies: ["JXSwiftUI"]),
     ]
 )

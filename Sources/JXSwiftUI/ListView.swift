@@ -6,15 +6,12 @@ protocol ListInfo: ElementInfo {
 
 /// A view whose body is a `SwiftUI.List` view.
 struct ListView: View {
-    private let info: ListInfo
-
-    init(_ info: ListInfo) {
-        self.info = info
-    }
+    let info: ListInfo
+    let errorHandler: ErrorHandler?
 
     var body: some View {
         List {
-            contentInfo.containerView
+            contentInfo.containerView(errorHandler: errorHandler)
         }
     }
 
@@ -22,7 +19,7 @@ struct ListView: View {
         do {
             return try info.contentInfo
         } catch {
-            // TODO: Error handling
+            errorHandler?(error)
             return []
         }
     }

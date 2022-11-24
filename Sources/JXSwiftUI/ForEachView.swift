@@ -8,15 +8,12 @@ protocol ForEachInfo: ElementInfo {
 
 /// A view that iterates over a collection of items.
 struct ForEachView: View {
-    private let info: ForEachInfo
-
-    init(_ info: ForEachInfo) {
-        self.info = info
-    }
+    let info: ForEachInfo
+    let errorHandler: ErrorHandler?
 
     var body: some View {
         ForEach(itemsWithIdentity, id: \.id) { itemWithIdentity in
-            contentInfo(for: itemWithIdentity.item).view
+            contentInfo(for: itemWithIdentity.item).view(errorHandler: errorHandler)
         }
     }
 
@@ -26,12 +23,12 @@ struct ForEachView: View {
                 do {
                     return try info.id(for: item)
                 } catch {
-                    // TODO: Error handling
+                    errorHandler?(error)
                     return ""
                 }
             }
         } catch {
-            // TODO: Error handling
+            errorHandler?(error)
             return ItemWithIdentityCollection(items: AnyRandomAccessCollection([])) { _ in "" }
         }
     }
@@ -40,7 +37,7 @@ struct ForEachView: View {
         do {
             return try info.contentInfo(for: item)
         } catch {
-            // TODO: Error handling
+            errorHandler?(error)
             return EmptyInfo()
         }
     }

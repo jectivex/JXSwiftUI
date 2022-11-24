@@ -7,14 +7,11 @@ protocol TapGestureModifierInfo: ElementInfo {
 
 /// A view that adds a tap gesture to its target view.
 struct TapGestureModifierView: View {
-    private let info: TapGestureModifierInfo
-
-    init(_ info: TapGestureModifierInfo) {
-        self.info = info
-    }
+    let info: TapGestureModifierInfo
+    let errorHandler: ErrorHandler?
 
     var body: some View {
-        targetInfo.view
+        targetInfo.view(errorHandler: errorHandler)
             .onTapGesture {
                 onTapGesture()
             }
@@ -24,7 +21,7 @@ struct TapGestureModifierView: View {
         do {
             return try info.targetInfo
         } catch {
-            // TODO: Error handling
+            errorHandler?(error)
             return EmptyInfo()
         }
     }
@@ -33,7 +30,7 @@ struct TapGestureModifierView: View {
         do {
             try info.onTapGesture()
         } catch {
-            // TODO: Error handling
+            errorHandler?(error)
         }
     }
 }

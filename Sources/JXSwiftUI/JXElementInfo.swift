@@ -1,7 +1,5 @@
 import JXKit
 
-// TODO: Fix error handling throughout this framework to throw
-
 struct JXElementInfo: ElementInfo {
     let elementType: ElementType
 
@@ -39,26 +37,30 @@ struct JXElementInfo: ElementInfo {
         }
     }
 
+    static func info(for jxValue: JXValue, in elementType: ElementType) throws -> ElementInfo {
+        return try info(for: jxValue, in: elementType.rawValue)
+    }
+    
     static func info(for jxValue: JXValue, in elementName: String) throws -> ElementInfo {
         guard !jxValue.isUndefined else {
-            // TODO: Throw informative error
-            return EmptyInfo()
+            throw JXSwiftUIErrors.undefinedValue(elementName)
         }
         guard let elementInfo = try self.for(jxValue) else {
-            // TODO: Throw informative error
-            return EmptyInfo()
+            throw JXSwiftUIErrors.unknownValue(elementName, try jxValue.string)
         }
         return elementInfo
     }
 
+    static func infoArray(for jxValue: JXValue, in elementType: ElementType) throws -> [ElementInfo] {
+        return try infoArray(for: jxValue, in: elementType.rawValue)
+    }
+    
     static func infoArray(for jxValue: JXValue, in elementName: String) throws -> [ElementInfo] {
         guard !jxValue.isUndefined else {
-            // TODO: Throw informative error
-            return []
+            throw JXSwiftUIErrors.undefinedValue(elementName)
         }
         guard jxValue.isArray else {
-            // TODO: Throw informative error
-            return []
+            throw JXSwiftUIErrors.valueNotArray(elementName, try jxValue.string)
         }
         let contentArray = try jxValue.array
         return try (0 ..< contentArray.count).map { i in

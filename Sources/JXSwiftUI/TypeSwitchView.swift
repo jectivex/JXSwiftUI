@@ -10,43 +10,38 @@ import SwiftUI
  View whose body is based on the `ElementType` of the given content info.
  */
 struct TypeSwitchView: View {
-    private let info: ElementInfo
-
-    init(_ info: ElementInfo) {
-        self.info = info
-    }
+    let info: ElementInfo
+    let errorHandler: ErrorHandler?
 
     var body: some View {
         switch info.elementType {
         case .button:
-            ButtonView(info as! ButtonInfo)
+            ButtonView(info: info as! ButtonInfo, errorHandler: errorHandler)
         case .custom:
-            CustomView(info as! CustomInfo)
+            CustomView(info: info as! CustomInfo, errorHandler: errorHandler)
         case .empty:
             EmptyView()
         case .foreach:
-            ForEachView(info as! ForEachInfo)
+            ForEachView(info: info as! ForEachInfo, errorHandler: errorHandler)
         case .hstack:
-            HStackView(info as! HStackInfo)
+            HStackView(info: info as! HStackInfo, errorHandler: errorHandler)
         case .if:
-            IfView(info as! IfInfo)
+            IfView(info: info as! IfInfo, errorHandler: errorHandler)
         case .list:
-            ListView(info as! ListInfo)
+            ListView(info: info as! ListInfo, errorHandler: errorHandler)
         case .spacer:
-            SpacerView(info as! SpacerInfo)
+            SpacerView(info: info as! SpacerInfo, errorHandler: errorHandler)
         case .text:
-            TextView(info as! TextInfo)
+            TextView(info: info as! TextInfo, errorHandler: errorHandler)
+        case .unknown:
+            EmptyView()
         case .vstack:
-            VStackView(info as! VStackInfo)
+            VStackView(info: info as! VStackInfo, errorHandler: errorHandler)
 
         case .fontModifier:
-            FontModifierView(info as! FontModifierInfo)
+            FontModifierView(info: info as! FontModifierInfo, errorHandler: errorHandler)
         case .tapGestureModifier:
-            TapGestureModifierView(info as! TapGestureModifierInfo)
-
-        default:
-            // TODO: Error handling
-            EmptyView()
+            TapGestureModifierView(info: info as! TapGestureModifierInfo, errorHandler: errorHandler)
         }
     }
 }

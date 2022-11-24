@@ -7,14 +7,11 @@ protocol FontModifierInfo: ElementInfo {
 
 /// A view that specifies a font for its target view.
 struct FontModifierView: View {
-    private let info: FontModifierInfo
-
-    init(_ info: FontModifierInfo) {
-        self.info = info
-    }
+    let info: FontModifierInfo
+    let errorHandler: ErrorHandler?
 
     var body: some View {
-        targetInfo.view
+        targetInfo.view(errorHandler: errorHandler)
             .font(font)
     }
 
@@ -22,7 +19,7 @@ struct FontModifierView: View {
         do {
             return try info.targetInfo
         } catch {
-            // TODO: Error handling
+            errorHandler?(error)
             return EmptyInfo()
         }
     }
@@ -31,7 +28,7 @@ struct FontModifierView: View {
         do {
             return try info.font
         } catch {
-            // TODO: Error handling
+            errorHandler?(error)
             return .body
         }
     }

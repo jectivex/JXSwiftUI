@@ -19,11 +19,10 @@ struct JXIfInfo: IfInfo {
     var ifContentInfo: ElementInfo {
         get throws {
             guard ifFunction.isFunction else {
-                // TODO: Throw informative error
-                return EmptyInfo()
+                throw JXSwiftUIErrors.valueNotFunction(elementType.rawValue, "ifFunction")
             }
             let ifContent = try ifFunction.call(withArguments: [])
-            return try JXElementInfo.info(for: ifContent, in: "If")
+            return try JXElementInfo.info(for: ifContent, in: elementType)
         }
     }
 
@@ -33,11 +32,10 @@ struct JXIfInfo: IfInfo {
                 return nil
             }
             guard elseFunction.isFunction else {
-                // TODO: Throw informative error
-                return EmptyInfo()
+                throw JXSwiftUIErrors.valueNotFunction(elementType.rawValue, "elseFunction")
             }
             let elseContent = try elseFunction.call(withArguments: [])
-            return try JXElementInfo.info(for: elseContent, in: "If.else")
+            return try JXElementInfo.info(for: elseContent, in: elementType)
         }
     }
 }

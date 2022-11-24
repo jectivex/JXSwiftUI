@@ -8,17 +8,14 @@ protocol IfInfo: ElementInfo {
 
 /// A view that includes 'if' or 'else' content depending on a boolean condition.
 struct IfView: View {
-    private let info: IfInfo
-
-    init(_ info: IfInfo) {
-        self.info = info
-    }
+    let info: IfInfo
+    let errorHandler: ErrorHandler?
 
     var body: some View {
         if isTrue {
-            ifContentInfo.view
+            ifContentInfo.view(errorHandler: errorHandler)
         } else if let elseContentInfo = self.elseContentInfo {
-            elseContentInfo.view
+            elseContentInfo.view(errorHandler: errorHandler)
         }
     }
 
@@ -26,7 +23,7 @@ struct IfView: View {
         do {
             return try info.isTrue
         } catch {
-            // TODO: Error handling
+            errorHandler?(error)
             return false
         }
     }
@@ -35,7 +32,7 @@ struct IfView: View {
         do {
             return try info.ifContentInfo
         } catch {
-            // TODO: Error handling
+            errorHandler?(error)
             return EmptyInfo()
         }
     }
@@ -44,7 +41,7 @@ struct IfView: View {
         do {
             return try info.elseContentInfo
         } catch {
-            // TODO: Error handling
+            errorHandler?(error)
             return nil
         }
     }

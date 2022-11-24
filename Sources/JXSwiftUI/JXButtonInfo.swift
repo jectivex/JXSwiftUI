@@ -4,7 +4,7 @@ struct JXButtonInfo: ButtonInfo {
     private let actionFunction: JXValue
 
     init(jxValue: JXValue) throws {
-        self.contentInfo = try JXElementInfo.info(for: jxValue["content"], in: "Button")
+        self.contentInfo = try JXElementInfo.info(for: jxValue["content"], in: .button)
         self.actionFunction = try jxValue["action"]
     }
 

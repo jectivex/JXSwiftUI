@@ -7,15 +7,12 @@ protocol ButtonInfo: ElementInfo {
 
 /// A view whose body is a `SwiftUI.Button` view.
 struct ButtonView: View {
-    private let info: ButtonInfo
-
-    init(_ info: ButtonInfo) {
-        self.info = info
-    }
+    let info: ButtonInfo
+    let errorHandler: ErrorHandler?
 
     var body: some View {
         Button(action: onAction) {
-            contentInfo.view
+            contentInfo.view(errorHandler: errorHandler)
         }
     }
 
@@ -23,7 +20,7 @@ struct ButtonView: View {
         do {
             return try info.contentInfo
         } catch {
-            // TODO: Error handling
+            errorHandler?(error)
             return EmptyInfo()
         }
     }
@@ -32,7 +29,7 @@ struct ButtonView: View {
         do {
             try info.onAction()
         } catch {
-            // TODO: Error handling
+            errorHandler?(error)
         }
     }
 }

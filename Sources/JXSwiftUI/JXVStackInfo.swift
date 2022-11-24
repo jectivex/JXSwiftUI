@@ -2,7 +2,7 @@ import JXKit
 
 struct JXVStackInfo: VStackInfo {
     init(jxValue: JXValue) throws {
-        self.contentInfo = try JXElementInfo.infoArray(for: jxValue["content"], in: "VStack")
+        self.contentInfo = try JXElementInfo.infoArray(for: jxValue["content"], in: .vstack)
     }
 
     var elementType: ElementType {

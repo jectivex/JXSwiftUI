@@ -2,31 +2,29 @@ import Combine
 import SwiftUI
 
 protocol CustomInfo: ElementInfo {
-    var onChange: AnyPublisher<Void, Never> { get throws }
+    var onJSStateWillChange: AnyPublisher<Void, Never> { get throws }
     var contentInfo: ElementInfo { get throws }
 }
 
 /// A view with custom content defined by a script.
 struct CustomView: View {
-    private let info: CustomInfo
+    let info: CustomInfo
+    let errorHandler: ErrorHandler?
+
     @StateObject private var trigger = Trigger()
 
-    init(_ info: CustomInfo) {
-        self.info = info
-    }
-
     var body: some View {
-        contentInfo.view
-            .onReceive(onChange) {
+        contentInfo.view(errorHandler: errorHandler)
+            .onReceive(onJSStateWillChange) {
                 withAnimation { trigger.objectWillChange.send() }
             }
     }
 
-    private var onChange: AnyPublisher<Void, Never> {
+    private var onJSStateWillChange: AnyPublisher<Void, Never> {
         do {
-            return try info.onChange
+            return try info.onJSStateWillChange
         } catch {
-            // TODO: Error handling
+            errorHandler?(error)
             return PassthroughSubject().eraseToAnyPublisher()
         }
     }
@@ -35,7 +33,7 @@ struct CustomView: View {
         do {
             return try info.contentInfo
         } catch {
-            // TODO: Error handling
+            errorHandler?(error)
             return EmptyInfo()
         }
     }

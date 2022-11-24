@@ -6,11 +6,8 @@ protocol TextInfo: ElementInfo {
 
 /// A view whose body is a `SwiftUI.Text` view.
 struct TextView: View {
-    private let info: TextInfo
-
-    init(_ info: TextInfo) {
-        self.info = info
-    }
+    let info: TextInfo
+    let errorHandler: ErrorHandler?
 
     var body: some View {
         Text(text)
@@ -20,7 +17,7 @@ struct TextView: View {
         do {
             return try info.text
         } catch {
-            // TODO: Error handler
+            errorHandler?(error)
             return ""
         }
     }

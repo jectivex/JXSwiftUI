@@ -18,8 +18,7 @@ struct JXForEachInfo: ForEachInfo {
     var items: AnyRandomAccessCollection<Any> {
         get throws {
             guard itemsValue.isArray else {
-                // TODO: Informative error
-                return AnyRandomAccessCollection([])
+                throw JXSwiftUIErrors.valueNotArray(elementType.rawValue, "items")
             }
             let jxItems = try itemsValue.array
             return AnyRandomAccessCollection(jxItems)
@@ -28,8 +27,7 @@ struct JXForEachInfo: ForEachInfo {
 
     func id(for item: Any) throws -> AnyHashable {
         guard idFunction.isFunction else {
-            // TODO: Throw informative error
-            return 0
+            throw JXSwiftUIErrors.valueNotFunction(elementType.rawValue, "idFunction")
         }
         let idValue = try idFunction.call(withArguments: [item as! JXValue])
         switch idValue.type {
@@ -44,30 +42,26 @@ struct JXForEachInfo: ForEachInfo {
         case .date:
             return try idValue.date
         case .buffer:
-            // TODO: Error
-            return 0
+            break
         case .string:
             return try idValue.string
         case .array:
-            // TODO
-            return 0
+            break
         case .object:
-            // TODO: Handle dictionaries and mapped types
-            return 0
+            break
         case .symbol:
             return try idValue.string
         case .other:
-            // TODO: ??
-            return 0
+            break
         }
+        throw JXSwiftUIErrors.unknownValue(elementType.rawValue, "idFunction")
     }
 
     func contentInfo(for item: Any) throws -> ElementInfo {
         guard contentFunction.isFunction else {
-            // TODO: Informative error
-            return EmptyInfo()
+            throw JXSwiftUIErrors.valueNotFunction(elementType.rawValue, "contentFunction")
         }
         let content = try contentFunction.call(withArguments: [item as! JXValue])
-        return try JXElementInfo.info(for: content, in: "ForEach")
+        return try JXElementInfo.info(for: content, in: elementType)
     }
 }

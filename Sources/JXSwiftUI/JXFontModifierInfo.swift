@@ -3,7 +3,7 @@ import SwiftUI
 
 struct JXFontModifierInfo: FontModifierInfo {
     init(jxValue: JXValue) throws {
-        self.targetInfo = try JXElementInfo.info(for: jxValue["target"], in: "font")
+        self.targetInfo = try JXElementInfo.info(for: jxValue["target"], in: .fontModifier)
         let fontName = try jxValue["fontName"].string
         self.font = try Self.font(for: fontName)
     }
@@ -17,7 +17,6 @@ struct JXFontModifierInfo: FontModifierInfo {
     let font: Font
 
     private static func font(for fontString: String) throws -> Font {
-        // TODO: Flesh out font support
         switch fontString {
         case "title":
             return .title
@@ -26,8 +25,7 @@ struct JXFontModifierInfo: FontModifierInfo {
         case "caption":
             return .caption
         default:
-            // TODO: Throw error
-            return .body
+            throw JXSwiftUIErrors.unknownValue(ElementType.fontModifier.rawValue, fontString)
         }
     }
 }

@@ -5,11 +5,8 @@ protocol SpacerInfo: ElementInfo {
 
 /// A view whose body is a `SwiftUI.Spacer` view.
 struct SpacerView: View {
-    private let info: SpacerInfo
-
-    init(_ info: SpacerInfo) {
-        self.info = info
-    }
+    let info: SpacerInfo
+    let errorHandler: ErrorHandler?
 
     var body: some View {
         Spacer()

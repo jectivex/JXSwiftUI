@@ -6,15 +6,12 @@ protocol HStackInfo: ElementInfo {
 
 /// A view whose body is a `SwiftUI.HStack` view.
 struct HStackView: View {
-    private let info: HStackInfo
-
-    init(_ info: HStackInfo) {
-        self.info = info
-    }
+    let info: HStackInfo
+    let errorHandler: ErrorHandler?
 
     var body: some View {
         HStack {
-            contentInfo.containerView
+            contentInfo.containerView(errorHandler: errorHandler)
         }
     }
 
@@ -22,7 +19,7 @@ struct HStackView: View {
         do {
             return try info.contentInfo
         } catch {
-            // TODO: Error handling
+            errorHandler?(error)
             return []
         }
     }
