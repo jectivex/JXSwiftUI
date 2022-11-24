@@ -21,6 +21,8 @@ struct JXElementInfo: ElementInfo {
             return try JXIfInfo(jxValue: jxValue)
         case .list:
             return try JXListInfo(jxValue: jxValue)
+        case .navigationView:
+            return try JXNavigationViewInfo(jxValue: jxValue)
         case .spacer:
             return try JXSpacerInfo(jxValue: jxValue)
         case .text:
@@ -30,6 +32,8 @@ struct JXElementInfo: ElementInfo {
 
         case .fontModifier:
             return try JXFontModifierInfo(jxValue: jxValue)
+        case .navigationTitleModifier:
+            return try JXNavigationTitleModifierInfo(jxValue: jxValue)
         case .tapGestureModifier:
             return try JXTapGestureModifierInfo(jxValue: jxValue)
         case .unknown:

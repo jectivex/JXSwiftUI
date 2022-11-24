@@ -1,14 +1,6 @@
-//
-//  TypeSwitchView.swift
-//
-//  Created by Abe White on 9/25/22.
-//
-
 import SwiftUI
 
-/**
- View whose body is based on the `ElementType` of the given content info.
- */
+/// View whose body is based on the `ElementType` of the given content info.
 struct TypeSwitchView: View {
     let info: ElementInfo
     let errorHandler: ErrorHandler?
@@ -29,6 +21,8 @@ struct TypeSwitchView: View {
             IfView(info: info as! IfInfo, errorHandler: errorHandler)
         case .list:
             ListView(info: info as! ListInfo, errorHandler: errorHandler)
+        case .navigationView:
+            NavigationView(info: info as! NavigationViewInfo, errorHandler: errorHandler)
         case .spacer:
             SpacerView(info: info as! SpacerInfo, errorHandler: errorHandler)
         case .text:
@@ -40,6 +34,8 @@ struct TypeSwitchView: View {
 
         case .fontModifier:
             FontModifierView(info: info as! FontModifierInfo, errorHandler: errorHandler)
+        case .navigationTitleModifier:
+            NavigationTitleModifierView(info: info as! NavigationTitleModifierInfo, errorHandler: errorHandler)
         case .tapGestureModifier:
             TapGestureModifierView(info: info as! TapGestureModifierInfo, errorHandler: errorHandler)
         }

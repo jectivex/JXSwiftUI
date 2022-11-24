@@ -28,11 +28,15 @@ struct JSCodeGenerator {
     }
 
     font(fontName) {
-        return \(namespace.value).FontModifier(this, fontName);
+        return \(namespace.value).\(ElementType.fontModifier.rawValue)(this, fontName);
+    }
+
+    navigationTitle(title) {
+        return \(namespace.value).\(ElementType.navigationTitleModifier.rawValue)(this, title);
     }
 
     onTapGesture(action) {
-        return \(namespace.value).TapGestureModifier(this, action);
+        return \(namespace.value).\(ElementType.tapGestureModifier.rawValue)(this, action);
     }
 }
 
@@ -68,10 +72,12 @@ struct JSCodeGenerator {
             return forEachJS(namespace: namespace)
         case .hstack:
             return hstackJS(namespace: namespace)
-        case .list:
-            return listJS(namespace: namespace)
         case .if:
             return ifJS(namespace: namespace)
+        case .list:
+            return listJS(namespace: namespace)
+        case .navigationView:
+            return navigationViewJS(namespace: namespace)
         case .spacer:
             return spacerJS(namespace: namespace)
         case .text:
@@ -83,6 +89,8 @@ struct JSCodeGenerator {
             
         case .fontModifier:
             return fontModifierJS(namespace: namespace)
+        case .navigationTitleModifier:
+            return navigationTitleModifierJS(namespace: namespace)
         case .tapGestureModifier:
             return tapGestureModifierJS(namespace: namespace)
         }
@@ -163,6 +171,16 @@ function(content) {
 }
 """
     }
+    
+    private static func navigationViewJS(namespace: JXNamespace) -> String {
+        """
+function(content) {
+    const e = new \(namespace.value).JXElement('\(ElementType.navigationView.rawValue)');
+    e.content = content;
+    return e;
+}
+"""
+    }
 
     private static func spacerJS(namespace: JXNamespace) -> String {
         """
@@ -201,6 +219,17 @@ function(target, fontName) {
     const e = new \(namespace.value).JXElement('\(ElementType.fontModifier.rawValue)');
     e.target = target;
     e.fontName = fontName;
+    return e;
+}
+"""
+    }
+    
+    private static func navigationTitleModifierJS(namespace: JXNamespace) -> String {
+        """
+function(target, title) {
+    const e = new \(namespace.value).JXElement('\(ElementType.navigationTitleModifier.rawValue)');
+    e.target = target;
+    e.title = title;
     return e;
 }
 """

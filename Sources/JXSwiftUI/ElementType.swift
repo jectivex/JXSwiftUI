@@ -8,8 +8,9 @@ enum ElementType: String, CaseIterable {
     case empty = "Empty"
     case foreach = "ForEach"
     case hstack = "HStack"
-    case list = "List"
     case `if` = "If"
+    case list = "List"
+    case navigationView = "NavigationView"
     case spacer = "Spacer"
     case text = "Text"
     case vstack = "VStack"
@@ -17,5 +18,6 @@ enum ElementType: String, CaseIterable {
 
     // Modifiers
     case fontModifier = "FontModifier"
+    case navigationTitleModifier = "NavigationTitleModifier"
     case tapGestureModifier = "TapGestureModifier"
 }
