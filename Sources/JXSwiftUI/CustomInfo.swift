@@ -2,34 +2,7 @@ import Combine
 import JXKit
 import SwiftUI
 
-/// A view with custom content defined by a script.
-struct CustomView: View {
-    let info: CustomInfo
-    let errorHandler: ErrorHandler?
-
-    @StateObject private var trigger = Trigger()
-
-    var body: some View {
-        contentInfo.view(errorHandler: errorHandler)
-            .onReceive(onJSStateWillChange) {
-                withAnimation { trigger.objectWillChange.send() }
-            }
-    }
-
-    private var onJSStateWillChange: AnyPublisher<Void, Never> {
-        return info.onJSStateWillChange
-    }
-
-    private var contentInfo: ElementInfo {
-        do {
-            return try info.contentInfo
-        } catch {
-            errorHandler?(error)
-            return EmptyInfo()
-        }
-    }
-}
-
+/// Vends a custom view defined in JS.
 struct CustomInfo: ElementInfo {
     private let jxValue: JXValue
     private let observer = WillChangeObserver()
@@ -44,16 +17,44 @@ struct CustomInfo: ElementInfo {
     var elementType: ElementType {
         return .custom
     }
+    
+    @ViewBuilder
+    func view(errorHandler: ErrorHandler?) -> any View {
+        CustomView(info: self, errorHandler: errorHandler)
+    }
 
-    var onJSStateWillChange: AnyPublisher<Void, Never> {
+    fileprivate var onJSStateWillChange: AnyPublisher<Void, Never> {
         return observer.objectWillChange.eraseToAnyPublisher()
     }
 
-    var contentInfo: ElementInfo {
+    fileprivate var contentInfo: ElementInfo {
         get throws {
             let bodyValue = try jxValue.invokeMethod(JSCodeGenerator.bodyFunction, withArguments: [])
             let className = try jxValue["constructor"]["name"].string
             return try Self.info(for: bodyValue, in: className)
+        }
+    }
+}
+
+private struct CustomView: View {
+    let info: CustomInfo
+    let errorHandler: ErrorHandler?
+
+    @StateObject private var trigger = Trigger()
+
+    var body: some View {
+        AnyView(contentInfo.view(errorHandler: errorHandler))
+            .onReceive(info.onJSStateWillChange) {
+                withAnimation { trigger.objectWillChange.send() }
+            }
+    }
+
+    private var contentInfo: ElementInfo {
+        do {
+            return try info.contentInfo
+        } catch {
+            errorHandler?(error)
+            return EmptyInfo()
         }
     }
 }

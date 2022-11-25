@@ -1,19 +1,10 @@
 import JXKit
 import SwiftUI
 
-/// A view whose body is a `SwiftUI.VStack` view.
-struct VStackView: View {
-    let info: VStackInfo
-    let errorHandler: ErrorHandler?
-
-    var body: some View {
-        VStack {
-            info.contentInfo.containerView(errorHandler: errorHandler)
-        }
-    }
-}
-
+/// Vends a `SwiftUI.VStack`.
 struct VStackInfo: ElementInfo {
+    private let contentInfo: [ElementInfo]
+    
     init(jxValue: JXValue) throws {
         self.contentInfo = try Self.infoArray(for: jxValue["content"], in: .vstack)
     }
@@ -22,5 +13,9 @@ struct VStackInfo: ElementInfo {
         return .vstack
     }
 
-    let contentInfo: [ElementInfo]
+    func view(errorHandler: ErrorHandler?) -> any View {
+        VStack {
+            contentInfo.containerView(errorHandler: errorHandler)
+        }
+    }
 }

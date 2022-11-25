@@ -1,22 +1,48 @@
 import JXKit
 import SwiftUI
 
-/// A view that iterates over a collection of items.
-struct ForEachView: View {
-    let info: ForEachInfo
-    let errorHandler: ErrorHandler?
+/// Iterates over a collection of items.
+struct ForEachInfo: ElementInfo {
+    private let itemsValue: JXValue
+    private let idFunction: JXValue
+    private let contentFunction: JXValue
 
-    var body: some View {
-        ForEach(itemsWithIdentity, id: \.id) { itemWithIdentity in
-            contentInfo(for: itemWithIdentity.item).view(errorHandler: errorHandler)
+    init(jxValue: JXValue) throws {
+        self.itemsValue = try jxValue["items"]
+        self.idFunction = try jxValue["idFunction"]
+        self.contentFunction = try jxValue["contentFunction"]
+        if !contentFunction.isFunction {
+            throw JXSwiftUIErrors.valueNotFunction(elementType.rawValue, "contentFunction")
         }
     }
 
-    private var itemsWithIdentity: ItemWithIdentityCollection {
+    var elementType: ElementType {
+        return .foreach
+    }
+
+    @ViewBuilder
+    func view(errorHandler: ErrorHandler?) -> any View {
+        ForEach(itemsWithIdentity(errorHandler: errorHandler), id: \.id) { itemWithIdentity in
+            let contentInfo = contentInfo(for: itemWithIdentity.item, errorHandler: errorHandler)
+            AnyView(contentInfo.view(errorHandler: errorHandler))
+        }
+    }
+    
+    private func contentInfo(for item: Any, errorHandler: ErrorHandler?) -> ElementInfo {
         do {
-            return try ItemWithIdentityCollection(items: info.items) { item in
+            let content = try contentFunction.call(withArguments: [item as! JXValue])
+            return try Self.info(for: content, in: elementType)
+        } catch {
+            errorHandler?(error)
+            return EmptyInfo()
+        }
+    }
+    
+    private func itemsWithIdentity(errorHandler: ErrorHandler?) -> ItemWithIdentityCollection {
+        do {
+            return try ItemWithIdentityCollection(items: items) { item in
                 do {
-                    return try info.id(for: item)
+                    return try id(for: item)
                 } catch {
                     errorHandler?(error)
                     return ""
@@ -28,32 +54,7 @@ struct ForEachView: View {
         }
     }
 
-    private func contentInfo(for item: Any) -> ElementInfo {
-        do {
-            return try info.contentInfo(for: item)
-        } catch {
-            errorHandler?(error)
-            return EmptyInfo()
-        }
-    }
-}
-
-struct ForEachInfo: ElementInfo {
-    private let itemsValue: JXValue
-    private let idFunction: JXValue
-    private let contentFunction: JXValue
-
-    init(jxValue: JXValue) throws {
-        self.itemsValue = try jxValue["items"]
-        self.idFunction = try jxValue["idFunction"]
-        self.contentFunction = try jxValue["contentFunction"]
-    }
-
-    var elementType: ElementType {
-        return .foreach
-    }
-
-    var items: AnyRandomAccessCollection<Any> {
+    private var items: AnyRandomAccessCollection<Any> {
         get throws {
             guard itemsValue.isArray else {
                 throw JXSwiftUIErrors.valueNotArray(elementType.rawValue, "items")
@@ -63,7 +64,7 @@ struct ForEachInfo: ElementInfo {
         }
     }
 
-    func id(for item: Any) throws -> AnyHashable {
+    private func id(for item: Any) throws -> AnyHashable {
         guard idFunction.isFunction else {
             throw JXSwiftUIErrors.valueNotFunction(elementType.rawValue, "idFunction")
         }
@@ -93,14 +94,6 @@ struct ForEachInfo: ElementInfo {
             break
         }
         throw JXSwiftUIErrors.unknownValue(elementType.rawValue, "idFunction")
-    }
-
-    func contentInfo(for item: Any) throws -> ElementInfo {
-        guard contentFunction.isFunction else {
-            throw JXSwiftUIErrors.valueNotFunction(elementType.rawValue, "contentFunction")
-        }
-        let content = try contentFunction.call(withArguments: [item as! JXValue])
-        return try Self.info(for: content, in: elementType)
     }
 }
 

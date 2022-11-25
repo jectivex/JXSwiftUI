@@ -1,17 +1,10 @@
 import JXKit
 import SwiftUI
 
-/// A view whose body is a `SwiftUI.Text` view.
-struct TextView: View {
-    let info: TextInfo
-    let errorHandler: ErrorHandler?
-
-    var body: some View {
-        Text(info.text)
-    }
-}
-
+/// Vends a `SwiftUI.Text`.
 struct TextInfo: ElementInfo {
+    private let text: String
+    
     init(jxValue: JXValue) throws {
         self.text = try jxValue["text"].string
     }
@@ -23,6 +16,9 @@ struct TextInfo: ElementInfo {
     var elementType: ElementType {
         return .text
     }
-
-    let text: String
+    
+    @ViewBuilder
+    func view(errorHandler: ErrorHandler?) -> any View {
+        Text(text)
+    }
 }

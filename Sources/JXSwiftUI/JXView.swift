@@ -28,7 +28,7 @@ public struct JXView: View {
     }
 
     public var body: some View {
-        TypeSwitchView(info: bodyInfo, errorHandler: errorHandler)
+        AnyView(bodyInfo.view(errorHandler: errorHandler))
     }
 
     private var bodyInfo: ElementInfo {

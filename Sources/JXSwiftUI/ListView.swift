@@ -1,19 +1,10 @@
 import JXKit
 import SwiftUI
 
-/// A view whose body is a `SwiftUI.List` view.
-struct ListView: View {
-    let info: ListInfo
-    let errorHandler: ErrorHandler?
-
-    var body: some View {
-        List {
-            info.contentInfo.containerView(errorHandler: errorHandler)
-        }
-    }
-}
-
+/// Vends a `SwiftUI.List`.
 struct ListInfo: ElementInfo {
+    private let contentInfo: [ElementInfo]
+    
     init(jxValue: JXValue) throws {
         self.contentInfo = try Self.infoArray(for: jxValue["content"], in: .list)
     }
@@ -22,5 +13,10 @@ struct ListInfo: ElementInfo {
         return .list
     }
 
-    let contentInfo: [ElementInfo]
+    @ViewBuilder
+    func view(errorHandler: ErrorHandler?) -> any View {
+        List {
+            contentInfo.containerView(errorHandler: errorHandler)
+        }
+    }
 }

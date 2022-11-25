@@ -1,18 +1,10 @@
 import JXKit
 import SwiftUI
 
-/// A view that specifies a font for its target view.
-struct FontModifierView: View {
-    let info: FontModifierInfo
-    let errorHandler: ErrorHandler?
-
-    var body: some View {
-        info.targetInfo.view(errorHandler: errorHandler)
-            .font(info.font)
-    }
-}
-
 struct FontModifierInfo: ElementInfo {
+    private let targetInfo: ElementInfo
+    private let font: Font
+    
     init(jxValue: JXValue) throws {
         self.targetInfo = try Self.info(for: jxValue["target"], in: .fontModifier)
         let fontName = try jxValue["fontName"].string
@@ -23,9 +15,11 @@ struct FontModifierInfo: ElementInfo {
         return .fontModifier
     }
 
-    let targetInfo: ElementInfo
-
-    let font: Font
+    @ViewBuilder
+    func view(errorHandler: ErrorHandler?) -> any View {
+        targetInfo.view(errorHandler: errorHandler)
+            .font(font)
+    }
 
     private static func font(for fontString: String) throws -> Font {
         switch fontString {

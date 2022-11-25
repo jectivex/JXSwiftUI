@@ -1,18 +1,11 @@
 import JXKit
 import SwiftUI
 
-/// A view that specifies a navigation title forr its target view.
-struct NavigationTitleModifierView: View {
-    let info: NavigationTitleModifierInfo
-    let errorHandler: ErrorHandler?
-
-    var body: some View {
-        info.targetInfo.view(errorHandler: errorHandler)
-            .navigationTitle(info.title)
-    }
-}
-
+/// Sets a navigation title for its target view.
 struct NavigationTitleModifierInfo: ElementInfo {
+    private let targetInfo: ElementInfo
+    private let title: String
+    
     init(jxValue: JXValue) throws {
         self.targetInfo = try Self.info(for: jxValue["target"], in: .navigationTitleModifier)
         self.title = try jxValue["title"].string
@@ -21,8 +14,10 @@ struct NavigationTitleModifierInfo: ElementInfo {
     var elementType: ElementType {
         return .navigationTitleModifier
     }
-
-    let targetInfo: ElementInfo
-
-    let title: String
+    
+    @ViewBuilder
+    func view(errorHandler: ErrorHandler?) -> any View {
+        AnyView(targetInfo.view(errorHandler: errorHandler))
+            .navigationTitle(title)
+    }
 }

@@ -1,19 +1,10 @@
 import JXKit
 import SwiftUI
 
-/// A view whose body is a `SwiftUI.NavigationView` view.
-struct NavigationView: View {
-    let info: NavigationViewInfo
-    let errorHandler: ErrorHandler?
-
-    var body: some View {
-        SwiftUI.NavigationView {
-            info.contentInfo.view(errorHandler: errorHandler)
-        }
-    }
-}
-
+/// Vends a `SwiftUI.NavigationView`.
 struct NavigationViewInfo: ElementInfo {
+    private let contentInfo: ElementInfo
+    
     init(jxValue: JXValue) throws {
         self.contentInfo = try Self.info(for: jxValue["content"], in: .navigationView)
     }
@@ -22,6 +13,11 @@ struct NavigationViewInfo: ElementInfo {
         return .navigationView
     }
 
-    let contentInfo: ElementInfo
+    @ViewBuilder
+    func view(errorHandler: ErrorHandler?) -> any View {
+        NavigationView {
+            AnyView(contentInfo.view(errorHandler: errorHandler))
+        }
+    }
 }
 

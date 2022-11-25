@@ -1,19 +1,10 @@
 import JXKit
 import SwiftUI
 
-/// A view whose body is a `SwiftUI.HStack` view.
-struct HStackView: View {
-    let info: HStackInfo
-    let errorHandler: ErrorHandler?
-
-    var body: some View {
-        HStack {
-            info.contentInfo.containerView(errorHandler: errorHandler)
-        }
-    }
-}
-
+/// Vends a `SwiftUI.HStack` view.
 struct HStackInfo: ElementInfo {
+    private let contentInfo: [ElementInfo]
+    
     init(jxValue: JXValue) throws {
         self.contentInfo = try Self.infoArray(for: jxValue["content"], in: .hstack)
     }
@@ -21,6 +12,10 @@ struct HStackInfo: ElementInfo {
     var elementType: ElementType {
         return .hstack
     }
-
-    let contentInfo: [ElementInfo]
+    
+    func view(errorHandler: ErrorHandler?) -> any View {
+        HStack {
+            contentInfo.containerView(errorHandler: errorHandler)
+        }
+    }
 }
