@@ -10,9 +10,22 @@ protocol ElementInfo {
 }
 
 extension ElementInfo {
-    static func `for`(_ jxValue: JXValue) throws -> ElementInfo? {
-        let elementTypeString = try jxValue[JSCodeGenerator.elementTypeProperty].string
-        let elementType = ElementType(rawValue: elementTypeString) ?? .unknown
+    static func info(for jxValue: JXValue, in elementType: ElementType) throws -> ElementInfo {
+        return try info(for: jxValue, in: elementType.rawValue)
+    }
+    
+    static func info(for jxValue: JXValue, in elementName: String) throws -> ElementInfo {
+        guard !jxValue.isUndefined else {
+            throw JXSwiftUIErrors.undefinedValue(elementName)
+        }
+        
+        let elementType: ElementType
+        if jxValue.hasProperty(JSCodeGenerator.elementTypeProperty) {
+            let elementTypeString = try jxValue[JSCodeGenerator.elementTypeProperty].string
+            elementType = ElementType(rawValue: elementTypeString) ?? .unknown
+        } else {
+            elementType = .native
+        }
         switch elementType {
         case .button:
             return try ButtonInfo(jxValue: jxValue)
@@ -28,6 +41,8 @@ extension ElementInfo {
             return try IfInfo(jxValue: jxValue)
         case .list:
             return try ListInfo(jxValue: jxValue)
+        case .native:
+            return try NativeInfo(jxValue: jxValue)
         case .navigationLink:
             return try NavigationLinkInfo(jxValue: jxValue)
         case .navigationView:
@@ -46,22 +61,8 @@ extension ElementInfo {
         case .tapGestureModifier:
             return try TapGestureModifierInfo(jxValue: jxValue)
         case .unknown:
-            return nil
-        }
-    }
-
-    static func info(for jxValue: JXValue, in elementType: ElementType) throws -> ElementInfo {
-        return try info(for: jxValue, in: elementType.rawValue)
-    }
-    
-    static func info(for jxValue: JXValue, in elementName: String) throws -> ElementInfo {
-        guard !jxValue.isUndefined else {
-            throw JXSwiftUIErrors.undefinedValue(elementName)
-        }
-        guard let elementInfo = try self.for(jxValue) else {
             throw JXSwiftUIErrors.unknownValue(elementName, try jxValue.string)
         }
-        return elementInfo
     }
 
     static func infoArray(for jxValue: JXValue, in elementType: ElementType) throws -> [ElementInfo] {

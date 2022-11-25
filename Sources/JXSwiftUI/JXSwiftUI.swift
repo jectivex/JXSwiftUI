@@ -3,6 +3,9 @@ import JXKit
 
 /// Register this module to use SwiftUI-in-JS in a context.
 public struct JXSwiftUI: JXModule {
+    public init() {
+    }
+    
     public let namespace: JXNamespace = "swiftui"
     
     public func initialize(in context: JXContext) throws {

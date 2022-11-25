@@ -76,6 +76,8 @@ struct JSCodeGenerator {
             return ifJS(namespace: namespace)
         case .list:
             return listJS(namespace: namespace)
+        case .native:
+            return nil
         case .navigationLink:
             return navigationLinkJS(namespace: namespace)
         case .navigationView:
