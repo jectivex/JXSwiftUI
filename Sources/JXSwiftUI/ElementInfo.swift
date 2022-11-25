@@ -28,6 +28,8 @@ extension ElementInfo {
             return try IfInfo(jxValue: jxValue)
         case .list:
             return try ListInfo(jxValue: jxValue)
+        case .navigationLink:
+            return try NavigationLinkInfo(jxValue: jxValue)
         case .navigationView:
             return try NavigationViewInfo(jxValue: jxValue)
         case .spacer:

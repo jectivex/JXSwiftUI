@@ -76,6 +76,8 @@ struct JSCodeGenerator {
             return ifJS(namespace: namespace)
         case .list:
             return listJS(namespace: namespace)
+        case .navigationLink:
+            return navigationLinkJS(namespace: namespace)
         case .navigationView:
             return navigationViewJS(namespace: namespace)
         case .spacer:
@@ -106,14 +108,15 @@ struct JSCodeGenerator {
     
     private static func buttonJS(namespace: JXNamespace) -> String {
 """
-function(actionOrLabel, actionOrContentFunction) {
+function(actionOrLabel, actionOrContent) {
     const e = new \(namespace.value).JXElement('\(ElementType.button.rawValue)');
-    if (typeof(actionOrLabel) == 'string') {
-        e.action = actionOrContentFunction;
-        e.content = Text(actionOrLabel);
+    // Button('label', () => { action }) or Button(() => { action }, <content>)
+    if (typeof(actionOrLabel) === 'string') {
+        e.action = actionOrContent;
+        e.content = \(namespace.value).Text(actionOrLabel);
     } else {
         e.action = actionOrLabel;
-        e.content = actionOrContentFunction();
+        e.content = actionOrContent;
     }
     return e;
 }
@@ -167,6 +170,23 @@ function(isTrue, ifFunction, elseFunction=null) {
 function(content) {
     const e = new \(namespace.value).JXElement('\(ElementType.list.rawValue)');
     e.content = content;
+    return e;
+}
+"""
+    }
+    
+    private static func navigationLinkJS(namespace: JXNamespace) -> String {
+        """
+function(destinationFunctionOrLabel, contentOrDestinationFunction) {
+    const e = new \(namespace.value).JXElement('\(ElementType.navigationLink.rawValue)');
+    // NavigationLink('label', () => { <destination> }) or NavigationLink(() => { <destination> }, <content>)
+    if (typeof(destinationFunctionOrLabel) === 'string') {
+        e.destinationFunction = contentOrDestinationFunction;
+        e.content = \(namespace.value).Text(destinationFunctionOrLabel);
+    } else {
+        e.destinationFunction = destinationFunctionOrLabel;
+        e.content = contentOrDestinationFunction;
+    }
     return e;
 }
 """

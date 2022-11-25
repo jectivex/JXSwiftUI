@@ -10,6 +10,7 @@ enum ElementType: String, CaseIterable {
     case hstack = "HStack"
     case `if` = "If"
     case list = "List"
+    case navigationLink = "NavigationLink"
     case navigationView = "NavigationView"
     case spacer = "Spacer"
     case text = "Text"
