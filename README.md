@@ -36,6 +36,7 @@ Browse the [API Documentation].
 ## TODO
 
 - Support more standard views and modifiers.
+- Observe published values from JS.
 - Bindings.
 - Allow JS views to pass JS content views to custom native container views.
 - Supply context and error handler to downstream native views that want to bridge back to JavaScript with a `JXView`.
