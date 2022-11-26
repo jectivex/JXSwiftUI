@@ -36,8 +36,13 @@ Browse the [API Documentation].
 ## TODO
 
 - Support more standard views and modifiers.
-- Observe published values from JS.
+- ObservableObject support.
+    - Observe changes in native ObservableObjects from JS.
+    - ObservableObject equivalent for JS model objects.
 - Bindings.
+    - Pass JS state var to other JS view as binding.
+    - Pass JS state var to native view as binding.
+    - Pass native binding to JS view.
 - Allow JS views to pass JS content views to custom native container views.
 - Supply context and error handler to downstream native views that want to bridge back to JavaScript with a `JXView`.
     - Wrapped in a single JXSwiftUIContext object?
