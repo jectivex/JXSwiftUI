@@ -12,17 +12,13 @@ struct JSCodeGenerator {
         let js = """
 \(namespace.value)._jxswiftuiStateHandler = {
     set(target, property, value) {
-        if (target._jxswiftuiObserver !== undefined && target._jxswiftuiObserver !== null) {
-            \(namespace.value)._jxswiftuiWillChange(target._jxswiftuiObserver);
-        }
+        target.willChange();
         target[property] = value;
         return true;
     }
 }
 
 \(namespace.value).JXElement = class {
-    _jxswiftuiType;
-
     constructor(type) {
         this._jxswiftuiType = type;
     }
@@ -41,11 +37,16 @@ struct JSCodeGenerator {
 }
 
 \(namespace.value).JXView = class extends \(namespace.value).JXElement {
-    state;
-
     constructor() {
         super('\(ElementType.custom.rawValue)');
-        this.state = new Proxy({}, \(namespace.value)._jxswiftuiStateHandler);
+        const state = {
+            willChange() {
+                if (this._jxswiftuiObserver !== undefined && this._jxswiftuiObserver !== null) {
+                    \(namespace.value)._jxswiftuiWillChange(this._jxswiftuiObserver);
+                }
+            }
+        };
+        this.state = new Proxy(state, \(namespace.value)._jxswiftuiStateHandler);
     }
 }
 """
