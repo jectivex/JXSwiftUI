@@ -1,3 +1,4 @@
+import JXBridge
 import JXKit
 import SwiftUI
 
@@ -13,9 +14,20 @@ struct HStackInfo: ElementInfo {
         return .hstack
     }
     
+    @ViewBuilder
     func view(errorHandler: ErrorHandler?) -> any View {
         HStack {
             contentInfo.containerView(errorHandler: errorHandler)
         }
+    }
+    
+    static func js(namespace: JXNamespace) -> String? {
+        """
+function(content) {
+    const e = new \(namespace.value).JXElement('\(ElementType.hstack.rawValue)');
+    e.content = content;
+    return e;
+}
+"""
     }
 }

@@ -1,3 +1,4 @@
+import JXBridge
 import JXKit
 import SwiftUI
 
@@ -26,6 +27,18 @@ struct ForEachInfo: ElementInfo {
             let contentInfo = contentInfo(for: itemWithIdentity.item, errorHandler: errorHandler)
             AnyView(contentInfo.view(errorHandler: errorHandler))
         }
+    }
+    
+    static func js(namespace: JXNamespace) -> String? {
+        """
+function(items, idFunction, contentFunction) {
+    const e = new \(namespace.value).JXElement('\(ElementType.foreach.rawValue)');
+    e.items = items;
+    e.idFunction = idFunction;
+    e.contentFunction = contentFunction;
+    return e;
+}
+"""
     }
     
     private func contentInfo(for item: Any, errorHandler: ErrorHandler?) -> ElementInfo {

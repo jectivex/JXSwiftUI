@@ -1,3 +1,4 @@
+import JXBridge
 import JXKit
 import SwiftUI
 
@@ -19,5 +20,16 @@ struct NavigationTitleModifierInfo: ElementInfo {
     func view(errorHandler: ErrorHandler?) -> any View {
         AnyView(targetInfo.view(errorHandler: errorHandler))
             .navigationTitle(title)
+    }
+    
+    static func js(namespace: JXNamespace) -> String? {
+        """
+function(target, title) {
+    const e = new \(namespace.value).JXElement('\(ElementType.navigationTitleModifier.rawValue)');
+    e.target = target;
+    e.title = title;
+    return e;
+}
+"""
     }
 }

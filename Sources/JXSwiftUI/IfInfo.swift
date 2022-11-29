@@ -1,3 +1,4 @@
+import JXBridge
 import JXKit
 import SwiftUI
 
@@ -41,6 +42,18 @@ struct IfInfo: ElementInfo {
             errorHandler?(error)
             return EmptyInfo()
         }
+    }
+    
+    static func js(namespace: JXNamespace) -> String? {
+        """
+function(isTrue, ifFunction, elseFunction=null) {
+    const e = new \(namespace.value).JXElement('\(ElementType.if.rawValue)');
+    e.isTrue = isTrue;
+    e.ifFunction = ifFunction;
+    e.elseFunction = elseFunction;
+    return e;
+}
+"""
     }
 
     private func elseContentInfo(errorHandler: ErrorHandler?) -> ElementInfo? {

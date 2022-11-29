@@ -1,3 +1,4 @@
+import JXBridge
 import JXKit
 import SwiftUI
 
@@ -18,6 +19,16 @@ struct NavigationViewInfo: ElementInfo {
         NavigationView {
             AnyView(contentInfo.view(errorHandler: errorHandler))
         }
+    }
+    
+    static func js(namespace: JXNamespace) -> String? {
+        """
+function(content) {
+    const e = new \(namespace.value).JXElement('\(ElementType.navigationView.rawValue)');
+    e.content = content;
+    return e;
+}
+"""
     }
 }
 

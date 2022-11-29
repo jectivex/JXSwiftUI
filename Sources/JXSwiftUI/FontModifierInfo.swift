@@ -1,3 +1,4 @@
+import JXBridge
 import JXKit
 import SwiftUI
 
@@ -19,6 +20,17 @@ struct FontModifierInfo: ElementInfo {
     func view(errorHandler: ErrorHandler?) -> any View {
         targetInfo.view(errorHandler: errorHandler)
             .font(font)
+    }
+    
+    static func js(namespace: JXNamespace) -> String? {
+        """
+function(target, fontName) {
+    const e = new \(namespace.value).JXElement('\(ElementType.fontModifier.rawValue)');
+    e.target = target;
+    e.fontName = fontName;
+    return e;
+}
+"""
     }
 
     private static func font(for fontString: String) throws -> Font {

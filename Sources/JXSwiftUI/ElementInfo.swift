@@ -1,3 +1,4 @@
+import JXBridge
 import JXKit
 import SwiftUI
 
@@ -7,9 +8,50 @@ typealias ErrorHandler = (Error) -> Void
 protocol ElementInfo {
     var elementType: ElementType { get }
     func view(errorHandler: ErrorHandler?) -> any View
+    static func js(namespace: JXNamespace) -> String?
 }
 
 extension ElementInfo {
+    static func infoType(for elementType: ElementType) -> ElementInfo.Type? {
+        switch elementType {
+        case .button:
+            return ButtonInfo.self
+        case .custom:
+            return CustomInfo.self
+        case .empty:
+            return EmptyInfo.self
+        case .foreach:
+            return ForEachInfo.self
+        case .hstack:
+            return HStackInfo.self
+        case .if:
+            return IfInfo.self
+        case .list:
+            return ListInfo.self
+        case .native:
+            return NativeInfo.self
+        case .navigationLink:
+            return NavigationLinkInfo.self
+        case .navigationView:
+            return NavigationViewInfo.self
+        case .spacer:
+            return SpacerInfo.self
+        case .text:
+            return TextInfo.self
+        case .vstack:
+            return VStackInfo.self
+
+        case .fontModifier:
+            return FontModifierInfo.self
+        case .navigationTitleModifier:
+            return NavigationTitleModifierInfo.self
+        case .tapGestureModifier:
+            return TapGestureModifierInfo.self
+        case .unknown:
+            return nil
+        }
+    }
+    
     static func info(for jxValue: JXValue, in elementType: ElementType) throws -> ElementInfo {
         return try info(for: jxValue, in: elementType.rawValue)
     }

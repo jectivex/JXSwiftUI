@@ -1,3 +1,4 @@
+import JXBridge
 import JXKit
 import SwiftUI
 
@@ -15,5 +16,9 @@ struct NativeInfo: ElementInfo {
     
     func view(errorHandler: ErrorHandler?) -> any View {
         return view
+    }
+    
+    static func js(namespace: JXNamespace) -> String? {
+        return nil
     }
 }

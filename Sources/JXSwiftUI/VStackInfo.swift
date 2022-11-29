@@ -1,3 +1,4 @@
+import JXBridge
 import JXKit
 import SwiftUI
 
@@ -17,5 +18,15 @@ struct VStackInfo: ElementInfo {
         VStack {
             contentInfo.containerView(errorHandler: errorHandler)
         }
+    }
+    
+    static func js(namespace: JXNamespace) -> String? {
+        """
+function(content) {
+    const e = new \(namespace.value).JXElement('\(ElementType.vstack.rawValue)');
+    e.content = content;
+    return e;
+}
+"""
     }
 }

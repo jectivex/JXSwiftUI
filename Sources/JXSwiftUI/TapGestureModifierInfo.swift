@@ -1,3 +1,4 @@
+import JXBridge
 import JXKit
 import SwiftUI
 
@@ -25,8 +26,19 @@ struct TapGestureModifierInfo: ElementInfo {
                 onTapGesture(errorHandler: errorHandler)
             }
     }
+    
+    static func js(namespace: JXNamespace) -> String? {
+        """
+function(target, action) {
+    const e = new \(namespace.value).JXElement('\(ElementType.tapGestureModifier.rawValue)');
+    e.target = target;
+    e.action = action;
+    return e;
+}
+"""
+    }
 
-    func onTapGesture(errorHandler: ErrorHandler?) {
+    private func onTapGesture(errorHandler: ErrorHandler?) {
         do {
             try onTapFunction.call(withArguments: [])
         } catch {

@@ -1,3 +1,4 @@
+import JXBridge
 import JXKit
 import SwiftUI
 
@@ -13,5 +14,14 @@ struct SpacerInfo: ElementInfo {
     @ViewBuilder
     func view(errorHandler: ErrorHandler?) -> any View {
         Spacer()
+    }
+    
+    static func js(namespace: JXNamespace) -> String? {
+        """
+function() {
+    const e = new \(namespace.value).JXElement('\(ElementType.spacer.rawValue)');
+    return e;
+}
+"""
     }
 }

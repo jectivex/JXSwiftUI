@@ -1,3 +1,4 @@
+import JXBridge
 import JXKit
 import SwiftUI
 
@@ -25,6 +26,23 @@ struct NavigationLinkInfo: ElementInfo {
         }) {
             AnyView(contentInfo.view(errorHandler: errorHandler))
         }
+    }
+    
+    static func js(namespace: JXNamespace) -> String? {
+        """
+function(destinationFunctionOrLabel, contentOrDestinationFunction) {
+    const e = new \(namespace.value).JXElement('\(ElementType.navigationLink.rawValue)');
+    // NavigationLink('label', () => { <destination> }) or NavigationLink(() => { <destination> }, <content>)
+    if (typeof(destinationFunctionOrLabel) === 'string') {
+        e.destinationFunction = contentOrDestinationFunction;
+        e.content = \(namespace.value).Text(destinationFunctionOrLabel);
+    } else {
+        e.destinationFunction = destinationFunctionOrLabel;
+        e.content = contentOrDestinationFunction;
+    }
+    return e;
+}
+"""
     }
     
     private func destination(errorHandler: ErrorHandler?) -> ElementInfo {

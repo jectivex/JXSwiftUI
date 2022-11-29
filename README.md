@@ -47,3 +47,4 @@ Browse the [API Documentation].
 - Supply context and error handler to downstream native views that want to bridge back to JavaScript with a `JXView`.
     - Wrapped in a single JXSwiftUIContext object?
     - As environment values? Or harden and use JXKit's "current" context stack?
+- JS support for checking platform (iOS vs. macOS, etc).

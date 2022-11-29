@@ -1,3 +1,4 @@
+import JXBridge
 import JXKit
 import SwiftUI
 
@@ -20,5 +21,15 @@ struct TextInfo: ElementInfo {
     @ViewBuilder
     func view(errorHandler: ErrorHandler?) -> any View {
         Text(text)
+    }
+    
+    static func js(namespace: JXNamespace) -> String? {
+        """
+function(text) {
+    const e = new \(namespace.value).JXElement('\(ElementType.text.rawValue)');
+    e.text = text;
+    return e;
+}
+"""
     }
 }

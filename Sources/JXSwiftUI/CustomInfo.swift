@@ -1,4 +1,5 @@
 import Combine
+import JXBridge
 import JXKit
 import SwiftUI
 
@@ -21,6 +22,10 @@ struct CustomInfo: ElementInfo {
     @ViewBuilder
     func view(errorHandler: ErrorHandler?) -> any View {
         CustomView(info: self, errorHandler: errorHandler)
+    }
+    
+    static func js(namespace: JXNamespace) -> String? {
+        return nil
     }
 
     fileprivate var onJSStateWillChange: AnyPublisher<Void, Never> {

@@ -1,3 +1,4 @@
+import JXBridge
 import JXKit
 import SwiftUI
 
@@ -18,5 +19,15 @@ struct ListInfo: ElementInfo {
         List {
             contentInfo.containerView(errorHandler: errorHandler)
         }
+    }
+    
+    static func js(namespace: JXNamespace) -> String? {
+        """
+function(content) {
+    const e = new \(namespace.value).JXElement('\(ElementType.list.rawValue)');
+    e.content = content;
+    return e;
+}
+"""
     }
 }
