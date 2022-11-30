@@ -1,6 +1,7 @@
 import Combine
 import JXBridge
 import JXKit
+import SwiftUI
 
 /// Register this module to use SwiftUI-in-JS in a context.
 public struct JXSwiftUI: JXModule {
@@ -22,6 +23,19 @@ public struct JXSwiftUI: JXModule {
             return context.undefined()
         }
         try context.global[namespace].setProperty(JSCodeGenerator.willChangeFunction, willChangeFunction)
+        
+        // Call SwiftUI.withAnimation { ... }
+        let withAnimationFunction = JXValue(newFunctionIn: context) { context, this, args in
+            guard args.count == 1 else {
+                return context.undefined()
+            }
+            let functionBlock = args[0]
+            let result = try withAnimation {
+                try functionBlock.call()
+            }
+            return try context.convey(result)
+        }
+        try context.global[namespace].setProperty(JSCodeGenerator.withAnimationFunction, withAnimationFunction)
         
         let initializeJS = JSCodeGenerator.initializationJS(namespace: namespace)
         try context.eval(initializeJS)

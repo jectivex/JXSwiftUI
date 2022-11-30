@@ -8,6 +8,7 @@ struct JSCodeGenerator {
     static let observedProperty = "observed"
     static let initStateFunction = "initState"
     static let bodyFunction = "body"
+    static let withAnimationFunction = "withAnimation"
     static let willChangeFunction = "_jxswiftuiWillChange"
     
     static func initializationJS(namespace: JXNamespace) -> String {

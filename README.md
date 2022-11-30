@@ -39,13 +39,10 @@ Browse the [API Documentation].
     
         HStack(() => [V1(), V2()... ])
     
-- Animation.
 - Improve error messages.
     - Consider adding a message and the view hierarchy to all errors.
 - Support more standard views and modifiers.
-- ObservableObject support.
-    - Observe changes in native ObservableObjects from JS.
-    - ObservableObject equivalent for JS model objects.
+- ObservableObject equivalent for JS model objects.
 - Bindings.
     - Pass JS state var to other JS view as binding.
     - Pass JS state var to native view as binding.
