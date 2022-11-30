@@ -18,4 +18,8 @@ public enum JXSwiftUIErrors: Error {
     /// Expected a JavaScript function.
     /// (Context, value)
     case valueNotFunction(String, String)
+    
+    /// Expected an ObservableObject.
+    /// (Context, value)
+    case valueNotObservable(String, String)
 }

@@ -39,6 +39,7 @@ Browse the [API Documentation].
     
         HStack(() => [V1(), V2()... ])
     
+- Animation.
 - Improve error messages.
     - Consider adding a message and the view hierarchy to all errors.
 - Support more standard views and modifiers.

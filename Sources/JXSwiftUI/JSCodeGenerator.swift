@@ -5,6 +5,7 @@ struct JSCodeGenerator {
     static let elementTypeProperty = "_jxswiftuiType"
     static let observerProperty = "_jxswiftuiObserver"
     static let stateProperty = "state"
+    static let observedProperty = "observed"
     static let initStateFunction = "initState"
     static let bodyFunction = "body"
     static let willChangeFunction = "_jxswiftuiWillChange"
@@ -43,13 +44,20 @@ struct JSCodeGenerator {
     constructor() {
         super('\(ElementType.custom.rawValue)');
         const state = {
+            observed: {},
             willChange() {
                 if (this._jxswiftuiObserver !== undefined && this._jxswiftuiObserver !== null) {
                     \(namespace.value)._jxswiftuiWillChange(this._jxswiftuiObserver);
                 }
             }
         };
+        state.o = state.observed;
+
         this.state = new Proxy(state, \(namespace.value)._jxswiftuiStateHandler);
+        this.s = this.state;
+
+        this.observed = {};
+        this.o = this.observed;
     }
 
     initState() {

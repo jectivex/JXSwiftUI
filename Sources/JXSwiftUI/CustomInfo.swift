@@ -40,6 +40,7 @@ private struct CustomView: View {
     private func evaluateJSBody() -> ElementInfo {
         do {
             try manageJSState()
+            try updateJSObservers()
             let bodyValue = try info.jxValue.invokeMethod(JSCodeGenerator.bodyFunction, withArguments: [])
             return try CustomInfo.info(for: bodyValue, in: info.jsClassName)
         } catch {
@@ -68,11 +69,47 @@ private struct CustomView: View {
             jsState.stateOwnerClassName = info.jsClassName
         }
     }
+    
+    private func updateJSObservers() throws {
+        // Gather all observables from the JS view and its state object
+        var observables: [ObjectIdentifier: any ObservableObject] = [:]
+        try addObservables(in: info.jxValue[JSCodeGenerator.observedProperty], to: &observables)
+        try addObservables(in: info.jxValue[JSCodeGenerator.stateProperty][JSCodeGenerator.observedProperty], to: &observables)
+        
+        // Unsubscribe observables we're no longer observing
+        for entry in jsState.observed {
+            if !observables.keys.contains(entry.key) {
+                jsState.observed[entry.key] = nil
+            }
+        }
+        // Subscribe to new observables so that a change will fire jsState.objectWillChange()
+        for entry in observables {
+            if !jsState.observed.keys.contains(entry.key) {
+                if let publisher = (entry.value.objectWillChange as any Publisher) as? ObservableObjectPublisher {
+                    jsState.observed[entry.key] = publisher.sink { [weak jsState] _ in
+                        jsState?.objectWillChange.send()
+                    }
+                }
+            }
+        }
+    }
+    
+    private func addObservables(in jsArray: JXValue, to dict: inout [ObjectIdentifier: any ObservableObject]) throws {
+        for entry in try jsArray.dictionary {
+            do {
+                let observable = try entry.value.convey(to: (any ObservableObject).self)
+                dict[ObjectIdentifier(observable)] = observable
+            } catch JXErrors.cannotConvey {
+                throw JXSwiftUIErrors.valueNotObservable(info.jsClassName, entry.key)
+            }
+        }
+    }
 }
 
 private class JSState: ObservableObject {
     let observer = WillChangeObserver()
     var observerSubscription: AnyCancellable?
+    var observed: [ObjectIdentifier: AnyCancellable] = [:]
     
     var state: JXValue?
     var stateOwnerClassName: String?
