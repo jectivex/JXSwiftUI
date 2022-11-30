@@ -5,6 +5,7 @@ struct JSCodeGenerator {
     static let elementTypeProperty = "_jxswiftuiType"
     static let observerProperty = "_jxswiftuiObserver"
     static let stateProperty = "state"
+    static let initStateFunction = "initState"
     static let bodyFunction = "body"
     static let willChangeFunction = "_jxswiftuiWillChange"
     
@@ -12,7 +13,9 @@ struct JSCodeGenerator {
         let js = """
 \(namespace.value)._jxswiftuiStateHandler = {
     set(target, property, value) {
-        target.willChange();
+        if (property !== '_jxswiftuiObserver') {
+            target.willChange();
+        }
         target[property] = value;
         return true;
     }
@@ -47,6 +50,9 @@ struct JSCodeGenerator {
             }
         };
         this.state = new Proxy(state, \(namespace.value)._jxswiftuiStateHandler);
+    }
+
+    initState() {
     }
 }
 """

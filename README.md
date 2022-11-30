@@ -35,6 +35,12 @@ Browse the [API Documentation].
 
 ## TODO
 
+- Allow any JS content views to be passed to container as the view(s) or a function returning the view(s).
+    
+        HStack(() => [V1(), V2()... ])
+    
+- Improve error messages.
+    - Consider adding a message and the view hierarchy to all errors.
 - Support more standard views and modifiers.
 - ObservableObject support.
     - Observe changes in native ObservableObjects from JS.
@@ -48,3 +54,4 @@ Browse the [API Documentation].
     - Wrapped in a single JXSwiftUIContext object?
     - As environment values? Or harden and use JXKit's "current" context stack?
 - JS support for checking platform (iOS vs. macOS, etc).
+- String localization.

@@ -5,14 +5,12 @@ import SwiftUI
 
 /// Vends a custom view defined in JS.
 struct CustomInfo: ElementInfo {
-    private let jxValue: JXValue
-    private let observer = WillChangeObserver()
+    let jxValue: JXValue
+    let jsClassName: String
 
     init(jxValue: JXValue) throws {
         self.jxValue = jxValue
-        // Set an observer that will be triggered on JS JXView.state changes
-        let observerValue = jxValue.context.object(peer: self.observer)
-        try jxValue[JSCodeGenerator.stateProperty].setProperty(JSCodeGenerator.observerProperty, observerValue)
+        self.jsClassName = try jxValue["constructor"]["name"].string
     }
 
     var elementType: ElementType {
@@ -27,42 +25,59 @@ struct CustomInfo: ElementInfo {
     static func js(namespace: JXNamespace) -> String? {
         return nil
     }
-
-    fileprivate var onJSStateWillChange: AnyPublisher<Void, Never> {
-        return observer.objectWillChange.eraseToAnyPublisher()
-    }
-
-    fileprivate var contentInfo: ElementInfo {
-        get throws {
-            let bodyValue = try jxValue.invokeMethod(JSCodeGenerator.bodyFunction, withArguments: [])
-            let className = try jxValue["constructor"]["name"].string
-            return try Self.info(for: bodyValue, in: className)
-        }
-    }
 }
 
 private struct CustomView: View {
     let info: CustomInfo
     let errorHandler: ErrorHandler?
 
-    @StateObject private var trigger = Trigger()
-
+    @StateObject private var jsState = JSState()
+    
     var body: some View {
-        AnyView(contentInfo.view(errorHandler: errorHandler))
-            .onReceive(info.onJSStateWillChange) {
-                withAnimation { trigger.objectWillChange.send() }
-            }
+        AnyView(evaluateJSBody().view(errorHandler: errorHandler))
     }
 
-    private var contentInfo: ElementInfo {
+    private func evaluateJSBody() -> ElementInfo {
         do {
-            return try info.contentInfo
+            try manageJSState()
+            let bodyValue = try info.jxValue.invokeMethod(JSCodeGenerator.bodyFunction, withArguments: [])
+            return try CustomInfo.info(for: bodyValue, in: info.jsClassName)
         } catch {
             errorHandler?(error)
             return EmptyInfo()
         }
     }
+    
+    private func manageJSState() throws {
+        if let state = jsState.state, let stateOwnerClassName = jsState.stateOwnerClassName, stateOwnerClassName == info.jsClassName {
+            // If we have previous state from the same JS view class, transfer it to the JS view.
+            // This preserves state when the parent view's body() is re-evaluated and a new JS
+            // view is constructed, but is being backed by the same SwiftUI view. In cases where
+            // it's the same JS view instance, it has no real effect
+            try info.jxValue.setProperty(JSCodeGenerator.stateProperty, state)
+        } else {
+            // If we don't have previous JS state, cache the JS view's state for injection next time.
+            // Assign an observer so that any state change triggers an update on our state object,
+            // causing this view to re-evaluate its body. JS views can use the initState() function
+            // to initialize expensive state only when it won't get overwritten
+            try info.jxValue[JSCodeGenerator.initStateFunction].call()
+            let state = try info.jxValue[JSCodeGenerator.stateProperty]
+            let observerValue = info.jxValue.context.object(peer: jsState.observer)
+            try state.setProperty(JSCodeGenerator.observerProperty, observerValue)
+            jsState.state = state
+            jsState.stateOwnerClassName = info.jsClassName
+        }
+    }
 }
 
-private class Trigger: ObservableObject {
+private class JSState: ObservableObject {
+    let observer = WillChangeObserver()
+    var observerSubscription: AnyCancellable?
+    
+    var state: JXValue?
+    var stateOwnerClassName: String?
+    
+    init() {
+        observerSubscription = observer.objectWillChange.sink { [weak self] _ in self?.objectWillChange.send() }
+    }
 }

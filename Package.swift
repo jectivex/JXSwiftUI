@@ -10,8 +10,8 @@ let package = Package(
         .library(name: "JXSwiftUI", targets: ["JXSwiftUI"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/jectivex/JXBridge.git", branch: "main"),
-        .package(url: "https://github.com/jectivex/JXKit.git", branch: "main"),
+        .package(url: "https://github.com/jectivex/JXBridge.git", from: "0.1.3"),
+        .package(url: "https://github.com/jectivex/JXKit.git", from: "3.3.0"),
     ],
     targets: [
         .target(name: "JXSwiftUI", dependencies: ["JXBridge", "JXKit"]),
