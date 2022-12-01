@@ -22,9 +22,9 @@ struct VStackInfo: ElementInfo {
     
     static func js(namespace: JXNamespace) -> String? {
         """
-function(content) {
+function(contentArray) {
     const e = new \(namespace.value).JXElement('\(ElementType.vstack.rawValue)');
-    e.content = content;
+    e.content = contentArray;
     return e;
 }
 """

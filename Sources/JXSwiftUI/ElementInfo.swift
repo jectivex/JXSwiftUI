@@ -22,6 +22,8 @@ extension ElementInfo {
             return EmptyInfo.self
         case .foreach:
             return ForEachInfo.self
+        case .form:
+            return FormInfo.self
         case .hstack:
             return HStackInfo.self
         case .if:
@@ -34,6 +36,8 @@ extension ElementInfo {
             return NavigationLinkInfo.self
         case .navigationView:
             return NavigationViewInfo.self
+        case .section:
+            return SectionInfo.self
         case .spacer:
             return SpacerInfo.self
         case .text:
@@ -77,6 +81,8 @@ extension ElementInfo {
             return EmptyInfo()
         case .foreach:
             return try ForEachInfo(jxValue: jxValue)
+        case .form:
+            return try FormInfo(jxValue: jxValue)
         case .hstack:
             return try HStackInfo(jxValue: jxValue)
         case .if:
@@ -89,6 +95,8 @@ extension ElementInfo {
             return try NavigationLinkInfo(jxValue: jxValue)
         case .navigationView:
             return try NavigationViewInfo(jxValue: jxValue)
+        case .section:
+            return try SectionInfo(jxValue: jxValue)
         case .spacer:
             return try SpacerInfo(jxValue: jxValue)
         case .text:

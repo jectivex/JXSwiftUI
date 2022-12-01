@@ -24,10 +24,10 @@ struct ButtonInfo: ElementInfo {
     }
     
     static func js(namespace: JXNamespace) -> String? {
+        // Button('label', () => { action }) or Button(() => { action }, <content>)
 """
 function(actionOrLabel, actionOrContent) {
     const e = new \(namespace.value).JXElement('\(ElementType.button.rawValue)');
-    // Button('label', () => { action }) or Button(() => { action }, <content>)
     if (typeof(actionOrLabel) === 'string') {
         e.action = actionOrContent;
         e.content = \(namespace.value).Text(actionOrLabel);

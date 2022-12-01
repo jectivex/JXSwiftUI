@@ -29,10 +29,10 @@ struct NavigationLinkInfo: ElementInfo {
     }
     
     static func js(namespace: JXNamespace) -> String? {
+        // NavigationLink('label', () => { <destination> }) or NavigationLink(() => { <destination> }, <content>)
         """
 function(destinationFunctionOrLabel, contentOrDestinationFunction) {
     const e = new \(namespace.value).JXElement('\(ElementType.navigationLink.rawValue)');
-    // NavigationLink('label', () => { <destination> }) or NavigationLink(() => { <destination> }, <content>)
     if (typeof(destinationFunctionOrLabel) === 'string') {
         e.destinationFunction = contentOrDestinationFunction;
         e.content = \(namespace.value).Text(destinationFunctionOrLabel);

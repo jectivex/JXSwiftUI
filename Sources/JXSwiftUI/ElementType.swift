@@ -7,12 +7,14 @@ enum ElementType: String, CaseIterable {
     case custom
     case empty = "Empty"
     case foreach = "ForEach"
+    case form = "Form"
     case hstack = "HStack"
     case `if` = "If"
     case list = "List"
     case native
     case navigationLink = "NavigationLink"
     case navigationView = "NavigationView"
+    case section = "Section"
     case spacer = "Spacer"
     case text = "Text"
     case vstack = "VStack"
