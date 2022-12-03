@@ -3,21 +3,23 @@ import JXKit
 import SwiftUI
 
 /// Vends a `SwiftUI.NavigationView`.
-struct NavigationViewInfo: ElementInfo {
-    private let contentInfo: ElementInfo
+struct NavigationViewElement: Element {
+    private let content: Content
     
     init(jxValue: JXValue) throws {
-        self.contentInfo = try Self.info(for: jxValue["content"], in: .navigationView)
+        self.content = try Content(jxValue: jxValue["content"])
     }
 
     var elementType: ElementType {
         return .navigationView
     }
 
-    @ViewBuilder
     func view(errorHandler: ErrorHandler?) -> any View {
-        NavigationView {
-            AnyView(contentInfo.view(errorHandler: errorHandler))
+        return NavigationView {
+            let errorHandler = errorHandler?.in(.navigationView)
+            content.element(errorHandler: errorHandler)
+                .view(errorHandler: errorHandler)
+                .eraseToAnyView()
         }
     }
     

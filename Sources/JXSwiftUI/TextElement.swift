@@ -3,7 +3,7 @@ import JXKit
 import SwiftUI
 
 /// Vends a `SwiftUI.Text`.
-struct TextInfo: ElementInfo {
+struct TextElement: Element {
     private let text: String
     
     init(jxValue: JXValue) throws {
@@ -18,9 +18,8 @@ struct TextInfo: ElementInfo {
         return .text
     }
     
-    @ViewBuilder
     func view(errorHandler: ErrorHandler?) -> any View {
-        Text(text)
+        return Text(text)
     }
     
     static func js(namespace: JXNamespace) -> String? {

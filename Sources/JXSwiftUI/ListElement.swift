@@ -3,21 +3,21 @@ import JXKit
 import SwiftUI
 
 /// Vends a `SwiftUI.List`.
-struct ListInfo: ElementInfo {
-    private let contentInfo: [ElementInfo]
+struct ListElement: Element {
+    private let content: Content
     
     init(jxValue: JXValue) throws {
-        self.contentInfo = try Self.infoArray(for: jxValue["content"], in: .list)
+        self.content = try Content(jxValue: jxValue["content"])
     }
 
     var elementType: ElementType {
         return .list
     }
 
-    @ViewBuilder
     func view(errorHandler: ErrorHandler?) -> any View {
-        List {
-            contentInfo.containerView(errorHandler: errorHandler)
+        return List {
+            let errorHandler = errorHandler?.in(.list)
+            content.elementArray(errorHandler: errorHandler) .containerView(errorHandler: errorHandler)
         }
     }
     

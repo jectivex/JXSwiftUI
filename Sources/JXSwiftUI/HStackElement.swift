@@ -3,21 +3,22 @@ import JXKit
 import SwiftUI
 
 /// Vends a `SwiftUI.HStack` view.
-struct HStackInfo: ElementInfo {
-    private let contentInfo: [ElementInfo]
+struct HStackElement: Element {
+    private let content: Content
     
     init(jxValue: JXValue) throws {
-        self.contentInfo = try Self.infoArray(for: jxValue["content"], in: .hstack)
+        self.content = try Content(jxValue: jxValue["content"])
     }
 
     var elementType: ElementType {
         return .hstack
     }
     
-    @ViewBuilder
     func view(errorHandler: ErrorHandler?) -> any View {
-        HStack {
-            contentInfo.containerView(errorHandler: errorHandler)
+        return HStack {
+            let errorHandler = errorHandler?.in(.hstack)
+            content.elementArray(errorHandler: errorHandler)
+                .containerView(errorHandler: errorHandler)
         }
     }
     

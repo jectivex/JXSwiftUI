@@ -3,11 +3,11 @@ import JXKit
 import SwiftUI
 
 /// Vends a `SwiftUI.VStack`.
-struct VStackInfo: ElementInfo {
-    private let contentInfo: [ElementInfo]
+struct VStackElement: Element {
+    private let content: Content
     
     init(jxValue: JXValue) throws {
-        self.contentInfo = try Self.infoArray(for: jxValue["content"], in: .vstack)
+        self.content = try Content(jxValue: jxValue["content"])
     }
 
     var elementType: ElementType {
@@ -15,8 +15,10 @@ struct VStackInfo: ElementInfo {
     }
 
     func view(errorHandler: ErrorHandler?) -> any View {
-        VStack {
-            contentInfo.containerView(errorHandler: errorHandler)
+        return VStack {
+            let errorHandler = errorHandler?.in(.vstack)
+            content.elementArray(errorHandler: errorHandler)
+                .containerView(errorHandler: errorHandler)
         }
     }
     

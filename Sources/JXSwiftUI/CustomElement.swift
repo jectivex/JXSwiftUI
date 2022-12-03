@@ -4,7 +4,7 @@ import JXKit
 import SwiftUI
 
 /// Vends a custom view defined in JS.
-struct CustomInfo: ElementInfo {
+struct CustomElement: Element {
     let jxValue: JXValue
     let jsClassName: String
 
@@ -17,9 +17,8 @@ struct CustomInfo: ElementInfo {
         return .custom
     }
     
-    @ViewBuilder
     func view(errorHandler: ErrorHandler?) -> any View {
-        CustomView(info: self, errorHandler: errorHandler)
+        return CustomView(element: self, errorHandler: errorHandler?.in(jsClassName))
     }
     
     static func js(namespace: JXNamespace) -> String? {
@@ -28,53 +27,55 @@ struct CustomInfo: ElementInfo {
 }
 
 private struct CustomView: View {
-    let info: CustomInfo
+    let element: CustomElement
     let errorHandler: ErrorHandler?
 
     @StateObject private var jsState = JSState()
     
     var body: some View {
-        AnyView(evaluateJSBody().view(errorHandler: errorHandler))
+        evaluateJSBody()
+            .view(errorHandler: errorHandler)
+            .eraseToAnyView()
     }
 
-    private func evaluateJSBody() -> ElementInfo {
+    private func evaluateJSBody() -> Element {
         do {
             try manageJSState()
             try updateJSObservers()
-            let bodyValue = try info.jxValue.invokeMethod(JSCodeGenerator.bodyFunction, withArguments: [])
-            return try CustomInfo.info(for: bodyValue, in: info.jsClassName)
+            return try Content(jxValue: element.jxValue.invokeMethod(JSCodeGenerator.bodyFunction))
+                .element(errorHandler: errorHandler)
         } catch {
-            errorHandler?(error)
-            return EmptyInfo()
+            errorHandler?.handle(error)
+            return EmptyElement()
         }
     }
     
     private func manageJSState() throws {
-        if let state = jsState.state, let stateOwnerClassName = jsState.stateOwnerClassName, stateOwnerClassName == info.jsClassName {
+        if let state = jsState.state, let stateOwnerClassName = jsState.stateOwnerClassName, stateOwnerClassName == element.jsClassName {
             // If we have previous state from the same JS view class, transfer it to the JS view.
             // This preserves state when the parent view's body() is re-evaluated and a new JS
             // view is constructed, but is being backed by the same SwiftUI view. In cases where
             // it's the same JS view instance, it has no real effect
-            try info.jxValue.setProperty(JSCodeGenerator.stateProperty, state)
+            try element.jxValue.setProperty(JSCodeGenerator.stateProperty, state)
         } else {
             // If we don't have previous JS state, cache the JS view's state for injection next time.
             // Assign an observer so that any state change triggers an update on our state object,
             // causing this view to re-evaluate its body. JS views can use the initState() function
             // to initialize expensive state only when it won't get overwritten
-            try info.jxValue[JSCodeGenerator.initStateFunction].call()
-            let state = try info.jxValue[JSCodeGenerator.stateProperty]
-            let observerValue = info.jxValue.context.object(peer: jsState.observer)
+            try element.jxValue[JSCodeGenerator.initStateFunction].call()
+            let state = try element.jxValue[JSCodeGenerator.stateProperty]
+            let observerValue = element.jxValue.context.object(peer: jsState.observer)
             try state.setProperty(JSCodeGenerator.observerProperty, observerValue)
             jsState.state = state
-            jsState.stateOwnerClassName = info.jsClassName
+            jsState.stateOwnerClassName = element.jsClassName
         }
     }
     
     private func updateJSObservers() throws {
         // Gather all observables from the JS view and its state object
         var observables: [ObjectIdentifier: any ObservableObject] = [:]
-        try addObservables(in: info.jxValue[JSCodeGenerator.observedProperty], to: &observables)
-        try addObservables(in: info.jxValue[JSCodeGenerator.stateProperty][JSCodeGenerator.observedProperty], to: &observables)
+        try addObservables(in: element.jxValue[JSCodeGenerator.observedProperty], to: &observables, force: true)
+        try addObservables(in: element.jxValue[JSCodeGenerator.stateProperty], to: &observables, force: false)
         
         // Unsubscribe observables we're no longer observing
         for entry in jsState.observed {
@@ -94,13 +95,12 @@ private struct CustomView: View {
         }
     }
     
-    private func addObservables(in jsArray: JXValue, to dict: inout [ObjectIdentifier: any ObservableObject]) throws {
-        for entry in try jsArray.dictionary {
-            do {
-                let observable = try entry.value.convey(to: (any ObservableObject).self)
+    private func addObservables(in jsObject: JXValue, to dict: inout [ObjectIdentifier: any ObservableObject], force: Bool) throws {
+        for entry in try jsObject.dictionary {
+            if let observable = try entry.value.bridged as? (any ObservableObject) {
                 dict[ObjectIdentifier(observable)] = observable
-            } catch JXErrors.cannotConvey {
-                throw JXSwiftUIErrors.valueNotObservable(info.jsClassName, entry.key)
+            } else if (force) {
+                throw JXError(message: "'observed.\(entry.key)' has non-observable value '\(entry.value.description)'")
             }
         }
     }

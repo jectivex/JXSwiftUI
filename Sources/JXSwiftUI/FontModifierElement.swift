@@ -2,12 +2,13 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-struct FontModifierInfo: ElementInfo {
-    private let targetInfo: ElementInfo
+/// Sets a font on its target view.
+struct FontModifierElement: Element {
+    private let target: Content
     private let font: Font
     
     init(jxValue: JXValue) throws {
-        self.targetInfo = try Self.info(for: jxValue["target"], in: .fontModifier)
+        self.target = try Content(jxValue: jxValue["target"])
         let fontName = try jxValue["fontName"].string
         self.font = try Self.font(for: fontName)
     }
@@ -16,9 +17,9 @@ struct FontModifierInfo: ElementInfo {
         return .fontModifier
     }
 
-    @ViewBuilder
     func view(errorHandler: ErrorHandler?) -> any View {
-        targetInfo.view(errorHandler: errorHandler)
+        return target.element(errorHandler: errorHandler)
+            .view(errorHandler: errorHandler)
             .font(font)
     }
     
@@ -42,7 +43,7 @@ function(target, fontName) {
         case "caption":
             return .caption
         default:
-            throw JXSwiftUIErrors.unknownValue(ElementType.fontModifier.rawValue, fontString)
+            throw JXError(message: "Unsupported font '\(fontString)'")
         }
     }
 }

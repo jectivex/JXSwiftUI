@@ -45,20 +45,14 @@ struct JSCodeGenerator {
     constructor() {
         super('\(ElementType.custom.rawValue)');
         const state = {
-            observed: {},
             willChange() {
                 if (this._jxswiftuiObserver !== undefined && this._jxswiftuiObserver !== null) {
                     \(namespace.value)._jxswiftuiWillChange(this._jxswiftuiObserver);
                 }
             }
         };
-        state.o = state.observed;
-
         this.state = new Proxy(state, \(namespace.value)._jxswiftuiStateHandler);
-        this.s = this.state;
-
         this.observed = {};
-        this.o = this.observed;
     }
 
     initState() {
@@ -70,7 +64,7 @@ struct JSCodeGenerator {
     }
     
     static func elementJS(for type: ElementType, namespace: JXNamespace) -> String? {
-        guard let js = CustomInfo.infoType(for: type)?.js(namespace: namespace) else {
+        guard let js = elementStaticType(for: type)?.js(namespace: namespace) else {
             return nil
         }
         let def = "\(namespace.value).\(type.rawValue) = \(js)"

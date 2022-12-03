@@ -3,23 +3,30 @@ import JXKit
 import SwiftUI
 
 /// Vends a `SwiftUI.Button`.
-struct ButtonInfo: ElementInfo {
-    private let contentInfo: ElementInfo
+struct ButtonElement: Element {
+    private let content: Content
     private let actionFunction: JXValue
 
     init(jxValue: JXValue) throws {
-        self.contentInfo = try Self.info(for: jxValue["content"], in: .button)
+        self.content = try Content(jxValue: jxValue["content"])
         self.actionFunction = try jxValue["action"]
+        guard actionFunction.isFunction else {
+            throw JXError(message: "Expected an action function. Received '\(actionFunction.description)'")
+        }
     }
 
     var elementType: ElementType {
         return .button
     }
     
-    @ViewBuilder
     func view(errorHandler: ErrorHandler?) -> any View {
-        Button(action: { onAction(errorHandler: errorHandler) }) {
-            AnyView(contentInfo.view(errorHandler: errorHandler))
+        let errorHandler = errorHandler?.in(.button)
+        return Button(action: {
+            onAction(errorHandler: errorHandler)
+        }) {
+            content.element(errorHandler: errorHandler)
+                .view(errorHandler: errorHandler)
+                .eraseToAnyView()
         }
     }
     
@@ -42,9 +49,9 @@ function(actionOrLabel, actionOrContent) {
     
     private func onAction(errorHandler: ErrorHandler?) {
         do {
-            try actionFunction.call(withArguments: [])
+            try actionFunction.call()
         } catch {
-            errorHandler?(error)
+            errorHandler?.attr("action").handle(error)
         }
     }
 }

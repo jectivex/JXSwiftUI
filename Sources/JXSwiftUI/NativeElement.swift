@@ -2,26 +2,23 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-/// Vends a `SwiftUI.Spacer`.
-struct SpacerInfo: ElementInfo {
+/// Vends a custom native view.
+struct NativeElement: Element {
+    private let view: any View
+
     init(jxValue: JXValue) throws {
+        self.view = try jxValue.convey()
     }
 
     var elementType: ElementType {
-        return .spacer
+        return .native
     }
     
-    @ViewBuilder
     func view(errorHandler: ErrorHandler?) -> any View {
-        Spacer()
+        return view
     }
     
     static func js(namespace: JXNamespace) -> String? {
-        """
-function() {
-    const e = new \(namespace.value).JXElement('\(ElementType.spacer.rawValue)');
-    return e;
-}
-"""
+        return nil
     }
 }

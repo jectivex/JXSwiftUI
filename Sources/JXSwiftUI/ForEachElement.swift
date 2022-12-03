@@ -3,17 +3,23 @@ import JXKit
 import SwiftUI
 
 /// Iterates over a collection of items.
-struct ForEachInfo: ElementInfo {
+struct ForEachElement: Element {
     private let itemsValue: JXValue
     private let idFunction: JXValue
     private let contentFunction: JXValue
 
     init(jxValue: JXValue) throws {
         self.itemsValue = try jxValue["items"]
+        guard itemsValue.isArray else {
+            throw JXError(message: "Expected an array of items to iterate over. Received '\(itemsValue.description)'")
+        }
         self.idFunction = try jxValue["idFunction"]
+        guard idFunction.isFunction else {
+            throw JXError(message: "Expected a function that takes an item as its argument and returns the item's identifier. Received '\(idFunction.description)'")
+        }
         self.contentFunction = try jxValue["contentFunction"]
-        if !contentFunction.isFunction {
-            throw JXSwiftUIErrors.valueNotFunction(elementType.rawValue, "contentFunction")
+        guard contentFunction.isFunction else {
+            throw JXError(message: "Content must be a function. Received '\(contentFunction.description)'")
         }
     }
 
@@ -21,11 +27,12 @@ struct ForEachInfo: ElementInfo {
         return .foreach
     }
 
-    @ViewBuilder
     func view(errorHandler: ErrorHandler?) -> any View {
-        ForEach(itemsWithIdentity(errorHandler: errorHandler), id: \.id) { itemWithIdentity in
-            let contentInfo = contentInfo(for: itemWithIdentity.item, errorHandler: errorHandler)
-            AnyView(contentInfo.view(errorHandler: errorHandler))
+        let errorHandler = errorHandler?.in(.foreach)
+        return ForEach(itemsWithIdentity(errorHandler: errorHandler), id: \.id) { itemWithIdentity in
+            let contentElement = contentElement(for: itemWithIdentity.item, errorHandler: errorHandler)
+            return contentElement.view(errorHandler: errorHandler)
+                .eraseToAnyView()
         }
     }
     
@@ -41,13 +48,13 @@ function(items, idFunction, contentFunction) {
 """
     }
     
-    private func contentInfo(for item: Any, errorHandler: ErrorHandler?) -> ElementInfo {
+    private func contentElement(for item: Any, errorHandler: ErrorHandler?) -> Element {
         do {
             let content = try contentFunction.call(withArguments: [item as! JXValue])
-            return try Self.info(for: content, in: elementType)
+            return Content(jxValue: content).element(errorHandler: errorHandler)
         } catch {
-            errorHandler?(error)
-            return EmptyInfo()
+            errorHandler?.handle(error)
+            return EmptyElement()
         }
     }
     
@@ -57,30 +64,24 @@ function(items, idFunction, contentFunction) {
                 do {
                     return try id(for: item)
                 } catch {
-                    errorHandler?(error)
-                    return ""
+                    errorHandler?.handle(error)
+                    return 0
                 }
             }
         } catch {
-            errorHandler?(error)
-            return ItemWithIdentityCollection(items: AnyRandomAccessCollection([])) { _ in "" }
+            errorHandler?.handle(error)
+            return ItemWithIdentityCollection(items: AnyRandomAccessCollection([])) { _ in 0 }
         }
     }
 
     private var items: AnyRandomAccessCollection<Any> {
         get throws {
-            guard itemsValue.isArray else {
-                throw JXSwiftUIErrors.valueNotArray(elementType.rawValue, "items")
-            }
             let jxItems = try itemsValue.array
             return AnyRandomAccessCollection(jxItems)
         }
     }
 
     private func id(for item: Any) throws -> AnyHashable {
-        guard idFunction.isFunction else {
-            throw JXSwiftUIErrors.valueNotFunction(elementType.rawValue, "idFunction")
-        }
         let idValue = try idFunction.call(withArguments: [item as! JXValue])
         switch idValue.type {
         case .null:
@@ -93,7 +94,7 @@ function(items, idFunction, contentFunction) {
             return try idValue.double
         case .date:
             return try idValue.date
-        case .buffer:
+        case .arrayBuffer:
             break
         case .string:
             return try idValue.string
@@ -103,10 +104,18 @@ function(items, idFunction, contentFunction) {
             break
         case .symbol:
             return try idValue.string
+        case .promise:
+            break
+        case .error:
+            break
+        case .constructor:
+            break
+        case .function:
+            break
         case .other:
             break
         }
-        throw JXSwiftUIErrors.unknownValue(elementType.rawValue, "idFunction")
+        throw JXError(message: "Unable to use value '\(idValue.description)' as an item identifier")
     }
 }
 

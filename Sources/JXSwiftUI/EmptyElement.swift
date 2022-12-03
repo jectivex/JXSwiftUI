@@ -2,14 +2,13 @@ import JXBridge
 import SwiftUI
 
 /// Vends an empty view.
-struct EmptyInfo: ElementInfo {
+struct EmptyElement: Element {
     var elementType: ElementType {
         return .empty
     }
     
-    @ViewBuilder
     func view(errorHandler: ErrorHandler?) -> any View {
-        EmptyView()
+        return EmptyView()
     }
     
     static func js(namespace: JXNamespace) -> String? {

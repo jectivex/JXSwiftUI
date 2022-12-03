@@ -3,21 +3,22 @@ import JXKit
 import SwiftUI
 
 /// Vends a `SwiftUI.Form` view.
-struct FormInfo: ElementInfo {
-    private let contentInfo: [ElementInfo]
+struct FormElement: Element {
+    private let content: Content
     
     init(jxValue: JXValue) throws {
-        self.contentInfo = try Self.infoArray(for: jxValue["content"], in: .form)
+        self.content = try Content(jxValue: jxValue["content"])
     }
 
     var elementType: ElementType {
         return .form
     }
     
-    @ViewBuilder
     func view(errorHandler: ErrorHandler?) -> any View {
-        Form {
-            contentInfo.containerView(errorHandler: errorHandler)
+        return Form {
+            let errorHandler = errorHandler?.in(.form)
+            content.elementArray(errorHandler: errorHandler)
+                .containerView(errorHandler: errorHandler)
         }
     }
     

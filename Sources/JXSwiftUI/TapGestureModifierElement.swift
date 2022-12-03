@@ -3,15 +3,15 @@ import JXKit
 import SwiftUI
 
 /// Adds a tap gesture to its target view.
-struct TapGestureModifierInfo: ElementInfo {
-    private let targetInfo: ElementInfo
+struct TapGestureModifierElement: Element {
+    private let target: Content
     private let onTapFunction: JXValue
 
     init(jxValue: JXValue) throws {
-        self.targetInfo = try Self.info(for: jxValue["target"], in: .tapGestureModifier)
+        self.target = try Content(jxValue: jxValue["target"])
         self.onTapFunction = try jxValue["action"]
-        guard self.onTapFunction.isFunction else {
-            throw JXSwiftUIErrors.valueNotFunction(elementType.rawValue, "action")
+        guard onTapFunction.isFunction else {
+            throw JXError(message: "Expected a tap function. Received '\(onTapFunction.description)'")
         }
     }
 
@@ -19,9 +19,9 @@ struct TapGestureModifierInfo: ElementInfo {
         return .tapGestureModifier
     }
 
-    @ViewBuilder
     func view(errorHandler: ErrorHandler?) -> any View {
-        AnyView(targetInfo.view(errorHandler: errorHandler))
+        return target.element(errorHandler: errorHandler)
+            .view(errorHandler: errorHandler)
             .onTapGesture {
                 onTapGesture(errorHandler: errorHandler)
             }
@@ -40,9 +40,9 @@ function(target, action) {
 
     private func onTapGesture(errorHandler: ErrorHandler?) {
         do {
-            try onTapFunction.call(withArguments: [])
+            try onTapFunction.call()
         } catch {
-            errorHandler?(error)
+            errorHandler?.in(.tapGestureModifier).handle(error)
         }
     }
 }
