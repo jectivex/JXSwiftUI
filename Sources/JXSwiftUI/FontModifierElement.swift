@@ -13,10 +13,6 @@ struct FontModifierElement: Element {
         self.font = try Self.font(for: fontName)
     }
 
-    var elementType: ElementType {
-        return .fontModifier
-    }
-
     func view(errorHandler: ErrorHandler?) -> any View {
         return target.element(errorHandler: errorHandler)
             .view(errorHandler: errorHandler)
@@ -26,7 +22,7 @@ struct FontModifierElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(target, fontName) {
-    const e = new \(namespace.value).JXElement('\(ElementType.fontModifier.rawValue)');
+    const e = new \(namespace).JXElement('\(ElementType.fontModifier.rawValue)');
     e.target = target;
     e.fontName = fontName;
     return e;
@@ -40,7 +36,7 @@ function(target, fontName) {
         }
         return """
 function(fontName) {
-    return \(namespace.value).\(ElementType.fontModifier.rawValue)(this, fontName);
+    return \(namespace).\(ElementType.fontModifier.rawValue)(this, fontName);
 }
 """
     }

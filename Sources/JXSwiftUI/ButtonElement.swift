@@ -15,10 +15,6 @@ struct ButtonElement: Element {
         }
     }
 
-    var elementType: ElementType {
-        return .button
-    }
-    
     func view(errorHandler: ErrorHandler?) -> any View {
         let errorHandler = errorHandler?.in(.button)
         return Button(action: {
@@ -34,10 +30,10 @@ struct ButtonElement: Element {
         // Button('label', () => { action }) or Button(() => { action }, <content>)
 """
 function(actionOrLabel, actionOrContent) {
-    const e = new \(namespace.value).JXElement('\(ElementType.button.rawValue)');
+    const e = new \(namespace).JXElement('\(ElementType.button.rawValue)');
     if (typeof(actionOrLabel) === 'string') {
         e.action = actionOrContent;
-        e.content = \(namespace.value).Text(actionOrLabel);
+        e.content = \(namespace).Text(actionOrLabel);
     } else {
         e.action = actionOrLabel;
         e.content = actionOrContent;

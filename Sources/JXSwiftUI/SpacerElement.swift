@@ -7,10 +7,6 @@ struct SpacerElement: Element {
     init(jxValue: JXValue) throws {
     }
 
-    var elementType: ElementType {
-        return .spacer
-    }
-    
     func view(errorHandler: ErrorHandler?) -> any View {
         return Spacer()
     }
@@ -18,7 +14,7 @@ struct SpacerElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function() {
-    const e = new \(namespace.value).JXElement('\(ElementType.spacer.rawValue)');
+    const e = new \(namespace).JXElement('\(ElementType.spacer.rawValue)');
     return e;
 }
 """

@@ -23,10 +23,6 @@ struct ForEachElement: Element {
         }
     }
 
-    var elementType: ElementType {
-        return .foreach
-    }
-
     func view(errorHandler: ErrorHandler?) -> any View {
         let errorHandler = errorHandler?.in(.foreach)
         return ForEach(itemsWithIdentity(errorHandler: errorHandler), id: \.id) { itemWithIdentity in
@@ -39,7 +35,7 @@ struct ForEachElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(items, idFunction, contentFunction) {
-    const e = new \(namespace.value).JXElement('\(ElementType.foreach.rawValue)');
+    const e = new \(namespace).JXElement('\(ElementType.foreach.rawValue)');
     e.items = items;
     e.idFunction = idFunction;
     e.contentFunction = contentFunction;

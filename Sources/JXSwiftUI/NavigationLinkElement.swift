@@ -12,10 +12,6 @@ struct NavigationLinkElement: Element {
         self.destination = try Content(jxValue: jxValue["destinationFunction"])
     }
 
-    var elementType: ElementType {
-        return .navigationLink
-    }
-    
     func view(errorHandler: ErrorHandler?) -> any View {
         let errorHandler = errorHandler?.in(.navigationLink)
         return NavigationLink(destination: {
@@ -34,10 +30,10 @@ struct NavigationLinkElement: Element {
         // NavigationLink('label', () => { <destination> }) or NavigationLink(() => { <destination> }, <content>)
         """
 function(destinationFunctionOrLabel, contentOrDestinationFunction) {
-    const e = new \(namespace.value).JXElement('\(ElementType.navigationLink.rawValue)');
+    const e = new \(namespace).JXElement('\(ElementType.navigationLink.rawValue)');
     if (typeof(destinationFunctionOrLabel) === 'string') {
         e.destinationFunction = contentOrDestinationFunction;
-        e.content = \(namespace.value).Text(destinationFunctionOrLabel);
+        e.content = \(namespace).Text(destinationFunctionOrLabel);
     } else {
         e.destinationFunction = destinationFunctionOrLabel;
         e.content = contentOrDestinationFunction;

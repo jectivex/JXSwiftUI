@@ -10,10 +10,6 @@ struct ListElement: Element {
         self.content = try Content(jxValue: jxValue["content"])
     }
 
-    var elementType: ElementType {
-        return .list
-    }
-
     func view(errorHandler: ErrorHandler?) -> any View {
         return List {
             let errorHandler = errorHandler?.in(.list)
@@ -24,7 +20,7 @@ struct ListElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(contentArray) {
-    const e = new \(namespace.value).JXElement('\(ElementType.list.rawValue)');
+    const e = new \(namespace).JXElement('\(ElementType.list.rawValue)');
     e.content = contentArray;
     return e;
 }

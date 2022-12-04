@@ -10,10 +10,6 @@ struct FormElement: Element {
         self.content = try Content(jxValue: jxValue["content"])
     }
 
-    var elementType: ElementType {
-        return .form
-    }
-    
     func view(errorHandler: ErrorHandler?) -> any View {
         return Form {
             let errorHandler = errorHandler?.in(.form)
@@ -25,7 +21,7 @@ struct FormElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(contentArray) {
-    const e = new \(namespace.value).JXElement('\(ElementType.form.rawValue)');
+    const e = new \(namespace).JXElement('\(ElementType.form.rawValue)');
     e.content = contentArray;
     return e;
 }

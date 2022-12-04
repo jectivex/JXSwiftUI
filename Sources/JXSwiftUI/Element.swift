@@ -4,8 +4,9 @@ import SwiftUI
 
 /// Representation of a SwiftUI element.
 protocol Element {
-    var elementType: ElementType { get }
+    init(jxValue: JXValue) throws
     func view(errorHandler: ErrorHandler?) -> any View
+    
     static func js(namespace: JXNamespace) -> String?
     static func modifierJS(for modifier: String, namespace: JXNamespace) -> String?
 }
@@ -13,98 +14,6 @@ protocol Element {
 extension Element {
     static func modifierJS(for modifier: String, namespace: JXNamespace) -> String? {
         return nil
-    }
-}
-
-func elementStaticType(for type: ElementType) -> Element.Type? {
-    switch type {
-    case .button:
-        return ButtonElement.self
-    case .custom:
-        return CustomElement.self
-    case .empty:
-        return EmptyElement.self
-    case .foreach:
-        return ForEachElement.self
-    case .form:
-        return FormElement.self
-    case .hstack:
-        return HStackElement.self
-    case .if:
-        return IfElement.self
-    case .list:
-        return ListElement.self
-    case .native:
-        return NativeElement.self
-    case .navigationLink:
-        return NavigationLinkElement.self
-    case .navigationView:
-        return NavigationViewElement.self
-    case .section:
-        return SectionElement.self
-    case .slider:
-        return SliderElement.self
-    case .spacer:
-        return SpacerElement.self
-    case .text:
-        return TextElement.self
-    case .vstack:
-        return VStackElement.self
-        
-    case .fontModifier:
-        return FontModifierElement.self
-    case .navigationTitleModifier:
-        return NavigationTitleModifierElement.self
-    case .tapGestureModifier:
-        return TapGestureModifierElement.self
-    case .unknown:
-        return nil
-    }
-}
-    
-func element(for jxValue: JXValue, type: ElementType) throws -> Element {
-    switch type {
-    case .button:
-        return try ButtonElement(jxValue: jxValue)
-    case .custom:
-        return try CustomElement(jxValue: jxValue)
-    case .empty:
-        return EmptyElement()
-    case .foreach:
-        return try ForEachElement(jxValue: jxValue)
-    case .form:
-        return try FormElement(jxValue: jxValue)
-    case .hstack:
-        return try HStackElement(jxValue: jxValue)
-    case .if:
-        return try IfElement(jxValue: jxValue)
-    case .list:
-        return try ListElement(jxValue: jxValue)
-    case .native:
-        return try NativeElement(jxValue: jxValue)
-    case .navigationLink:
-        return try NavigationLinkElement(jxValue: jxValue)
-    case .navigationView:
-        return try NavigationViewElement(jxValue: jxValue)
-    case .section:
-        return try SectionElement(jxValue: jxValue)
-    case .slider:
-        return try SliderElement(jxValue: jxValue)
-    case .spacer:
-        return try SpacerElement(jxValue: jxValue)
-    case .text:
-        return try TextElement(jxValue: jxValue)
-    case .vstack:
-        return try VStackElement(jxValue: jxValue)
-        
-    case .fontModifier:
-        return try FontModifierElement(jxValue: jxValue)
-    case .navigationTitleModifier:
-        return try NavigationTitleModifierElement(jxValue: jxValue)
-    case .tapGestureModifier:
-        return try TapGestureModifierElement(jxValue: jxValue)
-    case .unknown:
-        throw JXError.internalError("Unknown JXSwiftUI element type")
     }
 }
 

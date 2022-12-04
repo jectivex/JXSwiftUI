@@ -15,10 +15,6 @@ struct IfElement: Element {
         self.elseContent = elseValue.isNullOrUndefined ? nil : Content(jxValue: elseValue)
     }
 
-    var elementType: ElementType {
-        return .if
-    }
-    
     func view(errorHandler: ErrorHandler?) -> any View {
         let errorHandler = errorHandler?.in(.if)
         if isTrue {
@@ -36,7 +32,7 @@ struct IfElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(isTrue, ifFunction, elseFunction=null) {
-    const e = new \(namespace.value).JXElement('\(ElementType.if.rawValue)');
+    const e = new \(namespace).JXElement('\(ElementType.if.rawValue)');
     e.isTrue = isTrue;
     e.ifFunction = ifFunction;
     e.elseFunction = elseFunction;

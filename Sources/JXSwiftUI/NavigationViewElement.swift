@@ -10,10 +10,6 @@ struct NavigationViewElement: Element {
         self.content = try Content(jxValue: jxValue["content"])
     }
 
-    var elementType: ElementType {
-        return .navigationView
-    }
-
     func view(errorHandler: ErrorHandler?) -> any View {
         return NavigationView {
             let errorHandler = errorHandler?.in(.navigationView)
@@ -26,7 +22,7 @@ struct NavigationViewElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(content) {
-    const e = new \(namespace.value).JXElement('\(ElementType.navigationView.rawValue)');
+    const e = new \(namespace).JXElement('\(ElementType.navigationView.rawValue)');
     e.content = content;
     return e;
 }

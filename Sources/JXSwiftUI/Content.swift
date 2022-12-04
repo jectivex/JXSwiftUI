@@ -46,31 +46,33 @@ struct Content {
             return try extractElement(for: $0.element, errorHandler: errorHandler)
         }
     }
-}
+    
+    private func extractElement(for jxValue: JXValue, errorHandler: ErrorHandler?) throws -> Element? {
+        var elementValue = jxValue
+        if jxValue.isFunction {
+            elementValue = try jxValue.call()
+        }
+        
+        let elementType: ElementType
+        if elementValue.hasProperty(JSCodeGenerator.elementTypeProperty) {
+            let elementTypeString = try elementValue[JSCodeGenerator.elementTypeProperty].string
+            guard let rawType = ElementType(rawValue: elementTypeString) else {
+                throw JXError.internalError("Unrecognized JXSwiftUI element type '\(elementTypeString)'")
+            }
+            elementType = rawType
+        } else {
+            elementType = .native
+        }
 
-private func extractElement(for jxValue: JXValue, errorHandler: ErrorHandler?) throws -> Element? {
-    var elementValue = jxValue
-    if jxValue.isFunction {
-        elementValue = try jxValue.call()
-    }
-    guard elementValue.hasProperty(JSCodeGenerator.elementTypeProperty) else {
         do {
-            return try element(for: elementValue, type: .native)
+            guard let element = try elementType.valueType?.init(jxValue: elementValue) else {
+                throw JXError.internalError("Unknown element type: \(elementType)")
+            }
+            return element
         } catch {
             // Handle constructor errors here where we know what we were trying to construct
-            errorHandler?.in(elementValue.description).handle(error)
+            errorHandler?.in(elementType).handle(error)
             return nil
         }
-    }
-    let elementTypeString = try elementValue[JSCodeGenerator.elementTypeProperty].string
-    guard let elementType = ElementType(rawValue: elementTypeString) else {
-        throw JXError.internalError("Unrecognized JXSwiftUI element type '\(elementTypeString)'")
-    }
-    do {
-        return try element(for: elementValue, type: elementType)
-    } catch {
-        // Handle constructor errors here where we know what we were trying to construct
-        errorHandler?.in(elementType).handle(error)
-        return nil
     }
 }

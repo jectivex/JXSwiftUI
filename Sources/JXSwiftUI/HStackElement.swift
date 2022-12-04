@@ -10,10 +10,6 @@ struct HStackElement: Element {
         self.content = try Content(jxValue: jxValue["content"])
     }
 
-    var elementType: ElementType {
-        return .hstack
-    }
-    
     func view(errorHandler: ErrorHandler?) -> any View {
         return HStack {
             let errorHandler = errorHandler?.in(.hstack)
@@ -25,7 +21,7 @@ struct HStackElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(contentArray) {
-    const e = new \(namespace.value).JXElement('\(ElementType.hstack.rawValue)');
+    const e = new \(namespace).JXElement('\(ElementType.hstack.rawValue)');
     e.content = contentArray;
     return e;
 }

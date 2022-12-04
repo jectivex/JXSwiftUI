@@ -10,10 +10,6 @@ struct NativeElement: Element {
         self.view = try jxValue.convey()
     }
 
-    var elementType: ElementType {
-        return .native
-    }
-    
     func view(errorHandler: ErrorHandler?) -> any View {
         return view
     }

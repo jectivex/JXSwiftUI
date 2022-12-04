@@ -16,10 +16,6 @@ struct SectionElement: Element {
         self.content = try Content(jxValue: jxValue["content"])
     }
 
-    var elementType: ElementType {
-        return .section
-    }
-    
     func view(errorHandler: ErrorHandler?) -> any View {
         let errorHandler = errorHandler?.in(.section)
         return Section(content: {
@@ -50,14 +46,14 @@ struct SectionElement: Element {
         // Section('header', [<content>]) or Section({ header: <content>, footer: <content> }, [<content>]) or Section([<content>])
         """
 function(propsOrContentArray, contentArray) {
-    const e = new \(namespace.value).JXElement('\(ElementType.section.rawValue)');
+    const e = new \(namespace).JXElement('\(ElementType.section.rawValue)');
     if (contentArray === undefined) {
         e.content = propsOrContentArray;
         e.header = null;
         e.footer = null;
     } else {
         if (typeof(propsOrContentArray) === 'string') {
-            e.header = \(namespace.value).Text(propsOrContentArray);
+            e.header = \(namespace).Text(propsOrContentArray);
             e.footer = null;
         } else {
             e.header = propsOrContentArray.header;

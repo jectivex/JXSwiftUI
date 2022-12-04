@@ -16,12 +16,12 @@ struct JSCodeGenerator {
     
     static func initializationJS(namespace: JXNamespace) -> String {
         let js = """
-\(namespace.value)._jxswiftuiStateHandler = {
+\(namespace)._jxswiftuiStateHandler = {
     get(target, property, receiver) {
         if (target[property] === undefined) {
             if (property.startsWith('$')) {
                 const stateProperty = property.slice(1);
-                return new \(namespace.value)._jxswiftuiBinding(() => {
+                return new \(namespace)._jxswiftuiBinding(() => {
                     return target[stateProperty];
                 }, (value) => {
                     target.willChange();
@@ -40,15 +40,15 @@ struct JSCodeGenerator {
         return true;
     }
 }
-\(namespace.value)._jxswiftuiElementHandler = {
+\(namespace)._jxswiftuiElementHandler = {
     get(target, property, receiver) {
         if (target[property] === undefined) {
-            \(namespace.value)._jxswiftuiAddModifier(property);
+            \(namespace)._jxswiftuiAddModifier(property);
         }
         return target[property];
     }
 }
-\(namespace.value)._jxswiftuiBindingHandler = {
+\(namespace)._jxswiftuiBindingHandler = {
     get(target, property, receiver) {
         const binding = target[property];
         if (binding === undefined) {
@@ -69,32 +69,32 @@ struct JSCodeGenerator {
         return true;
     }
 }
-\(namespace.value)._jxswiftuiBinding = class {
+\(namespace)._jxswiftuiBinding = class {
     constructor(get, set) {
         this.get = get;
         this.set = set;
     }
 }
 
-\(namespace.value).JXElement = class {
+\(namespace).JXElement = class {
     constructor(type) {
         this._jxswiftuiType = type;
-        return new Proxy(this, \(namespace.value)._jxswiftuiElementHandler);
+        return new Proxy(this, \(namespace)._jxswiftuiElementHandler);
     }
 }
 
-\(namespace.value).JXView = class extends \(namespace.value).JXElement {
+\(namespace).JXView = class extends \(namespace).JXElement {
     constructor() {
         super('\(ElementType.custom.rawValue)');
         const state = {
             willChange() {
                 if (this._jxswiftuiObserver !== undefined && this._jxswiftuiObserver !== null) {
-                    \(namespace.value)._jxswiftuiWillChange(this._jxswiftuiObserver);
+                    \(namespace)._jxswiftuiWillChange(this._jxswiftuiObserver);
                 }
             }
         }
-        this.state = new Proxy(state, \(namespace.value)._jxswiftuiStateHandler);
-        this.binding = new Proxy({}, \(namespace.value)._jxswiftuiBindingHandler);
+        this.state = new Proxy(state, \(namespace)._jxswiftuiStateHandler);
+        this.binding = new Proxy({}, \(namespace)._jxswiftuiBindingHandler);
         this.observed = {};
     }
 
@@ -107,19 +107,19 @@ struct JSCodeGenerator {
     }
     
     static func elementJS(for type: ElementType, namespace: JXNamespace) -> String? {
-        guard let js = elementStaticType(for: type)?.js(namespace: namespace) else {
+        guard let js = type.valueType?.js(namespace: namespace) else {
             return nil
         }
-        let def = "\(namespace.value).\(type.rawValue) = \(js)"
+        let def = "\(namespace).\(type.rawValue) = \(js)"
         print(def) //~~~
         return def
     }
     
     static func modifierJS(for type: ElementType, modifier: String, namespace: JXNamespace) -> String? {
-        guard let js = elementStaticType(for: type)?.modifierJS(for: modifier, namespace: namespace) else {
+        guard let js = type.valueType?.modifierJS(for: modifier, namespace: namespace) else {
             return nil
         }
-        let def = "\(namespace.value).\(elementClass).prototype.\(modifier) = \(js)"
+        let def = "\(namespace).\(elementClass).prototype.\(modifier) = \(js)"
         print(def) //~~~
         return def
     }

@@ -1,10 +1,13 @@
 import JXBridge
+import JXKit
 import SwiftUI
 
 /// Vends an empty view.
 struct EmptyElement: Element {
-    var elementType: ElementType {
-        return .empty
+    init(jxValue: JXValue) throws {
+    }
+    
+    init() {
     }
     
     func view(errorHandler: ErrorHandler?) -> any View {
@@ -14,7 +17,7 @@ struct EmptyElement: Element {
     static func js(namespace: JXNamespace) -> String? {
 """
 function() {
-    return new \(namespace.value).JXElement('\(ElementType.empty.rawValue)');
+    return new \(namespace).JXElement('\(ElementType.empty.rawValue)');
 }
 """
     }

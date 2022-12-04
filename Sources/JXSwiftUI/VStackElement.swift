@@ -10,10 +10,6 @@ struct VStackElement: Element {
         self.content = try Content(jxValue: jxValue["content"])
     }
 
-    var elementType: ElementType {
-        return .vstack
-    }
-
     func view(errorHandler: ErrorHandler?) -> any View {
         return VStack {
             let errorHandler = errorHandler?.in(.vstack)
@@ -25,7 +21,7 @@ struct VStackElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(contentArray) {
-    const e = new \(namespace.value).JXElement('\(ElementType.vstack.rawValue)');
+    const e = new \(namespace).JXElement('\(ElementType.vstack.rawValue)');
     e.content = contentArray;
     return e;
 }

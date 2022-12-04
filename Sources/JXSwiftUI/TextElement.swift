@@ -14,10 +14,6 @@ struct TextElement: Element {
         self.text = text
     }
 
-    var elementType: ElementType {
-        return .text
-    }
-    
     func view(errorHandler: ErrorHandler?) -> any View {
         return Text(text)
     }
@@ -25,7 +21,7 @@ struct TextElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(text) {
-    const e = new \(namespace.value).JXElement('\(ElementType.text.rawValue)');
+    const e = new \(namespace).JXElement('\(ElementType.text.rawValue)');
     e.text = text;
     return e;
 }

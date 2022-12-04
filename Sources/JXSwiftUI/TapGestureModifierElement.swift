@@ -15,10 +15,6 @@ struct TapGestureModifierElement: Element {
         }
     }
 
-    var elementType: ElementType {
-        return .tapGestureModifier
-    }
-
     func view(errorHandler: ErrorHandler?) -> any View {
         return target.element(errorHandler: errorHandler)
             .view(errorHandler: errorHandler)
@@ -30,7 +26,7 @@ struct TapGestureModifierElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(target, action) {
-    const e = new \(namespace.value).JXElement('\(ElementType.tapGestureModifier.rawValue)');
+    const e = new \(namespace).JXElement('\(ElementType.tapGestureModifier.rawValue)');
     e.target = target;
     e.action = action;
     return e;
@@ -44,7 +40,7 @@ function(target, action) {
         }
         return """
 function(action) {
-    return \(namespace.value).\(ElementType.tapGestureModifier.rawValue)(this, action);
+    return \(namespace).\(ElementType.tapGestureModifier.rawValue)(this, action);
 }
 """
     }

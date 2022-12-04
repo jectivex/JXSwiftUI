@@ -2,40 +2,37 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-/// Sets a navigation title for its target view.
-struct NavigationTitleModifierElement: Element {
+/// Sets padding on its target view.
+struct PaddingModifierElement: Element {
     private let target: Content
-    private let title: String
     
     init(jxValue: JXValue) throws {
         self.target = try Content(jxValue: jxValue["target"])
-        self.title = try jxValue["title"].string
     }
-
+    
     func view(errorHandler: ErrorHandler?) -> any View {
         return target.element(errorHandler: errorHandler)
             .view(errorHandler: errorHandler)
-            .navigationTitle(title)
+            .padding()
     }
     
     static func js(namespace: JXNamespace) -> String? {
         """
-function(target, title) {
-    const e = new \(namespace).JXElement('\(ElementType.navigationTitleModifier.rawValue)');
+function(target) {
+    const e = new \(namespace).JXElement('\(ElementType.paddingModifier.rawValue)');
     e.target = target;
-    e.title = title;
     return e;
 }
 """
     }
     
     static func modifierJS(for modifier: String, namespace: JXNamespace) -> String? {
-        guard modifier == "navigationTitle" else {
+        guard modifier == "padding" else {
             return nil
         }
         return """
-function(title) {
-    return \(namespace).\(ElementType.navigationTitleModifier.rawValue)(this, title);
+function() {
+    return \(namespace).\(ElementType.paddingModifier.rawValue)(this);
 }
 """
     }
