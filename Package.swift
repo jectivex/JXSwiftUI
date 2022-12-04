@@ -11,7 +11,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/jectivex/JXBridge.git", from: "0.1.4"),
-        .package(url: "https://github.com/jectivex/JXKit.git", from: "3.3.1"),
+        .package(url: "https://github.com/jectivex/JXKit.git", from: "3.3.2"),
     ],
     targets: [
         .target(name: "JXSwiftUI", dependencies: ["JXBridge", "JXKit"]),

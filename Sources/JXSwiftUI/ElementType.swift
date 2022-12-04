@@ -8,12 +8,14 @@ enum ElementType: String, CaseIterable {
     case empty = "Empty"
     case foreach = "ForEach"
     case form = "Form"
+    case group = "Group"
     case hstack = "HStack"
     case `if` = "If"
     case list = "List"
     case native
     case navigationLink = "NavigationLink"
     case navigationView = "NavigationView"
+    case scrollView = "ScrollView"
     case section = "Section"
     case slider = "Slider"
     case spacer = "Spacer"
@@ -39,6 +41,8 @@ enum ElementType: String, CaseIterable {
             return ForEachElement.self
         case .form:
             return FormElement.self
+        case .group:
+            return GroupElement.self
         case .hstack:
             return HStackElement.self
         case .if:
@@ -51,6 +55,8 @@ enum ElementType: String, CaseIterable {
             return NavigationLinkElement.self
         case .navigationView:
             return NavigationViewElement.self
+        case .scrollView:
+            return ScrollViewElement.self
         case .section:
             return SectionElement.self
         case .slider:
