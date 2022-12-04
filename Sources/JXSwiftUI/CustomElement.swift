@@ -18,7 +18,7 @@ struct CustomElement: Element {
     }
     
     func view(errorHandler: ErrorHandler?) -> any View {
-        return CustomView(element: self, errorHandler: errorHandler?.in(jsClassName))
+        return CustomView(element: self, errorHandler: errorHandler?.reset.in(jsClassName))
     }
     
     static func js(namespace: JXNamespace) -> String? {

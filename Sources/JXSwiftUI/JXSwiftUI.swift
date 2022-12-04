@@ -12,7 +12,7 @@ public struct JXSwiftUI: JXModule {
     
     public func initialize(in context: JXContext) throws {
         // Function elements trigger to load a modifier that the code has called but does not yet exist
-        let addModifierFunction = JXValue(newFunctionIn: context) { context, this , args in
+        let addModifierFunction = JXValue(newFunctionIn: context) { context, this, args in
             guard args.count == 1 else {
                 return context.undefined()
             }

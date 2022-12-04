@@ -42,6 +42,8 @@ func elementStaticType(for type: ElementType) -> Element.Type? {
         return NavigationViewElement.self
     case .section:
         return SectionElement.self
+    case .slider:
+        return SliderElement.self
     case .spacer:
         return SpacerElement.self
     case .text:
@@ -86,6 +88,8 @@ func element(for jxValue: JXValue, type: ElementType) throws -> Element {
         return try NavigationViewElement(jxValue: jxValue)
     case .section:
         return try SectionElement(jxValue: jxValue)
+    case .slider:
+        return try SliderElement(jxValue: jxValue)
     case .spacer:
         return try SpacerElement(jxValue: jxValue)
     case .text:

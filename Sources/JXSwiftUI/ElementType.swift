@@ -15,6 +15,7 @@ enum ElementType: String, CaseIterable {
     case navigationLink = "NavigationLink"
     case navigationView = "NavigationView"
     case section = "Section"
+    case slider = "Slider"
     case spacer = "Spacer"
     case text = "Text"
     case vstack = "VStack"

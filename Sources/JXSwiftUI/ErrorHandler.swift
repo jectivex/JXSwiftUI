@@ -15,6 +15,10 @@ struct ErrorHandler {
         handler(error)
     }
     
+    var reset: ErrorHandler {
+        return ErrorHandler(handler: handler, elementPath: [])
+    }
+    
     /// Create a handler traversing into the given element.
     func `in`(_ type: ElementType) -> ErrorHandler {
         return self.in(type.rawValue)
