@@ -53,12 +53,15 @@ function(propsOrContentArray, contentArray) {
     const e = new \(namespace.value).JXElement('\(ElementType.section.rawValue)');
     if (contentArray === undefined) {
         e.content = propsOrContentArray;
+        e.header = null;
+        e.footer = null;
     } else {
         if (typeof(propsOrContentArray) === 'string') {
             e.header = \(namespace.value).Text(propsOrContentArray);
+            e.footer = null;
         } else {
-            e.header = props.header;
-            e.footer = proper.footer;
+            e.header = propsOrContentArray.header;
+            e.footer = propsOrContentArray.footer;
         }
         e.content = contentArray;
     }

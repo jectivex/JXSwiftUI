@@ -32,4 +32,15 @@ function(target, title) {
 }
 """
     }
+    
+    static func modifierJS(for modifier: String, namespace: JXNamespace) -> String? {
+        guard modifier == "navigationTitle" else {
+            return nil
+        }
+        return """
+function(title) {
+    return \(namespace.value).\(ElementType.navigationTitleModifier.rawValue)(this, title);
+}
+"""
+    }
 }

@@ -33,6 +33,17 @@ function(target, fontName) {
 }
 """
     }
+    
+    static func modifierJS(for modifier: String, namespace: JXNamespace) -> String? {
+        guard modifier == "font" else {
+            return nil
+        }
+        return """
+function(fontName) {
+    return \(namespace.value).\(ElementType.fontModifier.rawValue)(this, fontName);
+}
+"""
+    }
 
     private static func font(for fontString: String) throws -> Font {
         switch fontString {

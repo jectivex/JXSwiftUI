@@ -7,6 +7,13 @@ protocol Element {
     var elementType: ElementType { get }
     func view(errorHandler: ErrorHandler?) -> any View
     static func js(namespace: JXNamespace) -> String?
+    static func modifierJS(for modifier: String, namespace: JXNamespace) -> String?
+}
+
+extension Element {
+    static func modifierJS(for modifier: String, namespace: JXNamespace) -> String? {
+        return nil
+    }
 }
 
 func elementStaticType(for type: ElementType) -> Element.Type? {

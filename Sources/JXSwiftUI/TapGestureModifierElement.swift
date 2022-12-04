@@ -37,6 +37,17 @@ function(target, action) {
 }
 """
     }
+    
+    static func modifierJS(for modifier: String, namespace: JXNamespace) -> String? {
+        guard modifier == "onTapGesture" else {
+            return nil
+        }
+        return """
+function(action) {
+    return \(namespace.value).\(ElementType.tapGestureModifier.rawValue)(this, action);
+}
+"""
+    }
 
     private func onTapGesture(errorHandler: ErrorHandler?) {
         do {

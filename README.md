@@ -45,6 +45,8 @@ Browse the [API Documentation].
 - Supply context and error handler to downstream native views that want to bridge back to JavaScript with a `JXView`.
     - Wrapped in a single JXSwiftUIContext object?
     - As environment values? Or harden and use JXKit's "current" context stack?
+    - Use JXContext.current support we want to add to JXBridge?
 - JS support for checking platform (iOS vs. macOS, etc).
 - String localization.
 - Performance testing and optimizations.
+- Support .modifier() and pluggable modifier types and functions.

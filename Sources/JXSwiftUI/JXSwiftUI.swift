@@ -11,6 +11,23 @@ public struct JXSwiftUI: JXModule {
     public let namespace: JXNamespace = "swiftui"
     
     public func initialize(in context: JXContext) throws {
+        // Function elements trigger to load a modifier that the code has called but does not yet exist
+        let addModifierFunction = JXValue(newFunctionIn: context) { context, this , args in
+            guard args.count == 1 else {
+                return context.undefined()
+            }
+            let modifier = try args[0].string
+            // Reverse cases because we put modifiers at the end
+            for elementType in ElementType.allCases.reversed() {
+                if let js = JSCodeGenerator.modifierJS(for: elementType, modifier: modifier, namespace: namespace) {
+                    try context.eval(js)
+                    break
+                }
+            }
+            return context.undefined()
+        }
+        try context.global[namespace].setProperty(JSCodeGenerator.addModifierFunction, addModifierFunction)
+        
         // Function custom elements trigger on state change, passing in their observer
         let willChangeFunction = JXValue(newFunctionIn: context) { context, this, args in
             guard args.count == 1 else {

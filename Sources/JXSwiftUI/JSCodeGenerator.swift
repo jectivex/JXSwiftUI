@@ -2,6 +2,7 @@ import JXBridge
 
 /// Generate supporting JavaScript code.
 struct JSCodeGenerator {
+    static let elementClass = "JXElement"
     static let elementTypeProperty = "_jxswiftuiType"
     static let observerProperty = "_jxswiftuiObserver"
     static let stateProperty = "state"
@@ -10,6 +11,7 @@ struct JSCodeGenerator {
     static let bodyFunction = "body"
     static let withAnimationFunction = "withAnimation"
     static let willChangeFunction = "_jxswiftuiWillChange"
+    static let addModifierFunction = "_jxswiftuiAddModifier"
     
     static func initializationJS(namespace: JXNamespace) -> String {
         let js = """
@@ -22,22 +24,19 @@ struct JSCodeGenerator {
         return true;
     }
 }
+\(namespace.value)._jxswiftuiElementHandler = {
+    get(target, property, receiver) {
+        if (target[property] === undefined) {
+            \(namespace.value)._jxswiftuiAddModifier(property);
+        }
+        return target[property]
+    }
+}
 
 \(namespace.value).JXElement = class {
     constructor(type) {
         this._jxswiftuiType = type;
-    }
-
-    font(fontName) {
-        return \(namespace.value).\(ElementType.fontModifier.rawValue)(this, fontName);
-    }
-
-    navigationTitle(title) {
-        return \(namespace.value).\(ElementType.navigationTitleModifier.rawValue)(this, title);
-    }
-
-    onTapGesture(action) {
-        return \(namespace.value).\(ElementType.tapGestureModifier.rawValue)(this, action);
+        return new Proxy(this, \(namespace.value)._jxswiftuiElementHandler);
     }
 }
 
@@ -68,6 +67,15 @@ struct JSCodeGenerator {
             return nil
         }
         let def = "\(namespace.value).\(type.rawValue) = \(js)"
+        print(def) //~~~
+        return def
+    }
+    
+    static func modifierJS(for type: ElementType, modifier: String, namespace: JXNamespace) -> String? {
+        guard let js = elementStaticType(for: type)?.modifierJS(for: modifier, namespace: namespace) else {
+            return nil
+        }
+        let def = "\(namespace.value).\(elementClass).prototype.\(modifier) = \(js)"
         print(def) //~~~
         return def
     }
