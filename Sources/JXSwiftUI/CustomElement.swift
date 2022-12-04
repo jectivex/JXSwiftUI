@@ -100,7 +100,7 @@ private struct CustomView: View {
             if let observable = try entry.value.bridged as? (any ObservableObject) {
                 dict[ObjectIdentifier(observable)] = observable
             } else if (force) {
-                throw JXError(message: "'observed.\(entry.key)' has non-observable value '\(entry.value.description)'")
+                throw JXError(message: "'observed.\(entry.key)' has non-observable value '\(entry.value)'")
             }
         }
     }

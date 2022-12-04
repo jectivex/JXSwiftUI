@@ -11,7 +11,7 @@ struct TapGestureModifierElement: Element {
         self.target = try Content(jxValue: jxValue["target"])
         self.onTapFunction = try jxValue["action"]
         guard onTapFunction.isFunction else {
-            throw JXError(message: "Expected a tap function. Received '\(onTapFunction.description)'")
+            throw JXError(message: "Expected a tap function. Received '\(onTapFunction)'")
         }
     }
 

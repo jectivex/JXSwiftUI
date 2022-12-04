@@ -11,15 +11,15 @@ struct ForEachElement: Element {
     init(jxValue: JXValue) throws {
         self.itemsValue = try jxValue["items"]
         guard itemsValue.isArray else {
-            throw JXError(message: "Expected an array of items to iterate over. Received '\(itemsValue.description)'")
+            throw JXError(message: "Expected an array of items to iterate over. Received '\(itemsValue)'")
         }
         self.idFunction = try jxValue["idFunction"]
         guard idFunction.isFunction else {
-            throw JXError(message: "Expected a function that takes an item as its argument and returns the item's identifier. Received '\(idFunction.description)'")
+            throw JXError(message: "Expected a function that takes an item as its argument and returns the item's identifier. Received '\(idFunction)'")
         }
         self.contentFunction = try jxValue["contentFunction"]
         guard contentFunction.isFunction else {
-            throw JXError(message: "Content must be a function. Received '\(contentFunction.description)'")
+            throw JXError(message: "Content must be a function. Received '\(contentFunction)'")
         }
     }
 
@@ -115,7 +115,7 @@ function(items, idFunction, contentFunction) {
         case .other:
             break
         }
-        throw JXError(message: "Unable to use value '\(idValue.description)' as an item identifier")
+        throw JXError(message: "Unable to use value '\(idValue)' as an item identifier")
     }
 }
 

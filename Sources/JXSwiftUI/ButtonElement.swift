@@ -11,7 +11,7 @@ struct ButtonElement: Element {
         self.content = try Content(jxValue: jxValue["content"])
         self.actionFunction = try jxValue["action"]
         guard actionFunction.isFunction else {
-            throw JXError(message: "Expected an action function. Received '\(actionFunction.description)'")
+            throw JXError(message: "Expected an action function. Received '\(actionFunction)'")
         }
     }
 
