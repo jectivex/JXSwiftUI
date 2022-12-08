@@ -47,5 +47,6 @@ Browse the [API Documentation].
     - Use JXContext.current support we want to add to JXBridge?
 - JS support for checking platform (iOS vs. macOS, etc).
 - String localization.
+- Custom color and resource loading plugins.
 - Performance testing and optimizations.
 - Support .modifier() and pluggable modifier types and functions.

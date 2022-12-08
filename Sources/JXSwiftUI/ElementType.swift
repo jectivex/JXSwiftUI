@@ -24,10 +24,12 @@ enum ElementType: String, CaseIterable {
     case unknown
 
     // Modifiers
-    case fontModifier = "FontModifier"
-    case navigationTitleModifier = "NavigationTitleModifier"
-    case paddingModifier = "PaddingModifier"
-    case tapGestureModifier = "TapGestureModifier"
+    case backgroundModifier = "background"
+    case fontModifier = "font"
+    case foregroundColorModifier = "foregroundColor"
+    case navigationTitleModifier = "navigationTitle"
+    case paddingModifier = "padding"
+    case tapGestureModifier = "onTapGesture"
     
     var valueType: Element.Type? {
         switch self {
@@ -68,8 +70,12 @@ enum ElementType: String, CaseIterable {
         case .vstack:
             return VStackElement.self
             
+        case .backgroundModifier:
+            return BackgroundModifierElement.self
         case .fontModifier:
             return FontModifierElement.self
+        case .foregroundColorModifier:
+            return ForegroundColorModifierElement.self
         case .navigationTitleModifier:
             return NavigationTitleModifierElement.self
         case .paddingModifier:

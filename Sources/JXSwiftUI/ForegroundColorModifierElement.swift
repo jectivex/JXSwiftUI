@@ -2,31 +2,31 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-/// Sets a font on its target view.
-struct FontModifierElement: Element {
+/// Sets a foreground color on its target view.
+struct ForegroundColorModifierElement: Element {
     private let target: Content
-    private let font: Font
+    private let color: Color
     
     init(jxValue: JXValue) throws {
         self.target = try Content(jxValue: jxValue["target"])
-        self.font = try jxValue["font"].convey()
+        self.color = try jxValue["color"].convey()
     }
 
     func view(errorHandler: ErrorHandler?) -> any View {
         return target.element(errorHandler: errorHandler)
             .view(errorHandler: errorHandler)
-            .font(font)
+            .foregroundColor(color)
     }
     
     static func modifierJS(namespace: JXNamespace) -> String? {
         return """
-function(font) {
-    const e = new \(namespace).JXElement('\(ElementType.fontModifier.rawValue)');
+function(color) {
+    const e = new \(namespace).JXElement('\(ElementType.foregroundColorModifier.rawValue)');
     e.target = this;
-    if (typeof(font) === 'string') {
-        e.font = swiftui.Font.systemStyled(font)
+    if (typeof(color) === 'string') {
+        e.color = new swiftui.Color(color);
     } else {
-        e.font = font;
+        e.color = color;
     }
     return e;
 }

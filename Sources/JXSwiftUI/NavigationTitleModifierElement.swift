@@ -18,24 +18,13 @@ struct NavigationTitleModifierElement: Element {
             .navigationTitle(title)
     }
     
-    static func js(namespace: JXNamespace) -> String? {
-        """
-function(target, title) {
-    const e = new \(namespace).JXElement('\(ElementType.navigationTitleModifier.rawValue)');
-    e.target = target;
-    e.title = title;
-    return e;
-}
-"""
-    }
-    
-    static func modifierJS(for modifier: String, namespace: JXNamespace) -> String? {
-        guard modifier == "navigationTitle" else {
-            return nil
-        }
+    static func modifierJS(namespace: JXNamespace) -> String? {
         return """
 function(title) {
-    return \(namespace).\(ElementType.navigationTitleModifier.rawValue)(this, title);
+    const e = new \(namespace).JXElement('\(ElementType.navigationTitleModifier.rawValue)');
+    e.target = this;
+    e.title = title;
+    return e;
 }
 """
     }

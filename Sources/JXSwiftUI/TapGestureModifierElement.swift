@@ -23,24 +23,13 @@ struct TapGestureModifierElement: Element {
             }
     }
     
-    static func js(namespace: JXNamespace) -> String? {
-        """
-function(target, action) {
-    const e = new \(namespace).JXElement('\(ElementType.tapGestureModifier.rawValue)');
-    e.target = target;
-    e.action = action;
-    return e;
-}
-"""
-    }
-    
-    static func modifierJS(for modifier: String, namespace: JXNamespace) -> String? {
-        guard modifier == "onTapGesture" else {
-            return nil
-        }
+    static func modifierJS(namespace: JXNamespace) -> String? {
         return """
 function(action) {
-    return \(namespace).\(ElementType.tapGestureModifier.rawValue)(this, action);
+    const e = new \(namespace).JXElement('\(ElementType.tapGestureModifier.rawValue)');
+    e.target = this;
+    e.action = action;
+    return e;
 }
 """
     }

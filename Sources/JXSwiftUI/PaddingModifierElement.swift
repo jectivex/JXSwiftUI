@@ -16,23 +16,12 @@ struct PaddingModifierElement: Element {
             .padding()
     }
     
-    static func js(namespace: JXNamespace) -> String? {
-        """
-function(target) {
-    const e = new \(namespace).JXElement('\(ElementType.paddingModifier.rawValue)');
-    e.target = target;
-    return e;
-}
-"""
-    }
-    
-    static func modifierJS(for modifier: String, namespace: JXNamespace) -> String? {
-        guard modifier == "padding" else {
-            return nil
-        }
+    static func modifierJS(namespace: JXNamespace) -> String? {
         return """
 function() {
-    return \(namespace).\(ElementType.paddingModifier.rawValue)(this);
+    const e = new \(namespace).JXElement('\(ElementType.paddingModifier.rawValue)');
+    e.target = this;
+    return e;
 }
 """
     }

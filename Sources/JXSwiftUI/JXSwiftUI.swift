@@ -17,12 +17,8 @@ public struct JXSwiftUI: JXModule {
                 return context.undefined()
             }
             let modifier = try args[0].string
-            // Reverse cases because we put modifiers at the end
-            for elementType in ElementType.allCases.reversed() {
-                if let js = JSCodeGenerator.modifierJS(for: elementType, modifier: modifier, namespace: namespace) {
-                    try context.eval(js)
-                    break
-                }
+            if let elementType = ElementType(rawValue: modifier), let js = JSCodeGenerator.modifierJS(for: elementType, modifier: modifier, namespace: namespace) {
+                try context.eval(js)
             }
             return context.undefined()
         }
@@ -59,11 +55,25 @@ public struct JXSwiftUI: JXModule {
     }
     
     public func define(symbol: String, namespace: JXNamespace, in context: JXContext) throws -> Bool {
-        guard let elementType = ElementType(rawValue: symbol), let js = JSCodeGenerator.elementJS(for: elementType, namespace: namespace) else {
-            return false
+        if let elementType = ElementType(rawValue: symbol), let js = JSCodeGenerator.elementJS(for: elementType, namespace: namespace) {
+            try context.eval(js)
+            return true
         }
-        try context.eval(js)
-        return true
+        if let symbol = SwiftUISymbol(rawValue: symbol) {
+            try symbol.define(in: context, namespace: namespace)
+            return true
+        }
+        return false
+    }
+    
+    public func define(for instance: Any, in context: JXContext) throws -> Bool {
+        for symbol in SwiftUISymbol.allCases {
+            if symbol.isInstance(instance) {
+                try symbol.define(in: context, namespace: namespace)
+                return true
+            }
+        }
+        return false
     }
     
     public func defineAll(namespace: JXNamespace, in context: JXContext) throws -> Bool {
@@ -76,6 +86,36 @@ public struct JXSwiftUI: JXModule {
                 try context.eval(js)
             }
         }
+        for symbol in SwiftUISymbol.allCases {
+            guard !namespaceValue.hasProperty(symbol.rawValue) else {
+                continue
+            }
+            try symbol.define(in: context, namespace: namespace)
+        }
         return true
+    }
+}
+    
+// Non-Element symbols
+private enum SwiftUISymbol: String, CaseIterable {
+    case color = "Color"
+    case font = "Font"
+    
+    func isInstance(_ instance: Any) -> Bool {
+        switch self {
+        case .color:
+            return instance is Color
+        case .font:
+            return instance is Font
+        }
+    }
+    
+    func define(in context: JXContext, namespace: JXNamespace) throws {
+        switch self {
+        case .color:
+            try context.registry.registerBridge(for: Color.self, namespace: namespace)
+        case .font:
+            try context.registry.registerBridge(for: Font.self, namespace: namespace)
+        }
     }
 }

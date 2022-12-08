@@ -8,11 +8,15 @@ protocol Element {
     func view(errorHandler: ErrorHandler?) -> any View
     
     static func js(namespace: JXNamespace) -> String?
-    static func modifierJS(for modifier: String, namespace: JXNamespace) -> String?
+    static func modifierJS(namespace: JXNamespace) -> String?
 }
 
 extension Element {
-    static func modifierJS(for modifier: String, namespace: JXNamespace) -> String? {
+    static func js(namespace: JXNamespace) -> String? {
+        return nil
+    }
+    
+    static func modifierJS(namespace: JXNamespace) -> String? {
         return nil
     }
 }

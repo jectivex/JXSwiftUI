@@ -102,7 +102,7 @@ struct JSCodeGenerator {
     }
 }
 """
-        print(js) //~~~
+        //print(js)
         return js
     }
     
@@ -111,16 +111,16 @@ struct JSCodeGenerator {
             return nil
         }
         let def = "\(namespace).\(type.rawValue) = \(js)"
-        print(def) //~~~
+        //print(def)
         return def
     }
     
     static func modifierJS(for type: ElementType, modifier: String, namespace: JXNamespace) -> String? {
-        guard let js = type.valueType?.modifierJS(for: modifier, namespace: namespace) else {
+        guard let js = type.valueType?.modifierJS(namespace: namespace) else {
             return nil
         }
         let def = "\(namespace).\(elementClass).prototype.\(modifier) = \(js)"
-        print(def) //~~~
+        //print(def)
         return def
     }
 }
