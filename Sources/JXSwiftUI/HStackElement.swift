@@ -21,7 +21,7 @@ struct HStackElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(contentArray) {
-    const e = new \(namespace).JXElement('\(ElementType.hstack.rawValue)');
+    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.hstack.rawValue)');
     e.content = contentArray;
     return e;
 }

@@ -17,7 +17,7 @@ struct SliderElement: Element {
     static func js(namespace: JXNamespace) -> String? {
 """
 function(binding) {
-    const e = new \(namespace).JXElement('\(ElementType.slider.rawValue)');
+    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.slider.rawValue)');
     e.binding = binding;
     return e;
 }

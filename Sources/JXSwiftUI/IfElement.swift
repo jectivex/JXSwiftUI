@@ -32,7 +32,7 @@ struct IfElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(isTrue, ifFunction, elseFunction=null) {
-    const e = new \(namespace).JXElement('\(ElementType.if.rawValue)');
+    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.if.rawValue)');
     e.isTrue = isTrue;
     e.ifFunction = ifFunction;
     e.elseFunction = elseFunction;

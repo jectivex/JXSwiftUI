@@ -46,7 +46,7 @@ struct SectionElement: Element {
         // Section('header', [<content>]) or Section({ header: <content>, footer: <content> }, [<content>]) or Section([<content>])
         """
 function(propsOrContentArray, contentArray) {
-    const e = new \(namespace).JXElement('\(ElementType.section.rawValue)');
+    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.section.rawValue)');
     if (contentArray === undefined) {
         e.content = propsOrContentArray;
         e.header = null;

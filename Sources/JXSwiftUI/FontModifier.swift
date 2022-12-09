@@ -2,28 +2,33 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-/// Sets a navigation title for its target view.
-struct NavigationTitleModifierElement: Element {
+/// Sets a font on its target view.
+struct FontModifier: Element {
     private let target: Content
-    private let title: String
+    private let font: Font
     
     init(jxValue: JXValue) throws {
         self.target = try Content(jxValue: jxValue["target"])
-        self.title = try jxValue["title"].string
+        self.font = try jxValue["font"].convey()
     }
 
     func view(errorHandler: ErrorHandler?) -> any View {
         return target.element(errorHandler: errorHandler)
             .view(errorHandler: errorHandler)
-            .navigationTitle(title)
+            .font(font)
     }
     
     static func modifierJS(namespace: JXNamespace) -> String? {
+        // .font(Font) or .font('name')
         return """
-function(title) {
-    const e = new \(namespace).JXElement('\(ElementType.navigationTitleModifier.rawValue)');
+function(font) {
+    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.fontModifier.rawValue)');
     e.target = this;
-    e.title = title;
+    if (typeof(font) === 'string') {
+        e.font = swiftui.Font.system(font)
+    } else {
+        e.font = font;
+    }
     return e;
 }
 """

@@ -21,7 +21,7 @@ struct TextElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(text) {
-    const e = new \(namespace).JXElement('\(ElementType.text.rawValue)');
+    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.text.rawValue)');
     e.text = text;
     return e;
 }

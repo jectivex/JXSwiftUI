@@ -22,7 +22,7 @@ struct NavigationViewElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(content) {
-    const e = new \(namespace).JXElement('\(ElementType.navigationView.rawValue)');
+    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.navigationView.rawValue)');
     e.content = content;
     return e;
 }

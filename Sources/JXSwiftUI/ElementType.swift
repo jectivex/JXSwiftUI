@@ -72,19 +72,19 @@ enum ElementType: String, CaseIterable {
             return VStackElement.self
             
         case .backgroundModifier:
-            return BackgroundModifierElement.self
+            return BackgroundModifier.self
         case .fontModifier:
-            return FontModifierElement.self
+            return FontModifier.self
         case .foregroundColorModifier:
-            return ForegroundColorModifierElement.self
+            return ForegroundColorModifier.self
         case .frameModifier:
-            return FrameModifierElement.self
+            return FrameModifier.self
         case .navigationTitleModifier:
-            return NavigationTitleModifierElement.self
+            return NavigationTitleModifier.self
         case .paddingModifier:
-            return PaddingModifierElement.self
+            return PaddingModifier.self
         case .tapGestureModifier:
-            return TapGestureModifierElement.self
+            return TapGestureModifier.self
         case .unknown:
             return nil
         }

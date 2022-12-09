@@ -30,7 +30,7 @@ struct ButtonElement: Element {
         // Button('label', () => { action }) or Button(() => { action }, <content>)
 """
 function(actionOrLabel, actionOrContent) {
-    const e = new \(namespace).JXElement('\(ElementType.button.rawValue)');
+    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.button.rawValue)');
     if (typeof(actionOrLabel) === 'string') {
         e.action = actionOrContent;
         e.content = \(namespace).Text(actionOrLabel);

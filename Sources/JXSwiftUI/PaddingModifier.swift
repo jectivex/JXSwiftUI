@@ -3,7 +3,7 @@ import JXKit
 import SwiftUI
 
 /// Sets padding on its target view.
-struct PaddingModifierElement: Element {
+struct PaddingModifier: Element {
     private let target: Content
     
     init(jxValue: JXValue) throws {
@@ -19,7 +19,7 @@ struct PaddingModifierElement: Element {
     static func modifierJS(namespace: JXNamespace) -> String? {
         return """
 function() {
-    const e = new \(namespace).JXElement('\(ElementType.paddingModifier.rawValue)');
+    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.paddingModifier.rawValue)');
     e.target = this;
     return e;
 }

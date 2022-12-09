@@ -3,7 +3,7 @@ import JXKit
 import SwiftUI
 
 /// Sets a background its target view.
-struct BackgroundModifierElement: Element {
+struct BackgroundModifier: Element {
     private let target: Content
     private let alignment: Alignment
     private let content: Content
@@ -29,7 +29,7 @@ struct BackgroundModifierElement: Element {
         // .background(props, content) or .background(content), where content may be a color name
         return """
 function(propsOrContent, content) {
-    const e = new \(namespace).JXElement('\(ElementType.backgroundModifier.rawValue)');
+    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.backgroundModifier.rawValue)');
     e.target = this;
     if (content === undefined) {
         e.alignment = 'center';

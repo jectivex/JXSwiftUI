@@ -30,7 +30,7 @@ struct NavigationLinkElement: Element {
         // NavigationLink('label', () => { <destination> }) or NavigationLink(() => { <destination> }, <content>)
         """
 function(destinationFunctionOrLabel, contentOrDestinationFunction) {
-    const e = new \(namespace).JXElement('\(ElementType.navigationLink.rawValue)');
+    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.navigationLink.rawValue)');
     if (typeof(destinationFunctionOrLabel) === 'string') {
         e.destinationFunction = contentOrDestinationFunction;
         e.content = \(namespace).Text(destinationFunctionOrLabel);

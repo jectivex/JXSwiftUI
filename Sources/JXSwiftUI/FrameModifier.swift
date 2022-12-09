@@ -3,7 +3,7 @@ import JXKit
 import SwiftUI
 
 /// Sets a frame on its target view.
-struct FrameModifierElement: Element {
+struct FrameModifier: Element {
     private let target: Content
     private let width: CGFloat?
     private let height: CGFloat?
@@ -42,7 +42,7 @@ struct FrameModifierElement: Element {
         // .frame(width, height, alignment) or .frame({ minWidth:, ... })
         return """
 function(widthOrProps, height, alignment) {
-    const e = new \(namespace).JXElement('\(ElementType.frameModifier.rawValue)');
+    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.frameModifier.rawValue)');
     e.target = this;
     if (typeof(widthOrProps) === 'number') {
         e.width = widthOrProps;

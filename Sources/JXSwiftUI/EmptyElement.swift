@@ -17,7 +17,7 @@ struct EmptyElement: Element {
     static func js(namespace: JXNamespace) -> String? {
 """
 function() {
-    return new \(namespace).JXElement('\(ElementType.empty.rawValue)');
+    return new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.empty.rawValue)');
 }
 """
     }

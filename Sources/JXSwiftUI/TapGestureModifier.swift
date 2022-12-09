@@ -3,7 +3,7 @@ import JXKit
 import SwiftUI
 
 /// Adds a tap gesture to its target view.
-struct TapGestureModifierElement: Element {
+struct TapGestureModifier: Element {
     private let target: Content
     private let onTapFunction: JXValue
 
@@ -26,7 +26,7 @@ struct TapGestureModifierElement: Element {
     static func modifierJS(namespace: JXNamespace) -> String? {
         return """
 function(action) {
-    const e = new \(namespace).JXElement('\(ElementType.tapGestureModifier.rawValue)');
+    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.tapGestureModifier.rawValue)');
     e.target = this;
     e.action = action;
     return e;

@@ -20,7 +20,7 @@ struct ListElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(contentArray) {
-    const e = new \(namespace).JXElement('\(ElementType.list.rawValue)');
+    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.list.rawValue)');
     e.content = contentArray;
     return e;
 }

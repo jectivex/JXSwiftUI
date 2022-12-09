@@ -3,12 +3,17 @@ import JXBridge
 import JXKit
 import SwiftUI
 
+extension JXNamespace {
+    /// Default JXSwiftUI namespace.
+    public static var swiftui = JXNamespace("swiftui")
+}
+
 /// Register this module to use SwiftUI-in-JS in a context.
 public struct JXSwiftUI: JXModule {
     public init() {
     }
     
-    public let namespace: JXNamespace = "swiftui"
+    public let namespace: JXNamespace = JXNamespace.swiftui
     
     public func initialize(in context: JXContext) throws {
         // Function elements trigger to load a modifier that the code has called but does not yet exist

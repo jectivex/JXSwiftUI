@@ -2,7 +2,7 @@ import JXBridge
 
 /// Generate supporting JavaScript code.
 struct JSCodeGenerator {
-    static let elementClass = "JXElement"
+    static let elementClass = "_JXSwiftUIElement" // Note: this is in the default namespace. See JXBridgeBuilderAdditions
     static let stateProperty = "state"
     static let observedProperty = "observed"
     static let initStateFunction = "initState"
@@ -76,14 +76,14 @@ struct JSCodeGenerator {
     }
 }
 
-\(namespace).JXElement = class {
+\(JXNamespace.default)._JXSwiftUIElement = class {
     constructor(type) {
-        this._jxswiftuiType = type;
+        this._jxswiftuiType = (type === undefined) ? '\(ElementType.native.rawValue)' : type;
         return new Proxy(this, \(namespace)._jxswiftuiElementHandler);
     }
 }
 
-\(namespace).JXView = class extends \(namespace).JXElement {
+\(namespace).JXView = class extends \(JXNamespace.default)._JXSwiftUIElement {
     constructor() {
         super('\(ElementType.custom.rawValue)');
         const state = {
@@ -119,7 +119,7 @@ struct JSCodeGenerator {
         guard let js = type.valueType?.modifierJS(namespace: namespace) else {
             return nil
         }
-        let def = "\(namespace).\(elementClass).prototype.\(modifier) = \(js)"
+        let def = "\(JXNamespace.default).\(elementClass).prototype.\(modifier) = \(js)"
         //print(def)
         return def
     }

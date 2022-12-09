@@ -5,9 +5,14 @@ import SwiftUI
 extension Color: JXStaticBridging {
     static public func jxBridge() throws -> JXBridge {
         JXBridgeBuilder(type: Color.self)
-            // new Color('name') or new Color({props}) where props can be red,green,blue,opacity
+            .asJXSwiftUIView()
+        
+            // Use static funcs to replace Color constructors to align with Font and
+            // hide the use of 'new', which is incongruous with our other SwiftUI elements
+        
+            // Color.system({props}) where props can be red,green,blue,opacity
             // or white,opacity or hue,saturation,brightness,opacity
-            .constructor { (props: JXValue) throws -> Color in
+            .static.func.system { (props: JXValue) throws -> Color in
                 guard !props.isString else {
                     return try Color(props.string)
                 }
@@ -31,6 +36,9 @@ extension Color: JXStaticBridging {
                 let brightnessValue = try props["brightness"]
                 return try Color(hue: hueValue.double, saturation: saturationValue.double, brightness: brightnessValue.double, opacity: opacity)
             }
+            // Color.custom(name)
+            .static.func.custom { (name: String) -> Color in Color(name) }
+
             .func.opacity { Color.opacity }
             .static.var.black { Color.black }
             .static.var.blue { Color.blue }

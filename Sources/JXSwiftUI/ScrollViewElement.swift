@@ -22,7 +22,7 @@ struct ScrollViewElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(content) {
-    const e = new \(namespace).JXElement('\(ElementType.scrollView.rawValue)');
+    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.scrollView.rawValue)');
     e.content = content;
     return e;
 }
