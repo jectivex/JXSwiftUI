@@ -26,20 +26,20 @@ struct BackgroundModifierElement: Element {
     }
     
     static func modifierJS(namespace: JXNamespace) -> String? {
-        // .background(alignment, content) or .background(content), where content may be a color name
+        // .background(props, content) or .background(content), where content may be a color name
         return """
-function(alignmentOrContent, content) {
+function(propsOrContent, content) {
     const e = new \(namespace).JXElement('\(ElementType.backgroundModifier.rawValue)');
     e.target = this;
     if (content === undefined) {
         e.alignment = 'center';
-        if (typeof(alignmentOrContent) === 'string') {
-            e.content = new swiftui.Color(alignmentOrContent);
+        if (typeof(propsOrContent) === 'string') {
+            e.content = new swiftui.Color(propsOrContent);
         } else {
-            e.content = alignmentOrContent;
+            e.content = propsOrContent;
         }
     } else {
-        e.alignment = alignmentOrContent;
+        e.alignment = (propsOrContent.alignment === undefined) ? 'center' : propsOrContent.alignment;
         if (typeof(content) === 'string') {
             e.content = new swiftui.Color(content);
         } else {

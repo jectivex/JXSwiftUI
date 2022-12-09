@@ -25,7 +25,7 @@ function(font) {
     const e = new \(namespace).JXElement('\(ElementType.fontModifier.rawValue)');
     e.target = this;
     if (typeof(font) === 'string') {
-        e.font = swiftui.Font.systemStyled(font)
+        e.font = swiftui.Font.system(font)
     } else {
         e.font = font;
     }

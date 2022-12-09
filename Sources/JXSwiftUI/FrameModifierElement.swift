@@ -39,14 +39,14 @@ struct FrameModifierElement: Element {
     }
     
     static func modifierJS(namespace: JXNamespace) -> String? {
-        // .frame(width, height, alignment) or .frame({ minWidth:, ... }), alignment)
+        // .frame(width, height, alignment) or .frame({ minWidth:, ... })
         return """
-function(widthOrParams, heightOrAlignment, alignment) {
+function(widthOrProps, height, alignment) {
     const e = new \(namespace).JXElement('\(ElementType.frameModifier.rawValue)');
     e.target = this;
-    if (typeof(widthOrParams) === 'number') {
-        e.width = widthOrParams;
-        e.height = heightOrAlignment;
+    if (typeof(widthOrProps) === 'number') {
+        e.width = widthOrProps;
+        e.height = height;
         e.alignment = (alignment === undefined) ? null : alignment;
         e.minWidth = null;
         e.idealWidth = null;
@@ -55,15 +55,16 @@ function(widthOrParams, heightOrAlignment, alignment) {
         e.idealHeight = null;
         e.maxHeight = null;
     } else {
-        e.width = null;
-        e.height = null;
-        e.alignment = (heightOrAlignment === undefined) ? null : heightOrAlignment;
-        e.minWidth = (widthOrParams.minWidth === undefined) ? null : widthOrParams.minWidth;
-        e.idealWidth = (widthOrParams.idealWidth === undefined) ? null : widthOrParams.idealWidth;
-        e.maxWidth = (widthOrParams.maxWidth === undefined) ? null : widthOrParams.maxWidth;
-        e.minHeight = (widthOrParams.minHeight === undefined) ? null : widthOrParams.minHeight;
-        e.idealHeight = (widthOrParams.idealHeight === undefined) ? null : widthOrParams.idealHeight;
-        e.maxHeight = (widthOrParams.maxHeight === undefined) ? null : widthOrParams.maxHeight;
+        const props = widthOrProps;
+        e.width = (props.width === undefined) ? null : props.width;
+        e.height = (props.height === undefined) ? null : props.height;
+        e.alignment = (props.alignment === undefined) ? null : props.alignment;
+        e.minWidth = (props.minWidth === undefined) ? null : props.minWidth;
+        e.idealWidth = (props.idealWidth === undefined) ? null : props.idealWidth;
+        e.maxWidth = (props.maxWidth === undefined) ? null : props.maxWidth;
+        e.minHeight = (props.minHeight === undefined) ? null : props.minHeight;
+        e.idealHeight = (props.idealHeight === undefined) ? null : props.idealHeight;
+        e.maxHeight = (props.maxHeight === undefined) ? null : props.maxHeight;
     }
     return e;
 }

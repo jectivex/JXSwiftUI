@@ -1,12 +1,36 @@
 import JXBridge
+import JXKit
 import SwiftUI
 
 extension Color: JXStaticBridging {
     static public func jxBridge() throws -> JXBridge {
         JXBridgeBuilder(type: Color.self)
-            .constructor { Color.init(_:) }
-            .constructor { (r: Double, g: Double, b: Double) in Color(red: r, green: g, blue: b) }
-            .constructor { (r: Double, g: Double, b: Double, o: Double) in Color(red: r, green: g, blue: b, opacity: o) }
+            // new Color('name') or new Color({props}) where props can be red,green,blue,opacity
+            // or white,opacity or hue,saturation,brightness,opacity
+            .constructor { (props: JXValue) throws -> Color in
+                guard !props.isString else {
+                    return try Color(props.string)
+                }
+                
+                let opacityValue = try props["opacity"]
+                let opacity = try opacityValue.isUndefined ? 1.0 : opacityValue.double
+                let redValue = try props["red"]
+                guard redValue.isUndefined else {
+                    let greenValue = try props["green"]
+                    let blueValue = try props["blue"]
+                    return try Color(red: redValue.double, green: greenValue.double, blue: blueValue.double, opacity: opacity)
+                }
+
+                let whiteValue = try props["white"]
+                guard whiteValue.isUndefined else {
+                    return try Color(white: whiteValue.double, opacity: opacity)
+                }
+                
+                let hueValue = try props["hue"]
+                let saturationValue = try props["saturation"]
+                let brightnessValue = try props["brightness"]
+                return try Color(hue: hueValue.double, saturation: saturationValue.double, brightness: brightnessValue.double, opacity: opacity)
+            }
             .func.opacity { Color.opacity }
             .static.var.black { Color.black }
             .static.var.blue { Color.blue }

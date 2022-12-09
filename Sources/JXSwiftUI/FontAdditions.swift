@@ -1,21 +1,57 @@
 import JXBridge
+import JXKit
 import SwiftUI
 
 extension Font: JXStaticBridging {
     static public func jxBridge() throws -> JXBridge {
-        var builder = JXBridgeBuilder(type: Font.self)
-            .static.func.system { (size: CGFloat) in
-                Font.system(size: size)
+        JXBridgeBuilder(type: Font.self)
+            // Font.system(size) or Font.system('style') or Font.system({props}) where props can be size,design,weight
+            // or style,design,weight
+            .static.func.system { (props: JXValue) throws -> Font in
+                guard !props.isNumber else {
+                    return try Font.system(size: props.double)
+                }
+                
+                if #available(iOS 16.0, *) {
+                    guard !props.isString else {
+                        return try Font.system(props.convey(to: Font.TextStyle.self))
+                    }
+                    
+                    let designValue = try props["design"]
+                    let design = try designValue.isUndefined ? nil : designValue.convey(to: Font.Design.self)
+                    let weightValue = try props["weight"]
+                    let weight = try weightValue.isUndefined ? nil : weightValue.convey(to: Font.Weight.self)
+                    
+                    let sizeValue = try props["size"]
+                    guard sizeValue.isUndefined else {
+                        return try Font.system(size: sizeValue.double, weight: weight, design: design)
+                    }
+                    let styleValue = try props["style"]
+                    return try Font.system(styleValue.convey(to: Font.TextStyle.self), design: design, weight: weight)
+                } else {
+                    return try Font.system(props.convey(to: Font.TextStyle.self))
+                }
             }
-            .static.func.system { (size: CGFloat, design: Font.Design, weight: Font.Weight) in
-                Font.system(size: size, weight: weight, design: design)
+            // Font.custom('name', size) or Font.custom('name', {props}) where props can be fixedSize or size,relativeTo
+            .static.func.custom { (name: JXValue, props: JXValue) throws -> Font in
+                let name = try name.string
+                guard !props.isNumber else {
+                    return try Font.custom(name, size: props.double)
+                }
+                
+                let fixedSizeValue = try props["fixedSize"]
+                guard fixedSizeValue.isUndefined else {
+                    return try Font.custom(name, fixedSize: fixedSizeValue.double)
+                }
+                
+                let sizeValue = try props["size"]
+                let relativeToValue = try props["relativeTo"]
+                guard relativeToValue.isUndefined else {
+                    let relativeTo = try relativeToValue.convey(to: Font.TextStyle.self)
+                    return try Font.custom(name, size: sizeValue.double, relativeTo: relativeTo)
+                }
+                return try Font.custom(name, size: sizeValue.double)
             }
-            .static.func.systemStyle { (style: Font.TextStyle) in
-                Font.system(style)
-            }
-            .static.func.custom { Font.custom(_:size:) }
-            .static.func.custom { Font.custom(_:size:relativeTo:) }
-            .static.func.customFixed { Font.custom(_:fixedSize:) }
             .static.var.largeTitle { Font.largeTitle }
             .static.var.title { Font.title }
             .static.var.title2 { Font.title2 }
@@ -35,12 +71,7 @@ extension Font: JXStaticBridging {
             .func.lowercaseSmallCaps { Font.lowercaseSmallCaps }
             .func.uppercaseSmallCaps { Font.uppercaseSmallCaps }
             .func.weight { Font.weight }
-        if #available(iOS 16.0, *) {
-            builder = builder.static.func.systemStyle { (style: Font.TextStyle, design: Font.Design, weight: Font.Weight) in
-                Font.system(style, design: design, weight: weight)
-            }
-        }
-        return builder.bridge
+            .bridge
     }
 }
 
