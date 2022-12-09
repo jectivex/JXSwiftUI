@@ -4,13 +4,13 @@ import SwiftUI
 extension Font: JXStaticBridging {
     static public func jxBridge() throws -> JXBridge {
         var builder = JXBridgeBuilder(type: Font.self)
-            .static.func.systemSized { (size: CGFloat) in
+            .static.func.system { (size: CGFloat) in
                 Font.system(size: size)
             }
             .static.func.system { (size: CGFloat, design: Font.Design, weight: Font.Weight) in
                 Font.system(size: size, weight: weight, design: design)
             }
-            .static.func.systemStyled { (style: Font.TextStyle) in
+            .static.func.systemStyle { (style: Font.TextStyle) in
                 Font.system(style)
             }
             .static.func.custom { Font.custom(_:size:) }
@@ -36,7 +36,7 @@ extension Font: JXStaticBridging {
             .func.uppercaseSmallCaps { Font.uppercaseSmallCaps }
             .func.weight { Font.weight }
         if #available(iOS 16.0, *) {
-            builder = builder.static.func.systemSpecd { (style: Font.TextStyle, design: Font.Design, weight: Font.Weight) in
+            builder = builder.static.func.systemStyle { (style: Font.TextStyle, design: Font.Design, weight: Font.Weight) in
                 Font.system(style, design: design, weight: weight)
             }
         }

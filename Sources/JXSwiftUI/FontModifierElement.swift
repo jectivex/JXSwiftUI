@@ -19,6 +19,7 @@ struct FontModifierElement: Element {
     }
     
     static func modifierJS(namespace: JXNamespace) -> String? {
+        // .font(Font) or .font('name')
         return """
 function(font) {
     const e = new \(namespace).JXElement('\(ElementType.fontModifier.rawValue)');

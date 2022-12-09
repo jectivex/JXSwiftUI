@@ -27,6 +27,7 @@ enum ElementType: String, CaseIterable {
     case backgroundModifier = "background"
     case fontModifier = "font"
     case foregroundColorModifier = "foregroundColor"
+    case frameModifier = "frame"
     case navigationTitleModifier = "navigationTitle"
     case paddingModifier = "padding"
     case tapGestureModifier = "onTapGesture"
@@ -76,6 +77,8 @@ enum ElementType: String, CaseIterable {
             return FontModifierElement.self
         case .foregroundColorModifier:
             return ForegroundColorModifierElement.self
+        case .frameModifier:
+            return FrameModifierElement.self
         case .navigationTitleModifier:
             return NavigationTitleModifierElement.self
         case .paddingModifier:

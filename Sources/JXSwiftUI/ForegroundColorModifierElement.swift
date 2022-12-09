@@ -19,6 +19,7 @@ struct ForegroundColorModifierElement: Element {
     }
     
     static func modifierJS(namespace: JXNamespace) -> String? {
+        // .foregroundColor(Color) or .foregroundColor('name')
         return """
 function(color) {
     const e = new \(namespace).JXElement('\(ElementType.foregroundColorModifier.rawValue)');
