@@ -23,11 +23,15 @@ extension Font: JXStaticBridging {
                     let weight = try weightValue.isUndefined ? nil : weightValue.convey(to: Font.Weight.self)
                     
                     let sizeValue = try props["size"]
+#if os(macOS)
+                    return try Font.system(size: sizeValue.double, weight: weight ?? .regular, design: design ?? .default)
+#else
                     guard sizeValue.isUndefined else {
                         return try Font.system(size: sizeValue.double, weight: weight, design: design)
                     }
                     let styleValue = try props["style"]
                     return try Font.system(styleValue.convey(to: Font.TextStyle.self), design: design, weight: weight)
+#endif
                 } else {
                     return try Font.system(props.convey(to: Font.TextStyle.self))
                 }

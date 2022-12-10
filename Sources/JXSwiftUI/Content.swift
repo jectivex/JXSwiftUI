@@ -1,6 +1,6 @@
 import JXKit
 
-/// Wraps a `JXValue` that represents content. Content can be a JXSwiftUIElement, custom view, or a function that returns one of those.
+/// Wraps a `JXValue` that represents content. Content can be a Element, custom view, or a function that returns one of those.
 struct Content {
     let jxValue: JXValue
     

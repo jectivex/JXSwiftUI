@@ -1,7 +1,6 @@
 import JXKit
 
-/// Used internally to handle errors, given that SwiftUI itself can't generally throw.
-/// Tracks our path down the SwiftUI element tree to give context to errors.
+/// Used internally to handle errors within non-throwing SwiftUI code.
 struct ErrorHandler {
     let handler: (Error) -> Void
     let elementPath: [String]
@@ -15,6 +14,7 @@ struct ErrorHandler {
         handler(error)
     }
     
+    /// Create a handler with an empty element path.
     var reset: ErrorHandler {
         return ErrorHandler(handler: handler, elementPath: [])
     }

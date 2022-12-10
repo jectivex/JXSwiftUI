@@ -1,6 +1,19 @@
 import SwiftUI
 
-/// - Note: In the future we might consider bridging `Alignment` or expanding support, but for now a simple `RawRepresentable` feels sufficient for most use cases
+extension JXSupported {
+    /// Use a JavaScript string to name any standard `SwiftUI.Alignment` value, e.g. `'topLeading'`.
+    public struct Alignment {}
+    
+    /// Use a JavaScript string to name any standard `SwiftUI.HorizontalAlignment` value, e.g. `'leading'`.
+    public struct HorizontalAlignment {}
+    
+    /// Use a JavaScript string to name any standard `SwiftUI.VerticalAlignment` value, e.g. `'top'`.
+    public struct VerticalAlignment {}
+}
+
+/// Represent each standard `SwiftUI.Alignment` value as a JavaScript string.
+///
+/// - Note: In the future we might consider promoting `Alignment` to a full type.
 extension Alignment: RawRepresentable {
     public init?(rawValue: String) {
         switch rawValue {
@@ -22,6 +35,7 @@ extension Alignment: RawRepresentable {
             self = .bottom
         case "bottomTrailing":
             self = .bottomTrailing
+#if !os(macOS)
         case "leadingFirstTextBaseline":
             self = .leadingFirstTextBaseline
         case "centerFirstTextBaseline":
@@ -34,6 +48,7 @@ extension Alignment: RawRepresentable {
             self = .centerLastTextBaseline
         case "trailingLastTextBaseline":
             self = .centerLastTextBaseline
+#endif
         default:
             return nil
         }
@@ -59,6 +74,7 @@ extension Alignment: RawRepresentable {
             return "bottom"
         case .bottomTrailing:
             return "bottomTrailing"
+#if !os(macOS)
         case .leadingFirstTextBaseline:
             return "leadingFirstTextBaseline"
         case .centerFirstTextBaseline:
@@ -71,13 +87,16 @@ extension Alignment: RawRepresentable {
             return "centerLastTextBaseline"
         case .trailingLastTextBaseline:
             return "centerLastTextBaseline"
+#endif
         default:
             return "unknown"
         }
     }
 }
 
-/// - Note: In the future we might consider bridging `HorizontalAlignment` or expanding support, but for now a simple `RawRepresentable` feels sufficient for most use cases
+/// Represent each standard `SwiftUI.HorizontalAlignment` value as a JavaScript string.
+///
+/// - Note: In the future we might consider promoting `HorizontalAlignment` to a full type.
 extension HorizontalAlignment: RawRepresentable {
     public init?(rawValue: String) {
         switch rawValue {
@@ -88,6 +107,7 @@ extension HorizontalAlignment: RawRepresentable {
         case "trailing":
             self = .trailing
         default:
+#if !os(macOS)
             if #available(iOS 16.0, *) {
                 if rawValue == "listRowSeparatorLeading" {
                     self = .listRowSeparatorLeading
@@ -95,6 +115,7 @@ extension HorizontalAlignment: RawRepresentable {
                     self = .listRowSeparatorTrailing
                 }
             }
+#endif
             return nil
         }
     }
@@ -108,6 +129,7 @@ extension HorizontalAlignment: RawRepresentable {
         case.trailing:
             return "trailing"
         default:
+#if !os(macOS)
             if #available(iOS 16.0, *) {
                 if self == .listRowSeparatorLeading {
                     return "listRowSeparatorLeading"
@@ -115,12 +137,15 @@ extension HorizontalAlignment: RawRepresentable {
                     return "listRowSeparatorTrailing"
                 }
             }
+#endif
             return "unknown"
         }
     }
 }
 
-/// - Note: In the future we might consider bridging `VerticalAlignment` or expanding support, but for now a simple `RawRepresentable` feels sufficient for most use cases
+/// Represent each standard `SwiftUI.VerticalAlignment` value as a JavaScript string.
+///
+/// - Note: In the future we might consider promoting `VerticalAlignment` to a full type.
 extension VerticalAlignment: RawRepresentable {
     public init?(rawValue: String) {
         switch rawValue {

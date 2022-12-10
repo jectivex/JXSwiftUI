@@ -2,7 +2,25 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-/// Sets a background its target view.
+extension JXSupported {
+    /// Sets a background on a target view.
+    /// Supported calls:
+    ///
+    ///     - .background({props}, content)
+    ///     - .background(content)
+    ///
+    /// Supported props:
+    ///
+    ///     - alignment: Alignment
+    ///
+    /// Supported content:
+    ///
+    ///     - Color name
+    ///     - View
+    ///     - Anonymous function returning a View
+    public struct BackgroundModifier {}
+}
+
 struct BackgroundModifier: Element {
     private let target: Content
     private let alignment: Alignment
