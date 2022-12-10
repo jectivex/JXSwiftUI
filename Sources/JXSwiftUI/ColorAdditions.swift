@@ -2,6 +2,27 @@ import JXBridge
 import JXKit
 import SwiftUI
 
+extension JXSupported {
+    /// A `SwiftUI.Color` value.
+    /// Supported usage:
+    ///
+    ///     - Color.red, Color.blue, etc
+    ///     - Color.system({props})
+    ///     - Color.custom('name') to load from an asset catalog
+    ///
+    /// Supported props:
+    ///
+    ///     - opacity: Optional opacity
+    ///     - red:green:blue: RGB color
+    ///     - hue:saturation:brightness: HSB color
+    ///     - white: Grayscale color
+    ///
+    /// Supported functions:
+    ///
+    ///     - opacity(value): Derive a color with the given opacity
+    public struct Color {}
+}
+
 extension Color: JXStaticBridging {
     static public func jxBridge() throws -> JXBridge {
         JXBridgeBuilder(type: Color.self)
@@ -10,13 +31,7 @@ extension Color: JXStaticBridging {
             // Use static funcs to replace Color constructors to align with Font and
             // hide the use of 'new', which is incongruous with our other SwiftUI elements
         
-            // Color.system({props}) where props can be red,green,blue,opacity
-            // or white,opacity or hue,saturation,brightness,opacity
             .static.func.system { (props: JXValue) throws -> Color in
-                guard !props.isString else {
-                    return try Color(props.string)
-                }
-                
                 let opacityValue = try props["opacity"]
                 let opacity = try opacityValue.isUndefined ? 1.0 : opacityValue.double
                 let redValue = try props["red"]
@@ -36,9 +51,7 @@ extension Color: JXStaticBridging {
                 let brightnessValue = try props["brightness"]
                 return try Color(hue: hueValue.double, saturation: saturationValue.double, brightness: brightnessValue.double, opacity: opacity)
             }
-            // Color.custom(name)
             .static.func.custom { (name: String) -> Color in Color(name) }
-
             .func.opacity { Color.opacity }
             .static.var.black { Color.black }
             .static.var.blue { Color.blue }

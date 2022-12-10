@@ -2,14 +2,28 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-/// Sets a font on its target view.
+extension JXSupported {
+    /// Sets a font on a target view.
+    /// Supported calls:
+    ///
+    ///     - .font(Font.TextStyle)
+    ///     - .font(Font)
+    public struct FontModifier {}
+}
+
 struct FontModifier: Element {
     private let target: Content
     private let font: Font
     
     init(jxValue: JXValue) throws {
         self.target = try Content(jxValue: jxValue["target"])
-        self.font = try jxValue["font"].convey()
+        let fontValue = try jxValue["font"]
+        if fontValue.isString {
+            let style = try fontValue.convey(to: Font.TextStyle.self)
+            self.font = Font.system(style)
+        } else {
+            self.font = try fontValue.convey()
+        }
     }
 
     func view(errorHandler: ErrorHandler?) -> any View {
@@ -24,11 +38,7 @@ struct FontModifier: Element {
 function(font) {
     const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.fontModifier.rawValue)');
     e.target = this;
-    if (typeof(font) === 'string') {
-        e.font = swiftui.Font.system(font)
-    } else {
-        e.font = font;
-    }
+    e.font = font;
     return e;
 }
 """

@@ -9,6 +9,10 @@ struct NativeElement: Element {
     init(jxValue: JXValue) throws {
         self.view = try jxValue.convey()
     }
+    
+    init(view: any View) {
+        self.view = view
+    }
 
     func view(errorHandler: ErrorHandler?) -> any View {
         return view

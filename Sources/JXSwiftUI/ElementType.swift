@@ -5,7 +5,7 @@ enum ElementType: String, CaseIterable {
     // Views
     case button = "Button"
     case custom
-    case empty = "Empty"
+    case empty = "EmptyView"
     case foreach = "ForEach"
     case form = "Form"
     case group = "Group"

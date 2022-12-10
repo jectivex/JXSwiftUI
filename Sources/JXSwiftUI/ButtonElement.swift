@@ -31,17 +31,37 @@ struct ButtonElement: Element {
     private let content: Content
 
     init(jxValue: JXValue) throws {
-        self.role = try jxValue["role"].convey()
-        self.actionFunction = try jxValue["action"]
-        guard actionFunction.isFunction else {
-            throw JXError(message: "Expected an action function. Received '\(actionFunction)'")
+        let args = try jxValue["args"].array
+        guard args.count >= 2 else {
+            throw JXError(message: "An action function and a label or content are required")
         }
-        self.content = try Content(jxValue: jxValue["content"])
+        if args[0].isString {
+            self.role = nil
+            self.content = try Content(element: TextElement(text: args[0].string))
+            self.actionFunction = args[1]
+        } else if args[0].isFunction {
+            self.role = nil
+            self.actionFunction = args[0]
+            self.content = Content(jxValue: args[1])
+        } else {
+            let roleValue = try args[0]["role"]
+            self.role = try roleValue.isUndefined ? nil : roleValue.convey()
+            self.actionFunction = args[1]
+            if args.count < 3 {
+                let label = try args[0]["label"]
+                guard label.isString else {
+                    throw JXError.missingContent()
+                }
+                self.content = try Content(element: TextElement(text: label.string))
+            } else {
+                self.content = Content(jxValue: args[2])
+            }
+        }
     }
 
     func view(errorHandler: ErrorHandler?) -> any View {
         let errorHandler = errorHandler?.in(.button)
-        return Button(action: {
+        return Button(role: role, action: {
             onAction(errorHandler: errorHandler)
         }) {
             content.element(errorHandler: errorHandler)
@@ -52,23 +72,9 @@ struct ButtonElement: Element {
     
     static func js(namespace: JXNamespace) -> String? {
 """
-function(propsOrActionOrLabel, actionOrContent, content) {
+function(...args) {
     const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.button.rawValue)');
-    if (typeof(propsOrActionOrLabel) === 'string') {
-        e.action = actionOrContent;
-        e.content = \(namespace).Text(actionOrLabel);
-    } else if typeof(propsOrActionOrLabel) === 'function') {
-        e.role = null;
-        e.action = propsOrActionOrLabel;
-        e.content = actionOrContent;
-    } else {
-        e.role = (propsOrActionOrLabel.role === undefined) ? null : propsOrActionOrLabel.role;
-        if (content === undefined) {
-            e.content = Text(
-        } else {
-            e.content = content;
-        }
-    }
+    e.args = args;
     return e;
 }
 """

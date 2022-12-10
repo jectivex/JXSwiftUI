@@ -28,8 +28,25 @@ struct BackgroundModifier: Element {
     
     init(jxValue: JXValue) throws {
         self.target = try Content(jxValue: jxValue["target"])
-        self.alignment = try jxValue["alignment"].convey()
-        self.content = try Content(jxValue: jxValue["content"])
+        let args = try jxValue["args"].array
+        guard !args.isEmpty else {
+            throw JXError.missingContent()
+        }
+        if args.count == 1 {
+            self.alignment = .center
+            if args[0].isString {
+                self.content = try Content(view: Color(args[0].string))
+            } else {
+                self.content = Content(jxValue: args[0])
+            }
+        } else {
+            self.alignment = try args[0].convey()
+            if args[1].isString {
+                self.content = try Content(view: Color(args[1].string))
+            } else {
+                self.content = Content(jxValue: args[1])
+            }
+        }
     }
 
     func view(errorHandler: ErrorHandler?) -> any View {
@@ -44,26 +61,11 @@ struct BackgroundModifier: Element {
     }
     
     static func modifierJS(namespace: JXNamespace) -> String? {
-        // .background(props, content) or .background(content), where content may be a color name
         return """
-function(propsOrContent, content) {
+function(...args) {
     const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.backgroundModifier.rawValue)');
     e.target = this;
-    if (content === undefined) {
-        e.alignment = 'center';
-        if (typeof(propsOrContent) === 'string') {
-            e.content = new swiftui.Color(propsOrContent);
-        } else {
-            e.content = propsOrContent;
-        }
-    } else {
-        e.alignment = (propsOrContent.alignment === undefined) ? 'center' : propsOrContent.alignment;
-        if (typeof(content) === 'string') {
-            e.content = new swiftui.Color(content);
-        } else {
-            e.content = content;
-        }
-    }
+    e.args = arg;
     return e;
 }
 """

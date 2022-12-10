@@ -1,13 +1,28 @@
 import JXKit
+import SwiftUI
 
 /// Wraps a `JXValue` that represents content. Content can be a Element, custom view, or a function that returns one of those.
 struct Content {
-    let jxValue: JXValue
+    let jxValue: JXValue?
+    let element: Element?
+    
+    init(jxValue: JXValue? = nil, element: Element? = nil) {
+        self.jxValue = jxValue
+        self.element = element
+    }
+    
+    init(view: any View) {
+        self.jxValue = nil
+        self.element = NativeElement(view: view)
+    }
     
     func element(errorHandler: ErrorHandler?) -> Element {
+        if let element = self.element {
+            return element
+        }
         do {
-            guard !jxValue.isNullOrUndefined else {
-                throw JXError(message: "JXSwiftUI content is missing or has a null value")
+            guard let jxValue = self.jxValue, !jxValue.isNullOrUndefined else {
+                throw JXError.missingContent()
             }
             return try extractElement(for: jxValue, errorHandler: errorHandler) ?? EmptyElement()
         } catch {
@@ -18,17 +33,20 @@ struct Content {
     
     func elementArray(errorHandler: ErrorHandler?) -> [Element] {
         do {
-            guard !jxValue.isNullOrUndefined else {
-                throw JXError(message: "JXSwiftUI content is missing or has a null value")
+            if self.element != nil {
+                throw JXError.contentNotArray()
             }
-            return try extractElementArray(errorHandler: errorHandler)
+            guard let jxValue = self.jxValue, !jxValue.isNullOrUndefined else {
+                throw JXError.missingContent()
+            }
+            return try extractElementArray(for: jxValue, errorHandler: errorHandler)
         } catch {
             errorHandler?.handle(error)
             return []
         }
     }
     
-    private func extractElementArray(errorHandler: ErrorHandler?) throws -> [Element] {
+    private func extractElementArray(for jxValue: JXValue, errorHandler: ErrorHandler?) throws -> [Element] {
         var arrayValue = jxValue
         if jxValue.isFunction {
             arrayValue = try jxValue.call()

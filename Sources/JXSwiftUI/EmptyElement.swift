@@ -2,7 +2,14 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-/// Vends an empty view.
+extension JXSupported {
+    /// A `SwiftUI.EmptyView`.
+    /// Supported usage:
+    ///
+    ///     - EmptyView()
+    public struct EmptyView {}
+}
+
 struct EmptyElement: Element {
     init(jxValue: JXValue) throws {
     }

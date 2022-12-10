@@ -2,11 +2,49 @@ import JXBridge
 import JXKit
 import SwiftUI
 
+extension JXSupported {
+    /// A `SwiftUI.Font` value.
+    /// Supported usage:
+    ///
+    ///     - Font.body, Font.title, etc
+    ///     - Font.system(size)
+    ///     - Font.system(Font.TextStyle)
+    ///     - Font.system({props})
+    ///     - Font.custom('font', size)
+    ///     - Font.custom('font', {props})
+    ///
+    /// Supported props for `Font.system`:
+    ///
+    ///     - size: Font size
+    ///     - style: Font.TextStyle in place of specifying the size
+    ///     - design: Font.Design
+    ///     - weight: Font.Weight
+    ///
+    /// Supported props for `Font.custom`:
+    ///
+    ///     - fixedSize: Fixed font size
+    ///     - size: Size relative to the given style. 0 if omitted
+    ///     - style: Font.TextStyle
+    ///
+    /// Supported functions:
+    ///
+    ///     - bold(), weight(Font.Weight): Derive a font with the given weight
+    ///     - italic(), monospaced(), monospacedDigit(), smallCaps(), lowercaseSmallCaps(), uppercaseSmallCaps(): Derive a font with the given style
+    public struct Font {
+        /// Use a JavaScript string to name any standard `Font.TextStyle` value, e.g. `'title'`.
+        public struct TextStyle {}
+        
+        /// Use a JavaScript string to name any standard `Font.Design` value, e.g. `'monospaced'`.
+        public struct Design {}
+        
+        /// Use a JavaScript string to name any standard `Font.Weight` value, e.g. `'bold'`.
+        public struct Weight {}
+    }
+}
+
 extension Font: JXStaticBridging {
     static public func jxBridge() throws -> JXBridge {
         JXBridgeBuilder(type: Font.self)
-            // Font.system(size) or Font.system('style') or Font.system({props}) where props can be size,design,weight
-            // or style,design,weight
             .static.func.system { (props: JXValue) throws -> Font in
                 guard !props.isNumber else {
                     return try Font.system(size: props.double)
@@ -36,7 +74,6 @@ extension Font: JXStaticBridging {
                     return try Font.system(props.convey(to: Font.TextStyle.self))
                 }
             }
-            // Font.custom('name', size) or Font.custom('name', {props}) where props can be fixedSize or size,relativeTo
             .static.func.custom { (name: JXValue, props: JXValue) throws -> Font in
                 let name = try name.string
                 guard !props.isNumber else {
@@ -49,10 +86,10 @@ extension Font: JXStaticBridging {
                 }
                 
                 let sizeValue = try props["size"]
-                let relativeToValue = try props["relativeTo"]
-                guard relativeToValue.isUndefined else {
-                    let relativeTo = try relativeToValue.convey(to: Font.TextStyle.self)
-                    return try Font.custom(name, size: sizeValue.double, relativeTo: relativeTo)
+                let styleValue = try props["style"]
+                guard styleValue.isUndefined else {
+                    let style = try styleValue.convey(to: Font.TextStyle.self)
+                    return try Font.custom(name, size: sizeValue.isUndefined ? 0.0 : sizeValue.double, relativeTo: style)
                 }
                 return try Font.custom(name, size: sizeValue.double)
             }
