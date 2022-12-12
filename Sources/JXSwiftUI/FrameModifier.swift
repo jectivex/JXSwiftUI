@@ -70,7 +70,7 @@ function(widthOrProps, height, alignment) {
     e.target = this;
     if (typeof(widthOrProps) === 'number') {
         e.width = widthOrProps;
-        e.height = height;
+        e.height = (height === undefined) ? null : height;
         e.alignment = (alignment === undefined) ? null : alignment;
         e.minWidth = null;
         e.idealWidth = null;

@@ -24,7 +24,7 @@ struct IfElement: Element {
     init(jxValue: JXValue) throws {
         self.isTrue = try jxValue["isTrue"].bool
         self.ifContent = try Content(jxValue: jxValue["ifFunction"])
-        self.elseContent = try Content.optional(jxValue: jxValue["elseContent"])
+        self.elseContent = try Content.optional(jxValue: jxValue["elseFunction"])
     }
 
     func view(errorHandler: ErrorHandler?) -> any View {

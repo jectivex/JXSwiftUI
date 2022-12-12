@@ -81,7 +81,7 @@ struct TextElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(propsOrText, text) {
-    const e = new \(namespace)._Text();
+    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.text.rawValue)');
     if (text === undefined) {
         e.text = propsOrText;
     } else {
@@ -91,43 +91,31 @@ function(propsOrText, text) {
             e.text = text;
         }
     }
+    e.fontWeight = function(value) {
+        e.fontWeightValue = value;
+        return e;
+    }
+    e.bold = function(value=true) {
+        e.boldValue = value;
+        return e;
+    }
+    e.italic = function(value=true) {
+        e.italicValue = value;
+        return e;
+    }
+    e.monospacedDigit = function(value=true) {
+        e.monospacedDigitValue = value;
+        return e;
+    }
+    e.strikethrough = function(value=true) {
+        e.strikethroughValue = value;
+        return e;
+    }
+    e.underline = function(value=true) {
+        e.underlineValue = value;
+        return e;
+    }
     return e;
-}
-
-\(namespace)._Text = class extends \(JXNamespace.default).\(JSCodeGenerator.elementClass) {
-    constructor() {
-        super('\(ElementType.text.rawValue)');
-    }
-
-    fontWeight(value) {
-        this.fontWeightValue = value;
-        return this;
-    }
-
-    bold(value=true) {
-        this.boldValue = value;
-        return this;
-    }
-
-    italic(value=true) {
-        this.italicValue = value;
-        return this;
-    }
-
-    monospacedDigit(value=true) {
-        this.monospacedDigitValue = value;
-        return this;
-    }
-
-    strikethrough(value=true) {
-        this.strikethroughValue = value;
-        return this;
-    }
-
-    underline(value=true) {
-        this.underlineValue = value;
-        return this;
-    }
 }
 """
     }

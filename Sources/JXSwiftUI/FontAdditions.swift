@@ -62,15 +62,24 @@ extension Font: JXStaticBridging {
                     
                     let sizeValue = try props["size"]
 #if os(macOS)
+                    guard !sizeValue.isUndefined else {
+                        throw JXError(message: "Missing font size")
+                    }
                     return try Font.system(size: sizeValue.double, weight: weight ?? .regular, design: design ?? .default)
 #else
                     guard sizeValue.isUndefined else {
                         return try Font.system(size: sizeValue.double, weight: weight, design: design)
                     }
                     let styleValue = try props["style"]
+                    guard !styleValue.isUndefined else {
+                        throw JXError(message: "Invalid font properties")
+                    }
                     return try Font.system(styleValue.convey(to: Font.TextStyle.self), design: design, weight: weight)
 #endif
                 } else {
+                    guard !props.isUndefined else {
+                        throw JXError(message: "Invalid font properties")
+                    }
                     return try Font.system(props.convey(to: Font.TextStyle.self))
                 }
             }
@@ -90,6 +99,9 @@ extension Font: JXStaticBridging {
                 guard styleValue.isUndefined else {
                     let style = try styleValue.convey(to: Font.TextStyle.self)
                     return try Font.custom(name, size: sizeValue.isUndefined ? 0.0 : sizeValue.double, relativeTo: style)
+                }
+                guard !sizeValue.isUndefined else {
+                    throw JXError(message: "Missing font size")
                 }
                 return try Font.custom(name, size: sizeValue.double)
             }

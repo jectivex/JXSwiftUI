@@ -38,6 +38,9 @@ extension Color: JXStaticBridging {
                 guard redValue.isUndefined else {
                     let greenValue = try props["green"]
                     let blueValue = try props["blue"]
+                    guard !greenValue.isUndefined && !blueValue.isUndefined else {
+                        throw JXError(message: "Expected number values for 'red', 'green', 'blue'")
+                    }
                     return try Color(red: redValue.double, green: greenValue.double, blue: blueValue.double, opacity: opacity)
                 }
 
@@ -49,6 +52,9 @@ extension Color: JXStaticBridging {
                 let hueValue = try props["hue"]
                 let saturationValue = try props["saturation"]
                 let brightnessValue = try props["brightness"]
+                guard !hueValue.isUndefined && !saturationValue.isUndefined && !brightnessValue.isUndefined else {
+                    throw JXError(message: "Expected number values for 'red', 'green', 'blue' or 'hue', 'saturation', 'brightness'")
+                }
                 return try Color(hue: hueValue.double, saturation: saturationValue.double, brightness: brightnessValue.double, opacity: opacity)
             }
             .static.func.custom { (name: String) -> Color in Color(name) }

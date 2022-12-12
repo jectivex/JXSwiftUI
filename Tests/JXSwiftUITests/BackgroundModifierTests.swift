@@ -3,7 +3,7 @@ import JXKit
 @testable import JXSwiftUI
 import XCTest
 
-final class BackgroundModifierTests: ElementTestsBase {
+final class BackgroundModifierTests: JXSwiftUITestsBase {
     func testColorName() throws {
         let jxValue = try context.eval("swiftui.EmptyView().background('customColor')")
         let background = try BackgroundModifier(jxValue: jxValue)
@@ -21,11 +21,9 @@ final class BackgroundModifierTests: ElementTestsBase {
         let background = try BackgroundModifier(jxValue: jxValue)
         let _ = background.view(errorHandler: errorHandler)
         
-        do {
+        expectingError {
             jxValue = try context.eval("swiftui.EmptyView().background({alignment: 'invalid'}, swiftui.EmptyView())")
             let _ = try BackgroundModifier(jxValue: jxValue)
-            XCTFail("Accepted invalid alignment")
-        } catch {
         }
     }
 }

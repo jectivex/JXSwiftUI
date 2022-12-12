@@ -20,6 +20,8 @@ extension JXSwiftUISupport {
     public enum NavigationLink {}
 }
 
+// TODO: Build in support for lazy detinations? Currently runs destination immediately
+
 struct NavigationLinkElement: Element {
     private let content: Content
     private let destination: Content

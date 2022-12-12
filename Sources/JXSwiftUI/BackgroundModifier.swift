@@ -28,24 +28,13 @@ struct BackgroundModifier: Element {
     
     init(jxValue: JXValue) throws {
         self.target = try Content(jxValue: jxValue["target"])
-        let args = try jxValue["args"].array
-        guard !args.isEmpty else {
-            throw JXError.missingContent()
-        }
-        if args.count == 1 {
-            self.alignment = .center
-            if args[0].isString {
-                self.content = try Content(view: Color(args[0].string))
-            } else {
-                self.content = try Content(jxValue: args[0])
-            }
+        let alignmentValue = try jxValue["alignment"]
+        self.alignment = try alignmentValue.isUndefined ? .center : alignmentValue.convey()
+        let contentValue = try jxValue["content"]
+        if contentValue.isString {
+            self.content = try Content(view: Color(contentValue.string))
         } else {
-            self.alignment = try args[0]["alignment"].convey()
-            if args[1].isString {
-                self.content = try Content(view: Color(args[1].string))
-            } else {
-                self.content = try Content(jxValue: args[1])
-            }
+            self.content = try Content(jxValue: contentValue)
         }
     }
 
@@ -62,10 +51,15 @@ struct BackgroundModifier: Element {
     
     static func modifierJS(namespace: JXNamespace) -> String? {
         return """
-function(...args) {
+function(propsOrContent, content) {
     const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.backgroundModifier.rawValue)');
     e.target = this;
-    e.args = args;
+    if (content === undefined) {
+        e.content = propsOrContent;
+    } else {
+        e.alignment = propsOrContent.alignment;
+        e.content = content;
+    }
     return e;
 }
 """
