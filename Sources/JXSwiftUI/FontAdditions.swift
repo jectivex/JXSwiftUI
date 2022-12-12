@@ -2,13 +2,13 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-extension JXSupported {
+extension JXSwiftUISupport {
     /// A `SwiftUI.Font` value.
     /// Supported usage:
     ///
     ///     - Font.body, Font.title, etc
     ///     - Font.system(size)
-    ///     - Font.system(Font.TextStyle)
+    ///     - Font.system(FontTextStyle)
     ///     - Font.system({props})
     ///     - Font.custom('font', size)
     ///     - Font.custom('font', {props})
@@ -16,30 +16,30 @@ extension JXSupported {
     /// Supported props for `Font.system`:
     ///
     ///     - size: Font size
-    ///     - style: Font.TextStyle in place of specifying the size
-    ///     - design: Font.Design
-    ///     - weight: Font.Weight
+    ///     - style: FontTextStyle in place of specifying the size
+    ///     - design: FontDesign
+    ///     - weight: FontWeight
     ///
     /// Supported props for `Font.custom`:
     ///
     ///     - fixedSize: Fixed font size
     ///     - size: Size relative to the given style. 0 if omitted
-    ///     - style: Font.TextStyle
+    ///     - style: FontTextStyle
     ///
     /// Supported functions:
     ///
-    ///     - bold(), weight(Font.Weight): Derive a font with the given weight
-    ///     - italic(), monospaced(), monospacedDigit(), smallCaps(), lowercaseSmallCaps(), uppercaseSmallCaps(): Derive a font with the given style
-    public struct Font {
-        /// Use a JavaScript string to name any standard `Font.TextStyle` value, e.g. `'title'`.
-        public struct TextStyle {}
+    ///     - bold(), weight(Font.Weight): Return a derived font with the given weight
+    ///     - italic(), monospaced(), monospacedDigit(), smallCaps(), lowercaseSmallCaps(), uppercaseSmallCaps(): Return a derived font with the given style
+    public enum Font {}
         
-        /// Use a JavaScript string to name any standard `Font.Design` value, e.g. `'monospaced'`.
-        public struct Design {}
+    /// Use a JavaScript string to name any standard `Font.TextStyle` value, e.g. `'title'`.
+    public enum FontTextStyle {}
         
-        /// Use a JavaScript string to name any standard `Font.Weight` value, e.g. `'bold'`.
-        public struct Weight {}
-    }
+    /// Use a JavaScript string to name any standard `Font.Design` value, e.g. `'monospaced'`.
+    public enum FontDesign {}
+        
+    /// Use a JavaScript string to name any standard `Font.Weight` value, e.g. `'bold'`.
+    public enum FontWeight {}
 }
 
 extension Font: JXStaticBridging {

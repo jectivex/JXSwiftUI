@@ -21,6 +21,7 @@ enum ElementType: String, CaseIterable {
     case spacer = "Spacer"
     case text = "Text"
     case vstack = "VStack"
+    case zstack = "ZStack"
     case unknown
 
     // Modifiers
@@ -70,6 +71,8 @@ enum ElementType: String, CaseIterable {
             return TextElement.self
         case .vstack:
             return VStackElement.self
+        case .zstack:
+            return ZStackElement.self
             
         case .backgroundModifier:
             return BackgroundModifier.self

@@ -2,7 +2,22 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-/// Vends a `SwiftUI.List`.
+extension JXSwiftUISupport {
+    /// A `SwiftUI.List`.
+    /// Supported usage:
+    ///
+    ///     - List([content])
+    ///
+    /// Supported content:
+    ///
+    ///     - View array
+    ///     - Anonymous function returning a View array
+    public enum List {}
+}
+
+// TODO: Support List selection, editing, row generation
+// TODO: Support .listStyle modifier for at least the standard styles
+
 struct ListElement: Element {
     private let content: Content
     

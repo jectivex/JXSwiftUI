@@ -1,14 +1,14 @@
 import SwiftUI
 
-extension JXSupported {
+extension JXSwiftUISupport {
     /// Use a JavaScript string to name any standard `SwiftUI.Alignment` value, e.g. `'topLeading'`.
-    public struct Alignment {}
+    public enum Alignment {}
     
     /// Use a JavaScript string to name any standard `SwiftUI.HorizontalAlignment` value, e.g. `'leading'`.
-    public struct HorizontalAlignment {}
+    public enum HorizontalAlignment {}
     
     /// Use a JavaScript string to name any standard `SwiftUI.VerticalAlignment` value, e.g. `'top'`.
-    public struct VerticalAlignment {}
+    public enum VerticalAlignment {}
 }
 
 /// Represent each standard `SwiftUI.Alignment` value as a JavaScript string.

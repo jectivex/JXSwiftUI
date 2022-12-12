@@ -2,7 +2,7 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-extension JXSupported {
+extension JXSwiftUISupport {
     /// A `SwiftUI.Color` value.
     /// Supported usage:
     ///
@@ -20,7 +20,7 @@ extension JXSupported {
     /// Supported functions:
     ///
     ///     - opacity(value): Derive a color with the given opacity
-    public struct Color {}
+    public enum Color {}
 }
 
 extension Color: JXStaticBridging {

@@ -2,7 +2,7 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-extension JXSupported {
+extension JXSwiftUISupport {
     /// Sets a background on a target view.
     /// Supported calls:
     ///
@@ -18,7 +18,7 @@ extension JXSupported {
     ///     - Color name
     ///     - View
     ///     - Anonymous function returning a View
-    public struct BackgroundModifier {}
+    public enum background {}
 }
 
 struct BackgroundModifier: Element {
@@ -37,14 +37,14 @@ struct BackgroundModifier: Element {
             if args[0].isString {
                 self.content = try Content(view: Color(args[0].string))
             } else {
-                self.content = Content(jxValue: args[0])
+                self.content = try Content(jxValue: args[0])
             }
         } else {
             self.alignment = try args[0].convey()
             if args[1].isString {
                 self.content = try Content(view: Color(args[1].string))
             } else {
-                self.content = Content(jxValue: args[1])
+                self.content = try Content(jxValue: args[1])
             }
         }
     }
@@ -65,7 +65,7 @@ struct BackgroundModifier: Element {
 function(...args) {
     const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.backgroundModifier.rawValue)');
     e.target = this;
-    e.args = arg;
+    e.args = args;
     return e;
 }
 """

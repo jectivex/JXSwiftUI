@@ -2,7 +2,20 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-/// A view that includes 'if' or 'else' content depending on a boolean condition.
+extension JXSwiftUISupport {
+    /// A `SwiftUI.If` conditional view.
+    /// Supported usage:
+    ///
+    ///     - If(boolean, () => { content })
+    ///     - If(boolean, () => { content }, () => { content })
+    ///
+    /// In the form with two trailing functions, the second provides `else` content.
+    /// Supported content:
+    ///
+    ///     - Anonymous function returning a View
+    public enum If {}
+}
+
 struct IfElement: Element {
     private let isTrue: Bool
     private let ifContent: Content
@@ -11,8 +24,7 @@ struct IfElement: Element {
     init(jxValue: JXValue) throws {
         self.isTrue = try jxValue["isTrue"].bool
         self.ifContent = try Content(jxValue: jxValue["ifFunction"])
-        let elseValue = try jxValue["elseFunction"]
-        self.elseContent = elseValue.isNullOrUndefined ? nil : Content(jxValue: elseValue)
+        self.elseContent = try Content.optional(jxValue: jxValue["elseContent"])
     }
 
     func view(errorHandler: ErrorHandler?) -> any View {
@@ -31,7 +43,7 @@ struct IfElement: Element {
     
     static func js(namespace: JXNamespace) -> String? {
         """
-function(isTrue, ifFunction, elseFunction=null) {
+function(isTrue, ifFunction, elseFunction) {
     const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.if.rawValue)');
     e.isTrue = isTrue;
     e.ifFunction = ifFunction;

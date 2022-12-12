@@ -2,7 +2,32 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-/// Sets a frame on its target view.
+extension JXSwiftUISupport {
+    /// Sets a frame on a target view.
+    /// Supported calls:
+    ///
+    ///     - .frame(with, height)
+    ///     - .frame(width, height, alignment)
+    ///     - .frame({props})
+    ///
+    /// Supported props:
+    ///
+    ///     - width
+    ///     - height
+    ///     - alignment
+    ///
+    /// Or:
+    /// 
+    ///     - minWidth
+    ///     - idealWidth
+    ///     - maxWidth
+    ///     - minHeight
+    ///     - idealHeight
+    ///     - maxHeight
+    ///     - alignment
+    public enum frame {}
+}
+
 struct FrameModifier: Element {
     private let target: Content
     private let width: CGFloat?
@@ -39,7 +64,6 @@ struct FrameModifier: Element {
     }
     
     static func modifierJS(namespace: JXNamespace) -> String? {
-        // .frame(width, height, alignment) or .frame({ minWidth:, ... })
         return """
 function(widthOrProps, height, alignment) {
     const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.frameModifier.rawValue)');

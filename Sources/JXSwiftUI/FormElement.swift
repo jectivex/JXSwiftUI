@@ -2,7 +2,19 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-/// Vends a `SwiftUI.Form` view.
+extension JXSwiftUISupport {
+    /// A `SwiftUI.Form`.
+    /// Supported usage:
+    ///
+    ///     - Form([content])
+    ///
+    /// Supported content:
+    ///
+    ///     - View array
+    ///     - Anonymous function returning a View array
+    public enum Form {}
+}
+
 struct FormElement: Element {
     private let content: Content
     

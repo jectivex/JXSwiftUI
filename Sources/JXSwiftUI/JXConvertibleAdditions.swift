@@ -39,3 +39,74 @@ extension Binding: JXConvertible {
         return try context.new(JSCodeGenerator.bindingClass, withArguments: [get, set])
     }
 }
+
+/// Represent each 'Edge' value as a JavaScript string: `top`, `bottom`, `leading`, `trailing`.
+///
+/// - Note: `Edge` already conforms to `RawRepresentable` as a number, so use `JXConvertible` for readable string values.
+extension Edge: JXConvertible {
+    public static func fromJX(_ value: JXValue) throws -> Edge {
+        switch try value.string {
+        case "top":
+            return .top
+        case "bottom":
+            return .bottom
+        case "leading":
+            return .leading
+        case "trailing":
+            return .trailing
+        default:
+            throw JXError(message: "'\(try value.string)' is not a valid 'Edge' value")
+        }
+    }
+    
+    public func toJX(in context: JXContext) throws -> JXValue {
+        switch self {
+        case .top:
+            return context.string("top")
+        case .bottom:
+            return context.string("bottom")
+        case .leading:
+            return context.string("leading")
+        case .trailing:
+            return context.string("trailing")
+        }
+    }
+}
+
+/// Represent `EdgeInsets` as a JavaScript object with `top`, `bottom`, `leading`, `trailing` properties.
+extension EdgeInsets: JXConvertible {
+    public static func fromJX(_ value: JXValue) throws -> EdgeInsets {
+        return try EdgeInsets(top: value["top"].double, leading: value["leading"].double, bottom: value["bottom"].double, trailing: value["trailing"].double)
+    }
+    
+    public func toJX(in context: JXContext) throws -> JXValue {
+        return try context.object(fromDictionary: [
+            "top": top, "leading": leading, "bottom": bottom, "trailing": trailing
+        ])
+    }
+}
+
+/// Represent each 'Axis' value as a JavaScript string: `horizontal`, `vertical`.
+///
+/// - Note: `Axis` already conforms to `RawRepresentable` as a number, so use `JXConvertible` for readable string values.
+extension Axis: JXConvertible {
+    public static func fromJX(_ value: JXValue) throws -> Axis {
+        switch try value.string {
+        case "horizontal":
+            return .horizontal
+        case "vertical":
+            return .vertical
+        default:
+            throw JXError(message: "'\(try value.string)' is not a valid 'Axis' value")
+        }
+    }
+    
+    public func toJX(in context: JXContext) throws -> JXValue {
+        switch self {
+        case .horizontal:
+            return context.string("horizontal")
+        case .vertical:
+            return context.string("vertical")
+        }
+    }
+}

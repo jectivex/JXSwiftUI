@@ -2,12 +2,12 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-extension JXSupported {
+extension JXSwiftUISupport {
     /// A `SwiftUI.EmptyView`.
     /// Supported usage:
     ///
     ///     - EmptyView()
-    public struct EmptyView {}
+    public enum EmptyView {}
 }
 
 struct EmptyElement: Element {

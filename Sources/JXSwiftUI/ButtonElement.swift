@@ -2,27 +2,29 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-extension JXSupported {
+extension JXSwiftUISupport {
     /// A `SwiftUI.Button`.
     /// Supported usage:
     ///
     ///     - Button('label', () => { action })
     ///     - Button(() => { action }, content)
+    ///     - Button({props}, () => { action })
     ///     - Button({props}, () => { action }, content)
     ///
     /// Supported props:
     ///
-    ///     - label: String. If included, the label is considered the button content.
+    ///     - label: content
     ///     - role: ButtonRole
     ///
     /// Supported content:
     ///
+    ///     - Label string
     ///     - View
     ///     - Anonymous function returning a View
-    public struct Button {}
+    public enum Button {}
     
     /// Use a JavaScript string to name any standard `SwiftUI.ButtonRole` value, e.g. `'cancel'`.
-    public struct ButtonRole {}
+    public enum ButtonRole {}
 }
 
 struct ButtonElement: Element {
@@ -37,24 +39,24 @@ struct ButtonElement: Element {
         }
         if args[0].isString {
             self.role = nil
-            self.content = try Content(element: TextElement(text: args[0].string))
+            self.content = try Content(jxValue: args[0])
             self.actionFunction = args[1]
         } else if args[0].isFunction {
             self.role = nil
             self.actionFunction = args[0]
-            self.content = Content(jxValue: args[1])
+            self.content = try Content(jxValue: args[1])
         } else {
             let roleValue = try args[0]["role"]
             self.role = try roleValue.isUndefined ? nil : roleValue.convey()
             self.actionFunction = args[1]
             if args.count < 3 {
-                let label = try args[0]["label"]
-                guard label.isString else {
+                let labelValue = try args[0]["label"]
+                guard !labelValue.isUndefined else {
                     throw JXError.missingContent()
                 }
-                self.content = try Content(element: TextElement(text: label.string))
+                self.content = try Content(jxValue: labelValue)
             } else {
-                self.content = Content(jxValue: args[2])
+                self.content = try Content(jxValue: args[2])
             }
         }
     }

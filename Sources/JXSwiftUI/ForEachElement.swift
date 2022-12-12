@@ -2,7 +2,26 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-/// Iterates over a collection of items.
+extension JXSwiftUISupport {
+    /// A `SwiftUI.ForEach` view.
+    /// Supported usage:
+    ///
+    ///     - ForEach([items], (item) => { itemId }, (item) => { content })
+    ///     - ForEach([items], 'id', (item) => { content })
+    ///     - ForEach([items], (item) => { content })
+    ///
+    /// Item IDs can be booleans, strings, numbers, symbols, or dates. Supported ways of getting each item ID:
+    ///
+    ///     - (item) => { itemId }: A function accepting an item and returning its ID
+    ///     - 'id': The name of a property holding each item's ID
+    ///     - If omitted, we assume each item has an 'id' property
+    ///
+    /// Supported content:
+    ///
+    ///     - (item) => { content }: A function accepting an item and returning a View
+    public enum ForEach {}
+}
+
 struct ForEachElement: Element {
     private let itemsValue: JXValue
     private let idFunction: JXValue
@@ -17,7 +36,7 @@ struct ForEachElement: Element {
         guard idFunction.isFunction else {
             throw JXError(message: "Expected a function that takes an item as its argument and returns the item's identifier. Received '\(idFunction)'")
         }
-        self.contentFunction = try jxValue["contentFunction"]
+        self.contentFunction = try jxValue["content"]
         guard contentFunction.isFunction else {
             throw JXError(message: "Content must be a function. Received '\(contentFunction)'")
         }
@@ -34,11 +53,20 @@ struct ForEachElement: Element {
     
     static func js(namespace: JXNamespace) -> String? {
         """
-function(items, idFunction, contentFunction) {
+function(items, idOrContent, content) {
     const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.foreach.rawValue)');
     e.items = items;
-    e.idFunction = idFunction;
-    e.contentFunction = contentFunction;
+    if (content === undefined) {
+        e.idFunction = (item) => { return item.id; }
+        e.content = idOrContent;
+    } else {
+        if (typeof(idOrContent) === 'string') {
+            e.idFunction = (item) => { return item[idOrContent]; }
+        } else {
+            e.idFunction = idOrContent;
+        }
+        e.content = content;
+    }
     return e;
 }
 """
@@ -47,7 +75,7 @@ function(items, idFunction, contentFunction) {
     private func contentElement(for item: Any, errorHandler: ErrorHandler?) -> Element {
         do {
             let content = try contentFunction.call(withArguments: [item as! JXValue])
-            return Content(jxValue: content).element(errorHandler: errorHandler)
+            return try Content(jxValue: content).element(errorHandler: errorHandler)
         } catch {
             errorHandler?.handle(error)
             return EmptyElement()

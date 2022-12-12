@@ -2,7 +2,22 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-/// Vends a `SwiftUI.NavigationView`.
+extension JXSwiftUISupport {
+    /// A `SwiftUI.NavigationView`.
+    /// Supported usage:
+    ///
+    ///     - NavigationView(content)
+    ///
+    /// Supported content:
+    ///
+    ///     - View
+    ///     - Anonymous function returning a View
+    public enum NavigationView {}
+}
+
+// TODO: Support navigation bar button items
+// TODO: Support iOS 16 NavigationStack and related navigation functionality
+
 struct NavigationViewElement: Element {
     private let content: Content
     

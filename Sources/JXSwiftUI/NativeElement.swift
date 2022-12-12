@@ -2,7 +2,7 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-/// Vends a custom native view.
+/// Vends a native view.
 struct NativeElement: Element {
     private let view: any View
 

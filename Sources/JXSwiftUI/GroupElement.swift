@@ -2,7 +2,19 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-/// Vends a `SwiftUI.Group` view.
+extension JXSwiftUISupport {
+    /// A `SwiftUI.Group`.
+    /// Supported usage:
+    ///
+    ///     - Group([content])
+    ///
+    /// Supported content:
+    ///
+    ///     - View array
+    ///     - Anonymous function returning a View array
+    public enum Group {}
+}
+
 struct GroupElement: Element {
     private let content: Content
     

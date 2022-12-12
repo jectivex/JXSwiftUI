@@ -2,17 +2,39 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-/// Vends a `SwiftUI.Section` view.
+extension JXSwiftUISupport {
+    /// A `SwiftUI.Section`.
+    /// Supported usage:
+    ///
+    ///     - Section([content])
+    ///     - Section('header', [content])
+    ///     - Section({props}, [content])
+    ///
+    /// Supported props:
+    ///
+    ///     - header: String or content
+    ///     - footer: String or content
+    ///
+    /// Supported section content:
+    ///
+    ///     - View array
+    ///     - Anonymous function returning a View array
+    ///
+    /// Supported header and footer content:
+    ///
+    ///     - View
+    ///     - Anonymous function returning a View
+    public enum Section {}
+}
+
 struct SectionElement: Element {
     private let headerContent: Content?
     private let footerContent: Content?
     private let content: Content
     
     init(jxValue: JXValue) throws {
-        let headerValue = try jxValue["header"]
-        self.headerContent = headerValue.isNullOrUndefined ? nil : Content(jxValue: headerValue)
-        let footerValue = try jxValue["footer"]
-        self.footerContent = footerValue.isNullOrUndefined ? nil : Content(jxValue: footerValue)
+        self.headerContent = try Content.optional(jxValue: jxValue["header"])
+        self.footerContent = try Content.optional(jxValue: jxValue["footer"])
         self.content = try Content(jxValue: jxValue["content"])
     }
 
@@ -43,18 +65,14 @@ struct SectionElement: Element {
     }
     
     static func js(namespace: JXNamespace) -> String? {
-        // Section('header', [<content>]) or Section({ header: <content>, footer: <content> }, [<content>]) or Section([<content>])
         """
 function(propsOrContentArray, contentArray) {
     const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.section.rawValue)');
     if (contentArray === undefined) {
         e.content = propsOrContentArray;
-        e.header = null;
-        e.footer = null;
     } else {
         if (typeof(propsOrContentArray) === 'string') {
-            e.header = \(namespace).Text(propsOrContentArray);
-            e.footer = null;
+            e.header = propsOrContentArray;
         } else {
             e.header = propsOrContentArray.header;
             e.footer = propsOrContentArray.footer;

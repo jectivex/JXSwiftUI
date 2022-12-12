@@ -1,3 +1,3 @@
 /// Umbrella for supported SwiftUI constructs.
-public enum JXSupported {
+public enum JXSwiftUISupport {
 }

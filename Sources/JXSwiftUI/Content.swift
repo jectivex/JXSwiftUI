@@ -1,13 +1,35 @@
 import JXKit
 import SwiftUI
 
-/// Wraps a `JXValue` that represents content. Content can be a Element, custom view, or a function that returns one of those.
+/// Wraps a `JXValue` that represents content. Content can be a string, element, custom view, or a function that returns an element or custom view.
 struct Content {
     let jxValue: JXValue?
     let element: Element?
     
-    init(jxValue: JXValue? = nil, element: Element? = nil) {
-        self.jxValue = jxValue
+    static func `optional`(jxValue: JXValue) throws -> Content? {
+        guard !jxValue.isNullOrUndefined else {
+            return nil
+        }
+        return try Content(jxValue: jxValue)
+    }
+    
+    init() {
+        self.jxValue = nil
+        self.element = nil
+    }
+    
+    init(jxValue: JXValue) throws {
+        if jxValue.isString {
+            self.jxValue = nil
+            self.element = try TextElement(text: jxValue.string)
+        } else {
+            self.jxValue = jxValue
+            self.element = nil
+        }
+    }
+    
+    init(element: Element) {
+        self.jxValue = nil
         self.element = element
     }
     

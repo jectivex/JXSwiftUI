@@ -2,13 +2,13 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-extension JXSupported {
+extension JXSwiftUISupport {
     /// Sets a font on a target view.
     /// Supported calls:
     ///
-    ///     - .font(Font.TextStyle)
+    ///     - .font(FontTextStyle)
     ///     - .font(Font)
-    public struct FontModifier {}
+    public enum font {}
 }
 
 struct FontModifier: Element {
@@ -33,7 +33,6 @@ struct FontModifier: Element {
     }
     
     static func modifierJS(namespace: JXNamespace) -> String? {
-        // .font(Font) or .font('name')
         return """
 function(font) {
     const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.fontModifier.rawValue)');

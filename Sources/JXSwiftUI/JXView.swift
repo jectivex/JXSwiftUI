@@ -26,7 +26,7 @@ public struct JXView: View {
                 try self.context.registry.register(JXSwiftUI())
             }
             let contentValue = try content(self.context)
-            contentElement =  Content(jxValue: contentValue).element(errorHandler: contentErrorHandler)
+            contentElement = try Content(jxValue: contentValue).element(errorHandler: contentErrorHandler)
         } catch {
             contentElement = EmptyElement()
             contentErrorHandler?.handle(error)
