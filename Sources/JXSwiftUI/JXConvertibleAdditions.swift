@@ -1,3 +1,4 @@
+import JXBridge
 import JXKit
 import SwiftUI
 
@@ -36,7 +37,7 @@ extension Binding: JXConvertible {
             self.wrappedValue = try args[0].convey(to: Value.self)
             return context.undefined()
         }
-        return try context.new(JSCodeGenerator.bindingClass, withArguments: [get, set])
+        return try context.new("\(JXNamespace.default).\(JSCodeGenerator.bindingClass)", withArguments: [get, set])
     }
 }
 

@@ -2,13 +2,13 @@ import JXBridge
 
 /// Generate supporting JavaScript code.
 struct JSCodeGenerator {
-    static let elementClass = "_Element" // Note: this is in the default namespace. See JXBridgeBuilderAdditions
+    static let elementClass = "_jxswiftuiElement" // Note: this is in the default namespace. See JXBridgeBuilderAdditions
     static let stateProperty = "state"
     static let observedProperty = "observed"
     static let initStateFunction = "initState"
     static let bodyFunction = "body"
     static let withAnimationFunction = "withAnimation"
-    static let bindingClass = "_jxswiftuiBinding"
+    static let bindingClass = "_jxswiftuiBinding" // Note: this is in the default namespace so that we can convey it
     static let elementTypeProperty = "_jxswiftuiType"
     static let observerProperty = "_jxswiftuiObserver"
     static let willChangeFunction = "_jxswiftuiWillChange"
@@ -21,7 +21,7 @@ struct JSCodeGenerator {
         if (target[property] === undefined) {
             if (property.startsWith('$')) {
                 const stateProperty = property.slice(1);
-                return new \(namespace)._jxswiftuiBinding(() => {
+                return new \(JXNamespace.default)._jxswiftuiBinding(() => {
                     return target[stateProperty];
                 }, (value) => {
                     target.willChange();
@@ -69,21 +69,21 @@ struct JSCodeGenerator {
         return true;
     }
 }
-\(namespace)._jxswiftuiBinding = class {
+\(JXNamespace.default)._jxswiftuiBinding = class {
     constructor(get, set) {
         this.get = get;
         this.set = set;
     }
 }
 
-\(JXNamespace.default)._Element = class {
+\(JXNamespace.default)._jxswiftuiElement = class {
     constructor(type) {
         this._jxswiftuiType = (type === undefined) ? '\(ElementType.native.rawValue)' : type;
         return new Proxy(this, \(namespace)._jxswiftuiElementHandler);
     }
 }
 
-\(namespace).JXView = class extends \(JXNamespace.default)._Element {
+\(namespace).JXView = class extends \(JXNamespace.default)._jxswiftuiElement {
     constructor() {
         super('\(ElementType.custom.rawValue)');
         const state = {

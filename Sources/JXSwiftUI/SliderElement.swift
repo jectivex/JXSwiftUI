@@ -9,6 +9,7 @@ extension JXSwiftUISupport {
     ///     - Slider($value)
     ///     - Slider($value, 'label')
     ///     - Slider($value, {props})
+    ///     - Slider($value, {props}, content)
     ///
     /// Supported values:
     ///
@@ -64,7 +65,13 @@ struct SliderElement: Element {
             self.maximumValue = try maximumValue.isUndefined ? 0.0 : maximumValue.double
             let stepValue = try propsValue["step"]
             self.step = try stepValue.isUndefined ? nil : stepValue.double
-            self.label = try Content.optional(jxValue: propsValue["label"])
+            
+            let contentValue = try jxValue["content"]
+            if contentValue.isUndefined {
+                self.label = try Content.optional(jxValue: propsValue["label"])
+            } else {
+                self.label = try Content(jxValue: contentValue)
+            }
             self.minimumValueLabel = try Content.optional(jxValue: propsValue["minimumValueLabel"])
             self.maximumValueLabel = try Content.optional(jxValue: propsValue["minimumValueLabel"])
         }
@@ -136,10 +143,11 @@ struct SliderElement: Element {
     
     static func js(namespace: JXNamespace) -> String? {
 """
-function(value, props) {
+function(value, props, content) {
     const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.slider.rawValue)');
     e.value = value;
     e.props = props;
+    e.content = content;
     return e;
 }
 """

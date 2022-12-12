@@ -33,6 +33,9 @@ struct ScrollViewElement: Element {
         if axesValue.isUndefined {
             self.axesSet = .vertical
         } else {
+            guard axesValue.isArray else {
+                throw JXError(message: "'axes' must be an array")
+            }
             let axes = try axesValue.array.map { try $0.convey(to: Axis.self) }
             let rawValue = axes.reduce(0) { $0 | $1.rawValue }
             self.axesSet = Axis.Set(rawValue: Int8(rawValue))
