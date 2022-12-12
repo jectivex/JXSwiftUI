@@ -8,7 +8,7 @@ extension JXNamespace {
     public static var swiftui = JXNamespace("swiftui")
 }
 
-/// Register this module to use SwiftUI-in-JavaScript.
+/// Register this module to use SwiftUI in a `JXContext`.
 public struct JXSwiftUI: JXModule {
     public init() {
     }

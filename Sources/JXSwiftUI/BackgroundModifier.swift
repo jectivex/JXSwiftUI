@@ -40,7 +40,7 @@ struct BackgroundModifier: Element {
                 self.content = try Content(jxValue: args[0])
             }
         } else {
-            self.alignment = try args[0].convey()
+            self.alignment = try args[0]["alignment"].convey()
             if args[1].isString {
                 self.content = try Content(view: Color(args[1].string))
             } else {
