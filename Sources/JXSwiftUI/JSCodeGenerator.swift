@@ -75,14 +75,12 @@ struct JSCodeGenerator {
         this.set = set;
     }
 }
-
 \(JXNamespace.default)._jxswiftuiElement = class {
     constructor(type) {
         this._jxswiftuiType = (type === undefined) ? '\(ElementType.native.rawValue)' : type;
         return new Proxy(this, \(namespace)._jxswiftuiElementHandler);
     }
 }
-
 \(namespace).JXView = class extends \(JXNamespace.default)._jxswiftuiElement {
     constructor() {
         super('\(ElementType.custom.rawValue)');
