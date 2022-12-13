@@ -44,9 +44,9 @@ struct ScrollViewElement: Element {
         self.content = try Content(jxValue: jxValue["content"])
     }
 
-    func view(errorHandler: ErrorHandler?) -> any View {
+    func view(errorHandler: ErrorHandler) -> any View {
         return ScrollView(axesSet, showsIndicators: showsIndicators) {
-            let errorHandler = errorHandler?.in(.scrollView)
+            let errorHandler = errorHandler.in(.scrollView)
             content.element(errorHandler: errorHandler)
                 .view(errorHandler: errorHandler)
                 .eraseToAnyView()

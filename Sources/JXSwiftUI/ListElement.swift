@@ -26,9 +26,9 @@ struct ListElement: Element {
         self.content = try Content(jxValue: jxValue["content"])
     }
 
-    func view(errorHandler: ErrorHandler?) -> any View {
+    func view(errorHandler: ErrorHandler) -> any View {
         return List {
-            let errorHandler = errorHandler?.in(.list)
+            let errorHandler = errorHandler.in(.list)
             content.elementArray(errorHandler: errorHandler) .containerView(errorHandler: errorHandler)
         }
     }

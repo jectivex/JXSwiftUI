@@ -62,8 +62,8 @@ struct ButtonElement: Element {
         }
     }
 
-    func view(errorHandler: ErrorHandler?) -> any View {
-        let errorHandler = errorHandler?.in(.button)
+    func view(errorHandler: ErrorHandler) -> any View {
+        let errorHandler = errorHandler.in(.button)
         return Button(role: role, action: {
             onAction(errorHandler: errorHandler)
         }) {
@@ -83,11 +83,11 @@ function(...args) {
 """
     }
     
-    private func onAction(errorHandler: ErrorHandler?) {
+    private func onAction(errorHandler: ErrorHandler) {
         do {
             try actionFunction.call()
         } catch {
-            errorHandler?.attr("action").handle(error)
+            errorHandler.attr("action").handle(error)
         }
     }
 }

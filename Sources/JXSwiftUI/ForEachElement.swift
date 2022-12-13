@@ -43,8 +43,8 @@ struct ForEachElement: Element {
         }
     }
 
-    func view(errorHandler: ErrorHandler?) -> any View {
-        let errorHandler = errorHandler?.in(.foreach)
+    func view(errorHandler: ErrorHandler) -> any View {
+        let errorHandler = errorHandler.in(.foreach)
         return ForEach(itemsWithIdentity(errorHandler: errorHandler), id: \.id) { itemWithIdentity in
             let contentElement = contentElement(for: itemWithIdentity.item, errorHandler: errorHandler)
             return contentElement.view(errorHandler: errorHandler)
@@ -73,28 +73,28 @@ function(items, idOrContent, content) {
 """
     }
     
-    private func contentElement(for item: Any, errorHandler: ErrorHandler?) -> Element {
+    private func contentElement(for item: Any, errorHandler: ErrorHandler) -> Element {
         do {
             let content = try contentFunction.call(withArguments: [item as! JXValue])
             return try Content(jxValue: content).element(errorHandler: errorHandler)
         } catch {
-            errorHandler?.handle(error)
+            errorHandler.handle(error)
             return EmptyElement()
         }
     }
     
-    private func itemsWithIdentity(errorHandler: ErrorHandler?) -> ItemWithIdentityCollection {
+    private func itemsWithIdentity(errorHandler: ErrorHandler) -> ItemWithIdentityCollection {
         do {
             return try ItemWithIdentityCollection(items: items) { item in
                 do {
                     return try id(for: item)
                 } catch {
-                    errorHandler?.handle(error)
+                    errorHandler.handle(error)
                     return 0
                 }
             }
         } catch {
-            errorHandler?.handle(error)
+            errorHandler.handle(error)
             return ItemWithIdentityCollection(items: AnyRandomAccessCollection([])) { _ in 0 }
         }
     }

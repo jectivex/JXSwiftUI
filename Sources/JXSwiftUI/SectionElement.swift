@@ -39,14 +39,14 @@ struct SectionElement: Element {
         self.content = try Content(jxValue: jxValue["content"])
     }
 
-    func view(errorHandler: ErrorHandler?) -> any View {
-        let errorHandler = errorHandler?.in(.section)
+    func view(errorHandler: ErrorHandler) -> any View {
+        let errorHandler = errorHandler.in(.section)
         return Section(content: {
             content.elementArray(errorHandler: errorHandler)
                 .containerView(errorHandler: errorHandler)
         }, header: {
             if let headerContent {
-                let errorHandler = errorHandler?.attr("header")
+                let errorHandler = errorHandler.attr("header")
                 headerContent.element(errorHandler: errorHandler)
                     .view(errorHandler: errorHandler)
                     .eraseToAnyView()
@@ -55,7 +55,7 @@ struct SectionElement: Element {
             }
         }, footer: {
             if let footerContent {
-                let errorHandler = errorHandler?.attr("footer")
+                let errorHandler = errorHandler.attr("footer")
                 footerContent.element(errorHandler: errorHandler)
                     .view(errorHandler: errorHandler)
                     .eraseToAnyView()

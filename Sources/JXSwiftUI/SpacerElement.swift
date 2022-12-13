@@ -20,7 +20,7 @@ struct SpacerElement: Element {
         self.minLength = try minLengthValue.isNullOrUndefined ? nil : minLengthValue.double
     }
 
-    func view(errorHandler: ErrorHandler?) -> any View {
+    func view(errorHandler: ErrorHandler) -> any View {
         return Spacer(minLength: minLength)
     }
     

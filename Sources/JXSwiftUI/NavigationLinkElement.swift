@@ -41,10 +41,10 @@ struct NavigationLinkElement: Element {
         }
     }
 
-    func view(errorHandler: ErrorHandler?) -> any View {
-        let errorHandler = errorHandler?.in(.navigationLink)
+    func view(errorHandler: ErrorHandler) -> any View {
+        let errorHandler = errorHandler.in(.navigationLink)
         return NavigationLink(destination: {
-            let errorHandler = errorHandler?.attr("destination")
+            let errorHandler = errorHandler.attr("destination")
             return destination.element(errorHandler: errorHandler)
                 .view(errorHandler: errorHandler)
                 .eraseToAnyView()

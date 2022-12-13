@@ -54,7 +54,7 @@ struct FrameModifier: Element {
         self.alignment = try jxValue["alignment"].convey()
     }
 
-    func view(errorHandler: ErrorHandler?) -> any View {
+    func view(errorHandler: ErrorHandler) -> any View {
         let targetView = target.element(errorHandler: errorHandler)
             .view(errorHandler: errorHandler)
         if minWidth != nil || idealWidth != nil || maxWidth != nil || minHeight != nil || idealHeight != nil || maxHeight != nil {

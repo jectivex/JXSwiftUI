@@ -39,8 +39,8 @@ struct BackgroundModifier: Element {
         }
     }
 
-    func view(errorHandler: ErrorHandler?) -> any View {
-        let backgroundErrorHandler = errorHandler?.in(.backgroundModifier)
+    func view(errorHandler: ErrorHandler) -> any View {
+        let backgroundErrorHandler = errorHandler.in(.backgroundModifier)
         return target.element(errorHandler: errorHandler)
             .view(errorHandler: errorHandler)
             .background(alignment: alignment) {

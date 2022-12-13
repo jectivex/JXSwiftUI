@@ -26,9 +26,9 @@ struct NavigationViewElement: Element {
         self.content = try Content(jxValue: jxValue["content"])
     }
 
-    func view(errorHandler: ErrorHandler?) -> any View {
+    func view(errorHandler: ErrorHandler) -> any View {
         return NavigationView {
-            let errorHandler = errorHandler?.in(.navigationView)
+            let errorHandler = errorHandler.in(.navigationView)
             content.element(errorHandler: errorHandler)
                 .view(errorHandler: errorHandler)
                 .eraseToAnyView()

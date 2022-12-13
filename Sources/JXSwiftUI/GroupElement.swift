@@ -23,8 +23,8 @@ struct GroupElement: Element {
         self.content = try Content(jxValue: jxValue["content"])
     }
 
-    func view(errorHandler: ErrorHandler?) -> any View {
-        let errorHandler = errorHandler?.in(.group)
+    func view(errorHandler: ErrorHandler) -> any View {
+        let errorHandler = errorHandler.in(.group)
         // .containerView already wraps its views in a Group
         return content.elementArray(errorHandler: errorHandler)
             .containerView(errorHandler: errorHandler)

@@ -29,14 +29,14 @@ struct IfElement: Element {
         self.elseContent = try Content.optional(jxValue: jxValue["elseFunction"])
     }
 
-    func view(errorHandler: ErrorHandler?) -> any View {
-        let errorHandler = errorHandler?.in(.if)
+    func view(errorHandler: ErrorHandler) -> any View {
+        let errorHandler = errorHandler.in(.if)
         if isTrue {
             return ifContent.element(errorHandler: errorHandler)
                 .view(errorHandler: errorHandler)
         }
         if let elseContent {
-            let errorHandler = errorHandler?.attr("else")
+            let errorHandler = errorHandler.attr("else")
             return elseContent.element(errorHandler: errorHandler)
                 .view(errorHandler: errorHandler)
         }
