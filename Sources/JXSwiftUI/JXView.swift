@@ -13,9 +13,9 @@ public struct JXView: View {
     /// Construct a view whose content is defined in JavaScript.
     ///
     /// - Parameters:
-    ///   - context: An existing context. The ``JXSwiftUI`` module must be registered with the context. If not supplied, we create a new context for this view.
-    ///   - errorHandler: An optional handler for JS errors. If not supplied, we print the error to the console.
-    ///   - content: A closure returning a `JXValue` reprenting the content view. Typically you will use the supplied context to `eval` JS that returns a SwiftUI-in-JS view.
+    ///   - context: An existing context. The ``JXSwiftUI`` module must be registered with the context. If not supplied, we create a new context and register `JXSwiftUI` for this view.
+    ///   - errorHandler: An optional handler for JavaScript errors. If not supplied, we print the error to the console.
+    ///   - content: A closure returning a `JXValue` reprenting the content view. Typically you will use the supplied context to `eval` JavaScript that returns a `JXSwiftUI` view.
     public init(context: JXContext? = nil, errorHandler: ((Error) -> Void)? = { print("\($0)") }, content: @escaping (JXContext) throws -> JXValue) {
         self.context = context ?? JXContext()
         self.errorHandler = errorHandler

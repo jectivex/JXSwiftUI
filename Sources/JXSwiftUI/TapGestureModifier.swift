@@ -2,7 +2,16 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-/// Adds a tap gesture to its target view.
+extension JXSwiftUISupport {
+    /// Sets a tap gesture on a target view.
+    ///
+    /// Supported calls:
+    ///
+    ///     - .onTapGesture(() => { action })
+    ///     - .onTapGesture(count, () => { action })
+    public enum onTapGesture {}
+}
+
 struct TapGestureModifier: Element {
     private let target: Content
     private let count: Int

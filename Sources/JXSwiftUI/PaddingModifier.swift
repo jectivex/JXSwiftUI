@@ -4,6 +4,7 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// Sets padding on a target view.
+    /// 
     /// Supported calls:
     ///
     ///     - .padding()

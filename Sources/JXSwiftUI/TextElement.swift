@@ -4,23 +4,24 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// A `SwiftUI.Text`.
+    ///
     /// Supported usage:
     ///
     ///     - Text('text/markdown')
     ///     - Text({props}, 'text/markdown')
     ///
-    /// Supported props:
+    /// Supported `props`:
     ///
     ///     - verbatim: If true, the text will be included verbatim
     ///
     /// Supported additional functions:
     ///
-    ///     - fontWeight(FontWeight)
-    ///     - bold(boolean=true)
-    ///     - italic(boolean=true)
-    ///     - monospacedDigit(boolean=true)
-    ///     - strikethrough(boolean=true)
-    ///     - underline(boolean=true)
+    ///     - .fontWeight(FontWeight)
+    ///     - .bold(boolean=true)
+    ///     - .italic(boolean=true)
+    ///     - .monospacedDigit(boolean=true)
+    ///     - .strikethrough(boolean=true)
+    ///     - .underline(boolean=true)
     public enum Text {}
 }
 

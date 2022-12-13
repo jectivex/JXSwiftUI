@@ -4,6 +4,7 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// A `SwiftUI.Spacer`.
+    /// 
     /// Supported usage:
     ///
     ///     - Spacer()

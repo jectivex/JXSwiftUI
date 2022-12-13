@@ -4,6 +4,7 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// Sets a navigation title on a target view.
+    /// 
     /// Supported calls:
     ///
     ///     - .navigationTitle('title')

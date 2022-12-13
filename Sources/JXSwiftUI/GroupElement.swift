@@ -4,11 +4,12 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// A `SwiftUI.Group`.
+    ///
     /// Supported usage:
     ///
     ///     - Group([content])
     ///
-    /// Supported content:
+    /// Supported `content`:
     ///
     ///     - View array
     ///     - Anonymous function returning a View array

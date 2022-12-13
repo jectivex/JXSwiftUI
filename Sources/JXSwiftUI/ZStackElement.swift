@@ -4,16 +4,17 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// A `SwiftUI.ZStack`.
+    ///
     /// Supported usage:
     ///
     ///     - ZStack([content])
     ///     - ZStack({props}, [content])
     ///
-    /// Supported props:
+    /// Supported `props`:
     ///
     ///     - alignment: Alignment
     ///
-    /// Supported content:
+    /// Supported `content`:
     ///
     ///     - View array
     ///     - Anonymous function returning a View array

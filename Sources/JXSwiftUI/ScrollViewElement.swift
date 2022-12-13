@@ -4,17 +4,18 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// A `SwiftUI.ScrollView`.
+    ///
     /// Supported usage:
     ///
     ///     - ScrollView(content)
     ///     - ScrollView({props}, content)
     ///
-    /// Supported props:
+    /// Supported `props`:
     ///
     ///     - axes: [Axis] array
     ///     - showsIndicators: Boolean
     ///
-    /// Supported content:
+    /// Supported `content`:
     ///
     ///     - View
     ///     - Anonymous function returning a View

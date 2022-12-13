@@ -41,8 +41,11 @@ extension Binding: JXConvertible {
     }
 }
 
-/// Represent each 'Edge' value as a JavaScript string: `top`, `bottom`, `leading`, `trailing`.
-///
+extension JXSwiftUISupport {
+    /// Use a JavaScript string to name any `SwiftUI.Edge` value, e.g. `'top'`.
+    public enum Edge {}
+}
+
 /// - Note: `Edge` already conforms to `RawRepresentable` as a number, so use `JXConvertible` for readable string values.
 extension Edge: JXConvertible {
     public static func fromJX(_ value: JXValue) throws -> Edge {
@@ -74,7 +77,11 @@ extension Edge: JXConvertible {
     }
 }
 
-/// Represent `EdgeInsets` as a JavaScript object with `top`, `bottom`, `leading`, `trailing` properties.
+extension JXSwiftUISupport {
+    /// Use a JavaScript object with `top`, `bottom`, `leading`, `trailing` properties to represent `SwiftUI.EdgeInsets`.
+    public enum EdgeInsets {}
+}
+
 extension EdgeInsets: JXConvertible {
     public static func fromJX(_ value: JXValue) throws -> EdgeInsets {
         return try EdgeInsets(top: value["top"].double, leading: value["leading"].double, bottom: value["bottom"].double, trailing: value["trailing"].double)
@@ -87,8 +94,11 @@ extension EdgeInsets: JXConvertible {
     }
 }
 
-/// Represent each 'Axis' value as a JavaScript string: `horizontal`, `vertical`.
-///
+extension JXSwiftUISupport {
+    /// Use a JavaScript string to name any `SwiftUI.Axis` value, e.g. `'horizontal'`.
+    public enum Axis {}
+}
+
 /// - Note: `Axis` already conforms to `RawRepresentable` as a number, so use `JXConvertible` for readable string values.
 extension Axis: JXConvertible {
     public static func fromJX(_ value: JXValue) throws -> Axis {

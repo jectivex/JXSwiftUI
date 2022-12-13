@@ -4,6 +4,7 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// A `SwiftUI.ForEach` view.
+    ///
     /// Supported usage:
     ///
     ///     - ForEach([items], (item) => { itemId }, (item) => { content })
@@ -16,7 +17,7 @@ extension JXSwiftUISupport {
     ///     - 'id': The name of a property holding each item's ID
     ///     - If omitted, we assume each item has an 'id' property
     ///
-    /// Supported content:
+    /// Supported `content`:
     ///
     ///     - (item) => { content }: A function accepting an item and returning a View
     public enum ForEach {}

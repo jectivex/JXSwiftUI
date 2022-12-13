@@ -4,6 +4,7 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// A `SwiftUI.Slider`.
+    ///
     /// Supported usage:
     ///
     ///     - Slider($value)
@@ -11,11 +12,11 @@ extension JXSwiftUISupport {
     ///     - Slider($value, {props})
     ///     - Slider($value, {props}, content)
     ///
-    /// Supported values:
+    /// Supported `value`:
     ///
-    ///     - Binding to a double
+    ///     - `Binding` to a Double
     ///
-    /// Supported props:
+    /// Supported `props`:
     ///
     ///     - label: Content
     ///     - minimumValueLabel: Content
@@ -24,7 +25,7 @@ extension JXSwiftUISupport {
     ///     - maximumValue: Number
     ///     - step: Number
     ///
-    /// Supported content:
+    /// Supported `content`:
     ///
     ///     - Label string
     ///     - View

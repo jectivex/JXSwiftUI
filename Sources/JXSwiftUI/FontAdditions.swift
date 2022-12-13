@@ -4,6 +4,7 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// A `SwiftUI.Font` value.
+    /// 
     /// Supported usage:
     ///
     ///     - Font.body, Font.title, etc
@@ -13,14 +14,14 @@ extension JXSwiftUISupport {
     ///     - Font.custom('font', size)
     ///     - Font.custom('font', {props})
     ///
-    /// Supported props for `Font.system`:
+    /// Supported `props` for `Font.system`:
     ///
     ///     - size: Font size
     ///     - style: FontTextStyle in place of specifying the size
     ///     - design: FontDesign
     ///     - weight: FontWeight
     ///
-    /// Supported props for `Font.custom`:
+    /// Supported `props` for `Font.custom`:
     ///
     ///     - fixedSize: Fixed font size
     ///     - size: Size relative to the given style. 0 if omitted
@@ -28,8 +29,8 @@ extension JXSwiftUISupport {
     ///
     /// Supported functions:
     ///
-    ///     - bold(), weight(Font.Weight): Return a derived font with the given weight
-    ///     - italic(), monospaced(), monospacedDigit(), smallCaps(), lowercaseSmallCaps(), uppercaseSmallCaps(): Return a derived font with the given style
+    ///     - .bold(), .weight(Font.Weight): Return a derived font with the given weight
+    ///     - .italic(), .monospaced(), .monospacedDigit(), .smallCaps(), .lowercaseSmallCaps(), .uppercaseSmallCaps(): Return a derived font with the given style
     public enum Font {}
         
     /// Use a JavaScript string to name any standard `Font.TextStyle` value, e.g. `'title'`.
