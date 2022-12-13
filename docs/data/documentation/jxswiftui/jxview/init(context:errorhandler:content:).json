@@ -177,7 +177,7 @@
             },
             {
               "kind" : "text",
-              "text" : ")? = { print(\"\\($0)\") }, "
+              "text" : ")? = nil, "
             },
             {
               "kind" : "externalParam",
@@ -234,24 +234,16 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "An existing context. The ",
+                  "text" : "An existing context. If not supplied, we use the ",
                   "type" : "text"
                 },
                 {
-                  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI",
+                  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXEnvironment",
                   "isActive" : true,
                   "type" : "reference"
                 },
                 {
-                  "text" : " module must be registered with the context. If not supplied, we create a new context and register ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "JXSwiftUI",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : " for this view.",
+                  "text" : " value, which defaults to a new context.",
                   "type" : "text"
                 }
               ],
@@ -265,7 +257,16 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "An optional handler for JavaScript errors. If not supplied, we print the error to the console.",
+                  "text" : "An optional handler for JavaScript errors. If not supplied, we use the ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXEnvironment",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " value, which defaults to printing errors to the console.",
                   "type" : "text"
                 }
               ],
@@ -347,6 +348,53 @@
   "title" : "JXSwiftUI",
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXEnvironment": {
+  "abstract" : [
+    {
+      "code" : "JXSwiftUI",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " contextual information passed through the environment. Any context and error handler passed to the ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXView",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " constructor override environmental values and establish new environment defaults for downstream views.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "JXEnvironment"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXEnvironment",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "JXEnvironment"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXEnvironment",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxenvironment"
 },
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXView": {
   "abstract" : [

@@ -31,9 +31,9 @@ struct ZStackElement: Element {
         self.content = try Content(jxValue: jxValue["content"])
     }
 
-    func view(errorHandler: ErrorHandler?) -> any View {
+    func view(errorHandler: ErrorHandler) -> any View {
         return ZStack(alignment: alignment) {
-            let errorHandler = errorHandler?.in(.zstack)
+            let errorHandler = errorHandler.in(.zstack)
             content.elementArray(errorHandler: errorHandler)
                 .containerView(errorHandler: errorHandler)
         }

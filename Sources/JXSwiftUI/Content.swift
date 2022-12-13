@@ -38,7 +38,7 @@ struct Content {
         self.element = NativeElement(view: view)
     }
     
-    func element(errorHandler: ErrorHandler?) -> Element {
+    func element(errorHandler: ErrorHandler) -> Element {
         if let element = self.element {
             return element
         }
@@ -48,12 +48,12 @@ struct Content {
             }
             return try extractElement(for: jxValue, errorHandler: errorHandler) ?? EmptyElement()
         } catch {
-            errorHandler?.handle(error)
+            errorHandler.handle(error)
             return EmptyElement()
         }
     }
     
-    func elementArray(errorHandler: ErrorHandler?) -> [Element] {
+    func elementArray(errorHandler: ErrorHandler) -> [Element] {
         do {
             if self.element != nil {
                 throw JXError.contentNotArray()
@@ -63,12 +63,12 @@ struct Content {
             }
             return try extractElementArray(for: jxValue, errorHandler: errorHandler)
         } catch {
-            errorHandler?.handle(error)
+            errorHandler.handle(error)
             return []
         }
     }
     
-    private func extractElementArray(for jxValue: JXValue, errorHandler: ErrorHandler?) throws -> [Element] {
+    private func extractElementArray(for jxValue: JXValue, errorHandler: ErrorHandler) throws -> [Element] {
         var arrayValue = jxValue
         if jxValue.isFunction {
             arrayValue = try jxValue.call()
@@ -77,17 +77,17 @@ struct Content {
             throw JXError(message: "Given JXSwiftUI content must be a JavaScript array or a function that returns an array")
         }
         return try arrayValue.array.enumerated().compactMap {
-            let errorHandler = errorHandler?.in("\($0.offset)")
+            let errorHandler = errorHandler.in("\($0.offset)")
             guard !jxValue.isNullOrUndefined else {
                 let error = JXError(message: "Element of the JXSwiftUI content array has a null or undefined value")
-                errorHandler?.handle(error)
+                errorHandler.handle(error)
                 return nil
             }
             return try extractElement(for: $0.element, errorHandler: errorHandler)
         }
     }
     
-    private func extractElement(for jxValue: JXValue, errorHandler: ErrorHandler?) throws -> Element? {
+    private func extractElement(for jxValue: JXValue, errorHandler: ErrorHandler) throws -> Element? {
         var elementValue = jxValue
         if jxValue.isFunction {
             elementValue = try jxValue.call()
@@ -111,7 +111,7 @@ struct Content {
             return element
         } catch {
             // Handle constructor errors here where we know what we were trying to construct
-            errorHandler?.in(elementType).handle(error)
+            errorHandler.in(elementType).handle(error)
             return nil
         }
     }

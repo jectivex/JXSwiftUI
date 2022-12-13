@@ -26,7 +26,7 @@ struct TapGestureModifier: Element {
         }
     }
 
-    func view(errorHandler: ErrorHandler?) -> any View {
+    func view(errorHandler: ErrorHandler) -> any View {
         return target.element(errorHandler: errorHandler)
             .view(errorHandler: errorHandler)
             .onTapGesture(count: count) {
@@ -51,11 +51,11 @@ function(countOrAction, action) {
 """
     }
 
-    private func onTapGesture(errorHandler: ErrorHandler?) {
+    private func onTapGesture(errorHandler: ErrorHandler) {
         do {
             try onTapFunction.call()
         } catch {
-            errorHandler?.in(.tapGestureModifier).handle(error)
+            errorHandler.in(.tapGestureModifier).handle(error)
         }
     }
 }

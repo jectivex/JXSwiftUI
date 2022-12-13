@@ -43,7 +43,7 @@ struct PaddingModifier: Element {
         }
     }
     
-    func view(errorHandler: ErrorHandler?) -> any View {
+    func view(errorHandler: ErrorHandler) -> any View {
         return padding(target.element(errorHandler: errorHandler)
             .view(errorHandler: errorHandler))
     }

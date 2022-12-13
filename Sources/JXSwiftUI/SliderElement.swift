@@ -78,13 +78,13 @@ struct SliderElement: Element {
         }
     }
 
-    func view(errorHandler: ErrorHandler?) -> any View {
-        let errorHandler = errorHandler?.in(.slider)
+    func view(errorHandler: ErrorHandler) -> any View {
+        let errorHandler = errorHandler.in(.slider)
         // Is there any way to support cases with or withour a step without repeating all code?
         if let step = self.step {
             return Slider(value: value, in: minimumValue...maximumValue, step: step) {
                 if let label = self.label {
-                    let labelErrorHandler = errorHandler?.attr("label")
+                    let labelErrorHandler = errorHandler.attr("label")
                     label.element(errorHandler: labelErrorHandler)
                         .view(errorHandler: labelErrorHandler)
                         .eraseToAnyView()
@@ -93,7 +93,7 @@ struct SliderElement: Element {
                 }
             } minimumValueLabel: {
                 if let minimumValueLabel = self.minimumValueLabel {
-                    let labelErrorHandler = errorHandler?.attr("minimumValueLabel")
+                    let labelErrorHandler = errorHandler.attr("minimumValueLabel")
                     minimumValueLabel.element(errorHandler: labelErrorHandler)
                         .view(errorHandler: labelErrorHandler)
                         .eraseToAnyView()
@@ -102,7 +102,7 @@ struct SliderElement: Element {
                 }
             } maximumValueLabel: {
                 if let maximumValueLabel = self.maximumValueLabel {
-                    let labelErrorHandler = errorHandler?.attr("maximumValueLabel")
+                    let labelErrorHandler = errorHandler.attr("maximumValueLabel")
                     maximumValueLabel.element(errorHandler: labelErrorHandler)
                         .view(errorHandler: labelErrorHandler)
                         .eraseToAnyView()
@@ -113,7 +113,7 @@ struct SliderElement: Element {
         } else {
             return Slider(value: value, in: minimumValue...maximumValue) {
                 if let label = self.label {
-                    let labelErrorHandler = errorHandler?.attr("label")
+                    let labelErrorHandler = errorHandler.attr("label")
                     label.element(errorHandler: labelErrorHandler)
                         .view(errorHandler: labelErrorHandler)
                         .eraseToAnyView()
@@ -122,7 +122,7 @@ struct SliderElement: Element {
                 }
             } minimumValueLabel: {
                 if let minimumValueLabel = self.minimumValueLabel {
-                    let labelErrorHandler = errorHandler?.attr("minimumValueLabel")
+                    let labelErrorHandler = errorHandler.attr("minimumValueLabel")
                     minimumValueLabel.element(errorHandler: labelErrorHandler)
                         .view(errorHandler: labelErrorHandler)
                         .eraseToAnyView()
@@ -131,7 +131,7 @@ struct SliderElement: Element {
                 }
             } maximumValueLabel: {
                 if let maximumValueLabel = self.maximumValueLabel {
-                    let labelErrorHandler = errorHandler?.attr("maximumValueLabel")
+                    let labelErrorHandler = errorHandler.attr("maximumValueLabel")
                     maximumValueLabel.element(errorHandler: labelErrorHandler)
                         .view(errorHandler: labelErrorHandler)
                         .eraseToAnyView()

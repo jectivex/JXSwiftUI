@@ -35,9 +35,9 @@ struct VStackElement: Element {
         self.content = try Content(jxValue: jxValue["content"])
     }
 
-    func view(errorHandler: ErrorHandler?) -> any View {
+    func view(errorHandler: ErrorHandler) -> any View {
         return VStack(alignment: alignment, spacing: spacing) {
-            let errorHandler = errorHandler?.in(.vstack)
+            let errorHandler = errorHandler.in(.vstack)
             content.elementArray(errorHandler: errorHandler)
                 .containerView(errorHandler: errorHandler)
         }

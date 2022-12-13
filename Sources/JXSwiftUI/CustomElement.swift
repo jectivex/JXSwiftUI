@@ -17,8 +17,8 @@ struct CustomElement: Element {
         return .custom
     }
     
-    func view(errorHandler: ErrorHandler?) -> any View {
-        return CustomView(element: self, errorHandler: errorHandler?.reset.in(jsClassName))
+    func view(errorHandler: ErrorHandler) -> any View {
+        return CustomView(element: self, errorHandler: errorHandler.reset.in(jsClassName))
     }
     
     static func js(namespace: JXNamespace) -> String? {
@@ -28,7 +28,7 @@ struct CustomElement: Element {
 
 private struct CustomView: View {
     let element: CustomElement
-    let errorHandler: ErrorHandler?
+    let errorHandler: ErrorHandler
 
     @StateObject private var jsState = JSState()
     
@@ -45,7 +45,7 @@ private struct CustomView: View {
             return try Content(jxValue: element.jxValue.invokeMethod(JSCodeGenerator.bodyFunction))
                 .element(errorHandler: errorHandler)
         } catch {
-            errorHandler?.handle(error)
+            errorHandler.handle(error)
             return EmptyElement()
         }
     }

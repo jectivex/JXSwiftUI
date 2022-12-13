@@ -14,6 +14,36 @@
                 "type" : "groupMarker"
               },
               {
+                "path" : "\/documentation\/jxswiftui\/jxenvironment\/init(context:errorhandler:)",
+                "title" : "init(context: JXContext?, errorHandler: ((Error) -> Void)?)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxenvironment\/context",
+                "title" : "let context: JXContext",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxenvironment\/errorhandler",
+                "title" : "let errorHandler: (Error) -> Void",
+                "type" : "property"
+              }
+            ],
+            "path" : "\/documentation\/jxswiftui\/jxenvironment",
+            "title" : "JXEnvironment",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
                 "path" : "\/documentation\/jxswiftui\/jxswiftui\/init()",
                 "title" : "init()",
                 "type" : "init"
@@ -94,16 +124,6 @@
               {
                 "path" : "\/documentation\/jxswiftui\/jxview\/body",
                 "title" : "var body: some View",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/jxswiftui\/jxview\/context",
-                "title" : "let context: JXContext",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/jxswiftui\/jxview\/errorhandler",
-                "title" : "let errorHandler: ((Error) -> Void)?",
                 "type" : "property"
               },
               {
@@ -1356,6 +1376,11 @@
                   {
                     "path" : "\/documentation\/jxswiftui\/jxview\/itemprovider(_:)",
                     "title" : "func itemProvider(Optional<() -> NSItemProvider?>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/jxenvironment(_:errorhandler:)",
+                    "title" : "func jxEnvironment(JXContext?, errorHandler: ((Error) -> Void)?) -> some View",
                     "type" : "method"
                   },
                   {

@@ -21,13 +21,13 @@ struct NavigationTitleModifier: Element {
         self.title = try Content(jxValue: jxValue["title"])
     }
 
-    func view(errorHandler: ErrorHandler?) -> any View {
+    func view(errorHandler: ErrorHandler) -> any View {
         let targetView = target.element(errorHandler: errorHandler)
             .view(errorHandler: errorHandler)
-        let titleErrorHandler = errorHandler?.in(.navigationTitleModifier)
+        let titleErrorHandler = errorHandler.in(.navigationTitleModifier)
         guard let titleText = title.element(errorHandler: titleErrorHandler)
             .view(errorHandler: titleErrorHandler) as? Text else {
-            titleErrorHandler?.handle(JXError(message: "Expected a string or Text view"))
+            titleErrorHandler.handle(JXError(message: "Expected a string or Text view"))
             return targetView
         }
         return targetView.navigationTitle(titleText)

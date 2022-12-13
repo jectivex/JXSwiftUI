@@ -18,7 +18,7 @@ struct EmptyElement: Element {
     init() {
     }
     
-    func view(errorHandler: ErrorHandler?) -> any View {
+    func view(errorHandler: ErrorHandler) -> any View {
         return EmptyView()
     }
     

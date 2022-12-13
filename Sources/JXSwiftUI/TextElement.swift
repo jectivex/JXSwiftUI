@@ -62,15 +62,15 @@ struct TextElement: Element {
         self.decorations = []
     }
 
-    func view(errorHandler: ErrorHandler?) -> any View {
-        let errorHandler = errorHandler?.in(.text)
+    func view(errorHandler: ErrorHandler) -> any View {
+        let errorHandler = errorHandler.in(.text)
         var text: Text
         if let verbatim = self.verbatim {
             text = Text(verbatim: verbatim)
         } else if let key = self.text {
             text = Text(key)
         } else {
-            errorHandler?.handle(JXError.internalError("Missing text"))
+            errorHandler.handle(JXError.internalError("Missing text"))
             return EmptyView()
         }
         for decoration in decorations {

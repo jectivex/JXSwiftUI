@@ -14,7 +14,7 @@ struct NativeElement: Element {
         self.view = view
     }
 
-    func view(errorHandler: ErrorHandler?) -> any View {
+    func view(errorHandler: ErrorHandler) -> any View {
         return view
     }
     

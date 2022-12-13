@@ -1,0 +1,327 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXEnvironment"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXEnvironment\/init(context:errorHandler:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:9JXSwiftUI13JXEnvironmentV7context12errorHandlerAC5JXKit9JXContextCSg_ys5Error_pcSgtcfc",
+    "fragments" : [
+      {
+        "kind" : "identifier",
+        "text" : "init"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "context"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:5JXKit9JXContextC",
+        "text" : "JXContext"
+      },
+      {
+        "kind" : "text",
+        "text" : "?, "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "errorHandler"
+      },
+      {
+        "kind" : "text",
+        "text" : ": (("
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:s5ErrorP",
+        "text" : "Error"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:s4Voida",
+        "text" : "Void"
+      },
+      {
+        "kind" : "text",
+        "text" : ")?)"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "JXSwiftUI"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Initializer",
+    "symbolKind" : "init",
+    "title" : "init(context:errorHandler:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "init"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "context"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:5JXKit9JXContextC",
+              "text" : "JXContext"
+            },
+            {
+              "kind" : "text",
+              "text" : "? = nil, "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "errorHandler"
+            },
+            {
+              "kind" : "text",
+              "text" : ": (("
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s5ErrorP",
+              "text" : "Error"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s4Voida",
+              "text" : "Void"
+            },
+            {
+              "kind" : "text",
+              "text" : ")? = nil)"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/jxswiftui\/jxenvironment\/init(context:errorhandler:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://JXSwiftUI/documentation/JXSwiftUI": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "JXSwiftUI",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXEnvironment": {
+  "abstract" : [
+    {
+      "code" : "JXSwiftUI",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " contextual information passed through the environment. Any context and error handler passed to the ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXView",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " constructor override environmental values and establish new environment defaults for downstream views.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "JXEnvironment"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXEnvironment",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "JXEnvironment"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXEnvironment",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxenvironment"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXEnvironment/init(context:errorHandler:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5JXKit9JXContextC",
+      "text" : "JXContext"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "errorHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : ": (("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5ErrorP",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ")?)"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXEnvironment\/init(context:errorHandler:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(context:errorHandler:)",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxenvironment\/init(context:errorhandler:)"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXView": {
+  "abstract" : [
+    {
+      "text" : "A SwiftUI view that displays content defined in JavaScript.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "JXView"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXView",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "JXView"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXView",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxview"
+}
+}
+}

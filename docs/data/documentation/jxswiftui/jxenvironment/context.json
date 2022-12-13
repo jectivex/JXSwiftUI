@@ -3,17 +3,17 @@
     "paths" : [
       [
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI",
-        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXView"
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXEnvironment"
       ]
     ]
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXView\/errorHandler"
+    "url" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXEnvironment\/context"
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:9JXSwiftUI6JXViewV12errorHandlerys5Error_pcSgvp",
+    "externalID" : "s:9JXSwiftUI13JXEnvironmentV7context5JXKit9JXContextCvp",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -25,29 +25,16 @@
       },
       {
         "kind" : "identifier",
-        "text" : "errorHandler"
+        "text" : "context"
       },
       {
         "kind" : "text",
-        "text" : ": (("
+        "text" : ": "
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:s5ErrorP",
-        "text" : "Error"
-      },
-      {
-        "kind" : "text",
-        "text" : ") -> "
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:s4Voida",
-        "text" : "Void"
-      },
-      {
-        "kind" : "text",
-        "text" : ")?"
+        "preciseIdentifier" : "s:5JXKit9JXContextC",
+        "text" : "JXContext"
       }
     ],
     "modules" : [
@@ -58,7 +45,7 @@
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",
-    "title" : "errorHandler"
+    "title" : "context"
   },
   "primaryContentSections" : [
     {
@@ -81,29 +68,16 @@
             },
             {
               "kind" : "identifier",
-              "text" : "errorHandler"
+              "text" : "context"
             },
             {
               "kind" : "text",
-              "text" : ": (("
+              "text" : ": "
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s5ErrorP",
-              "text" : "Error"
-            },
-            {
-              "kind" : "text",
-              "text" : ") -> "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s4Voida",
-              "text" : "Void"
-            },
-            {
-              "kind" : "text",
-              "text" : ")?"
+              "preciseIdentifier" : "s:5JXKit9JXContextC",
+              "text" : "JXContext"
             }
           ]
         }
@@ -122,7 +96,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/jxswiftui\/jxview\/errorhandler"
+        "\/documentation\/jxswiftui\/jxenvironment\/context"
       ],
       "traits" : [
         {
@@ -143,6 +117,87 @@
   "title" : "JXSwiftUI",
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXEnvironment": {
+  "abstract" : [
+    {
+      "code" : "JXSwiftUI",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " contextual information passed through the environment. Any context and error handler passed to the ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXView",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " constructor override environmental values and establish new environment defaults for downstream views.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "JXEnvironment"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXEnvironment",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "JXEnvironment"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXEnvironment",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxenvironment"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXEnvironment/context": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5JXKit9JXContextC",
+      "text" : "JXContext"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXEnvironment\/context",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "context",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxenvironment\/context"
 },
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXView": {
   "abstract" : [
@@ -177,53 +232,6 @@
   "title" : "JXView",
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxview"
-},
-"doc://JXSwiftUI/documentation/JXSwiftUI/JXView/errorHandler": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "errorHandler"
-    },
-    {
-      "kind" : "text",
-      "text" : ": (("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:s5ErrorP",
-      "text" : "Error"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:s4Voida",
-      "text" : "Void"
-    },
-    {
-      "kind" : "text",
-      "text" : ")?"
-    }
-  ],
-  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXView\/errorHandler",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "errorHandler",
-  "type" : "topic",
-  "url" : "\/documentation\/jxswiftui\/jxview\/errorhandler"
 }
 }
 }

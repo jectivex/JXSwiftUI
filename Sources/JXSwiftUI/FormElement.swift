@@ -23,9 +23,9 @@ struct FormElement: Element {
         self.content = try Content(jxValue: jxValue["content"])
     }
 
-    func view(errorHandler: ErrorHandler?) -> any View {
+    func view(errorHandler: ErrorHandler) -> any View {
         return Form {
-            let errorHandler = errorHandler?.in(.form)
+            let errorHandler = errorHandler.in(.form)
             content.elementArray(errorHandler: errorHandler)
                 .containerView(errorHandler: errorHandler)
         }

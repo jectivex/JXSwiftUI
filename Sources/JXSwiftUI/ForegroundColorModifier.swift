@@ -26,7 +26,7 @@ struct ForegroundColorModifier: Element {
         }
     }
 
-    func view(errorHandler: ErrorHandler?) -> any View {
+    func view(errorHandler: ErrorHandler) -> any View {
         return target.element(errorHandler: errorHandler)
             .view(errorHandler: errorHandler)
             .foregroundColor(color)
