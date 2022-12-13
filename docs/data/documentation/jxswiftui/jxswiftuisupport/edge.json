@@ -1,11 +1,19 @@
 {
   "abstract" : [
     {
-      "text" : "A ",
+      "text" : "Use a JavaScript string to name any ",
       "type" : "text"
     },
     {
-      "code" : "SwiftUI.EmptyView",
+      "code" : "SwiftUI.Edge",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " value, e.g. ",
+      "type" : "text"
+    },
+    {
+      "code" : "'top'",
       "type" : "codeVoice"
     },
     {
@@ -23,12 +31,12 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/EmptyView"
+    "url" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Edge"
   },
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "JXSwiftUI",
-    "externalID" : "s:9JXSwiftUI0A9UISupportO9EmptyViewO",
+    "externalID" : "s:9JXSwiftUI0A9UISupportO4EdgeO",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -40,7 +48,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "EmptyView"
+        "text" : "Edge"
       }
     ],
     "modules" : [
@@ -51,13 +59,13 @@
     "navigatorTitle" : [
       {
         "kind" : "identifier",
-        "text" : "EmptyView"
+        "text" : "Edge"
       }
     ],
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
-    "title" : "JXSwiftUISupport.EmptyView"
+    "title" : "JXSwiftUISupport.Edge"
   },
   "primaryContentSections" : [
     {
@@ -80,39 +88,12 @@
             },
             {
               "kind" : "identifier",
-              "text" : "EmptyView"
+              "text" : "Edge"
             }
           ]
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "overview",
-          "level" : 2,
-          "text" : "Overview",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "Supported usage:",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "code" : [
-            "- EmptyView()"
-          ],
-          "syntax" : null,
-          "type" : "codeListing"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -126,7 +107,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/jxswiftui\/jxswiftuisupport\/emptyview"
+        "\/documentation\/jxswiftui\/jxswiftuisupport\/edge"
       ],
       "traits" : [
         {
@@ -182,14 +163,22 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport"
 },
-"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/EmptyView": {
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/Edge": {
   "abstract" : [
     {
-      "text" : "A ",
+      "text" : "Use a JavaScript string to name any ",
       "type" : "text"
     },
     {
-      "code" : "SwiftUI.EmptyView",
+      "code" : "SwiftUI.Edge",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " value, e.g. ",
+      "type" : "text"
+    },
+    {
+      "code" : "'top'",
       "type" : "codeVoice"
     },
     {
@@ -208,21 +197,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "EmptyView"
+      "text" : "Edge"
     }
   ],
-  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/EmptyView",
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Edge",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "EmptyView"
+      "text" : "Edge"
     }
   ],
   "role" : "symbol",
-  "title" : "JXSwiftUISupport.EmptyView",
+  "title" : "JXSwiftUISupport.Edge",
   "type" : "topic",
-  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/emptyview"
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/edge"
 }
 }
 }

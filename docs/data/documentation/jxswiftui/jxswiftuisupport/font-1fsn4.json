@@ -11,14 +11,6 @@
     {
       "text" : " value.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Supported usage:",
-      "type" : "text"
     }
   ],
   "hierarchy" : {
@@ -104,6 +96,15 @@
           "type" : "heading"
         },
         {
+          "inlineContent" : [
+            {
+              "text" : "Supported usage:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
           "code" : [
             "- Font.body, Font.title, etc",
             "- Font.system(size)",
@@ -118,7 +119,15 @@
         {
           "inlineContent" : [
             {
-              "text" : "Supported props for ",
+              "text" : "Supported ",
+              "type" : "text"
+            },
+            {
+              "code" : "props",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " for ",
               "type" : "text"
             },
             {
@@ -145,7 +154,15 @@
         {
           "inlineContent" : [
             {
-              "text" : "Supported props for ",
+              "text" : "Supported ",
+              "type" : "text"
+            },
+            {
+              "code" : "props",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " for ",
               "type" : "text"
             },
             {
@@ -179,8 +196,8 @@
         },
         {
           "code" : [
-            "- bold(), weight(Font.Weight): Return a derived font with the given weight",
-            "- italic(), monospaced(), monospacedDigit(), smallCaps(), lowercaseSmallCaps(), uppercaseSmallCaps(): Return a derived font with the given style"
+            "- .bold(), .weight(Font.Weight): Return a derived font with the given weight",
+            "- .italic(), .monospaced(), .monospacedDigit(), .smallCaps(), .lowercaseSmallCaps(), .uppercaseSmallCaps(): Return a derived font with the given style"
           ],
           "syntax" : null,
           "type" : "codeListing"
@@ -225,7 +242,7 @@
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport": {
   "abstract" : [
     {
-      "text" : "Umbrella for supported SwiftUI constructs.",
+      "text" : "Documentation on all supported SwiftUI constructs.",
       "type" : "text"
     }
   ],
@@ -268,14 +285,6 @@
     },
     {
       "text" : " value.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Supported usage:",
       "type" : "text"
     }
   ],

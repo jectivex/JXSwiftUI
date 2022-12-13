@@ -42,9 +42,6 @@ Browse the [API Documentation].
     - Pass JS state var to native view as binding.
 - Allow JS views to pass JS content views to custom native container views.
 - Supply context and error handler to downstream native views that want to bridge back to JavaScript with a `JXView`.
-    - Wrapped in a single JXSwiftUIContext object?
-    - As environment values? Or harden and use JXKit's "current" context stack?
-    - Use JXContext.current support we want to add to JXBridge?
 - JS support for checking platform (iOS vs. macOS, etc).
 - String localization.
 - Custom color and resource loading plugins.

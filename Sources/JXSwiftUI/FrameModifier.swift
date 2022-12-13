@@ -4,17 +4,18 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// Sets a frame on a target view.
+    ///
     /// Supported calls:
     ///
     ///     - .frame(with, height)
     ///     - .frame(width, height, alignment)
     ///     - .frame({props})
     ///
-    /// Supported props:
+    /// Supported `props`:
     ///
     ///     - width
     ///     - height
-    ///     - alignment
+    ///     - alignment: Alignment
     ///
     /// Or:
     /// 
@@ -24,7 +25,7 @@ extension JXSwiftUISupport {
     ///     - minHeight
     ///     - idealHeight
     ///     - maxHeight
-    ///     - alignment
+    ///     - alignment: Alignment
     public enum frame {}
 }
 

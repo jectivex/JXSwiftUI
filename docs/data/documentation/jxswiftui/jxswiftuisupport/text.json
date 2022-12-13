@@ -11,14 +11,6 @@
     {
       "text" : ".",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Supported usage:",
-      "type" : "text"
     }
   ],
   "hierarchy" : {
@@ -104,6 +96,15 @@
           "type" : "heading"
         },
         {
+          "inlineContent" : [
+            {
+              "text" : "Supported usage:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
           "code" : [
             "- Text('text\/markdown')",
             "- Text({props}, 'text\/markdown')"
@@ -114,7 +115,15 @@
         {
           "inlineContent" : [
             {
-              "text" : "Supported props:",
+              "text" : "Supported ",
+              "type" : "text"
+            },
+            {
+              "code" : "props",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
               "type" : "text"
             }
           ],
@@ -138,12 +147,12 @@
         },
         {
           "code" : [
-            "- fontWeight(FontWeight)",
-            "- bold(boolean=true)",
-            "- italic(boolean=true)",
-            "- monospacedDigit(boolean=true)",
-            "- strikethrough(boolean=true)",
-            "- underline(boolean=true)"
+            "- .fontWeight(FontWeight)",
+            "- .bold(boolean=true)",
+            "- .italic(boolean=true)",
+            "- .monospacedDigit(boolean=true)",
+            "- .strikethrough(boolean=true)",
+            "- .underline(boolean=true)"
           ],
           "syntax" : null,
           "type" : "codeListing"
@@ -188,7 +197,7 @@
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport": {
   "abstract" : [
     {
-      "text" : "Umbrella for supported SwiftUI constructs.",
+      "text" : "Documentation on all supported SwiftUI constructs.",
       "type" : "text"
     }
   ],
@@ -231,14 +240,6 @@
     },
     {
       "text" : ".",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Supported usage:",
       "type" : "text"
     }
   ],

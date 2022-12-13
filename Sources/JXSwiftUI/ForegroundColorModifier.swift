@@ -4,6 +4,7 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// Sets a foreground color on a target view.
+    /// 
     /// Supported calls:
     ///
     ///     - .foregroundColor('name')

@@ -11,14 +11,6 @@
     {
       "text" : ".",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Supported usage:",
-      "type" : "text"
     }
   ],
   "hierarchy" : {
@@ -104,6 +96,15 @@
           "type" : "heading"
         },
         {
+          "inlineContent" : [
+            {
+              "text" : "Supported usage:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
           "code" : [
             "- Section([content])",
             "- Section('header', [content])",
@@ -115,7 +116,15 @@
         {
           "inlineContent" : [
             {
-              "text" : "Supported props:",
+              "text" : "Supported ",
+              "type" : "text"
+            },
+            {
+              "code" : "props",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
               "type" : "text"
             }
           ],
@@ -132,7 +141,15 @@
         {
           "inlineContent" : [
             {
-              "text" : "Supported section content:",
+              "text" : "Supported section ",
+              "type" : "text"
+            },
+            {
+              "code" : "content",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
               "type" : "text"
             }
           ],
@@ -149,7 +166,15 @@
         {
           "inlineContent" : [
             {
-              "text" : "Supported header and footer content:",
+              "text" : "Supported header and footer ",
+              "type" : "text"
+            },
+            {
+              "code" : "content",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
               "type" : "text"
             }
           ],
@@ -203,7 +228,7 @@
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport": {
   "abstract" : [
     {
-      "text" : "Umbrella for supported SwiftUI constructs.",
+      "text" : "Documentation on all supported SwiftUI constructs.",
       "type" : "text"
     }
   ],
@@ -246,14 +271,6 @@
     },
     {
       "text" : ".",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Supported usage:",
       "type" : "text"
     }
   ],

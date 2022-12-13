@@ -4,17 +4,18 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// A `SwiftUI.VStack`.
+    ///
     /// Supported usage:
     ///
     ///     - VStack([content])
     ///     - VStack({props}, [content])
     ///
-    /// Supported props:
+    /// Supported `props`:
     ///
     ///     - alignment: HorizontalAlignment
     ///     - spacing
     ///
-    /// Supported content:
+    /// Supported `content`:
     ///
     ///     - View array
     ///     - Anonymous function returning a View array

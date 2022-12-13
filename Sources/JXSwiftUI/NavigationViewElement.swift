@@ -4,11 +4,12 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// A `SwiftUI.NavigationView`.
+    ///
     /// Supported usage:
     ///
     ///     - NavigationView(content)
     ///
-    /// Supported content:
+    /// Supported `content`:
     ///
     ///     - View
     ///     - Anonymous function returning a View

@@ -116,7 +116,7 @@
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport": {
   "abstract" : [
     {
-      "text" : "Umbrella for supported SwiftUI constructs.",
+      "text" : "Documentation on all supported SwiftUI constructs.",
       "type" : "text"
     }
   ],

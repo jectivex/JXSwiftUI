@@ -4,23 +4,24 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// A `SwiftUI.Section`.
+    ///
     /// Supported usage:
     ///
     ///     - Section([content])
     ///     - Section('header', [content])
     ///     - Section({props}, [content])
     ///
-    /// Supported props:
+    /// Supported `props`:
     ///
     ///     - header: String or content
     ///     - footer: String or content
     ///
-    /// Supported section content:
+    /// Supported section `content`:
     ///
     ///     - View array
     ///     - Anonymous function returning a View array
     ///
-    /// Supported header and footer content:
+    /// Supported header and footer `content`:
     ///
     ///     - View
     ///     - Anonymous function returning a View

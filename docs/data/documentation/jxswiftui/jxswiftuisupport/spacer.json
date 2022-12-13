@@ -11,14 +11,6 @@
     {
       "text" : ".",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Supported usage:",
-      "type" : "text"
     }
   ],
   "hierarchy" : {
@@ -104,6 +96,15 @@
           "type" : "heading"
         },
         {
+          "inlineContent" : [
+            {
+              "text" : "Supported usage:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
           "code" : [
             "- Spacer()",
             "- Spacer(minLength)"
@@ -151,7 +152,7 @@
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport": {
   "abstract" : [
     {
-      "text" : "Umbrella for supported SwiftUI constructs.",
+      "text" : "Documentation on all supported SwiftUI constructs.",
       "type" : "text"
     }
   ],
@@ -194,14 +195,6 @@
     },
     {
       "text" : ".",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Supported usage:",
       "type" : "text"
     }
   ],

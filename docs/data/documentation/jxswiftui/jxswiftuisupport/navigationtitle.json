@@ -3,14 +3,6 @@
     {
       "text" : "Sets a navigation title on a target view.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Supported calls:",
-      "type" : "text"
     }
   ],
   "hierarchy" : {
@@ -96,6 +88,15 @@
           "type" : "heading"
         },
         {
+          "inlineContent" : [
+            {
+              "text" : "Supported calls:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
           "code" : [
             "- .navigationTitle('title')",
             "- .navigationTitle(Text)"
@@ -143,7 +144,7 @@
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport": {
   "abstract" : [
     {
-      "text" : "Umbrella for supported SwiftUI constructs.",
+      "text" : "Documentation on all supported SwiftUI constructs.",
       "type" : "text"
     }
   ],
@@ -178,14 +179,6 @@
   "abstract" : [
     {
       "text" : "Sets a navigation title on a target view.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Supported calls:",
       "type" : "text"
     }
   ],

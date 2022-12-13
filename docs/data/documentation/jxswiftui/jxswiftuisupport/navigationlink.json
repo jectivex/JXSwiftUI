@@ -11,14 +11,6 @@
     {
       "text" : ".",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Supported usage:",
-      "type" : "text"
     }
   ],
   "hierarchy" : {
@@ -104,6 +96,15 @@
           "type" : "heading"
         },
         {
+          "inlineContent" : [
+            {
+              "text" : "Supported usage:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
           "code" : [
             "- NavigationLink('label', () => { destination })",
             "- NavigationLink(() => { destination }, content)"
@@ -114,7 +115,15 @@
         {
           "inlineContent" : [
             {
-              "text" : "Supported destination function:",
+              "text" : "Supported ",
+              "type" : "text"
+            },
+            {
+              "code" : "destination",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
               "type" : "text"
             }
           ],
@@ -130,7 +139,15 @@
         {
           "inlineContent" : [
             {
-              "text" : "Supported content:",
+              "text" : "Supported ",
+              "type" : "text"
+            },
+            {
+              "code" : "content",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
               "type" : "text"
             }
           ],
@@ -184,7 +201,7 @@
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport": {
   "abstract" : [
     {
-      "text" : "Umbrella for supported SwiftUI constructs.",
+      "text" : "Documentation on all supported SwiftUI constructs.",
       "type" : "text"
     }
   ],
@@ -227,14 +244,6 @@
     },
     {
       "text" : ".",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Supported usage:",
       "type" : "text"
     }
   ],

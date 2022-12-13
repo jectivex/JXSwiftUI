@@ -4,11 +4,12 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// A `SwiftUI.List`.
+    ///
     /// Supported usage:
     ///
     ///     - List([content])
     ///
-    /// Supported content:
+    /// Supported `content`:
     ///
     ///     - View array
     ///     - Anonymous function returning a View array

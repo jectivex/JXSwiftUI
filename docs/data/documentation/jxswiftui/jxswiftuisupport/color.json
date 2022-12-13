@@ -11,14 +11,6 @@
     {
       "text" : " value.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Supported usage:",
-      "type" : "text"
     }
   ],
   "hierarchy" : {
@@ -104,6 +96,15 @@
           "type" : "heading"
         },
         {
+          "inlineContent" : [
+            {
+              "text" : "Supported usage:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
           "code" : [
             "- Color.red, Color.blue, etc",
             "- Color.system({props})",
@@ -115,7 +116,15 @@
         {
           "inlineContent" : [
             {
-              "text" : "Supported props:",
+              "text" : "Supported ",
+              "type" : "text"
+            },
+            {
+              "code" : "props",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
               "type" : "text"
             }
           ],
@@ -142,7 +151,7 @@
         },
         {
           "code" : [
-            "- opacity(value): Derive a color with the given opacity"
+            "- .opacity(value): Derive a color with the given opacity"
           ],
           "syntax" : null,
           "type" : "codeListing"
@@ -187,7 +196,7 @@
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport": {
   "abstract" : [
     {
-      "text" : "Umbrella for supported SwiftUI constructs.",
+      "text" : "Documentation on all supported SwiftUI constructs.",
       "type" : "text"
     }
   ],
@@ -230,14 +239,6 @@
     },
     {
       "text" : " value.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Supported usage:",
       "type" : "text"
     }
   ],

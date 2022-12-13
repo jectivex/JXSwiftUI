@@ -4,11 +4,12 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// A `SwiftUI.Form`.
+    ///
     /// Supported usage:
     ///
     ///     - Form([content])
     ///
-    /// Supported content:
+    /// Supported `content`:
     ///
     ///     - View array
     ///     - Anonymous function returning a View array

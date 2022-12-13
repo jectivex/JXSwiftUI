@@ -4,6 +4,7 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// Sets a font on a target view.
+    /// 
     /// Supported calls:
     ///
     ///     - .font(FontTextStyle)

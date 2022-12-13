@@ -3,14 +3,6 @@
     {
       "text" : "Sets a background on a target view.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Supported calls:",
-      "type" : "text"
     }
   ],
   "hierarchy" : {
@@ -96,6 +88,15 @@
           "type" : "heading"
         },
         {
+          "inlineContent" : [
+            {
+              "text" : "Supported calls:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
           "code" : [
             "- .background({props}, content)",
             "- .background(content)"
@@ -106,7 +107,15 @@
         {
           "inlineContent" : [
             {
-              "text" : "Supported props:",
+              "text" : "Supported ",
+              "type" : "text"
+            },
+            {
+              "code" : "props",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
               "type" : "text"
             }
           ],
@@ -122,7 +131,15 @@
         {
           "inlineContent" : [
             {
-              "text" : "Supported content:",
+              "text" : "Supported ",
+              "type" : "text"
+            },
+            {
+              "code" : "content",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
               "type" : "text"
             }
           ],
@@ -177,7 +194,7 @@
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport": {
   "abstract" : [
     {
-      "text" : "Umbrella for supported SwiftUI constructs.",
+      "text" : "Documentation on all supported SwiftUI constructs.",
       "type" : "text"
     }
   ],
@@ -212,14 +229,6 @@
   "abstract" : [
     {
       "text" : "Sets a background on a target view.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Supported calls:",
       "type" : "text"
     }
   ],

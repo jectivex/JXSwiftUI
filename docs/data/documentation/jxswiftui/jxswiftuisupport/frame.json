@@ -3,14 +3,6 @@
     {
       "text" : "Sets a frame on a target view.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Supported calls:",
-      "type" : "text"
     }
   ],
   "hierarchy" : {
@@ -96,6 +88,15 @@
           "type" : "heading"
         },
         {
+          "inlineContent" : [
+            {
+              "text" : "Supported calls:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
           "code" : [
             "- .frame(with, height)",
             "- .frame(width, height, alignment)",
@@ -107,7 +108,15 @@
         {
           "inlineContent" : [
             {
-              "text" : "Supported props:",
+              "text" : "Supported ",
+              "type" : "text"
+            },
+            {
+              "code" : "props",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
               "type" : "text"
             }
           ],
@@ -117,7 +126,7 @@
           "code" : [
             "- width",
             "- height",
-            "- alignment"
+            "- alignment: Alignment"
           ],
           "syntax" : null,
           "type" : "codeListing"
@@ -139,7 +148,7 @@
             "- minHeight",
             "- idealHeight",
             "- maxHeight",
-            "- alignment"
+            "- alignment: Alignment"
           ],
           "syntax" : null,
           "type" : "codeListing"
@@ -184,7 +193,7 @@
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport": {
   "abstract" : [
     {
-      "text" : "Umbrella for supported SwiftUI constructs.",
+      "text" : "Documentation on all supported SwiftUI constructs.",
       "type" : "text"
     }
   ],
@@ -219,14 +228,6 @@
   "abstract" : [
     {
       "text" : "Sets a frame on a target view.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Supported calls:",
       "type" : "text"
     }
   ],

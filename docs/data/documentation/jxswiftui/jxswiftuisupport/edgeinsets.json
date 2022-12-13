@@ -1,11 +1,43 @@
 {
   "abstract" : [
     {
-      "text" : "A ",
+      "text" : "Use a JavaScript object with ",
       "type" : "text"
     },
     {
-      "code" : "SwiftUI.EmptyView",
+      "code" : "top",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", ",
+      "type" : "text"
+    },
+    {
+      "code" : "bottom",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", ",
+      "type" : "text"
+    },
+    {
+      "code" : "leading",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", ",
+      "type" : "text"
+    },
+    {
+      "code" : "trailing",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " properties to represent ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftUI.EdgeInsets",
       "type" : "codeVoice"
     },
     {
@@ -23,12 +55,12 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/EmptyView"
+    "url" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/EdgeInsets"
   },
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "JXSwiftUI",
-    "externalID" : "s:9JXSwiftUI0A9UISupportO9EmptyViewO",
+    "externalID" : "s:9JXSwiftUI0A9UISupportO10EdgeInsetsO",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -40,7 +72,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "EmptyView"
+        "text" : "EdgeInsets"
       }
     ],
     "modules" : [
@@ -51,13 +83,13 @@
     "navigatorTitle" : [
       {
         "kind" : "identifier",
-        "text" : "EmptyView"
+        "text" : "EdgeInsets"
       }
     ],
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
-    "title" : "JXSwiftUISupport.EmptyView"
+    "title" : "JXSwiftUISupport.EdgeInsets"
   },
   "primaryContentSections" : [
     {
@@ -80,39 +112,12 @@
             },
             {
               "kind" : "identifier",
-              "text" : "EmptyView"
+              "text" : "EdgeInsets"
             }
           ]
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "overview",
-          "level" : 2,
-          "text" : "Overview",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "Supported usage:",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "code" : [
-            "- EmptyView()"
-          ],
-          "syntax" : null,
-          "type" : "codeListing"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -126,7 +131,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/jxswiftui\/jxswiftuisupport\/emptyview"
+        "\/documentation\/jxswiftui\/jxswiftuisupport\/edgeinsets"
       ],
       "traits" : [
         {
@@ -182,14 +187,46 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport"
 },
-"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/EmptyView": {
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/EdgeInsets": {
   "abstract" : [
     {
-      "text" : "A ",
+      "text" : "Use a JavaScript object with ",
       "type" : "text"
     },
     {
-      "code" : "SwiftUI.EmptyView",
+      "code" : "top",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", ",
+      "type" : "text"
+    },
+    {
+      "code" : "bottom",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", ",
+      "type" : "text"
+    },
+    {
+      "code" : "leading",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", ",
+      "type" : "text"
+    },
+    {
+      "code" : "trailing",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " properties to represent ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftUI.EdgeInsets",
       "type" : "codeVoice"
     },
     {
@@ -208,21 +245,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "EmptyView"
+      "text" : "EdgeInsets"
     }
   ],
-  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/EmptyView",
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/EdgeInsets",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "EmptyView"
+      "text" : "EdgeInsets"
     }
   ],
   "role" : "symbol",
-  "title" : "JXSwiftUISupport.EmptyView",
+  "title" : "JXSwiftUISupport.EdgeInsets",
   "type" : "topic",
-  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/emptyview"
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/edgeinsets"
 }
 }
 }

@@ -4,13 +4,15 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// A `SwiftUI.If` conditional view.
+    ///
     /// Supported usage:
     ///
     ///     - If(boolean, () => { content })
     ///     - If(boolean, () => { content }, () => { content })
     ///
     /// In the form with two trailing functions, the second provides `else` content.
-    /// Supported content:
+    /// 
+    /// Supported `content`:
     ///
     ///     - Anonymous function returning a View
     public enum If {}

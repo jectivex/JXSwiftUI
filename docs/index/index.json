@@ -2530,6 +2530,11 @@
                 "type" : "enum"
               },
               {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/axis",
+                "title" : "JXSwiftUISupport.Axis",
+                "type" : "enum"
+              },
+              {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/button",
                 "title" : "JXSwiftUISupport.Button",
                 "type" : "enum"
@@ -2542,6 +2547,16 @@
               {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/color",
                 "title" : "JXSwiftUISupport.Color",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/edge",
+                "title" : "JXSwiftUISupport.Edge",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/edgeinsets",
+                "title" : "JXSwiftUISupport.EdgeInsets",
                 "type" : "enum"
               },
               {
@@ -2677,6 +2692,11 @@
               {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/navigationtitle",
                 "title" : "JXSwiftUISupport.navigationTitle",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/ontapgesture",
+                "title" : "JXSwiftUISupport.onTapGesture",
                 "type" : "enum"
               },
               {

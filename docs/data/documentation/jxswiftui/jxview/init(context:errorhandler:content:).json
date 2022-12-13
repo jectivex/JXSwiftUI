@@ -243,7 +243,15 @@
                   "type" : "reference"
                 },
                 {
-                  "text" : " module must be registered with the context. If not supplied, we create a new context for this view.",
+                  "text" : " module must be registered with the context. If not supplied, we create a new context and register ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "JXSwiftUI",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " for this view.",
                   "type" : "text"
                 }
               ],
@@ -257,7 +265,7 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "An optional handler for JS errors. If not supplied, we print the error to the console.",
+                  "text" : "An optional handler for JavaScript errors. If not supplied, we print the error to the console.",
                   "type" : "text"
                 }
               ],
@@ -287,7 +295,15 @@
                   "type" : "codeVoice"
                 },
                 {
-                  "text" : " JS that returns a SwiftUI-in-JS view.",
+                  "text" : " JavaScript that returns a ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "JXSwiftUI",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " view.",
                   "type" : "text"
                 }
               ],

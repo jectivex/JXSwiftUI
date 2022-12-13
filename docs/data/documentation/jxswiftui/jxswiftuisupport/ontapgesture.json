@@ -1,15 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "SwiftUI.EmptyView",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Sets a tap gesture on a target view.",
       "type" : "text"
     }
   ],
@@ -23,12 +15,12 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/EmptyView"
+    "url" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/onTapGesture"
   },
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "JXSwiftUI",
-    "externalID" : "s:9JXSwiftUI0A9UISupportO9EmptyViewO",
+    "externalID" : "s:9JXSwiftUI0A9UISupportO12onTapGestureO",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -40,7 +32,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "EmptyView"
+        "text" : "onTapGesture"
       }
     ],
     "modules" : [
@@ -51,13 +43,13 @@
     "navigatorTitle" : [
       {
         "kind" : "identifier",
-        "text" : "EmptyView"
+        "text" : "onTapGesture"
       }
     ],
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
-    "title" : "JXSwiftUISupport.EmptyView"
+    "title" : "JXSwiftUISupport.onTapGesture"
   },
   "primaryContentSections" : [
     {
@@ -80,7 +72,7 @@
             },
             {
               "kind" : "identifier",
-              "text" : "EmptyView"
+              "text" : "onTapGesture"
             }
           ]
         }
@@ -98,7 +90,7 @@
         {
           "inlineContent" : [
             {
-              "text" : "Supported usage:",
+              "text" : "Supported calls:",
               "type" : "text"
             }
           ],
@@ -106,7 +98,8 @@
         },
         {
           "code" : [
-            "- EmptyView()"
+            "- .onTapGesture(() => { action })",
+            "- .onTapGesture(count, () => { action })"
           ],
           "syntax" : null,
           "type" : "codeListing"
@@ -126,7 +119,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/jxswiftui\/jxswiftuisupport\/emptyview"
+        "\/documentation\/jxswiftui\/jxswiftuisupport\/ontapgesture"
       ],
       "traits" : [
         {
@@ -182,18 +175,10 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport"
 },
-"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/EmptyView": {
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/onTapGesture": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "SwiftUI.EmptyView",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Sets a tap gesture on a target view.",
       "type" : "text"
     }
   ],
@@ -208,21 +193,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "EmptyView"
+      "text" : "onTapGesture"
     }
   ],
-  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/EmptyView",
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/onTapGesture",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "EmptyView"
+      "text" : "onTapGesture"
     }
   ],
   "role" : "symbol",
-  "title" : "JXSwiftUISupport.EmptyView",
+  "title" : "JXSwiftUISupport.onTapGesture",
   "type" : "topic",
-  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/emptyview"
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/ontapgesture"
 }
 }
 }

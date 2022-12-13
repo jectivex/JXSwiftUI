@@ -4,16 +4,17 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// Sets a background on a target view.
+    /// 
     /// Supported calls:
     ///
     ///     - .background({props}, content)
     ///     - .background(content)
     ///
-    /// Supported props:
+    /// Supported `props`:
     ///
     ///     - alignment: Alignment
     ///
-    /// Supported content:
+    /// Supported `content`:
     ///
     ///     - Color name
     ///     - View

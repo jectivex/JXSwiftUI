@@ -4,13 +4,14 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// A `SwiftUI.Color` value.
+    ///
     /// Supported usage:
     ///
     ///     - Color.red, Color.blue, etc
     ///     - Color.system({props})
     ///     - Color.custom('name') to load from an asset catalog
     ///
-    /// Supported props:
+    /// Supported `props`:
     ///
     ///     - opacity: Optional opacity
     ///     - red:green:blue: RGB color
@@ -19,7 +20,7 @@ extension JXSwiftUISupport {
     ///
     /// Supported functions:
     ///
-    ///     - opacity(value): Derive a color with the given opacity
+    ///     - .opacity(value): Derive a color with the given opacity
     public enum Color {}
 }
 

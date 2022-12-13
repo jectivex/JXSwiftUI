@@ -4,6 +4,7 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// A `SwiftUI.Button`.
+    ///
     /// Supported usage:
     ///
     ///     - Button('label', () => { action })
@@ -11,12 +12,12 @@ extension JXSwiftUISupport {
     ///     - Button({props}, () => { action })
     ///     - Button({props}, () => { action }, content)
     ///
-    /// Supported props:
+    /// Supported `props`:
     ///
     ///     - label: content
     ///     - role: ButtonRole
     ///
-    /// Supported content:
+    /// Supported `content`:
     ///
     ///     - Label string
     ///     - View

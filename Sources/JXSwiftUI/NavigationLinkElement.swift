@@ -4,16 +4,17 @@ import SwiftUI
 
 extension JXSwiftUISupport {
     /// A `SwiftUI.NavigationLink`.
+    ///
     /// Supported usage:
     ///
     ///     - NavigationLink('label', () => { destination })
     ///     - NavigationLink(() => { destination }, content)
     ///
-    /// Supported destination function:
+    /// Supported `destination`:
     ///
     ///     - Anonymous function returning a View
     ///
-    /// Supported content:
+    /// Supported `content`:
     ///
     ///     - View
     ///     - Anonymous function returning a View

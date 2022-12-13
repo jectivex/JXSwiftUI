@@ -3,14 +3,6 @@
     {
       "text" : "Sets padding on a target view.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Supported calls:",
-      "type" : "text"
     }
   ],
   "hierarchy" : {
@@ -96,6 +88,15 @@
           "type" : "heading"
         },
         {
+          "inlineContent" : [
+            {
+              "text" : "Supported calls:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
           "code" : [
             "- .padding()",
             "- .padding(number)",
@@ -146,7 +147,7 @@
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport": {
   "abstract" : [
     {
-      "text" : "Umbrella for supported SwiftUI constructs.",
+      "text" : "Documentation on all supported SwiftUI constructs.",
       "type" : "text"
     }
   ],
@@ -181,14 +182,6 @@
   "abstract" : [
     {
       "text" : "Sets padding on a target view.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Supported calls:",
       "type" : "text"
     }
   ],
