@@ -1,0 +1,2704 @@
+{
+  "interfaceLanguages" : {
+    "swift" : [
+      {
+        "children" : [
+          {
+            "title" : "Structures",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftui\/init()",
+                "title" : "init()",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftui\/namespace",
+                "title" : "let namespace: JXNamespace",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftui\/define(for:in:)",
+                "title" : "func define(for: Any, in: JXContext) throws -> Bool",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftui\/define(symbol:namespace:in:)",
+                "title" : "func define(symbol: String, namespace: JXNamespace, in: JXContext) throws -> Bool",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftui\/defineall(namespace:in:)",
+                "title" : "func defineAll(namespace: JXNamespace, in: JXContext) throws -> Bool",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftui\/initialize(in:)",
+                "title" : "func initialize(in: JXContext) throws",
+                "type" : "method"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxswiftui\/register(with:)",
+                    "title" : "func register(with: JXRegistry)",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/jxswiftui\/jxswiftui\/jxmodule-implementations",
+                "title" : "JXModule Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/jxswiftui\/jxswiftui",
+            "title" : "JXSwiftUI",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxview\/init(context:errorhandler:content:)",
+                "title" : "init(context: JXContext?, errorHandler: ((Error) -> Void)?, content: (JXContext) throws -> JXValue)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxview\/body",
+                "title" : "var body: some View",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxview\/context",
+                "title" : "let context: JXContext",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxview\/errorhandler",
+                "title" : "let errorHandler: ((Error) -> Void)?",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accentcolor(_:)",
+                    "title" : "func accentColor(Color?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibility(activationpoint:)-3nimr",
+                    "title" : "func accessibility(activationPoint: UnitPoint) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibility(activationpoint:)-8px4p",
+                    "title" : "func accessibility(activationPoint: CGPoint) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibility(addtraits:)",
+                    "title" : "func accessibility(addTraits: AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibility(hidden:)",
+                    "title" : "func accessibility(hidden: Bool) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibility(hint:)",
+                    "title" : "func accessibility(hint: Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibility(identifier:)",
+                    "title" : "func accessibility(identifier: String) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibility(inputlabels:)",
+                    "title" : "func accessibility(inputLabels: [Text]) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibility(label:)",
+                    "title" : "func accessibility(label: Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibility(removetraits:)",
+                    "title" : "func accessibility(removeTraits: AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibility(selectionidentifier:)",
+                    "title" : "func accessibility(selectionIdentifier: AnyHashable) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibility(sortpriority:)",
+                    "title" : "func accessibility(sortPriority: Double) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibility(value:)",
+                    "title" : "func accessibility(value: Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityaction(_:_:)",
+                    "title" : "func accessibilityAction(AccessibilityActionKind, () -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityaction(action:label:)",
+                    "title" : "func accessibilityAction<Label>(action: () -> Void, label: () -> Label) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityaction(named:_:)-214bc",
+                    "title" : "func accessibilityAction(named: LocalizedStringKey, () -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityaction(named:_:)-3dtoq",
+                    "title" : "func accessibilityAction(named: Text, () -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityaction(named:_:)-8qlcv",
+                    "title" : "func accessibilityAction<S>(named: S, () -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityactions(_:)",
+                    "title" : "func accessibilityActions<Content>(() -> Content) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityactivationpoint(_:)-1upg1",
+                    "title" : "func accessibilityActivationPoint(CGPoint) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityactivationpoint(_:)-4zyb8",
+                    "title" : "func accessibilityActivationPoint(UnitPoint) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityaddtraits(_:)",
+                    "title" : "func accessibilityAddTraits(AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityadjustableaction(_:)",
+                    "title" : "func accessibilityAdjustableAction((AccessibilityAdjustmentDirection) -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilitychartdescriptor(_:)",
+                    "title" : "func accessibilityChartDescriptor<R>(R) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilitychildren(children:)",
+                    "title" : "func accessibilityChildren<V>(children: () -> V) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilitycustomcontent(_:_:importance:)-1q53q",
+                    "title" : "func accessibilityCustomContent<V>(AccessibilityCustomContentKey, V, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilitycustomcontent(_:_:importance:)-37o3v",
+                    "title" : "func accessibilityCustomContent<L, V>(L, V, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilitycustomcontent(_:_:importance:)-3nphv",
+                    "title" : "func accessibilityCustomContent<V>(LocalizedStringKey, V, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilitycustomcontent(_:_:importance:)-40vvr",
+                    "title" : "func accessibilityCustomContent(Text, Text, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilitycustomcontent(_:_:importance:)-7e4sr",
+                    "title" : "func accessibilityCustomContent(LocalizedStringKey, LocalizedStringKey, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilitycustomcontent(_:_:importance:)-7k3qz",
+                    "title" : "func accessibilityCustomContent(AccessibilityCustomContentKey, LocalizedStringKey, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilitycustomcontent(_:_:importance:)-9i2ze",
+                    "title" : "func accessibilityCustomContent(AccessibilityCustomContentKey, Text?, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilitycustomcontent(_:_:importance:)-9nqqs",
+                    "title" : "func accessibilityCustomContent(LocalizedStringKey, Text, importance: AXCustomContent.Importance) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityelement(children:)",
+                    "title" : "func accessibilityElement(children: AccessibilityChildBehavior) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityfocused(_:)",
+                    "title" : "func accessibilityFocused(AccessibilityFocusState<Bool>.Binding) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityfocused(_:equals:)",
+                    "title" : "func accessibilityFocused<Value>(AccessibilityFocusState<Value>.Binding, equals: Value) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityheading(_:)",
+                    "title" : "func accessibilityHeading(AccessibilityHeadingLevel) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityhidden(_:)",
+                    "title" : "func accessibilityHidden(Bool) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityhint(_:)-5isui",
+                    "title" : "func accessibilityHint(Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityhint(_:)-69i8v",
+                    "title" : "func accessibilityHint<S>(S) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityhint(_:)-7iuky",
+                    "title" : "func accessibilityHint(LocalizedStringKey) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityidentifier(_:)",
+                    "title" : "func accessibilityIdentifier(String) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityignoresinvertcolors(_:)",
+                    "title" : "func accessibilityIgnoresInvertColors(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityinputlabels(_:)-1aor6",
+                    "title" : "func accessibilityInputLabels([LocalizedStringKey]) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityinputlabels(_:)-3rzxg",
+                    "title" : "func accessibilityInputLabels<S>([S]) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityinputlabels(_:)-6rew7",
+                    "title" : "func accessibilityInputLabels([Text]) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilitylabel(_:)-73u",
+                    "title" : "func accessibilityLabel(LocalizedStringKey) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilitylabel(_:)-8txft",
+                    "title" : "func accessibilityLabel(Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilitylabel(_:)-957eq",
+                    "title" : "func accessibilityLabel<S>(S) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilitylabeledpair(role:id:in:)",
+                    "title" : "func accessibilityLabeledPair<ID>(role: AccessibilityLabeledPairRole, id: ID, in: Namespace.ID) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilitylinkedgroup(id:in:)",
+                    "title" : "func accessibilityLinkedGroup<ID>(id: ID, in: Namespace.ID) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityremovetraits(_:)",
+                    "title" : "func accessibilityRemoveTraits(AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityrepresentation(representation:)",
+                    "title" : "func accessibilityRepresentation<V>(representation: () -> V) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityrespondstouserinteraction(_:)",
+                    "title" : "func accessibilityRespondsToUserInteraction(Bool) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityrotor(_:entries:)-2cmll",
+                    "title" : "func accessibilityRotor<Content>(LocalizedStringKey, entries: () -> Content) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityrotor(_:entries:)-2or53",
+                    "title" : "func accessibilityRotor<L, Content>(L, entries: () -> Content) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityrotor(_:entries:)-6y0gw",
+                    "title" : "func accessibilityRotor<Content>(Text, entries: () -> Content) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityrotor(_:entries:)-72362",
+                    "title" : "func accessibilityRotor<Content>(AccessibilitySystemRotor, entries: () -> Content) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityrotor(_:entries:entryid:entrylabel:)-17qee",
+                    "title" : "func accessibilityRotor<L, EntryModel, ID>(L, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityrotor(_:entries:entryid:entrylabel:)-32u9k",
+                    "title" : "func accessibilityRotor<EntryModel, ID>(LocalizedStringKey, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityrotor(_:entries:entryid:entrylabel:)-6rrtx",
+                    "title" : "func accessibilityRotor<EntryModel, ID>(Text, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityrotor(_:entries:entryid:entrylabel:)-mja1",
+                    "title" : "func accessibilityRotor<EntryModel, ID>(AccessibilitySystemRotor, entries: [EntryModel], entryID: KeyPath<EntryModel, ID>, entryLabel: KeyPath<EntryModel, String>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityrotor(_:entries:entrylabel:)-1el4l",
+                    "title" : "func accessibilityRotor<EntryModel>(Text, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityrotor(_:entries:entrylabel:)-1krsp",
+                    "title" : "func accessibilityRotor<EntryModel>(AccessibilitySystemRotor, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityrotor(_:entries:entrylabel:)-5pr2q",
+                    "title" : "func accessibilityRotor<L, EntryModel>(L, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityrotor(_:entries:entrylabel:)-7nyp4",
+                    "title" : "func accessibilityRotor<EntryModel>(LocalizedStringKey, entries: [EntryModel], entryLabel: KeyPath<EntryModel, String>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityrotor(_:textranges:)-1ho9f",
+                    "title" : "func accessibilityRotor(LocalizedStringKey, textRanges: [Range<String.Index>]) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityrotor(_:textranges:)-1ttp4",
+                    "title" : "func accessibilityRotor<L>(L, textRanges: [Range<String.Index>]) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityrotor(_:textranges:)-1v2qn",
+                    "title" : "func accessibilityRotor(Text, textRanges: [Range<String.Index>]) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityrotor(_:textranges:)-67uwh",
+                    "title" : "func accessibilityRotor(AccessibilitySystemRotor, textRanges: [Range<String.Index>]) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityrotorentry(id:in:)",
+                    "title" : "func accessibilityRotorEntry<ID>(id: ID, in: Namespace.ID) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityscrollaction(_:)",
+                    "title" : "func accessibilityScrollAction((Edge) -> Void) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityshowslargecontentviewer()",
+                    "title" : "func accessibilityShowsLargeContentViewer() -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityshowslargecontentviewer(_:)",
+                    "title" : "func accessibilityShowsLargeContentViewer<V>(() -> V) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilitysortpriority(_:)",
+                    "title" : "func accessibilitySortPriority(Double) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilitytextcontenttype(_:)",
+                    "title" : "func accessibilityTextContentType(AccessibilityTextContentType) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityvalue(_:)-373bu",
+                    "title" : "func accessibilityValue(Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityvalue(_:)-775m4",
+                    "title" : "func accessibilityValue(LocalizedStringKey) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/accessibilityvalue(_:)-9biiu",
+                    "title" : "func accessibilityValue<S>(S) -> ModifiedContent<Self, AccessibilityAttachmentModifier>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/alert(_:ispresented:actions:)-3d0e7",
+                    "title" : "func alert<S, A>(S, isPresented: Binding<Bool>, actions: () -> A) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/alert(_:ispresented:actions:)-3k00z",
+                    "title" : "func alert<A>(LocalizedStringKey, isPresented: Binding<Bool>, actions: () -> A) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/alert(_:ispresented:actions:)-99o75",
+                    "title" : "func alert<A>(Text, isPresented: Binding<Bool>, actions: () -> A) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/alert(_:ispresented:actions:message:)-3s42i",
+                    "title" : "func alert<A, M>(Text, isPresented: Binding<Bool>, actions: () -> A, message: () -> M) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/alert(_:ispresented:actions:message:)-7yppz",
+                    "title" : "func alert<S, A, M>(S, isPresented: Binding<Bool>, actions: () -> A, message: () -> M) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/alert(_:ispresented:actions:message:)-iu50",
+                    "title" : "func alert<A, M>(LocalizedStringKey, isPresented: Binding<Bool>, actions: () -> A, message: () -> M) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/alert(_:ispresented:presenting:actions:)-299x4",
+                    "title" : "func alert<S, A, T>(S, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/alert(_:ispresented:presenting:actions:)-5i0ac",
+                    "title" : "func alert<A, T>(Text, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/alert(_:ispresented:presenting:actions:)-6gfdn",
+                    "title" : "func alert<A, T>(LocalizedStringKey, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/alert(_:ispresented:presenting:actions:message:)-1yeu0",
+                    "title" : "func alert<A, M, T>(Text, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/alert(_:ispresented:presenting:actions:message:)-5s28",
+                    "title" : "func alert<S, A, M, T>(S, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/alert(_:ispresented:presenting:actions:message:)-7e5dc",
+                    "title" : "func alert<A, M, T>(LocalizedStringKey, isPresented: Binding<Bool>, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/alert(ispresented:content:)",
+                    "title" : "func alert(isPresented: Binding<Bool>, content: () -> Alert) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/alert(ispresented:error:actions:)",
+                    "title" : "func alert<E, A>(isPresented: Binding<Bool>, error: E?, actions: () -> A) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/alert(ispresented:error:actions:message:)",
+                    "title" : "func alert<E, A, M>(isPresented: Binding<Bool>, error: E?, actions: (E) -> A, message: (E) -> M) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/alert(item:content:)",
+                    "title" : "func alert<Item>(item: Binding<Item?>, content: (Item) -> Alert) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/alignmentguide(_:computevalue:)-486sn",
+                    "title" : "func alignmentGuide(VerticalAlignment, computeValue: (ViewDimensions) -> CGFloat) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/alignmentguide(_:computevalue:)-b4kk",
+                    "title" : "func alignmentGuide(HorizontalAlignment, computeValue: (ViewDimensions) -> CGFloat) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/allowshittesting(_:)",
+                    "title" : "func allowsHitTesting(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/allowstightening(_:)",
+                    "title" : "func allowsTightening(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/anchorpreference(key:value:transform:)",
+                    "title" : "func anchorPreference<A, K>(key: K.Type, value: Anchor<A>.Source, transform: (Anchor<A>) -> K.Value) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/animation(_:)",
+                    "title" : "func animation(Animation?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/animation(_:value:)",
+                    "title" : "func animation<V>(Animation?, value: V) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/aspectratio(_:contentmode:)-33d1j",
+                    "title" : "func aspectRatio(CGSize, contentMode: ContentMode) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/aspectratio(_:contentmode:)-8wc9j",
+                    "title" : "func aspectRatio(CGFloat?, contentMode: ContentMode) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/autocorrectiondisabled(_:)",
+                    "title" : "func autocorrectionDisabled(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/background(_:alignment:)",
+                    "title" : "func background<Background>(Background, alignment: Alignment) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/background(_:ignoressafeareaedges:)",
+                    "title" : "func background<S>(S, ignoresSafeAreaEdges: Edge.Set) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/background(_:in:fillstyle:)-lsja",
+                    "title" : "func background<S, T>(S, in: T, fillStyle: FillStyle) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/background(_:in:fillstyle:)-ynwt",
+                    "title" : "func background<S, T>(S, in: T, fillStyle: FillStyle) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/background(alignment:content:)",
+                    "title" : "func background<V>(alignment: Alignment, content: () -> V) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/background(ignoressafeareaedges:)",
+                    "title" : "func background(ignoresSafeAreaEdges: Edge.Set) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/background(in:fillstyle:)-1hraz",
+                    "title" : "func background<S>(in: S, fillStyle: FillStyle) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/background(in:fillstyle:)-62qwl",
+                    "title" : "func background<S>(in: S, fillStyle: FillStyle) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/backgroundpreferencevalue(_:_:)",
+                    "title" : "func backgroundPreferenceValue<Key, T>(Key.Type, (Key.Value) -> T) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/backgroundpreferencevalue(_:alignment:_:)",
+                    "title" : "func backgroundPreferenceValue<K, V>(K.Type, alignment: Alignment, (K.Value) -> V) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/backgroundstyle(_:)",
+                    "title" : "func backgroundStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/badge(_:)-3tx1f",
+                    "title" : "func badge(Text?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/badge(_:)-5pc04",
+                    "title" : "func badge(LocalizedStringKey?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/badge(_:)-5qtw4",
+                    "title" : "func badge(Int) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/badge(_:)-y1kg",
+                    "title" : "func badge<S>(S?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/baselineoffset(_:)",
+                    "title" : "func baselineOffset(CGFloat) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/blendmode(_:)",
+                    "title" : "func blendMode(BlendMode) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/blur(radius:opaque:)",
+                    "title" : "func blur(radius: CGFloat, opaque: Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/bold(_:)",
+                    "title" : "func bold(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/border(_:width:)",
+                    "title" : "func border<S>(S, width: CGFloat) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/brightness(_:)",
+                    "title" : "func brightness(Double) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/buttonbordershape(_:)",
+                    "title" : "func buttonBorderShape(ButtonBorderShape) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/buttonstyle(_:)-59m53",
+                    "title" : "func buttonStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/buttonstyle(_:)-tzym",
+                    "title" : "func buttonStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/clipshape(_:style:)",
+                    "title" : "func clipShape<S>(S, style: FillStyle) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/clipped(antialiased:)",
+                    "title" : "func clipped(antialiased: Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/colorinvert()",
+                    "title" : "func colorInvert() -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/colormultiply(_:)",
+                    "title" : "func colorMultiply(Color) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/colorscheme(_:)",
+                    "title" : "func colorScheme(ColorScheme) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/compositinggroup()",
+                    "title" : "func compositingGroup() -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/confirmationdialog(_:ispresented:titlevisibility:actions:)-3h3c8",
+                    "title" : "func confirmationDialog<A>(LocalizedStringKey, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/confirmationdialog(_:ispresented:titlevisibility:actions:)-77urj",
+                    "title" : "func confirmationDialog<S, A>(S, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/confirmationdialog(_:ispresented:titlevisibility:actions:)-8q928",
+                    "title" : "func confirmationDialog<A>(Text, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/confirmationdialog(_:ispresented:titlevisibility:actions:message:)-1bu2d",
+                    "title" : "func confirmationDialog<A, M>(Text, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A, message: () -> M) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/confirmationdialog(_:ispresented:titlevisibility:actions:message:)-79dfu",
+                    "title" : "func confirmationDialog<A, M>(LocalizedStringKey, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A, message: () -> M) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/confirmationdialog(_:ispresented:titlevisibility:actions:message:)-7q0wi",
+                    "title" : "func confirmationDialog<S, A, M>(S, isPresented: Binding<Bool>, titleVisibility: Visibility, actions: () -> A, message: () -> M) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/confirmationdialog(_:ispresented:titlevisibility:presenting:actions:)-47sx",
+                    "title" : "func confirmationDialog<A, T>(LocalizedStringKey, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/confirmationdialog(_:ispresented:titlevisibility:presenting:actions:)-58bh4",
+                    "title" : "func confirmationDialog<A, T>(Text, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/confirmationdialog(_:ispresented:titlevisibility:presenting:actions:)-92y8o",
+                    "title" : "func confirmationDialog<S, A, T>(S, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/confirmationdialog(_:ispresented:titlevisibility:presenting:actions:message:)-5de5i",
+                    "title" : "func confirmationDialog<A, M, T>(LocalizedStringKey, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/confirmationdialog(_:ispresented:titlevisibility:presenting:actions:message:)-8dlc6",
+                    "title" : "func confirmationDialog<S, A, M, T>(S, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/confirmationdialog(_:ispresented:titlevisibility:presenting:actions:message:)-vmss",
+                    "title" : "func confirmationDialog<A, M, T>(Text, isPresented: Binding<Bool>, titleVisibility: Visibility, presenting: T?, actions: (T) -> A, message: (T) -> M) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/containershape(_:)",
+                    "title" : "func containerShape<T>(T) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/contentshape(_:_:eofill:)",
+                    "title" : "func contentShape<S>(ContentShapeKinds, S, eoFill: Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/contentshape(_:eofill:)",
+                    "title" : "func contentShape<S>(S, eoFill: Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/contenttransition(_:)",
+                    "title" : "func contentTransition(ContentTransition) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/contextmenu(_:)",
+                    "title" : "func contextMenu<MenuItems>(ContextMenu<MenuItems>?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/contextmenu(forselectiontype:menu:primaryaction:)",
+                    "title" : "func contextMenu<I, M>(forSelectionType: I.Type, menu: (Set<I>) -> M, primaryAction: ((Set<I>) -> Void)?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/contextmenu(menuitems:)",
+                    "title" : "func contextMenu<MenuItems>(menuItems: () -> MenuItems) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/contextmenu(menuitems:preview:)",
+                    "title" : "func contextMenu<M, P>(menuItems: () -> M, preview: () -> P) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/contrast(_:)",
+                    "title" : "func contrast(Double) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/controlgroupstyle(_:)",
+                    "title" : "func controlGroupStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/controlsize(_:)",
+                    "title" : "func controlSize(ControlSize) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/coordinatespace(name:)",
+                    "title" : "func coordinateSpace<T>(name: T) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/copyable(_:)",
+                    "title" : "func copyable<T>(() -> [T]) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/cornerradius(_:antialiased:)",
+                    "title" : "func cornerRadius(CGFloat, antialiased: Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/cuttable(for:action:)",
+                    "title" : "func cuttable<T>(for: T.Type, action: () -> [T]) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/datepickerstyle(_:)",
+                    "title" : "func datePickerStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/defaultappstorage(_:)",
+                    "title" : "func defaultAppStorage(UserDefaults) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/defaultfocus(_:_:priority:)",
+                    "title" : "func defaultFocus<V>(FocusState<V>.Binding, V, priority: DefaultFocusEvaluationPriority) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/deletedisabled(_:)",
+                    "title" : "func deleteDisabled(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/disableautocorrection(_:)",
+                    "title" : "func disableAutocorrection(Bool?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/disabled(_:)",
+                    "title" : "func disabled(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/disclosuregroupstyle(_:)",
+                    "title" : "func disclosureGroupStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/draggable(_:)",
+                    "title" : "func draggable<T>(() -> T) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/draggable(_:preview:)",
+                    "title" : "func draggable<V, T>(() -> T, preview: () -> V) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/drawinggroup(opaque:colormode:)",
+                    "title" : "func drawingGroup(opaque: Bool, colorMode: ColorRenderingMode) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/dropdestination(for:action:istargeted:)",
+                    "title" : "func dropDestination<T>(for: T.Type, action: ([T], CGPoint) -> Bool, isTargeted: (Bool) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/dynamictypesize(_:)",
+                    "title" : "func dynamicTypeSize(DynamicTypeSize) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/edgesignoringsafearea(_:)",
+                    "title" : "func edgesIgnoringSafeArea(Edge.Set) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/environment(_:_:)",
+                    "title" : "func environment<V>(WritableKeyPath<EnvironmentValues, V>, V) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/environmentobject(_:)",
+                    "title" : "func environmentObject<T>(T) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/exportabletoservices(_:)",
+                    "title" : "func exportableToServices<T>(() -> [T]) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/exportabletoservices(_:onedit:)",
+                    "title" : "func exportableToServices<T>(() -> [T], onEdit: ([T]) -> Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/exportsitemproviders(_:onexport:)",
+                    "title" : "func exportsItemProviders([UTType], onExport: () -> [NSItemProvider]) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/exportsitemproviders(_:onexport:onedit:)",
+                    "title" : "func exportsItemProviders([UTType], onExport: () -> [NSItemProvider], onEdit: ([NSItemProvider]) -> Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/fileexporter(ispresented:document:contenttype:defaultfilename:oncompletion:)-5sd92",
+                    "title" : "func fileExporter<D>(isPresented: Binding<Bool>, document: D?, contentType: UTType, defaultFilename: String?, onCompletion: (Result<URL, Error>) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/fileexporter(ispresented:document:contenttype:defaultfilename:oncompletion:)-9par",
+                    "title" : "func fileExporter<D>(isPresented: Binding<Bool>, document: D?, contentType: UTType, defaultFilename: String?, onCompletion: (Result<URL, Error>) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/fileexporter(ispresented:documents:contenttype:oncompletion:)-6cl21",
+                    "title" : "func fileExporter<C>(isPresented: Binding<Bool>, documents: C, contentType: UTType, onCompletion: (Result<[URL], Error>) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/fileexporter(ispresented:documents:contenttype:oncompletion:)-9zkfo",
+                    "title" : "func fileExporter<C>(isPresented: Binding<Bool>, documents: C, contentType: UTType, onCompletion: (Result<[URL], Error>) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/fileimporter(ispresented:allowedcontenttypes:allowsmultipleselection:oncompletion:)",
+                    "title" : "func fileImporter(isPresented: Binding<Bool>, allowedContentTypes: [UTType], allowsMultipleSelection: Bool, onCompletion: (Result<[URL], Error>) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/fileimporter(ispresented:allowedcontenttypes:oncompletion:)",
+                    "title" : "func fileImporter(isPresented: Binding<Bool>, allowedContentTypes: [UTType], onCompletion: (Result<URL, Error>) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/filemover(ispresented:file:oncompletion:)",
+                    "title" : "func fileMover(isPresented: Binding<Bool>, file: URL?, onCompletion: (Result<URL, Error>) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/filemover(ispresented:files:oncompletion:)",
+                    "title" : "func fileMover<C>(isPresented: Binding<Bool>, files: C, onCompletion: (Result<[URL], Error>) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/fixedsize()",
+                    "title" : "func fixedSize() -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/fixedsize(horizontal:vertical:)",
+                    "title" : "func fixedSize(horizontal: Bool, vertical: Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/flipsforrighttoleftlayoutdirection(_:)",
+                    "title" : "func flipsForRightToLeftLayoutDirection(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/focusscope(_:)",
+                    "title" : "func focusScope(Namespace.ID) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/focussection()",
+                    "title" : "func focusSection() -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/focusable(_:)",
+                    "title" : "func focusable(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/focusable(_:onfocuschange:)",
+                    "title" : "func focusable(Bool, onFocusChange: (Bool) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/focused(_:)",
+                    "title" : "func focused(FocusState<Bool>.Binding) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/focused(_:equals:)",
+                    "title" : "func focused<Value>(FocusState<Value>.Binding, equals: Value) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/focusedobject(_:)-1wwfg",
+                    "title" : "func focusedObject<T>(T?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/focusedobject(_:)-54w4z",
+                    "title" : "func focusedObject<T>(T) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/focusedsceneobject(_:)-2rcv7",
+                    "title" : "func focusedSceneObject<T>(T) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/focusedsceneobject(_:)-9kq21",
+                    "title" : "func focusedSceneObject<T>(T?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/focusedscenevalue(_:_:)-538xe",
+                    "title" : "func focusedSceneValue<T>(WritableKeyPath<FocusedValues, T?>, T?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/focusedscenevalue(_:_:)-6fth",
+                    "title" : "func focusedSceneValue<T>(WritableKeyPath<FocusedValues, T?>, T) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/focusedvalue(_:_:)-3ag9m",
+                    "title" : "func focusedValue<Value>(WritableKeyPath<FocusedValues, Value?>, Value) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/focusedvalue(_:_:)-49s0k",
+                    "title" : "func focusedValue<Value>(WritableKeyPath<FocusedValues, Value?>, Value?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/font(_:)",
+                    "title" : "func font(Font?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/fontdesign(_:)",
+                    "title" : "func fontDesign(Font.Design?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/fontweight(_:)",
+                    "title" : "func fontWeight(Font.Weight?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/fontwidth(_:)",
+                    "title" : "func fontWidth(Font.Width?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/foregroundcolor(_:)",
+                    "title" : "func foregroundColor(Color?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/foregroundstyle(_:)",
+                    "title" : "func foregroundStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/foregroundstyle(_:_:)",
+                    "title" : "func foregroundStyle<S1, S2>(S1, S2) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/foregroundstyle(_:_:_:)",
+                    "title" : "func foregroundStyle<S1, S2, S3>(S1, S2, S3) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/formstyle(_:)",
+                    "title" : "func formStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/frame()",
+                    "title" : "func frame() -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/frame(minwidth:idealwidth:maxwidth:minheight:idealheight:maxheight:alignment:)",
+                    "title" : "func frame(minWidth: CGFloat?, idealWidth: CGFloat?, maxWidth: CGFloat?, minHeight: CGFloat?, idealHeight: CGFloat?, maxHeight: CGFloat?, alignment: Alignment) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/frame(width:height:alignment:)",
+                    "title" : "func frame(width: CGFloat?, height: CGFloat?, alignment: Alignment) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/gaugestyle(_:)",
+                    "title" : "func gaugeStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/gesture(_:including:)",
+                    "title" : "func gesture<T>(T, including: GestureMask) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/grayscale(_:)",
+                    "title" : "func grayscale(Double) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/gridcellanchor(_:)",
+                    "title" : "func gridCellAnchor(UnitPoint) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/gridcellcolumns(_:)",
+                    "title" : "func gridCellColumns(Int) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/gridcellunsizedaxes(_:)",
+                    "title" : "func gridCellUnsizedAxes(Axis.Set) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/gridcolumnalignment(_:)",
+                    "title" : "func gridColumnAlignment(HorizontalAlignment) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/groupboxstyle(_:)",
+                    "title" : "func groupBoxStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/handlesexternalevents(preferring:allowing:)",
+                    "title" : "func handlesExternalEvents(preferring: Set<String>, allowing: Set<String>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/headerprominence(_:)",
+                    "title" : "func headerProminence(Prominence) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/help(_:)-40da",
+                    "title" : "func help<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/help(_:)-4uxjk",
+                    "title" : "func help(Text) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/help(_:)-6jdn8",
+                    "title" : "func help(LocalizedStringKey) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/hidden()",
+                    "title" : "func hidden() -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/highprioritygesture(_:including:)",
+                    "title" : "func highPriorityGesture<T>(T, including: GestureMask) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/horizontalradiogrouplayout()",
+                    "title" : "func horizontalRadioGroupLayout() -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/huerotation(_:)",
+                    "title" : "func hueRotation(Angle) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/id(_:)",
+                    "title" : "func id<ID>(ID) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/ignoressafearea(_:edges:)",
+                    "title" : "func ignoresSafeArea(SafeAreaRegions, edges: Edge.Set) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/imagescale(_:)",
+                    "title" : "func imageScale(Image.Scale) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/importablefromservices(for:action:)",
+                    "title" : "func importableFromServices<T>(for: T.Type, action: ([T]) -> Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/importsitemproviders(_:onimport:)",
+                    "title" : "func importsItemProviders([UTType], onImport: ([NSItemProvider]) -> Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/interactionactivitytrackingtag(_:)",
+                    "title" : "func interactionActivityTrackingTag(String) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/interactivedismissdisabled(_:)",
+                    "title" : "func interactiveDismissDisabled(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/italic(_:)",
+                    "title" : "func italic(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/itemprovider(_:)",
+                    "title" : "func itemProvider(Optional<() -> NSItemProvider?>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/kerning(_:)",
+                    "title" : "func kerning(CGFloat) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/keyboardshortcut(_:)-6loi1",
+                    "title" : "func keyboardShortcut(KeyboardShortcut?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/keyboardshortcut(_:)-8n3dz",
+                    "title" : "func keyboardShortcut(KeyboardShortcut) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/keyboardshortcut(_:modifiers:)",
+                    "title" : "func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/keyboardshortcut(_:modifiers:localization:)",
+                    "title" : "func keyboardShortcut(KeyEquivalent, modifiers: EventModifiers, localization: KeyboardShortcut.Localization) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/labelstyle(_:)",
+                    "title" : "func labelStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/labeledcontentstyle(_:)",
+                    "title" : "func labeledContentStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/labelshidden()",
+                    "title" : "func labelsHidden() -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/layoutpriority(_:)",
+                    "title" : "func layoutPriority(Double) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/layoutvalue(key:value:)",
+                    "title" : "func layoutValue<K>(key: K.Type, value: K.Value) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/linelimit(_:)-2t30p",
+                    "title" : "func lineLimit(Int?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/linelimit(_:)-5hadp",
+                    "title" : "func lineLimit(PartialRangeThrough<Int>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/linelimit(_:)-6vy6a",
+                    "title" : "func lineLimit(ClosedRange<Int>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/linelimit(_:)-88my8",
+                    "title" : "func lineLimit(PartialRangeFrom<Int>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/linelimit(_:reservesspace:)",
+                    "title" : "func lineLimit(Int, reservesSpace: Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/linespacing(_:)",
+                    "title" : "func lineSpacing(CGFloat) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/listitemtint(_:)-4mgat",
+                    "title" : "func listItemTint(ListItemTint?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/listitemtint(_:)-x88h",
+                    "title" : "func listItemTint(Color?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/listrowbackground(_:)",
+                    "title" : "func listRowBackground<V>(V?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/listrowinsets(_:)",
+                    "title" : "func listRowInsets(EdgeInsets?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/listrowseparator(_:edges:)",
+                    "title" : "func listRowSeparator(Visibility, edges: VerticalEdge.Set) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/listrowseparatortint(_:edges:)",
+                    "title" : "func listRowSeparatorTint(Color?, edges: VerticalEdge.Set) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/listsectionseparator(_:edges:)",
+                    "title" : "func listSectionSeparator(Visibility, edges: VerticalEdge.Set) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/listsectionseparatortint(_:edges:)",
+                    "title" : "func listSectionSeparatorTint(Color?, edges: VerticalEdge.Set) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/liststyle(_:)",
+                    "title" : "func listStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/luminancetoalpha()",
+                    "title" : "func luminanceToAlpha() -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/mask(_:)",
+                    "title" : "func mask<Mask>(Mask) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/mask(alignment:_:)",
+                    "title" : "func mask<Mask>(alignment: Alignment, () -> Mask) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/matchedgeometryeffect(id:in:properties:anchor:issource:)",
+                    "title" : "func matchedGeometryEffect<ID>(id: ID, in: Namespace.ID, properties: MatchedGeometryProperties, anchor: UnitPoint, isSource: Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/menubuttonstyle(_:)",
+                    "title" : "func menuButtonStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/menuindicator(_:)",
+                    "title" : "func menuIndicator(Visibility) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/menuorder(_:)",
+                    "title" : "func menuOrder(MenuOrder) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/menustyle(_:)",
+                    "title" : "func menuStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/minimumscalefactor(_:)",
+                    "title" : "func minimumScaleFactor(CGFloat) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/modifier(_:)",
+                    "title" : "func modifier<T>(T) -> ModifiedContent<Self, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/monospaced(_:)",
+                    "title" : "func monospaced(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/monospaceddigit()",
+                    "title" : "func monospacedDigit() -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/movedisabled(_:)",
+                    "title" : "func moveDisabled(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/multilinetextalignment(_:)",
+                    "title" : "func multilineTextAlignment(TextAlignment) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationbarbackbuttonhidden(_:)",
+                    "title" : "func navigationBarBackButtonHidden(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationbarhidden(_:)",
+                    "title" : "func navigationBarHidden(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationbartitle(_:)-2qu5r",
+                    "title" : "func navigationBarTitle(LocalizedStringKey) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationbartitle(_:)-5q8hh",
+                    "title" : "func navigationBarTitle(Text) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationbartitle(_:)-9xld5",
+                    "title" : "func navigationBarTitle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationbartitle(_:displaymode:)-2l9k7",
+                    "title" : "func navigationBarTitle(Text, displayMode: NavigationBarItem.TitleDisplayMode) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationbartitle(_:displaymode:)-5zmy6",
+                    "title" : "func navigationBarTitle(LocalizedStringKey, displayMode: NavigationBarItem.TitleDisplayMode) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationbartitle(_:displaymode:)-6c21m",
+                    "title" : "func navigationBarTitle<S>(S, displayMode: NavigationBarItem.TitleDisplayMode) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationdestination(for:destination:)",
+                    "title" : "func navigationDestination<D, C>(for: D.Type, destination: (D) -> C) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationdestination(ispresented:destination:)",
+                    "title" : "func navigationDestination<V>(isPresented: Binding<Bool>, destination: () -> V) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationdocument(_:)",
+                    "title" : "func navigationDocument(URL) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationdocument(_:preview:)-1bzqp",
+                    "title" : "func navigationDocument<D>(D, preview: SharePreview<Never, Never>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationdocument(_:preview:)-2hwxm",
+                    "title" : "func navigationDocument<D, I>(D, preview: SharePreview<Never, I>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationdocument(_:preview:)-9g75g",
+                    "title" : "func navigationDocument<D, I1, I2>(D, preview: SharePreview<I1, I2>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationdocument(_:preview:)-vize",
+                    "title" : "func navigationDocument<D, I>(D, preview: SharePreview<I, Never>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationsplitviewcolumnwidth(_:)",
+                    "title" : "func navigationSplitViewColumnWidth(CGFloat) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationsplitviewcolumnwidth(min:ideal:max:)",
+                    "title" : "func navigationSplitViewColumnWidth(min: CGFloat?, ideal: CGFloat, max: CGFloat?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationsplitviewstyle(_:)",
+                    "title" : "func navigationSplitViewStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationsubtitle(_:)-2j608",
+                    "title" : "func navigationSubtitle(Text) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationsubtitle(_:)-4cing",
+                    "title" : "func navigationSubtitle(LocalizedStringKey) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationsubtitle(_:)-6v3jx",
+                    "title" : "func navigationSubtitle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationtitle(_:)-1npv",
+                    "title" : "func navigationTitle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationtitle(_:)-2mbu7",
+                    "title" : "func navigationTitle(Binding<String>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationtitle(_:)-3vlgr",
+                    "title" : "func navigationTitle<V>(() -> V) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationtitle(_:)-53sk7",
+                    "title" : "func navigationTitle(LocalizedStringKey) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationtitle(_:)-jpq",
+                    "title" : "func navigationTitle(Text) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/navigationviewstyle(_:)",
+                    "title" : "func navigationViewStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/offset(_:)",
+                    "title" : "func offset(CGSize) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/offset(x:y:)",
+                    "title" : "func offset(x: CGFloat, y: CGFloat) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/onappear(perform:)",
+                    "title" : "func onAppear(perform: (() -> Void)?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/onchange(of:perform:)",
+                    "title" : "func onChange<V>(of: V, perform: (V) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/oncommand(_:perform:)",
+                    "title" : "func onCommand(Selector, perform: (() -> Void)?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/oncontinueuseractivity(_:perform:)",
+                    "title" : "func onContinueUserActivity(String, perform: (NSUserActivity) -> ()) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/oncontinuoushover(coordinatespace:perform:)",
+                    "title" : "func onContinuousHover(coordinateSpace: CoordinateSpace, perform: (HoverPhase) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/oncopycommand(perform:)",
+                    "title" : "func onCopyCommand(perform: (() -> [NSItemProvider])?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/oncutcommand(perform:)",
+                    "title" : "func onCutCommand(perform: (() -> [NSItemProvider])?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/ondeletecommand(perform:)",
+                    "title" : "func onDeleteCommand(perform: (() -> Void)?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/ondisappear(perform:)",
+                    "title" : "func onDisappear(perform: (() -> Void)?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/ondrag(_:)",
+                    "title" : "func onDrag(() -> NSItemProvider) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/ondrag(_:preview:)",
+                    "title" : "func onDrag<V>(() -> NSItemProvider, preview: () -> V) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/ondrop(of:delegate:)-42m3y",
+                    "title" : "func onDrop(of: [UTType], delegate: DropDelegate) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/ondrop(of:delegate:)-6scc2",
+                    "title" : "func onDrop(of: [String], delegate: DropDelegate) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/ondrop(of:istargeted:perform:)-1816h",
+                    "title" : "func onDrop(of: [UTType], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/ondrop(of:istargeted:perform:)-5binh",
+                    "title" : "func onDrop(of: [UTType], isTargeted: Binding<Bool>?, perform: ([NSItemProvider]) -> Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/ondrop(of:istargeted:perform:)-66rtx",
+                    "title" : "func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider], CGPoint) -> Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/ondrop(of:istargeted:perform:)-92bqj",
+                    "title" : "func onDrop(of: [String], isTargeted: Binding<Bool>?, perform: ([NSItemProvider]) -> Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/onexitcommand(perform:)",
+                    "title" : "func onExitCommand(perform: (() -> Void)?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/onhover(perform:)",
+                    "title" : "func onHover(perform: (Bool) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/onlongpressgesture(minimumduration:maximumdistance:perform:onpressingchanged:)",
+                    "title" : "func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, perform: () -> Void, onPressingChanged: ((Bool) -> Void)?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/onlongpressgesture(minimumduration:maximumdistance:pressing:perform:)",
+                    "title" : "func onLongPressGesture(minimumDuration: Double, maximumDistance: CGFloat, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/onlongpressgesture(minimumduration:perform:onpressingchanged:)",
+                    "title" : "func onLongPressGesture(minimumDuration: Double, perform: () -> Void, onPressingChanged: ((Bool) -> Void)?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/onlongpressgesture(minimumduration:pressing:perform:)",
+                    "title" : "func onLongPressGesture(minimumDuration: Double, pressing: ((Bool) -> Void)?, perform: () -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/onmovecommand(perform:)",
+                    "title" : "func onMoveCommand(perform: ((MoveCommandDirection) -> Void)?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/onopenurl(perform:)",
+                    "title" : "func onOpenURL(perform: (URL) -> ()) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/onpastecommand(of:perform:)-3wne3",
+                    "title" : "func onPasteCommand(of: [UTType], perform: ([NSItemProvider]) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/onpastecommand(of:perform:)-7ea2a",
+                    "title" : "func onPasteCommand(of: [String], perform: ([NSItemProvider]) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/onpastecommand(of:validator:perform:)-35ciz",
+                    "title" : "func onPasteCommand<Payload>(of: [UTType], validator: ([NSItemProvider]) -> Payload?, perform: (Payload) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/onpastecommand(of:validator:perform:)-6us46",
+                    "title" : "func onPasteCommand<Payload>(of: [String], validator: ([NSItemProvider]) -> Payload?, perform: (Payload) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/onplaypausecommand(perform:)",
+                    "title" : "func onPlayPauseCommand(perform: (() -> Void)?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/onpreferencechange(_:perform:)",
+                    "title" : "func onPreferenceChange<K>(K.Type, perform: (K.Value) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/onreceive(_:perform:)",
+                    "title" : "func onReceive<P>(P, perform: (P.Output) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/onsubmit(of:_:)",
+                    "title" : "func onSubmit(of: SubmitTriggers, (() -> Void)) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/ontapgesture(count:coordinatespace:perform:)",
+                    "title" : "func onTapGesture(count: Int, coordinateSpace: CoordinateSpace, perform: (CGPoint) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/ontapgesture(count:perform:)",
+                    "title" : "func onTapGesture(count: Int, perform: () -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/opacity(_:)",
+                    "title" : "func opacity(Double) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/overlay(_:alignment:)",
+                    "title" : "func overlay<Overlay>(Overlay, alignment: Alignment) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/overlay(_:ignoressafeareaedges:)",
+                    "title" : "func overlay<S>(S, ignoresSafeAreaEdges: Edge.Set) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/overlay(_:in:fillstyle:)",
+                    "title" : "func overlay<S, T>(S, in: T, fillStyle: FillStyle) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/overlay(alignment:content:)",
+                    "title" : "func overlay<V>(alignment: Alignment, content: () -> V) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/overlaypreferencevalue(_:_:)",
+                    "title" : "func overlayPreferenceValue<Key, T>(Key.Type, (Key.Value) -> T) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/overlaypreferencevalue(_:alignment:_:)",
+                    "title" : "func overlayPreferenceValue<K, V>(K.Type, alignment: Alignment, (K.Value) -> V) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/padding(_:)-4zly2",
+                    "title" : "func padding(EdgeInsets) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/padding(_:)-8ypy6",
+                    "title" : "func padding(CGFloat) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/padding(_:_:)",
+                    "title" : "func padding(Edge.Set, CGFloat?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/pagecommand(value:in:step:)",
+                    "title" : "func pageCommand<V>(value: Binding<V>, in: ClosedRange<V>, step: V) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/pastedestination(for:action:validator:)",
+                    "title" : "func pasteDestination<T>(for: T.Type, action: ([T]) -> Void, validator: ([T]) -> [T]) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/persistentsystemoverlays(_:)",
+                    "title" : "func persistentSystemOverlays(Visibility) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/pickerstyle(_:)",
+                    "title" : "func pickerStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/popover(ispresented:attachmentanchor:arrowedge:content:)",
+                    "title" : "func popover<Content>(isPresented: Binding<Bool>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: () -> Content) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/popover(item:attachmentanchor:arrowedge:content:)",
+                    "title" : "func popover<Item, Content>(item: Binding<Item?>, attachmentAnchor: PopoverAttachmentAnchor, arrowEdge: Edge, content: (Item) -> Content) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/position(_:)",
+                    "title" : "func position(CGPoint) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/position(x:y:)",
+                    "title" : "func position(x: CGFloat, y: CGFloat) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/preference(key:value:)",
+                    "title" : "func preference<K>(key: K.Type, value: K.Value) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/preferredcolorscheme(_:)",
+                    "title" : "func preferredColorScheme(ColorScheme?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/prefersdefaultfocus(_:in:)",
+                    "title" : "func prefersDefaultFocus(Bool, in: Namespace.ID) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/presentationdetents(_:)",
+                    "title" : "func presentationDetents(Set<PresentationDetent>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/presentationdetents(_:selection:)",
+                    "title" : "func presentationDetents(Set<PresentationDetent>, selection: Binding<PresentationDetent>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/presentationdragindicator(_:)",
+                    "title" : "func presentationDragIndicator(Visibility) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/presentedwindowstyle(_:)",
+                    "title" : "func presentedWindowStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/presentedwindowtoolbarstyle(_:)",
+                    "title" : "func presentedWindowToolbarStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/previewcontext(_:)",
+                    "title" : "func previewContext<C>(C) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/previewdevice(_:)",
+                    "title" : "func previewDevice(PreviewDevice?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/previewdisplayname(_:)",
+                    "title" : "func previewDisplayName(String?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/previewinterfaceorientation(_:)",
+                    "title" : "func previewInterfaceOrientation(InterfaceOrientation) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/previewlayout(_:)",
+                    "title" : "func previewLayout(PreviewLayout) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/privacysensitive(_:)",
+                    "title" : "func privacySensitive(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/progressviewstyle(_:)",
+                    "title" : "func progressViewStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/projectioneffect(_:)",
+                    "title" : "func projectionEffect(ProjectionTransform) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/redacted(reason:)",
+                    "title" : "func redacted(reason: RedactionReasons) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/refreshable(action:)",
+                    "title" : "func refreshable(action: () async -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/renameaction(_:)-8m39m",
+                    "title" : "func renameAction(() -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/renameaction(_:)-imuv",
+                    "title" : "func renameAction(FocusState<Bool>.Binding) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/rotation3deffect(_:axis:anchor:anchorz:perspective:)",
+                    "title" : "func rotation3DEffect(Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint, anchorZ: CGFloat, perspective: CGFloat) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/rotationeffect(_:anchor:)",
+                    "title" : "func rotationEffect(Angle, anchor: UnitPoint) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/safeareainset(edge:alignment:spacing:content:)-7op7k",
+                    "title" : "func safeAreaInset<V>(edge: VerticalEdge, alignment: HorizontalAlignment, spacing: CGFloat?, content: () -> V) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/safeareainset(edge:alignment:spacing:content:)-ifsq",
+                    "title" : "func safeAreaInset<V>(edge: HorizontalEdge, alignment: VerticalAlignment, spacing: CGFloat?, content: () -> V) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/saturation(_:)",
+                    "title" : "func saturation(Double) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/scaleeffect(_:anchor:)-59fge",
+                    "title" : "func scaleEffect(CGSize, anchor: UnitPoint) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/scaleeffect(_:anchor:)-7s0xi",
+                    "title" : "func scaleEffect(CGFloat, anchor: UnitPoint) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/scaleeffect(x:y:anchor:)",
+                    "title" : "func scaleEffect(x: CGFloat, y: CGFloat, anchor: UnitPoint) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/scaledtofill()",
+                    "title" : "func scaledToFill() -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/scaledtofit()",
+                    "title" : "func scaledToFit() -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/scenepadding(_:)",
+                    "title" : "func scenePadding(Edge.Set) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/scenepadding(_:edges:)",
+                    "title" : "func scenePadding(ScenePadding, edges: Edge.Set) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/scrollcontentbackground(_:)",
+                    "title" : "func scrollContentBackground(Visibility) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/scrolldisabled(_:)",
+                    "title" : "func scrollDisabled(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/scrolldismisseskeyboard(_:)",
+                    "title" : "func scrollDismissesKeyboard(ScrollDismissesKeyboardMode) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/scrollindicators(_:axes:)",
+                    "title" : "func scrollIndicators(ScrollIndicatorVisibility, axes: Axis.Set) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/searchcompletion(_:)",
+                    "title" : "func searchCompletion(String) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/searchscopes(_:scopes:)",
+                    "title" : "func searchScopes<V, S>(Binding<V>, scopes: () -> S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/searchsuggestions(_:)",
+                    "title" : "func searchSuggestions<S>(() -> S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/searchsuggestions(_:for:)",
+                    "title" : "func searchSuggestions(Visibility, for: SearchSuggestionsPlacement.Set) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/searchable(text:placement:prompt:)-755d2",
+                    "title" : "func searchable<S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/searchable(text:placement:prompt:)-859xf",
+                    "title" : "func searchable(text: Binding<String>, placement: SearchFieldPlacement, prompt: LocalizedStringKey) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/searchable(text:placement:prompt:)-8q4ub",
+                    "title" : "func searchable(text: Binding<String>, placement: SearchFieldPlacement, prompt: Text?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/searchable(text:placement:prompt:suggestions:)-379jg",
+                    "title" : "func searchable<V, S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: S, suggestions: () -> V) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/searchable(text:placement:prompt:suggestions:)-4jp18",
+                    "title" : "func searchable<S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, suggestions: () -> S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "deprecated" : true,
+                    "path" : "\/documentation\/jxswiftui\/jxview\/searchable(text:placement:prompt:suggestions:)-7574j",
+                    "title" : "func searchable<S>(text: Binding<String>, placement: SearchFieldPlacement, prompt: Text?, suggestions: () -> S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/searchable(text:tokens:placement:prompt:token:)-1gib7",
+                    "title" : "func searchable<C, T, S>(text: Binding<String>, tokens: Binding<C>, placement: SearchFieldPlacement, prompt: S, token: (C.Element) -> T) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/searchable(text:tokens:placement:prompt:token:)-9grlz",
+                    "title" : "func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, placement: SearchFieldPlacement, prompt: Text?, token: (C.Element) -> T) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/searchable(text:tokens:placement:prompt:token:)-9ohv7",
+                    "title" : "func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (C.Element) -> T) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/searchable(text:tokens:suggestedtokens:placement:prompt:token:)-1gcvi",
+                    "title" : "func searchable<C, T, S>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: S, token: (C.Element) -> T) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/searchable(text:tokens:suggestedtokens:placement:prompt:token:)-31lv4",
+                    "title" : "func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: Text?, token: (C.Element) -> T) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/searchable(text:tokens:suggestedtokens:placement:prompt:token:)-k6h3",
+                    "title" : "func searchable<C, T>(text: Binding<String>, tokens: Binding<C>, suggestedTokens: Binding<C>, placement: SearchFieldPlacement, prompt: LocalizedStringKey, token: (C.Element) -> T) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/shadow(color:radius:x:y:)",
+                    "title" : "func shadow(color: Color, radius: CGFloat, x: CGFloat, y: CGFloat) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/sheet(ispresented:ondismiss:content:)",
+                    "title" : "func sheet<Content>(isPresented: Binding<Bool>, onDismiss: (() -> Void)?, content: () -> Content) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/sheet(item:ondismiss:content:)",
+                    "title" : "func sheet<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)?, content: (Item) -> Content) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/simultaneousgesture(_:including:)",
+                    "title" : "func simultaneousGesture<T>(T, including: GestureMask) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/speechadjustedpitch(_:)",
+                    "title" : "func speechAdjustedPitch(Double) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/speechalwaysincludespunctuation(_:)",
+                    "title" : "func speechAlwaysIncludesPunctuation(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/speechannouncementsqueued(_:)",
+                    "title" : "func speechAnnouncementsQueued(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/speechspellsoutcharacters(_:)",
+                    "title" : "func speechSpellsOutCharacters(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/strikethrough(_:pattern:color:)",
+                    "title" : "func strikethrough(Bool, pattern: Text.LineStyle.Pattern, color: Color?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/submitlabel(_:)",
+                    "title" : "func submitLabel(SubmitLabel) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/submitscope(_:)",
+                    "title" : "func submitScope(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/swipeactions(edge:allowsfullswipe:content:)",
+                    "title" : "func swipeActions<T>(edge: HorizontalEdge, allowsFullSwipe: Bool, content: () -> T) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/symbolrenderingmode(_:)",
+                    "title" : "func symbolRenderingMode(SymbolRenderingMode?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/symbolvariant(_:)",
+                    "title" : "func symbolVariant(SymbolVariants) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/tabitem(_:)",
+                    "title" : "func tabItem<V>(() -> V) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/tabviewstyle(_:)",
+                    "title" : "func tabViewStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/tablestyle(_:)",
+                    "title" : "func tableStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/tag(_:)",
+                    "title" : "func tag<V>(V) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/task(id:priority:_:)",
+                    "title" : "func task<T>(id: T, priority: TaskPriority, () async -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/task(priority:_:)",
+                    "title" : "func task(priority: TaskPriority, () async -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/textcase(_:)",
+                    "title" : "func textCase(Text.Case?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/textcontenttype(_:)",
+                    "title" : "func textContentType(NSTextContentType?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/textfieldstyle(_:)",
+                    "title" : "func textFieldStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/textselection(_:)",
+                    "title" : "func textSelection<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/tint(_:)",
+                    "title" : "func tint(Color?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/togglestyle(_:)",
+                    "title" : "func toggleStyle<S>(S) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/toolbar(_:for:)",
+                    "title" : "func toolbar(Visibility, for: ToolbarPlacement...) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/toolbar(content:)-11a30",
+                    "title" : "func toolbar<Content>(content: () -> Content) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/toolbar(content:)-74umj",
+                    "title" : "func toolbar<Content>(content: () -> Content) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/toolbar(id:content:)",
+                    "title" : "func toolbar<Content>(id: String, content: () -> Content) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/toolbarbackground(_:for:)",
+                    "title" : "func toolbarBackground(Visibility, for: ToolbarPlacement...) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/toolbarcolorscheme(_:for:)",
+                    "title" : "func toolbarColorScheme(ColorScheme?, for: ToolbarPlacement...) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/toolbarrole(_:)",
+                    "title" : "func toolbarRole(ToolbarRole) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/toolbartitlemenu(content:)",
+                    "title" : "func toolbarTitleMenu<C>(content: () -> C) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/touchbar(_:)",
+                    "title" : "func touchBar<Content>(TouchBar<Content>) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/touchbar(content:)",
+                    "title" : "func touchBar<Content>(content: () -> Content) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/touchbarcustomizationlabel(_:)",
+                    "title" : "func touchBarCustomizationLabel(Text) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/touchbaritempresence(_:)",
+                    "title" : "func touchBarItemPresence(TouchBarItemPresence) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/touchbaritemprincipal(_:)",
+                    "title" : "func touchBarItemPrincipal(Bool) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/tracking(_:)",
+                    "title" : "func tracking(CGFloat) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/transaction(_:)",
+                    "title" : "func transaction((inout Transaction) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/transformanchorpreference(key:value:transform:)",
+                    "title" : "func transformAnchorPreference<A, K>(key: K.Type, value: Anchor<A>.Source, transform: (inout K.Value, Anchor<A>) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/transformeffect(_:)",
+                    "title" : "func transformEffect(CGAffineTransform) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/transformenvironment(_:transform:)",
+                    "title" : "func transformEnvironment<V>(WritableKeyPath<EnvironmentValues, V>, transform: (inout V) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/transformpreference(_:_:)",
+                    "title" : "func transformPreference<K>(K.Type, (inout K.Value) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/transition(_:)",
+                    "title" : "func transition(AnyTransition) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/truncationmode(_:)",
+                    "title" : "func truncationMode(Text.TruncationMode) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/underline(_:pattern:color:)",
+                    "title" : "func underline(Bool, pattern: Text.LineStyle.Pattern, color: Color?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/unredacted()",
+                    "title" : "func unredacted() -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/useractivity(_:element:_:)",
+                    "title" : "func userActivity<P>(String, element: P?, (P, NSUserActivity) -> ()) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/useractivity(_:isactive:_:)",
+                    "title" : "func userActivity(String, isActive: Bool, (NSUserActivity) -> ()) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/jxswiftui\/jxview\/zindex(_:)",
+                    "title" : "func zIndex(Double) -> some View",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/jxswiftui\/jxview\/view-implementations",
+                "title" : "View Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/jxswiftui\/jxview",
+            "title" : "JXView",
+            "type" : "struct"
+          },
+          {
+            "title" : "Enumerations",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumerations",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/alignment",
+                "title" : "JXSwiftUISupport.Alignment",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/button",
+                "title" : "JXSwiftUISupport.Button",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/buttonrole",
+                "title" : "JXSwiftUISupport.ButtonRole",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/color",
+                "title" : "JXSwiftUISupport.Color",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/emptyview",
+                "title" : "JXSwiftUISupport.EmptyView",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/font-1fsn4",
+                "title" : "JXSwiftUISupport.Font",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/fontdesign",
+                "title" : "JXSwiftUISupport.FontDesign",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/fonttextstyle",
+                "title" : "JXSwiftUISupport.FontTextStyle",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/fontweight",
+                "title" : "JXSwiftUISupport.FontWeight",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/foreach",
+                "title" : "JXSwiftUISupport.ForEach",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/form",
+                "title" : "JXSwiftUISupport.Form",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/group",
+                "title" : "JXSwiftUISupport.Group",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/hstack",
+                "title" : "JXSwiftUISupport.HStack",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/horizontalalignment",
+                "title" : "JXSwiftUISupport.HorizontalAlignment",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/if",
+                "title" : "JXSwiftUISupport.If",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/list",
+                "title" : "JXSwiftUISupport.List",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/navigationlink",
+                "title" : "JXSwiftUISupport.NavigationLink",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/navigationview",
+                "title" : "JXSwiftUISupport.NavigationView",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/scrollview",
+                "title" : "JXSwiftUISupport.ScrollView",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/section",
+                "title" : "JXSwiftUISupport.Section",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/slider",
+                "title" : "JXSwiftUISupport.Slider",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/spacer",
+                "title" : "JXSwiftUISupport.Spacer",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/text",
+                "title" : "JXSwiftUISupport.Text",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/vstack",
+                "title" : "JXSwiftUISupport.VStack",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/verticalalignment",
+                "title" : "JXSwiftUISupport.VerticalAlignment",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/zstack",
+                "title" : "JXSwiftUISupport.ZStack",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/background",
+                "title" : "JXSwiftUISupport.background",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/font-38880",
+                "title" : "JXSwiftUISupport.font",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/foregroundcolor",
+                "title" : "JXSwiftUISupport.foregroundColor",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/frame",
+                "title" : "JXSwiftUISupport.frame",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/navigationtitle",
+                "title" : "JXSwiftUISupport.navigationTitle",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/padding",
+                "title" : "JXSwiftUISupport.padding",
+                "type" : "enum"
+              }
+            ],
+            "path" : "\/documentation\/jxswiftui\/jxswiftuisupport",
+            "title" : "JXSwiftUISupport",
+            "type" : "enum"
+          }
+        ],
+        "path" : "\/documentation\/jxswiftui",
+        "title" : "JXSwiftUI",
+        "type" : "module"
+      }
+    ]
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 1,
+    "patch" : 0
+  }
+}
