@@ -12,8 +12,8 @@ Browse the [API Documentation].
 
 ## Dependencies
 
-- [JXKit][]: Cross-platform JavaScript engine[^1]
-- [JXBridge][]: Bridge native types to JavaScript[^2]
+- [JXKit][]: Cross-platform JavaScript engine
+- [JXBridge][]: Bridge native types to JavaScript
 
 [Swift Package Manager]: https://swift.org/package-manager
 [API Documentation]: https://www.jective.org/JXSwiftUI/documentation/jxswiftui/
