@@ -145,7 +145,7 @@ struct SliderElement: Element {
     static func js(namespace: JXNamespace) -> String? {
 """
 function(value, props, content) {
-    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.slider.rawValue)');
+    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.slider.rawValue)');
     e.value = value;
     e.props = props;
     e.content = content;

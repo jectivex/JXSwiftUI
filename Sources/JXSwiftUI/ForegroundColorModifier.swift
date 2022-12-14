@@ -36,7 +36,7 @@ struct ForegroundColorModifier: Element {
         // .foregroundColor(Color) or .foregroundColor('name')
         return """
 function(color) {
-    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.foregroundColorModifier.rawValue)');
+    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.foregroundColorModifier.rawValue)');
     e.target = this;
     e.color = color;
     return e;

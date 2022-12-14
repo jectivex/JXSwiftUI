@@ -76,7 +76,7 @@ struct ButtonElement: Element {
     static func js(namespace: JXNamespace) -> String? {
 """
 function(...args) {
-    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.button.rawValue)');
+    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.button.rawValue)');
     e.args = args;
     return e;
 }

@@ -36,7 +36,7 @@ struct FontModifier: Element {
     static func modifierJS(namespace: JXNamespace) -> String? {
         return """
 function(font) {
-    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.fontModifier.rawValue)');
+    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.fontModifier.rawValue)');
     e.target = this;
     e.font = font;
     return e;

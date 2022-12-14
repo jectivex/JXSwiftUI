@@ -58,7 +58,7 @@ struct NavigationLinkElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(...args) {
-    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.navigationLink.rawValue)');
+    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.navigationLink.rawValue)');
     e.args = args;
     return e;
 }

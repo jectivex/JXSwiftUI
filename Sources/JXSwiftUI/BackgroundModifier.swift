@@ -53,7 +53,7 @@ struct BackgroundModifier: Element {
     static func modifierJS(namespace: JXNamespace) -> String? {
         return """
 function(propsOrContent, content) {
-    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.backgroundModifier.rawValue)');
+    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.backgroundModifier.rawValue)');
     e.target = this;
     if (content === undefined) {
         e.content = propsOrContent;

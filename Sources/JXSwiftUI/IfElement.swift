@@ -46,7 +46,7 @@ struct IfElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(isTrue, ifFunction, elseFunction) {
-    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.if.rawValue)');
+    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.if.rawValue)');
     e.isTrue = isTrue;
     e.ifFunction = ifFunction;
     e.elseFunction = elseFunction;

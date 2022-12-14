@@ -82,7 +82,7 @@ struct TextElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(propsOrText, text) {
-    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.text.rawValue)');
+    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.text.rawValue)');
     if (text === undefined) {
         e.text = propsOrText;
     } else {

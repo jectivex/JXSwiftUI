@@ -51,7 +51,7 @@ struct PaddingModifier: Element {
     static func modifierJS(namespace: JXNamespace) -> String? {
         return """
 function(...args) {
-    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.paddingModifier.rawValue)');
+    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.paddingModifier.rawValue)');
     e.target = this;
     e.args = args;
     return e;

@@ -55,7 +55,7 @@ struct ForEachElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(items, idOrContent, content) {
-    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.foreach.rawValue)');
+    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.foreach.rawValue)');
     e.items = items;
     if (content === undefined) {
         e.idFunction = (item) => { return item.id; }

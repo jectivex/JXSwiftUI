@@ -7,8 +7,8 @@ struct JSCodeGenerator {
     static let initStateFunction = "initState"
     static let bodyFunction = "body"
     static let withAnimationFunction = "withAnimation"
-    static let elementClass = "_jxswiftuiElement" // Note: this is in the default namespace. See JXBridgeBuilderAdditions
-    static let bindingClass = "_jxswiftuiBinding" // Note: this is in the default namespace so that we can convey it
+    static let elementClass = "_jxswiftuiElement" // Note: this is in the global namespace. See JXBridgeBuilderAdditions
+    static let bindingClass = "_jxswiftuiBinding" // Note: this is in the global namespace so that we can convey it
     static let elementTypeProperty = "_jxswiftuiType"
     static let observerProperty = "_jxswiftuiObserver"
     static let willChangeFunction = "_jxswiftuiWillChange"
@@ -16,13 +16,13 @@ struct JSCodeGenerator {
     
     static func initializationJS(namespace: JXNamespace) -> String {
         let js = """
-\(JXNamespace.default)._jxswiftuiElement = class {
+_jxswiftuiElement = class {
     constructor(type) {
         this._jxswiftuiType = (type === undefined) ? '\(ElementType.native.rawValue)' : type;
         return new Proxy(this, \(namespace)._jxswiftuiElementHandler);
     }
 }
-\(JXNamespace.default)._jxswiftuiBinding = class {
+_jxswiftuiBinding = class {
     constructor(get, set) {
         this.get = get;
         this.set = set;
@@ -33,7 +33,7 @@ struct JSCodeGenerator {
         if (target[property] === undefined) {
             if (property.startsWith('$')) {
                 const stateProperty = property.slice(1);
-                return new \(JXNamespace.default)._jxswiftuiBinding(() => {
+                return new _jxswiftuiBinding(() => {
                     return target[stateProperty];
                 }, (value) => {
                     target.willChange();
@@ -81,7 +81,7 @@ struct JSCodeGenerator {
         return true;
     }
 }
-\(namespace).JXView = class extends \(JXNamespace.default)._jxswiftuiElement {
+\(namespace).JXView = class extends _jxswiftuiElement {
     constructor() {
         super('\(ElementType.custom.rawValue)');
         const state = {
@@ -117,7 +117,7 @@ struct JSCodeGenerator {
         guard let js = type.valueType?.modifierJS(namespace: namespace) else {
             return nil
         }
-        let def = "\(JXNamespace.default).\(elementClass).prototype.\(modifier) = \(js)"
+        let def = "\(elementClass).prototype.\(modifier) = \(js)"
         //print(def)
         return def
     }

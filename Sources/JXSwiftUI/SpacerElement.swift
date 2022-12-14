@@ -27,7 +27,7 @@ struct SpacerElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(minLength) {
-    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.spacer.rawValue)');
+    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.spacer.rawValue)');
     e.minLength = minLength;
     return e;
 }
