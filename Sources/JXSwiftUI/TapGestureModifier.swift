@@ -37,7 +37,7 @@ struct TapGestureModifier: Element {
     static func modifierJS(namespace: JXNamespace) -> String? {
         return """
 function(countOrAction, action) {
-    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.tapGestureModifier.rawValue)');
+    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.tapGestureModifier.rawValue)');
     e.target = this;
     if (action === undefined) {
         e.count = 1;

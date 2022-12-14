@@ -33,7 +33,7 @@ struct GroupElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(contentArray) {
-    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.group.rawValue)');
+    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.group.rawValue)');
     e.content = contentArray;
     return e;
 }

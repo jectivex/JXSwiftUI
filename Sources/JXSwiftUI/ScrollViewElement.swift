@@ -56,7 +56,7 @@ struct ScrollViewElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(propsOrContent, content) {
-    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.scrollView.rawValue)');
+    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.scrollView.rawValue)');
     if (content === undefined) {
         e.content = propsOrContent;
     } else {

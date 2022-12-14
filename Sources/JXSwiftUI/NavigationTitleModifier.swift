@@ -36,7 +36,7 @@ struct NavigationTitleModifier: Element {
     static func modifierJS(namespace: JXNamespace) -> String? {
         return """
 function(title) {
-    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.navigationTitleModifier.rawValue)');
+    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.navigationTitleModifier.rawValue)');
     e.target = this;
     e.title = title;
     return e;

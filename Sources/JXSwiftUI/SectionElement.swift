@@ -68,7 +68,7 @@ struct SectionElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(propsOrContentArray, contentArray) {
-    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.section.rawValue)');
+    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.section.rawValue)');
     if (contentArray === undefined) {
         e.content = propsOrContentArray;
     } else {

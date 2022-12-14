@@ -34,7 +34,7 @@ struct FormElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(contentArray) {
-    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.form.rawValue)');
+    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.form.rawValue)');
     e.content = contentArray;
     return e;
 }

@@ -67,7 +67,7 @@ struct FrameModifier: Element {
     static func modifierJS(namespace: JXNamespace) -> String? {
         return """
 function(widthOrProps, height, alignment) {
-    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.frameModifier.rawValue)');
+    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.frameModifier.rawValue)');
     e.target = this;
     if (typeof(widthOrProps) === 'number') {
         e.width = widthOrProps;

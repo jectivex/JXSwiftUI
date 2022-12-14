@@ -46,7 +46,7 @@ struct HStackElement: Element {
     static func js(namespace: JXNamespace) -> String? {
         """
 function(propsOrContentArray, contentArray) {
-    const e = new \(JXNamespace.default).\(JSCodeGenerator.elementClass)('\(ElementType.hstack.rawValue)');
+    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.hstack.rawValue)');
     if (contentArray === undefined) {
         e.content = propsOrContentArray;
     } else {
