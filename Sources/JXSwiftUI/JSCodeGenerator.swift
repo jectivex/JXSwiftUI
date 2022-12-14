@@ -2,12 +2,12 @@ import JXBridge
 
 /// Generate supporting JavaScript code.
 struct JSCodeGenerator {
-    static let elementClass = "_jxswiftuiElement" // Note: this is in the default namespace. See JXBridgeBuilderAdditions
     static let stateProperty = "state"
     static let observedProperty = "observed"
     static let initStateFunction = "initState"
     static let bodyFunction = "body"
     static let withAnimationFunction = "withAnimation"
+    static let elementClass = "_jxswiftuiElement" // Note: this is in the default namespace. See JXBridgeBuilderAdditions
     static let bindingClass = "_jxswiftuiBinding" // Note: this is in the default namespace so that we can convey it
     static let elementTypeProperty = "_jxswiftuiType"
     static let observerProperty = "_jxswiftuiObserver"
@@ -16,6 +16,18 @@ struct JSCodeGenerator {
     
     static func initializationJS(namespace: JXNamespace) -> String {
         let js = """
+\(JXNamespace.default)._jxswiftuiElement = class {
+    constructor(type) {
+        this._jxswiftuiType = (type === undefined) ? '\(ElementType.native.rawValue)' : type;
+        return new Proxy(this, \(namespace)._jxswiftuiElementHandler);
+    }
+}
+\(JXNamespace.default)._jxswiftuiBinding = class {
+    constructor(get, set) {
+        this.get = get;
+        this.set = set;
+    }
+}
 \(namespace)._jxswiftuiStateHandler = {
     get(target, property, receiver) {
         if (target[property] === undefined) {
@@ -67,18 +79,6 @@ struct JSCodeGenerator {
         }
         binding.set(value);
         return true;
-    }
-}
-\(JXNamespace.default)._jxswiftuiBinding = class {
-    constructor(get, set) {
-        this.get = get;
-        this.set = set;
-    }
-}
-\(JXNamespace.default)._jxswiftuiElement = class {
-    constructor(type) {
-        this._jxswiftuiType = (type === undefined) ? '\(ElementType.native.rawValue)' : type;
-        return new Proxy(this, \(namespace)._jxswiftuiElementHandler);
     }
 }
 \(namespace).JXView = class extends \(JXNamespace.default)._jxswiftuiElement {
