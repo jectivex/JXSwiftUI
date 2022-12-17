@@ -9,7 +9,7 @@ final class SliderElementTests: JXSwiftUITestsBase {
         var value = 0.0
         let binding = Binding(get: { return value }, set: { value = $0 })
         try context.withValues([binding]) {
-            let jxValue = try context.eval("swiftui.Slider($0)")
+            let jxValue = try context.eval("jxswiftui.Slider($0)")
             let slider = try SliderElement(jxValue: jxValue)
             let _ = slider.view(errorHandler: errorHandler)
         }
@@ -19,12 +19,12 @@ final class SliderElementTests: JXSwiftUITestsBase {
         var value = 0.0
         let binding = Binding(get: { return value }, set: { value = $0 })
         try context.withValues([binding]) {
-            let jxValue = try context.eval("swiftui.Slider($0, 'label')")
+            let jxValue = try context.eval("jxswiftui.Slider($0, 'label')")
             let slider = try SliderElement(jxValue: jxValue)
             let _ = slider.view(errorHandler: errorHandler)
         }
         try context.withValues([binding]) {
-            let jxValue = try context.eval("swiftui.Slider($0, {}, swiftui.Text('label'))")
+            let jxValue = try context.eval("jxswiftui.Slider($0, {}, jxswiftui.Text('label'))")
             let slider = try SliderElement(jxValue: jxValue)
             let _ = slider.view(errorHandler: errorHandler)
         }
@@ -34,7 +34,7 @@ final class SliderElementTests: JXSwiftUITestsBase {
         var value = 0.0
         let binding = Binding(get: { return value }, set: { value = $0 })
         try context.withValues([binding]) {
-            let jxValue = try context.eval("swiftui.Slider($0, {minimumValue: 10, maximumValue: 20, step: 2})")
+            let jxValue = try context.eval("jxswiftui.Slider($0, {minimumValue: 10, maximumValue: 20, step: 2})")
             let slider = try SliderElement(jxValue: jxValue)
             let _ = slider.view(errorHandler: errorHandler)
         }
@@ -44,7 +44,7 @@ final class SliderElementTests: JXSwiftUITestsBase {
         var value = 0.0
         let binding = Binding(get: { return value }, set: { value = $0 })
         try context.withValues([binding]) {
-            let jxValue = try context.eval("swiftui.Slider($0, {label: 'label', minimumValueLabel: swiftui.EmptyView(), maximumValueLabel: 'max'})")
+            let jxValue = try context.eval("jxswiftui.Slider($0, {label: 'label', minimumValueLabel: jxswiftui.EmptyView(), maximumValueLabel: 'max'})")
             let slider = try SliderElement(jxValue: jxValue)
             let _ = slider.view(errorHandler: errorHandler)
         }
