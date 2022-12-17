@@ -32,7 +32,7 @@ public struct JXView: View {
     private func contentElement(errorHandler: ErrorHandler) -> Element {
         let context = context ?? jxEnvironment.context
         do {
-            if context.registry.module(for: .swiftui) == nil {
+            if context.registry.module(for: .jxswiftui) == nil {
                 try context.registry.register(JXSwiftUI())
             }
             let contentValue = try content(context)
