@@ -81,7 +81,7 @@ _jxswiftuiBinding = class {
         return true;
     }
 }
-\(namespace).JXView = class extends _jxswiftuiElement {
+\(namespace).View = class extends _jxswiftuiElement {
     constructor() {
         super('\(ElementType.custom.rawValue)');
         const state = {
