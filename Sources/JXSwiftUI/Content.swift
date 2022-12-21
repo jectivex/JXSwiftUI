@@ -39,11 +39,11 @@ struct Content {
     }
     
     func element(errorHandler: ErrorHandler) -> Element {
-        if let element = self.element {
+        if let element {
             return element
         }
         do {
-            guard let jxValue = self.jxValue, !jxValue.isNullOrUndefined else {
+            guard let jxValue, !jxValue.isNullOrUndefined else {
                 throw JXError.missingContent()
             }
             return try extractElement(for: jxValue, errorHandler: errorHandler) ?? EmptyElement()
@@ -55,10 +55,10 @@ struct Content {
     
     func elementArray(errorHandler: ErrorHandler) -> [Element] {
         do {
-            if self.element != nil {
+            if element != nil {
                 throw JXError.contentNotArray()
             }
-            guard let jxValue = self.jxValue, !jxValue.isNullOrUndefined else {
+            guard let jxValue, !jxValue.isNullOrUndefined else {
                 throw JXError.missingContent()
             }
             return try extractElementArray(for: jxValue, errorHandler: errorHandler)

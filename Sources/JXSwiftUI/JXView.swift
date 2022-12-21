@@ -1,3 +1,4 @@
+import Combine
 import JXBridge
 import JXKit
 import SwiftUI
@@ -5,6 +6,7 @@ import SwiftUI
 /// A SwiftUI view that displays content defined in JavaScript.
 public struct JXView: View {
     @Environment(\.jx) private var jxEnvironment: JXEnvironment
+    @StateObject private var resourcesObservable = ViewResourcesObservable()
     private let context: JXContext?
     private let errorHandler: ((Error) -> Void)?
     private let content: (JXContext) throws -> JXValue
@@ -31,15 +33,43 @@ public struct JXView: View {
     
     private func contentElement(errorHandler: ErrorHandler) -> Element {
         let context = context ?? jxEnvironment.context
+        resourcesObservable.initialize(context: context)
         do {
             if context.registry.module(for: .jxswiftui) == nil {
                 try context.registry.register(JXSwiftUI())
             }
-            let contentValue = try content(context)
-            return try Content(jxValue: contentValue).element(errorHandler: errorHandler)
+            let result = try context.trackingScriptAccess {
+                return try content(context)
+            }
+            resourcesObservable.viewScriptIDs = result.scriptIDs
+            return try Content(jxValue: result.value).element(errorHandler: errorHandler)
         } catch {
             errorHandler.handle(error)
             return EmptyElement()
+        }
+    }
+}
+
+/// Used to update each view if any accessed resources changes.
+private class ViewResourcesObservable: ObservableObject {
+    private var context: JXContext?
+    private var resourcesSubscription: JXCancellable?
+    
+    func initialize(context: JXContext) {
+        guard context !== context else {
+            return
+        }
+        self.context = context
+        self.resourcesSubscription = context.onScriptsDidChange { [weak self] in
+            self?.onScriptsDidChange($0)
+        }
+    }
+    
+    var viewScriptIDs: Set<String> = []
+    
+    private func onScriptsDidChange(_ scriptIDs: Set<String>) {
+        if !scriptIDs.isDisjoint(with: viewScriptIDs) {
+            objectWillChange.send()
         }
     }
 }
