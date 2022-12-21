@@ -65,7 +65,7 @@ struct TextElement: Element {
     func view(errorHandler: ErrorHandler) -> any View {
         let errorHandler = errorHandler.in(.text)
         var text: Text
-        if let verbatim = self.verbatim {
+        if let verbatim {
             text = Text(verbatim: verbatim)
         } else if let key = self.text {
             text = Text(key)
