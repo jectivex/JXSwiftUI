@@ -6,7 +6,7 @@ import SwiftUI
 /// A SwiftUI view that displays content defined in JavaScript.
 public struct JXView: View {
     @Environment(\.jx) private var jxEnvironment: JXEnvironment
-    @StateObject private var resourcesObservable = ViewResourcesObservable()
+    @StateObject private var scriptsObservable = ViewScriptsObservable()
     private let context: JXContext?
     private let errorHandler: ((Error) -> Void)?
     private let content: (JXContext) throws -> JXValue
@@ -33,16 +33,23 @@ public struct JXView: View {
     
     private func contentElement(errorHandler: ErrorHandler) -> Element {
         let context = context ?? jxEnvironment.context
-        resourcesObservable.initialize(context: context)
         do {
             if context.registry.module(for: .jxswiftui) == nil {
                 try context.registry.register(JXSwiftUI())
             }
-            let result = try context.trackingScriptAccess {
-                return try content(context)
+            let jxValue: JXValue
+            if context.configuration.isDynamicReloadEnabled {
+                // When dynamic reloading is enabled, track which script resources this view uses and re-run our body when they change
+                scriptsObservable.initialize(context: context)
+                let result = try context.trackingScriptAccess {
+                    return try content(context)
+                }
+                scriptsObservable.accessedScripts = result.accessed
+                jxValue = result.value
+            } else {
+                jxValue = try content(context)
             }
-            resourcesObservable.viewScriptIDs = result.scriptIDs
-            return try Content(jxValue: result.value).element(errorHandler: errorHandler)
+            return try Content(jxValue: jxValue).element(errorHandler: errorHandler)
         } catch {
             errorHandler.handle(error)
             return EmptyElement()
@@ -50,25 +57,25 @@ public struct JXView: View {
     }
 }
 
-/// Used to update each view if any accessed resources changes.
-private class ViewResourcesObservable: ObservableObject {
+/// Used to update each view if any accessed scripts change.
+private class ViewScriptsObservable: ObservableObject {
     private var context: JXContext?
-    private var resourcesSubscription: JXCancellable?
+    private var scriptsSubscription: JXCancellable?
     
     func initialize(context: JXContext) {
-        guard context !== context else {
+        guard context !== self.context else {
             return
         }
         self.context = context
-        self.resourcesSubscription = context.onScriptsDidChange { [weak self] in
+        self.scriptsSubscription = context.onScriptsDidChange { [weak self] in
             self?.onScriptsDidChange($0)
         }
     }
     
-    var viewScriptIDs: Set<String> = []
+    var accessedScripts: Set<String> = []
     
-    private func onScriptsDidChange(_ scriptIDs: Set<String>) {
-        if !scriptIDs.isDisjoint(with: viewScriptIDs) {
+    private func onScriptsDidChange(_ scripts: Set<String>) {
+        if !scripts.isDisjoint(with: accessedScripts) {
             objectWillChange.send()
         }
     }
