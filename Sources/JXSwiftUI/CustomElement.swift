@@ -56,7 +56,15 @@ private struct CustomView: View {
             // This preserves state when the parent view's body() is re-evaluated and a new JS
             // view is constructed, but is being backed by the same SwiftUI view. In cases where
             // it's the same JS view instance, it has no real effect
-            try element.jxValue.setProperty(JSCodeGenerator.stateProperty, state)
+            if element.jxValue.context.configuration.isDynamicReloadEnabled {
+                // If the view definition may have changed, merge any new state properties
+                try element.jxValue[JSCodeGenerator.initStateFunction].call()
+                let newState = try element.jxValue[JSCodeGenerator.stateProperty]
+                let mergedState = try jsState.merge(state: newState)
+                try element.jxValue.setProperty(JSCodeGenerator.stateProperty, mergedState)
+            } else {
+                try element.jxValue.setProperty(JSCodeGenerator.stateProperty, state)
+            }
         } else {
             // If we don't have previous JS state, cache the JS view's state for injection next time.
             // Assign an observer so that any state change triggers an update on our state object,
@@ -116,5 +124,18 @@ private class JSState: ObservableObject {
     
     init() {
         observerSubscription = observer.objectWillChange.sink { [weak self] _ in self?.objectWillChange.send() }
+    }
+
+    func merge(state: JXValue) throws -> JXValue {
+        guard let target = self.state else {
+            self.state = state
+            return state
+        }
+        for entry in try state.dictionary {
+            if !target.hasProperty(entry.key) {
+                try target.setProperty(entry.key, entry.value)
+            }
+        }
+        return target
     }
 }
