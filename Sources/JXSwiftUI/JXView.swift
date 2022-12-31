@@ -15,7 +15,7 @@ public struct JXView: View {
     ///
     /// - Parameters:
     ///   - context: An existing context. If not supplied, we use the ``JXEnvironment`` value, which defaults to a new context.
-    ///   - errorHandler: An optional handler for JavaScript errors. If not supplied, we use the ``JXEnvironment`` value, which defaults to printing errors to the console.
+    ///   - errorHandler: An optional handler for JavaScript errors. If not supplied, we use the ``JXEnvironment`` value, which defaults to logging errors via `JXContext.configuration.log`.
     ///   - content: A closure returning a `JXValue` reprenting the content view. Typically you will use the supplied context to `eval` JavaScript that returns a `JXSwiftUI` view.
     public init(context: JXContext? = nil, errorHandler: ((Error) -> Void)? = nil, content: @escaping (JXContext) throws -> JXValue) {
         self.context = context
@@ -24,7 +24,7 @@ public struct JXView: View {
     }
     
     public var body: some View {
-        let jxErrorHandler = ErrorHandler(handler: self.errorHandler ?? jxEnvironment.errorHandler, elementPath: [])
+        let jxErrorHandler = ErrorHandler(handler: errorHandler ?? jxEnvironment.errorHandler, elementPath: [])
         return contentElement(errorHandler: jxErrorHandler)
             .view(errorHandler: jxErrorHandler)
             .eraseToAnyView()
