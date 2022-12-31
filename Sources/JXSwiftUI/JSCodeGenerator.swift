@@ -9,6 +9,7 @@ struct JSCodeGenerator {
     static let withAnimationFunction = "withAnimation"
     static let elementClass = "_jxswiftuiElement" // Note: this is in the global namespace. See JXBridgeBuilderAdditions
     static let bindingClass = "_jxswiftuiBinding" // Note: this is in the global namespace so that we can convey it
+    static let bindingClassCreateFunction = "create"
     static let elementTypeProperty = "_jxswiftuiType"
     static let observerProperty = "_jxswiftuiObserver"
     static let willChangeFunction = "_jxswiftuiWillChange"
@@ -23,6 +24,9 @@ _jxswiftuiElement = class {
     }
 }
 _jxswiftuiBinding = class {
+    static create(get, set) {
+        return new _jxswiftuiBinding(get, set);
+    }
     constructor(get, set) {
         this.get = get;
         this.set = set;
