@@ -38,7 +38,7 @@ final class ColorTests: JXSwiftUITestsBase {
             let _ = try context.eval("jxswiftui.Color.system({})").convey(to: Color.self)
         }
         expectingError {
-            let _ = try context.eval("var o = {}; jxswiftui.Color.system({red: o.red, blue: o.blue, green: o.green})").convey(to: Color.self)
+            let _ = try context.eval("const o = {}; jxswiftui.Color.system({red: o.red, blue: o.blue, green: o.green})").convey(to: Color.self)
         }
     }
 }

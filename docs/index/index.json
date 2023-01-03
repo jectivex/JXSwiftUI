@@ -2645,6 +2645,16 @@
                 "type" : "enum"
               },
               {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/liststyle-7dd4o",
+                "title" : "JXSwiftUISupport.ListStyle",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/nstextcontenttype",
+                "title" : "JXSwiftUISupport.NSTextContentType",
+                "type" : "enum"
+              },
+              {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/navigationlink",
                 "title" : "JXSwiftUISupport.NavigationLink",
                 "type" : "enum"
@@ -2655,6 +2665,16 @@
                 "type" : "enum"
               },
               {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/picker",
+                "title" : "JXSwiftUISupport.Picker",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/pickerstyle-4cjmf",
+                "title" : "JXSwiftUISupport.PickerStyle",
+                "type" : "enum"
+              },
+              {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/scrollview",
                 "title" : "JXSwiftUISupport.ScrollView",
                 "type" : "enum"
@@ -2662,6 +2682,11 @@
               {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/section",
                 "title" : "JXSwiftUISupport.Section",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/securefield",
+                "title" : "JXSwiftUISupport.SecureField",
                 "type" : "enum"
               },
               {
@@ -2677,6 +2702,26 @@
               {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/text",
                 "title" : "JXSwiftUISupport.Text",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/texteditor",
+                "title" : "JXSwiftUISupport.TextEditor",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/textfield",
+                "title" : "JXSwiftUISupport.TextField",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/textfieldstyle-9a4ov",
+                "title" : "JXSwiftUISupport.TextFieldStyle",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/toggle",
+                "title" : "JXSwiftUISupport.Toggle",
                 "type" : "enum"
               },
               {
@@ -2700,6 +2745,11 @@
                 "type" : "enum"
               },
               {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/border",
+                "title" : "JXSwiftUISupport.border",
+                "type" : "enum"
+              },
+              {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/font-38880",
                 "title" : "JXSwiftUISupport.font",
                 "type" : "enum"
@@ -2715,8 +2765,18 @@
                 "type" : "enum"
               },
               {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/liststyle-3pk6j",
+                "title" : "JXSwiftUISupport.listStyle",
+                "type" : "enum"
+              },
+              {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/navigationtitle",
                 "title" : "JXSwiftUISupport.navigationTitle",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/onsubmit",
+                "title" : "JXSwiftUISupport.onSubmit",
                 "type" : "enum"
               },
               {
@@ -2727,6 +2787,31 @@
               {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/padding",
                 "title" : "JXSwiftUISupport.padding",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/pickerstyle-9wfq7",
+                "title" : "JXSwiftUISupport.pickerStyle",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/submitscope",
+                "title" : "JXSwiftUISupport.submitScope",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/tag",
+                "title" : "JXSwiftUISupport.tag",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/textcontenttype",
+                "title" : "JXSwiftUISupport.textContentType",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/textfieldstyle-95n03",
+                "title" : "JXSwiftUISupport.textFieldStyle",
                 "type" : "enum"
               }
             ],

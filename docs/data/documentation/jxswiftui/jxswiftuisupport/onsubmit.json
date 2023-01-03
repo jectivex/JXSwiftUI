@@ -1,0 +1,223 @@
+{
+  "abstract" : [
+    {
+      "text" : "Sets a submit action on a target view.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/onSubmit"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "JXSwiftUI",
+    "externalID" : "s:9JXSwiftUI0A9UISupportO8onSubmitO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "onSubmit"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "JXSwiftUI"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "onSubmit"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "JXSwiftUISupport.onSubmit"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "onSubmit"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Supported calls:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "- .onSubmit(() => { action })",
+            "- .onSubmit('trigger', () => { action })",
+            "- .onSubmit(['trigger', 'trigger'], () => { action })"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Supported triggers are ‘text’ and ‘search’.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/jxswiftui\/jxswiftuisupport\/onsubmit"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://JXSwiftUI/documentation/JXSwiftUI": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "JXSwiftUI",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport": {
+  "abstract" : [
+    {
+      "text" : "Documentation on all supported SwiftUI constructs.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "JXSwiftUISupport"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "JXSwiftUISupport"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/onSubmit": {
+  "abstract" : [
+    {
+      "text" : "Sets a submit action on a target view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "onSubmit"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/onSubmit",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "onSubmit"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.onSubmit",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/onsubmit"
+}
+}
+}

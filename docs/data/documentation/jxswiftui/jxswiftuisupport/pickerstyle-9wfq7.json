@@ -1,0 +1,212 @@
+{
+  "abstract" : [
+    {
+      "text" : "Sets the picker style on a target view.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/pickerStyle-9wfq7"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "JXSwiftUI",
+    "externalID" : "s:9JXSwiftUI0A9UISupportO11pickerStyleO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "pickerStyle"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "JXSwiftUI"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "pickerStyle"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "JXSwiftUISupport.pickerStyle"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "pickerStyle"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Supported calls:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "- .pickerStyle(PickerStyle)"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/jxswiftui\/jxswiftuisupport\/pickerstyle-9wfq7"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://JXSwiftUI/documentation/JXSwiftUI": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "JXSwiftUI",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport": {
+  "abstract" : [
+    {
+      "text" : "Documentation on all supported SwiftUI constructs.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "JXSwiftUISupport"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "JXSwiftUISupport"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/pickerStyle-9wfq7": {
+  "abstract" : [
+    {
+      "text" : "Sets the picker style on a target view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "pickerStyle"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/pickerStyle-9wfq7",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "pickerStyle"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.pickerStyle",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/pickerstyle-9wfq7"
+}
+}
+}

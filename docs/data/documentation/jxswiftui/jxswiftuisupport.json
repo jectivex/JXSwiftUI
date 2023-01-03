@@ -108,23 +108,40 @@
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/HorizontalAlignment",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/If",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/List",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/ListStyle-7dd4o",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/NSTextContentType",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/NavigationLink",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/NavigationView",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Picker",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/PickerStyle-4cjmf",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/ScrollView",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Section",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/SecureField",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Slider",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Spacer",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Text",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/TextEditor",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/TextField",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/TextFieldStyle-9a4ov",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Toggle",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/VStack",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/VerticalAlignment",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/ZStack",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/background",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/border",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/font-38880",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/foregroundColor",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/frame",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/listStyle-3pk6j",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/navigationTitle",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/onSubmit",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/onTapGesture",
-        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/padding"
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/padding",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/pickerStyle-9wfq7",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/submitScope",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/tag",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/textContentType",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/textFieldStyle-95n03"
       ],
       "title" : "Enumerations"
     }
@@ -1082,6 +1099,106 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/list"
 },
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/ListStyle-7dd4o": {
+  "abstract" : [
+    {
+      "text" : "Use a JavaScript string to name any standard ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftUI.ListStyle",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " value, e.g. ",
+      "type" : "text"
+    },
+    {
+      "code" : "'automatic'",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ListStyle"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/ListStyle-7dd4o",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ListStyle"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.ListStyle",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/liststyle-7dd4o"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/NSTextContentType": {
+  "abstract" : [
+    {
+      "text" : "Use a JavaScript string to name any standard ",
+      "type" : "text"
+    },
+    {
+      "code" : "AppKit.NSTextContentType",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " value, e.g. ",
+      "type" : "text"
+    },
+    {
+      "code" : "'emailAddress'",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NSTextContentType"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/NSTextContentType",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NSTextContentType"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.NSTextContentType",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/nstextcontenttype"
+},
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/NavigationLink": {
   "abstract" : [
     {
@@ -1166,6 +1283,98 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/navigationview"
 },
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/Picker": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftUI.Picker",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Picker"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Picker",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Picker"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.Picker",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/picker"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/PickerStyle-4cjmf": {
+  "abstract" : [
+    {
+      "text" : "Use a JavaScript string to name any standard ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftUI.PickerStyle",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " value, e.g. ",
+      "type" : "text"
+    },
+    {
+      "code" : "'automatic'",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PickerStyle"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/PickerStyle-4cjmf",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PickerStyle"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.PickerStyle",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/pickerstyle-4cjmf"
+},
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/ScrollView": {
   "abstract" : [
     {
@@ -1249,6 +1458,48 @@
   "title" : "JXSwiftUISupport.Section",
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/section"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/SecureField": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftUI.SecureField",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SecureField"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/SecureField",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SecureField"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.SecureField",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/securefield"
 },
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/Slider": {
   "abstract" : [
@@ -1375,6 +1626,182 @@
   "title" : "JXSwiftUISupport.Text",
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/text"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/TextEditor": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftUI.TextEditor",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TextEditor"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/TextEditor",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TextEditor"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.TextEditor",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/texteditor"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/TextField": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftUI.TextField",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TextField"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/TextField",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TextField"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.TextField",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/textfield"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/TextFieldStyle-9a4ov": {
+  "abstract" : [
+    {
+      "text" : "Use a JavaScript string to name any standard ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftUI.TextFieldStyle",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " value, e.g. ",
+      "type" : "text"
+    },
+    {
+      "code" : "'automatic'",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TextFieldStyle"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/TextFieldStyle-9a4ov",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TextFieldStyle"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.TextFieldStyle",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/textfieldstyle-9a4ov"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/Toggle": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftUI.Toggle",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Toggle"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Toggle",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Toggle"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.Toggle",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/toggle"
 },
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/VStack": {
   "abstract" : [
@@ -1544,6 +1971,40 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/background"
 },
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/border": {
+  "abstract" : [
+    {
+      "text" : "Sets a border on a target view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "border"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/border",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "border"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.border",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/border"
+},
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/font-38880": {
   "abstract" : [
     {
@@ -1646,6 +2107,40 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/frame"
 },
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/listStyle-3pk6j": {
+  "abstract" : [
+    {
+      "text" : "Sets the list style on a target view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "listStyle"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/listStyle-3pk6j",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "listStyle"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.listStyle",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/liststyle-3pk6j"
+},
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/navigationTitle": {
   "abstract" : [
     {
@@ -1679,6 +2174,40 @@
   "title" : "JXSwiftUISupport.navigationTitle",
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/navigationtitle"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/onSubmit": {
+  "abstract" : [
+    {
+      "text" : "Sets a submit action on a target view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "onSubmit"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/onSubmit",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "onSubmit"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.onSubmit",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/onsubmit"
 },
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/onTapGesture": {
   "abstract" : [
@@ -1747,6 +2276,184 @@
   "title" : "JXSwiftUISupport.padding",
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/padding"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/pickerStyle-9wfq7": {
+  "abstract" : [
+    {
+      "text" : "Sets the picker style on a target view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "pickerStyle"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/pickerStyle-9wfq7",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "pickerStyle"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.pickerStyle",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/pickerstyle-9wfq7"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/submitScope": {
+  "abstract" : [
+    {
+      "text" : "Prevents submission of the target view from triggering ",
+      "type" : "text"
+    },
+    {
+      "code" : "onSubmit",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " actions higher up the view hierarchy.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "submitScope"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/submitScope",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "submitScope"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.submitScope",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/submitscope"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/tag": {
+  "abstract" : [
+    {
+      "text" : "Tags the target view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "tag"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/tag",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "tag"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.tag",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/tag"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/textContentType": {
+  "abstract" : [
+    {
+      "text" : "Sets the text content type on a target view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "textContentType"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/textContentType",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "textContentType"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.textContentType",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/textcontenttype"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/textFieldStyle-95n03": {
+  "abstract" : [
+    {
+      "text" : "Sets the text field style on a target view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "textFieldStyle"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/textFieldStyle-95n03",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "textFieldStyle"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.textFieldStyle",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/textfieldstyle-95n03"
 }
 }
 }

@@ -29,7 +29,8 @@ struct ListElement: Element {
     func view(errorHandler: ErrorHandler) -> any View {
         return List {
             let errorHandler = errorHandler.in(.list)
-            content.elementArray(errorHandler: errorHandler) .containerView(errorHandler: errorHandler)
+            content.elementArray(errorHandler: errorHandler)
+                .containerView(errorHandler: errorHandler)
         }
     }
     

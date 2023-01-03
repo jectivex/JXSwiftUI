@@ -1,0 +1,263 @@
+{
+  "abstract" : [
+    {
+      "text" : "Sets a border on a target view.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/border"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "JXSwiftUI",
+    "externalID" : "s:9JXSwiftUI0A9UISupportO6borderO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "border"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "JXSwiftUI"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "border"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "JXSwiftUISupport.border"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "border"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Supported calls:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "- .border({props}, content)",
+            "- .border(content)"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Supported ",
+              "type" : "text"
+            },
+            {
+              "code" : "props",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "- width: Number"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Supported ",
+              "type" : "text"
+            },
+            {
+              "code" : "content",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "- Color name",
+            "- View",
+            "- Anonymous function returning a View"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/jxswiftui\/jxswiftuisupport\/border"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://JXSwiftUI/documentation/JXSwiftUI": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "JXSwiftUI",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport": {
+  "abstract" : [
+    {
+      "text" : "Documentation on all supported SwiftUI constructs.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "JXSwiftUISupport"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "JXSwiftUISupport"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/border": {
+  "abstract" : [
+    {
+      "text" : "Sets a border on a target view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "border"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/border",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "border"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.border",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/border"
+}
+}
+}
