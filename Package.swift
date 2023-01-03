@@ -10,8 +10,8 @@ let package = Package(
         .library(name: "JXSwiftUI", targets: ["JXSwiftUI"]),
     ],
     dependencies: [ .package(name: "swift-docc-plugin", url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"), 
-        .package(url: "https://github.com/jectivex/JXBridge.git", from: "0.1.14"),
-        .package(url: "https://github.com/jectivex/JXKit.git", from: "3.4.1"),
+        .package(url: "https://github.com/jectivex/JXBridge.git", from: "0.1.15"),
+        .package(url: "https://github.com/jectivex/JXKit.git", from: "3.5.0"),
     ],
     targets: [
         .target(name: "JXSwiftUI", dependencies: ["JXBridge", "JXKit"]),

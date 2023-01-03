@@ -266,7 +266,15 @@
                   "type" : "reference"
                 },
                 {
-                  "text" : " value, which defaults to printing errors to the console.",
+                  "text" : " value, which defaults to logging errors via ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "JXContext.configuration.log",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ".",
                   "type" : "text"
                 }
               ],
