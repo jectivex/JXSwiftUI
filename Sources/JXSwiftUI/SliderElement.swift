@@ -80,7 +80,7 @@ struct SliderElement: Element {
 
     func view(errorHandler: ErrorHandler) -> any View {
         let errorHandler = errorHandler.in(.slider)
-        // Is there any way to support cases with or withour a step without repeating all code?
+        // Is there any way to support cases with or without a step without repeating all code?
         if let step {
             return Slider(value: value, in: minimumValue...maximumValue, step: step) {
                 if let label = self.label {
