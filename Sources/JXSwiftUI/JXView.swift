@@ -41,7 +41,7 @@ public struct JXView: View {
             if context.configuration.isDynamicReloadEnabled {
                 // When dynamic reloading is enabled, track which script resources this view uses and re-run our body when they change
                 scriptsObservable.initialize(context: context)
-                let result = try context.trackingScriptAccess {
+                let result = try context.trackingScriptsAccess {
                     return try content(context)
                 }
                 scriptsObservable.accessedScripts = result.accessed
