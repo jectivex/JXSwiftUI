@@ -13,8 +13,12 @@ final class ListStyleModifierTests: JXSwiftUITestsBase {
 
 #if os(macOS)
     func testAlternatingBackground() throws {
-        let jxValue = try context.eval("jxswiftui.EmptyView().listStyle('inset', true)")
-        let listStyle = try ListStyleModifier(jxValue: jxValue)
+        var jxValue = try context.eval("jxswiftui.EmptyView().listStyle('inset', {alternatesRowBackgrounds: true})")
+        var listStyle = try ListStyleModifier(jxValue: jxValue)
+        let _ = listStyle.view(errorHandler: errorHandler)
+
+        jxValue = try context.eval("jxswiftui.EmptyView().listStyle('inset', {})")
+        listStyle = try ListStyleModifier(jxValue: jxValue)
         let _ = listStyle.view(errorHandler: errorHandler)
     }
 #endif

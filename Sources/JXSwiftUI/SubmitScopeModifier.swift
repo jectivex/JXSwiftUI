@@ -1,5 +1,3 @@
-import JXBridge
-import JXKit
 import SwiftUI
 
 extension JXSwiftUISupport {
@@ -12,29 +10,13 @@ extension JXSwiftUISupport {
     public enum submitScope {}
 }
 
-struct SubmitScopeModifier: Element {
-    private let target: Content
-    private let blocking: Bool
+struct SubmitScopeModifier: BoolModifier {
+    static let type = ElementType.submitScopeModifier
 
-    init(jxValue: JXValue) throws {
-        self.target = try Content(jxValue: jxValue["target"])
-        self.blocking = try jxValue["blocking"].bool
-    }
+    let target: Content
+    let value: Bool
 
-    func view(errorHandler: ErrorHandler) -> any View {
-        return target.element(errorHandler: errorHandler)
-            .view(errorHandler: errorHandler)
-            .submitScope(blocking)
-    }
-
-    static func modifierJS(namespace: JXNamespace) -> String? {
-        return """
-function(blocking) {
-    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.submitScopeModifier.rawValue)');
-    e.target = this;
-    e.blocking = blocking === undefined || blocking;
-    return e;
-}
-"""
+    func apply(to view: any View, errorHandler: ErrorHandler) -> any View {
+        return view.submitScope(value)
     }
 }

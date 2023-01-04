@@ -3,17 +3,17 @@ import JXKit
 import SwiftUI
 
 extension JXSwiftUISupport {
-    /// Sets a foreground color on a target view.
-    /// 
+    /// Sets a tint color on a target view.
+    ///
     /// Supported calls:
     ///
-    ///     - .foregroundColor('name')
-    ///     - .foregroundColor(Color)
-    public enum foregroundColor {}
+    ///     - .tint('name')
+    ///     - .tint(Color)
+    public enum tint {}
 }
 
-struct ForegroundColorModifier: SingleValueModifier {
-    static let type = ElementType.foregroundColorModifier
+struct TintModifier: SingleValueModifier {
+    static let type = ElementType.tintModifier
     let target: Content
     let value: Color
 
@@ -22,6 +22,6 @@ struct ForegroundColorModifier: SingleValueModifier {
     }
 
     func apply(to view: any View, errorHandler: ErrorHandler) -> any View {
-        return view.foregroundColor(value)
+        return view.tint(value)
     }
 }

@@ -12,35 +12,22 @@ extension JXSwiftUISupport {
     public enum navigationTitle {}
 }
 
-struct NavigationTitleModifier: Element {
-    private let target: Content
-    private let title: Content
-    
-    init(jxValue: JXValue) throws {
-        self.target = try Content(jxValue: jxValue["target"])
-        self.title = try Content(jxValue: jxValue["title"])
+struct NavigationTitleModifier: SingleValueModifier {
+    static let type = ElementType.navigationTitleModifier
+    let target: Content
+    let value: Content
+
+    static func convert(_ value: JXValue) throws -> Content {
+        return try Content(jxValue: value)
     }
 
-    func view(errorHandler: ErrorHandler) -> any View {
-        let targetView = target.element(errorHandler: errorHandler)
-            .view(errorHandler: errorHandler)
+    func apply(to view: any View, errorHandler: ErrorHandler) -> any View {
         let titleErrorHandler = errorHandler.in(.navigationTitleModifier)
-        guard let titleText = title.element(errorHandler: titleErrorHandler)
+        guard let titleText = value.element(errorHandler: titleErrorHandler)
             .view(errorHandler: titleErrorHandler) as? Text else {
             titleErrorHandler.handle(JXError(message: "Expected a string or Text view"))
-            return targetView
+            return view
         }
-        return targetView.navigationTitle(titleText)
-    }
-    
-    static func modifierJS(namespace: JXNamespace) -> String? {
-        return """
-function(title) {
-    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.navigationTitleModifier.rawValue)');
-    e.target = this;
-    e.title = title;
-    return e;
-}
-"""
+        return view.navigationTitle(titleText)
     }
 }

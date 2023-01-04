@@ -15,34 +15,21 @@ extension JXSwiftUISupport {
     public enum TextInputAutocapitalization {}
 }
 
-struct TextInputAutocapitalizationModifier: Element {
-    private let target: Content
-    private let type: TextInputAutocapitalization
+struct TextInputAutocapitalizationModifier: SingleValueModifier {
+    static let type = ElementType.textInputAutocapitalizationModifier
+    let target: Content
+    let value: TextInputAutocapitalization
 
-    init(jxValue: JXValue) throws {
-        self.target = try Content(jxValue: jxValue["target"])
-        let uitype = try jxValue["type"].convey(to: UITextAutocapitalizationType.self)
+    static func convert(_ value: JXValue) throws -> TextInputAutocapitalization {
+        let uitype = try value.convey(to: UITextAutocapitalizationType.self)
         guard let type = TextInputAutocapitalization(uitype) else {
             throw JXError.internalError("TextInputAutocapitalization")
         }
-        self.type = type
+        return type
     }
 
-    func view(errorHandler: ErrorHandler) -> any View {
-        return target.element(errorHandler: errorHandler)
-            .view(errorHandler: errorHandler)
-            .textInputAutocapitalization(type)
-    }
-
-    static func modifierJS(namespace: JXNamespace) -> String? {
-        return """
-function(type) {
-    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.textInputAutocapitalizationModifier.rawValue)');
-    e.target = this;
-    e.type = type;
-    return e;
-}
-"""
+    func apply(to view: any View, errorHandler: ErrorHandler) -> any View {
+        return view.textInputAutocapitalization(value)
     }
 }
 

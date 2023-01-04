@@ -26,7 +26,6 @@ extension JXSwiftUISupport {
 }
 
 // TODO: Test that .font() and .foregroundColor() can be used when the caller expects Text, e.g. on navigationTitle
-// TODO: tint, lineLimit, allowsTightening, minimumScaleFactor modifiers
 
 struct TextElement: Element {
     private let text: LocalizedStringKey?

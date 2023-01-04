@@ -7,13 +7,19 @@ import XCTest
 final class ImageTests: JXSwiftUITestsBase {
     func testNamed() throws {
         let _ = try context.eval("jxswiftui.Image.named('name', {label: 'label'})")
-        if #available(iOS 16.0, macOS 13.0, *) {
+#if os(macOS)
+        expectingError {
+            let _ = try context.eval("jxswiftui.Image.named('name', {label: 'label', variableValue: 0.5})")
+        }
+#else
+        if #available(iOS 16.0, *) {
             let _ = try context.eval("jxswiftui.Image.named('name', {label: 'label', variableValue: 0.5})")
         } else {
             expectingError {
                 let _ = try context.eval("jxswiftui.Image.named('name', {label: 'label', variableValue: 0.5})")
             }
         }
+#endif
         expectingError {
             let _ = try context.eval("jxswiftui.Image.named('name')") // Missing label
         }
@@ -24,13 +30,19 @@ final class ImageTests: JXSwiftUITestsBase {
 
     func testSystem() throws {
         let _ = try context.eval("jxswiftui.Image.system('pencil')")
-        if #available(iOS 16.0, macOS 13.0, *) {
+#if os(macOS)
+        expectingError {
+            let _ = try context.eval("jxswiftui.Image.system('pencil', {variableValue: 0.5})")
+        }
+#else
+        if #available(iOS 16.0, *) {
             let _ = try context.eval("jxswiftui.Image.system('pencil', {variableValue: 0.5})")
         } else {
             expectingError {
                 let _ = try context.eval("jxswiftui.Image.system('pencil', {variableValue: 0.5})")
             }
         }
+#endif
         expectingError {
             let _ = try context.eval("jxswiftui.Image.system('pencil', {label: 'label})") // Label not supported
         }

@@ -19,33 +19,24 @@ extension JXSwiftUISupport {
 #endif
 }
 
-struct TextContentTypeModifier: Element {
-    private let target: Content
+struct TextContentTypeModifier: SingleValueModifier {
+    static let type = ElementType.textContentTypeModifier
+    let target: Content
 #if os(macOS)
-    private let type: NSTextContentType
+    let value: NSTextContentType
+
+    static func convert(_ value: JXValue) throws -> NSTextContentType {
+        return try value.convey()
+    }
 #else
-    private let type: UITextContentType
+    let value: UITextContentType
+
+    static func convert(_ value: JXValue) throws -> UITextContentType {
+        return try value.convey()
+    }
 #endif
 
-    init(jxValue: JXValue) throws {
-        self.target = try Content(jxValue: jxValue["target"])
-        self.type = try jxValue["type"].convey()
-    }
-
-    func view(errorHandler: ErrorHandler) -> any View {
-        return target.element(errorHandler: errorHandler)
-            .view(errorHandler: errorHandler)
-            .textContentType(type)
-    }
-
-    static func modifierJS(namespace: JXNamespace) -> String? {
-        return """
-function(type) {
-    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.textContentTypeModifier.rawValue)');
-    e.target = this;
-    e.type = type;
-    return e;
-}
-"""
+    func apply(to view: any View, errorHandler: ErrorHandler) -> any View {
+        return view.textContentType(value)
     }
 }

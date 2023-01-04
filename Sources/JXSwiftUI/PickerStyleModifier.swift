@@ -14,49 +14,36 @@ extension JXSwiftUISupport {
     public enum PickerStyle {}
 }
 
-struct PickerStyleModifier: Element {
-    private let target: Content
-    private let style: any PickerStyle
+struct PickerStyleModifier: SingleValueModifier {
+    static let type = ElementType.pickerStyleModifier
+    let target: Content
+    let value: any PickerStyle
 
-    init(jxValue: JXValue) throws {
-        self.target = try Content(jxValue: jxValue["target"])
-        let styleString = try jxValue["style"].string
+    static func convert(_ value: JXValue) throws -> any PickerStyle {
+        let styleString = try value.string
         switch styleString {
         case "automatic":
-            self.style = .automatic
+            return .automatic
         case "inline":
-            self.style = .inline
+            return .inline
         case "menu":
-            self.style = .menu
+            return .menu
 #if os(macOS)
         case "radioGroup":
-            self.style = .radioGroup
+            return .radioGroup
 #endif
         case "segmented":
-            self.style = .segmented
+            return .segmented
 #if !os(macOS)
         case "wheel":
-            self.style = .wheel
+            return .wheel
 #endif
         default:
             throw JXError.invalid(value: styleString, for: (any PickerStyle).self)
         }
     }
 
-    func view(errorHandler: ErrorHandler) -> any View {
-        return target.element(errorHandler: errorHandler)
-            .view(errorHandler: errorHandler)
-            .pickerStyle(style)
-    }
-
-    static func modifierJS(namespace: JXNamespace) -> String? {
-        return """
-function(style) {
-    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.pickerStyleModifier.rawValue)');
-    e.target = this;
-    e.style = style;
-    return e;
-}
-"""
+    func apply(to view: any View, errorHandler: ErrorHandler) -> any View {
+        return view.pickerStyle(value)
     }
 }

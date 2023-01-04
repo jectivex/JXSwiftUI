@@ -1,4 +1,3 @@
-import JXBridge
 import JXKit
 import SwiftUI
 
@@ -12,35 +11,21 @@ extension JXSwiftUISupport {
     public enum font {}
 }
 
-struct FontModifier: Element {
-    private let target: Content
-    private let font: Font
-    
-    init(jxValue: JXValue) throws {
-        self.target = try Content(jxValue: jxValue["target"])
-        let fontValue = try jxValue["font"]
-        if fontValue.isString {
-            let style = try fontValue.convey(to: Font.TextStyle.self)
-            self.font = Font.system(style)
+struct FontModifier: SingleValueModifier {
+    static let type = ElementType.fontModifier
+    let target: Content
+    let value: Font
+
+    static func convert(_ value: JXValue) throws -> Font {
+        if value.isString {
+            let style = try value.convey(to: Font.TextStyle.self)
+            return Font.system(style)
         } else {
-            self.font = try fontValue.convey()
+            return try value.convey()
         }
     }
-
-    func view(errorHandler: ErrorHandler) -> any View {
-        return target.element(errorHandler: errorHandler)
-            .view(errorHandler: errorHandler)
-            .font(font)
-    }
     
-    static func modifierJS(namespace: JXNamespace) -> String? {
-        return """
-function(font) {
-    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.fontModifier.rawValue)');
-    e.target = this;
-    e.font = font;
-    return e;
-}
-"""
+    func apply(to view: any View, errorHandler: ErrorHandler) -> any View {
+        return view.font(value)
     }
 }
