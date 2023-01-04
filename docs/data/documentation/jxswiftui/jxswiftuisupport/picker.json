@@ -130,7 +130,7 @@
         },
         {
           "code" : [
-            "- `Binding` to a Bool, Date, Number, or String"
+            "- `Binding` to a Bool, Date, Double, or String"
           ],
           "syntax" : null,
           "type" : "codeListing"

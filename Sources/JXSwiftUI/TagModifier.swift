@@ -15,38 +15,25 @@ extension JXSwiftUISupport {
     public enum tag {}
 }
 
-struct TagModifier: Element {
-    private let target: Content
-    private let value: HashableValue
+struct TagModifier: SingleValueModifier {
+    static let type = ElementType.tagModifier
+    let target: Content
+    let value: HashableValue
 
-    init(jxValue: JXValue) throws {
-        self.target = try Content(jxValue: jxValue["target"])
-        self.value = try jxValue["value"].convey()
+    static func convert(_ value: JXValue) throws -> HashableValue {
+        return try value.convey()
     }
-
-    func view(errorHandler: ErrorHandler) -> any View {
-        let targetView = target.element(errorHandler: errorHandler)
-            .view(errorHandler: errorHandler)
+    
+    func apply(to view: any View, errorHandler: ErrorHandler) -> any View {
         switch value {
         case .bool(let value):
-            return targetView.tag(value)
+            return view.tag(value)
         case .date(let value):
-            return targetView.tag(value)
+            return view.tag(value)
         case .double(let value):
-            return targetView.tag(value)
+            return view.tag(value)
         case .string(let value):
-            return targetView.tag(value)
+            return view.tag(value)
         }
-    }
-
-    static func modifierJS(namespace: JXNamespace) -> String? {
-        return """
-function(value) {
-    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.tagModifier.rawValue)');
-    e.target = this;
-    e.value = value;
-    return e;
-}
-"""
     }
 }

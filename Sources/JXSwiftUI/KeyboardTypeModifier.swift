@@ -1,5 +1,4 @@
 #if !os(macOS)
-import JXBridge
 import JXKit
 import SwiftUI
 
@@ -15,30 +14,17 @@ extension JXSwiftUISupport {
     public enum UIKeyboardType {}
 }
 
-struct KeyboardTypeModifier: Element {
-    private let target: Content
-    private let type: UIKeyboardType
+struct KeyboardTypeModifier: SingleValueModifier {
+    static let type = ElementType.keyboardTypeModifier
+    let target: Content
+    let value: UIKeyboardType
 
-    init(jxValue: JXValue) throws {
-        self.target = try Content(jxValue: jxValue["target"])
-        self.type = try jxValue["type"].convey()
+    static func convert(_ value: JXValue) throws -> UIKeyboardType {
+        return try value.convey()
     }
 
-    func view(errorHandler: ErrorHandler) -> any View {
-        return target.element(errorHandler: errorHandler)
-            .view(errorHandler: errorHandler)
-            .keyboardType(type)
-    }
-
-    static func modifierJS(namespace: JXNamespace) -> String? {
-        return """
-function(type) {
-    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.keyboardTypeModifier.rawValue)');
-    e.target = this;
-    e.type = type;
-    return e;
-}
-"""
+    func apply(to view: any View, errorHandler: ErrorHandler) -> any View {
+        return view.keyboardType(value)
     }
 }
 

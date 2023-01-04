@@ -8,7 +8,11 @@ extension JXSwiftUISupport {
     /// Supported calls:
     ///
     ///     - .listStyle(ListStyle)
-    ///     - .listStyle(ListStyle, alternatesRowBackgrounds)
+    ///     - .listStyle(ListStyle, {props})
+    ///
+    /// Supported `props`:
+    ///
+    ///     - alternatesRowBackgrounds: Bool
     public enum listStyle {}
 
     /// Use a JavaScript string to name any standard `SwiftUI.ListStyle` value, e.g. `'automatic'`.
@@ -27,8 +31,8 @@ struct ListStyleModifier: Element {
             self.style = .automatic
 #if os(macOS)
         case "bordered":
-            let alternatesValue = try jxValue["alternates"]
-            let alternates = !alternatesValue.isUndefined && alternatesValue.bool
+            let propsValue = try jxValue["props"]
+            let alternates = try !propsValue.isUndefined && propsValue["alternatesRowBackgrounds"].bool
             self.style = .bordered(alternatesRowBackgrounds: alternates)
 #endif
 #if !os(macOS)
@@ -39,8 +43,8 @@ struct ListStyleModifier: Element {
 #endif
         case "inset":
 #if os(macOS)
-            let alternatesValue = try jxValue["alternates"]
-            let alternates = !alternatesValue.isUndefined && alternatesValue.bool
+            let propsValue = try jxValue["props"]
+            let alternates = try !propsValue.isUndefined && propsValue["alternatesRowBackgrounds"].bool
             self.style = .inset(alternatesRowBackgrounds: alternates)
 #else
             self.style = .inset
@@ -62,11 +66,11 @@ struct ListStyleModifier: Element {
 
     static func modifierJS(namespace: JXNamespace) -> String? {
         return """
-function(style, alternates) {
+function(style, props) {
     const e = new \(JSCodeGenerator.elementClass)('\(ElementType.listStyleModifier.rawValue)');
     e.target = this;
     e.style = style;
-    e.alternates = alternates;
+    e.props = props;
     return e;
 }
 """

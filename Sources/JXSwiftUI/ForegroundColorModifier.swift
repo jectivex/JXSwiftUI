@@ -12,35 +12,16 @@ extension JXSwiftUISupport {
     public enum foregroundColor {}
 }
 
-struct ForegroundColorModifier: Element {
-    private let target: Content
-    private let color: Color
-    
-    init(jxValue: JXValue) throws {
-        self.target = try Content(jxValue: jxValue["target"])
-        let colorValue = try jxValue["color"]
-        if colorValue.isString {
-            self.color = try Color(colorValue.string)
-        } else {
-            self.color = try colorValue.convey()
-        }
+struct ForegroundColorModifier: SingleValueModifier {
+    static let type = ElementType.foregroundColorModifier
+    let target: Content
+    let value: Color
+
+    static func convert(_ value: JXValue) throws -> Color {
+        return try value.isString ? Color(value.string) : value.convey()
     }
 
-    func view(errorHandler: ErrorHandler) -> any View {
-        return target.element(errorHandler: errorHandler)
-            .view(errorHandler: errorHandler)
-            .foregroundColor(color)
-    }
-    
-    static func modifierJS(namespace: JXNamespace) -> String? {
-        // .foregroundColor(Color) or .foregroundColor('name')
-        return """
-function(color) {
-    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.foregroundColorModifier.rawValue)');
-    e.target = this;
-    e.color = color;
-    return e;
-}
-"""
+    func apply(to view: any View, errorHandler: ErrorHandler) -> any View {
+        return view.foregroundColor(value)
     }
 }

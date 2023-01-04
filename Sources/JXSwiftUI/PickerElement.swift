@@ -11,7 +11,7 @@ extension JXSwiftUISupport {
     ///
     /// Supported `selection`:
     ///
-    ///     - `Binding` to a Bool, Date, Number, or String
+    ///     - `Binding` to a Bool, Date, Double, or String
     ///
     /// Supported `label`:
     ///

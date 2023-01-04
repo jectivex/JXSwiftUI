@@ -99,7 +99,31 @@
         {
           "code" : [
             "- .listStyle(ListStyle)",
-            "- .listStyle(ListStyle, alternatesRowBackgrounds)"
+            "- .listStyle(ListStyle, {props})"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Supported ",
+              "type" : "text"
+            },
+            {
+              "code" : "props",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "- alternatesRowBackgrounds: Bool"
           ],
           "syntax" : null,
           "type" : "codeListing"

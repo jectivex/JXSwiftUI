@@ -108,6 +108,8 @@
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/HorizontalAlignment",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/If",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Image",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Label",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/LabelStyle-4j2i",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/List",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/ListStyle-7dd4o",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/NSTextContentType",
@@ -121,29 +123,39 @@
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/SecureField",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Slider",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Spacer",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/TabView",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Text",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/TextEditor",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/TextField",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/TextFieldStyle-9a4ov",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Toggle",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/TruncationMode-720hi",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/VStack",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/VerticalAlignment",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/ZStack",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/allowsTightening",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/background",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/badge",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/border",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/font-38880",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/foregroundColor",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/frame",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/labelStyle-9qr33",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/lineLimit",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/listStyle-3pk6j",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/minimumScaleFactor",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/navigationTitle",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/onSubmit",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/onTapGesture",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/padding",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/pickerStyle-9wfq7",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/submitScope",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/tabItem",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/tag",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/textContentType",
-        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/textFieldStyle-95n03"
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/textFieldStyle-95n03",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/tint",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/truncationMode-5vww2"
       ],
       "title" : "Enumerations"
     }
@@ -1101,6 +1113,98 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/image"
 },
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/Label": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftUI.Label",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Label"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Label",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Label"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.Label",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/label"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/LabelStyle-4j2i": {
+  "abstract" : [
+    {
+      "text" : "Use a JavaScript string to name any standard ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftUI.LabelStyle",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " value, e.g. ",
+      "type" : "text"
+    },
+    {
+      "code" : "'iconOnly'",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "LabelStyle"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/LabelStyle-4j2i",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "LabelStyle"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.LabelStyle",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/labelstyle-4j2i"
+},
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/List": {
   "abstract" : [
     {
@@ -1679,6 +1783,48 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/spacer"
 },
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/TabView": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftUI.TabView",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TabView"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/TabView",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TabView"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.TabView",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/tabview"
+},
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/Text": {
   "abstract" : [
     {
@@ -1897,6 +2043,56 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/toggle"
 },
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/TruncationMode-720hi": {
+  "abstract" : [
+    {
+      "text" : "Use a JavaScript string to name any standard ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftUI.Text.TruncationMode",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " value, e.g. ",
+      "type" : "text"
+    },
+    {
+      "code" : "'tail'",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TruncationMode"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/TruncationMode-720hi",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TruncationMode"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.TruncationMode",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/truncationmode-720hi"
+},
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/VStack": {
   "abstract" : [
     {
@@ -2031,6 +2227,40 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/zstack"
 },
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/allowsTightening": {
+  "abstract" : [
+    {
+      "text" : "Allow tightening on a target view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "allowsTightening"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/allowsTightening",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "allowsTightening"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.allowsTightening",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/allowstightening"
+},
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/background": {
   "abstract" : [
     {
@@ -2064,6 +2294,40 @@
   "title" : "JXSwiftUISupport.background",
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/background"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/badge": {
+  "abstract" : [
+    {
+      "text" : "Sets a badge on a target view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "badge"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/badge",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "badge"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.badge",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/badge"
 },
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/border": {
   "abstract" : [
@@ -2201,6 +2465,74 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/frame"
 },
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/labelStyle-9qr33": {
+  "abstract" : [
+    {
+      "text" : "Sets the label style on a target view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "labelStyle"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/labelStyle-9qr33",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "labelStyle"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.labelStyle",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/labelstyle-9qr33"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/lineLimit": {
+  "abstract" : [
+    {
+      "text" : "Sets a line limit on a target view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "lineLimit"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/lineLimit",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "lineLimit"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.lineLimit",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/linelimit"
+},
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/listStyle-3pk6j": {
   "abstract" : [
     {
@@ -2234,6 +2566,40 @@
   "title" : "JXSwiftUISupport.listStyle",
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/liststyle-3pk6j"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/minimumScaleFactor": {
+  "abstract" : [
+    {
+      "text" : "Sets a minimum scale factor on a target view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "minimumScaleFactor"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/minimumScaleFactor",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "minimumScaleFactor"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.minimumScaleFactor",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/minimumscalefactor"
 },
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/navigationTitle": {
   "abstract" : [
@@ -2447,6 +2813,40 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/submitscope"
 },
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/tabItem": {
+  "abstract" : [
+    {
+      "text" : "Sets the tab item for a target view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "tabItem"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/tabItem",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "tabItem"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.tabItem",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/tabitem"
+},
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/tag": {
   "abstract" : [
     {
@@ -2548,6 +2948,74 @@
   "title" : "JXSwiftUISupport.textFieldStyle",
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/textfieldstyle-95n03"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/tint": {
+  "abstract" : [
+    {
+      "text" : "Sets a tint color on a target view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "tint"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/tint",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "tint"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.tint",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/tint"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/truncationMode-5vww2": {
+  "abstract" : [
+    {
+      "text" : "Sets the text truncation mode on a target view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "truncationMode"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/truncationMode-5vww2",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "truncationMode"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.truncationMode",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/truncationmode-5vww2"
 }
 }
 }

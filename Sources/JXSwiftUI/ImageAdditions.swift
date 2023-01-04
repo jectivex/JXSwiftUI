@@ -33,8 +33,8 @@ extension Image: JXStaticBridging {
         JXBridgeBuilder(type: Image.self)
             .asJXSwiftUIView()
 
-            // Use static funcs to replace Image constructors to align with Font and
-            // hide the use of 'new', which is incongruous with our other SwiftUI elements
+            // Use static funcs to replace Image constructors to hide the use of 'new', which is
+            // incongruous with our other SwiftUI elements
 
             .static.func.named { (name: String, props: JXValue) throws -> Image in
                 let labelValue = try props["label"]
@@ -44,7 +44,13 @@ extension Image: JXStaticBridging {
                 let label = try Text(labelValue.string)
                 let variableValueValue = try props["variableValue"]
                 let variableValue = try variableValueValue.isNullOrUndefined ? nil : variableValueValue.double
-                if #available(iOS 16.0, macOS 13.0, *) {
+#if os(macOS) // Couldn't get the #available check to compile on Mac
+                guard variableValue == nil else {
+                    throw JXError(message: "'variableValue' is only supported in iOS 16+")
+                }
+                return Image(name, label: label)
+#else
+                if #available(iOS 16.0, *) {
                     return Image(name, variableValue: variableValue, label: label)
                 } else {
                     guard variableValue == nil else {
@@ -52,6 +58,7 @@ extension Image: JXStaticBridging {
                     }
                     return Image(name, label: label)
                 }
+#endif
             }
             .static.func.system { (name: String) -> Image in
                 return Image(systemName: name)
@@ -63,14 +70,21 @@ extension Image: JXStaticBridging {
                 }
                 let variableValueValue = try props["variableValue"]
                 let variableValue = try variableValueValue.isNullOrUndefined ? nil : variableValueValue.double
-                if #available(iOS 16.0, macOS 13.0, *) {
+#if os(macOS) // Couldn't get the #available check to compile on Mac
+                guard variableValue == nil else {
+                    throw JXError(message: "'variableValue' is only supported in iOS 16+ / macOS 13+")
+                }
+                return Image(systemName: name)
+#else
+                if #available(iOS 16.0, *) {
                     return Image(systemName: name, variableValue: variableValue)
                 } else {
                     guard variableValue == nil else {
-                        throw JXError(message: "'variableValue' is only supported in iOS 16+ / macOS 13+")
+                        throw JXError(message: "'variableValue' is only supported in iOS 16+")
                     }
                     return Image(systemName: name)
                 }
+#endif
             }
             .func.resizable { $0.resizable() }
             .func.resizable { (image: Image, props: JXValue) throws in

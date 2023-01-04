@@ -11,6 +11,7 @@ enum ElementType: String, CaseIterable {
     case group = "Group"
     case hstack = "HStack"
     case `if` = "If"
+    case label = "Label"
     case list = "List"
     case native
     case navigationLink = "NavigationLink"
@@ -21,6 +22,7 @@ enum ElementType: String, CaseIterable {
     case secureField = "SecureField"
     case slider = "Slider"
     case spacer = "Spacer"
+    case tabView = "TabView"
     case text = "Text"
     case textEditor = "TextEditor"
     case textField = "TextField"
@@ -30,10 +32,12 @@ enum ElementType: String, CaseIterable {
     case unknown
 
     // Modifiers
+    case allowsTighteningModifier = "allowsTightening"
 #if !os(macOS)
     case autocorrectionDisabledModifier = "autocorrectionDisabled"
 #endif
     case backgroundModifier = "background"
+    case badgeModifier = "badge"
     case borderModifier = "border"
     case fontModifier = "font"
     case foregroundColorModifier = "foregroundColor"
@@ -41,12 +45,16 @@ enum ElementType: String, CaseIterable {
 #if !os(macOS)
     case keyboardTypeModifier = "keyboardType"
 #endif
+    case labelStyleModifier = "labelStyle"
+    case lineLimitModifier = "lineLimit"
     case listStyleModifier = "listStyle"
+    case minimumScaleFactorModifier = "minimumScaleFactor"
     case navigationTitleModifier = "navigationTitle"
     case paddingModifier = "padding"
     case pickerStyleModifier = "pickerStyle"
     case submitModifier = "onSubmit"
     case submitScopeModifier = "submitScope"
+    case tabItemModifier = "tabItem"
     case tagModifier = "tag"
     case tapGestureModifier = "onTapGesture"
     case textContentTypeModifier = "textContentType"
@@ -54,6 +62,8 @@ enum ElementType: String, CaseIterable {
 #if !os(macOS)
     case textInputAutocapitalizationModifier = "textInputAutocapitalization"
 #endif
+    case tintModifier = "tint"
+    case truncationModeModifier = "truncationMode"
     
     var valueType: Element.Type? {
         switch self {
@@ -73,6 +83,8 @@ enum ElementType: String, CaseIterable {
             return HStackElement.self
         case .if:
             return IfElement.self
+        case .label:
+            return LabelElement.self
         case .list:
             return ListElement.self
         case .native:
@@ -93,6 +105,8 @@ enum ElementType: String, CaseIterable {
             return SliderElement.self
         case .spacer:
             return SpacerElement.self
+        case .tabView:
+            return TabViewElement.self
         case .text:
             return TextElement.self
         case .textEditor:
@@ -106,12 +120,16 @@ enum ElementType: String, CaseIterable {
         case .zstack:
             return ZStackElement.self
 
+        case .allowsTighteningModifier:
+            return AllowsTighteningModifier.self
 #if !os(macOS)
         case .autocorrectionDisabledModifier:
             return AutocorrectionDisabledModifier.self
 #endif
         case .backgroundModifier:
             return BackgroundModifier.self
+        case .badgeModifier:
+            return BadgeModifier.self
         case .borderModifier:
             return BorderModifier.self
         case .fontModifier:
@@ -124,8 +142,14 @@ enum ElementType: String, CaseIterable {
         case .keyboardTypeModifier:
             return KeyboardTypeModifier.self
 #endif
+        case .labelStyleModifier:
+            return LabelStyleModifier.self
+        case .lineLimitModifier:
+            return LineLimitModifier.self
         case .listStyleModifier:
             return ListStyleModifier.self
+        case .minimumScaleFactorModifier:
+            return MinimumScaleFactorModifier.self
         case .navigationTitleModifier:
             return NavigationTitleModifier.self
         case .paddingModifier:
@@ -136,6 +160,8 @@ enum ElementType: String, CaseIterable {
             return SubmitModifier.self
         case .submitScopeModifier:
             return SubmitScopeModifier.self
+        case .tabItemModifier:
+            return TabItemModifier.self
         case .tagModifier:
             return TagModifier.self
         case .tapGestureModifier:
@@ -148,6 +174,10 @@ enum ElementType: String, CaseIterable {
         case .textInputAutocapitalizationModifier:
             return TextInputAutocapitalizationModifier.self
 #endif
+        case .tintModifier:
+            return TintModifier.self
+        case .truncationModeModifier:
+            return TruncationModeModifier.self
 
         case .unknown:
             return nil

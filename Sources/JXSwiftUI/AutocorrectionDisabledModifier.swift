@@ -1,6 +1,4 @@
 #if !os(macOS)
-import JXBridge
-import JXKit
 import SwiftUI
 
 extension JXSwiftUISupport {
@@ -13,30 +11,14 @@ extension JXSwiftUISupport {
     public enum autocorrectionDisabled {}
 }
 
-struct AutocorrectionDisabledModifier: Element {
-    private let target: Content
-    private let disabled: Bool
+struct AutocorrectionDisabledModifier: BoolModifier {
+    static let type = ElementType.autocorrectionDisabledModifier
 
-    init(jxValue: JXValue) throws {
-        self.target = try Content(jxValue: jxValue["target"])
-        self.disabled = try jxValue["disabled"].bool
-    }
+    let target: Content
+    let value: Bool
 
-    func view(errorHandler: ErrorHandler) -> any View {
-        return target.element(errorHandler: errorHandler)
-            .view(errorHandler: errorHandler)
-            .autocorrectionDisabled(disabled)
-    }
-
-    static func modifierJS(namespace: JXNamespace) -> String? {
-        return """
-function(disabled) {
-    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.autocorrectionDisabledModifier.rawValue)');
-    e.target = this;
-    e.disabled = disabled === undefined || disabled;
-    return e;
-}
-"""
+    func apply(to view: any View, errorHandler: ErrorHandler) -> any View {
+        return view.autocorrectionDisabled(value)
     }
 }
 #endif

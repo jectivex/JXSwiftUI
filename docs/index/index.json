@@ -2645,6 +2645,16 @@
                 "type" : "enum"
               },
               {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/label",
+                "title" : "JXSwiftUISupport.Label",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/labelstyle-4j2i",
+                "title" : "JXSwiftUISupport.LabelStyle",
+                "type" : "enum"
+              },
+              {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/list",
                 "title" : "JXSwiftUISupport.List",
                 "type" : "enum"
@@ -2710,6 +2720,11 @@
                 "type" : "enum"
               },
               {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/tabview",
+                "title" : "JXSwiftUISupport.TabView",
+                "type" : "enum"
+              },
+              {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/text",
                 "title" : "JXSwiftUISupport.Text",
                 "type" : "enum"
@@ -2735,6 +2750,11 @@
                 "type" : "enum"
               },
               {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/truncationmode-720hi",
+                "title" : "JXSwiftUISupport.TruncationMode",
+                "type" : "enum"
+              },
+              {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/vstack",
                 "title" : "JXSwiftUISupport.VStack",
                 "type" : "enum"
@@ -2750,8 +2770,18 @@
                 "type" : "enum"
               },
               {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/allowstightening",
+                "title" : "JXSwiftUISupport.allowsTightening",
+                "type" : "enum"
+              },
+              {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/background",
                 "title" : "JXSwiftUISupport.background",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/badge",
+                "title" : "JXSwiftUISupport.badge",
                 "type" : "enum"
               },
               {
@@ -2775,8 +2805,23 @@
                 "type" : "enum"
               },
               {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/labelstyle-9qr33",
+                "title" : "JXSwiftUISupport.labelStyle",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/linelimit",
+                "title" : "JXSwiftUISupport.lineLimit",
+                "type" : "enum"
+              },
+              {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/liststyle-3pk6j",
                 "title" : "JXSwiftUISupport.listStyle",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/minimumscalefactor",
+                "title" : "JXSwiftUISupport.minimumScaleFactor",
                 "type" : "enum"
               },
               {
@@ -2810,6 +2855,11 @@
                 "type" : "enum"
               },
               {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/tabitem",
+                "title" : "JXSwiftUISupport.tabItem",
+                "type" : "enum"
+              },
+              {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/tag",
                 "title" : "JXSwiftUISupport.tag",
                 "type" : "enum"
@@ -2822,6 +2872,16 @@
               {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/textfieldstyle-95n03",
                 "title" : "JXSwiftUISupport.textFieldStyle",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/tint",
+                "title" : "JXSwiftUISupport.tint",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/truncationmode-5vww2",
+                "title" : "JXSwiftUISupport.truncationMode",
                 "type" : "enum"
               }
             ],

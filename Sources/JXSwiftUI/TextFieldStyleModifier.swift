@@ -14,43 +14,30 @@ extension JXSwiftUISupport {
     public enum TextFieldStyle {}
 }
 
-struct TextFieldStyleModifier: Element {
-    private let target: Content
-    private let style: any TextFieldStyle
+struct TextFieldStyleModifier: SingleValueModifier {
+    static let type = ElementType.textFieldStyleModifier
+    let target: Content
+    let value: any TextFieldStyle
 
-    init(jxValue: JXValue) throws {
-        self.target = try Content(jxValue: jxValue["target"])
-        let styleString = try jxValue["style"].string
+    static func convert(_ value: JXValue) throws -> any TextFieldStyle {
+        let styleString = try value.string
         switch styleString {
         case "automatic":
-            self.style = .automatic
+            return .automatic
         case "plain":
-            self.style = .plain
+            return .plain
         case "roundedBorder":
-            self.style = .roundedBorder
+            return .roundedBorder
 #if os(macOS)
         case "squareBorder":
-            self.style = .squareBorder
+            return .squareBorder
 #endif
         default:
             throw JXError.invalid(value: styleString, for: (any TextFieldStyle).self)
         }
     }
 
-    func view(errorHandler: ErrorHandler) -> any View {
-        return target.element(errorHandler: errorHandler)
-            .view(errorHandler: errorHandler)
-            .textFieldStyle(style)
-    }
-
-    static func modifierJS(namespace: JXNamespace) -> String? {
-        return """
-function(style) {
-    const e = new \(JSCodeGenerator.elementClass)('\(ElementType.textFieldStyleModifier.rawValue)');
-    e.target = this;
-    e.style = style;
-    return e;
-}
-"""
+    func apply(to view: any View, errorHandler: ErrorHandler) -> any View {
+        return view.textFieldStyle(value)
     }
 }
