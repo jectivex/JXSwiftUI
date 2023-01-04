@@ -1,0 +1,274 @@
+{
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftUI.Image",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " value.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Image"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "JXSwiftUI",
+    "externalID" : "s:9JXSwiftUI0A9UISupportO5ImageO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "Image"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "JXSwiftUI"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "Image"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "JXSwiftUISupport.Image"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "Image"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Supported usage:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "- Image.named('name', {props}) to load from an asset catalog",
+            "- Image.system('name') to load SF Symbols",
+            "- Image.system('name', {props})"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Supported ",
+              "type" : "text"
+            },
+            {
+              "code" : "props",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "- variableValue: A number between 0.0 and 1.0 that the rendered image may use to customize its appearance",
+            "- label: SwiftUI uses this value for accessibility. Required for images loaded from an asset catalog"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Supported functions:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "- .resizable(): Derive a resizable image",
+            "- .resizable({props}): Derive a resizable image with the following props:",
+            "        - capInsets: EdgeInsets",
+            "        - resizingMode: Image.ResizingMode"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/jxswiftui\/jxswiftuisupport\/image"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://JXSwiftUI/documentation/JXSwiftUI": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "JXSwiftUI",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport": {
+  "abstract" : [
+    {
+      "text" : "Documentation on all supported SwiftUI constructs.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "JXSwiftUISupport"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "JXSwiftUISupport"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/Image": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftUI.Image",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Image"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Image",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Image"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.Image",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/image"
+}
+}
+}

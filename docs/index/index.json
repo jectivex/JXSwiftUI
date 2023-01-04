@@ -2640,6 +2640,11 @@
                 "type" : "enum"
               },
               {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/image",
+                "title" : "JXSwiftUISupport.Image",
+                "type" : "enum"
+              },
+              {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/list",
                 "title" : "JXSwiftUISupport.List",
                 "type" : "enum"
@@ -2672,6 +2677,11 @@
               {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/pickerstyle-4cjmf",
                 "title" : "JXSwiftUISupport.PickerStyle",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/resizingmode",
+                "title" : "JXSwiftUISupport.ResizingMode",
                 "type" : "enum"
               },
               {

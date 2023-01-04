@@ -107,6 +107,7 @@
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/HStack",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/HorizontalAlignment",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/If",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Image",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/List",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/ListStyle-7dd4o",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/NSTextContentType",
@@ -114,6 +115,7 @@
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/NavigationView",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Picker",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/PickerStyle-4cjmf",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/ResizingMode",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/ScrollView",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Section",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/SecureField",
@@ -1057,6 +1059,48 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/if"
 },
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/Image": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftUI.Image",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Image"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Image",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Image"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.Image",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/image"
+},
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/List": {
   "abstract" : [
     {
@@ -1374,6 +1418,56 @@
   "title" : "JXSwiftUISupport.PickerStyle",
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/pickerstyle-4cjmf"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/ResizingMode": {
+  "abstract" : [
+    {
+      "text" : "Use a JavaScript string to name any standard ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftUI.Image.ResizingMode",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " value, e.g. ",
+      "type" : "text"
+    },
+    {
+      "code" : "'stretch'",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ResizingMode"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/ResizingMode",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ResizingMode"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.ResizingMode",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/resizingmode"
 },
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/ScrollView": {
   "abstract" : [
