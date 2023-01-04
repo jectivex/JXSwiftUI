@@ -15,7 +15,7 @@ extension JXSwiftUISupport {
     ///
     ///     - (item) => { itemId }: A function accepting an item and returning its ID
     ///     - 'id': The name of a property holding each item's ID
-    ///     - If omitted, we assume each item has an 'id' property
+    ///     - If omitted, we assume each item is one of the supported ID types or has an 'id' property
     ///
     /// Supported `content`:
     ///
@@ -58,7 +58,7 @@ function(items, idOrContent, content) {
     const e = new \(JSCodeGenerator.elementClass)('\(ElementType.foreach.rawValue)');
     e.items = items;
     if (content === undefined) {
-        e.idFunction = (item) => { return item.id; }
+        e.idFunction = (item) => { return item.id === undefined ? item : item.id; }
         e.content = idOrContent;
     } else {
         if (typeof(idOrContent) === 'string') {
