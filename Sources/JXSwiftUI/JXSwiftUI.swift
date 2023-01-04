@@ -105,6 +105,7 @@ public struct JXSwiftUI: JXModule {
 private enum SwiftUISymbol: String, CaseIterable {
     case color = "Color"
     case font = "Font"
+    case image = "Image"
     
     func isInstance(_ instance: Any) -> Bool {
         switch self {
@@ -112,6 +113,8 @@ private enum SwiftUISymbol: String, CaseIterable {
             return instance is Color
         case .font:
             return instance is Font
+        case .image:
+            return instance is Image
         }
     }
     
@@ -121,6 +124,8 @@ private enum SwiftUISymbol: String, CaseIterable {
             try context.registry.registerBridge(for: Color.self, namespace: namespace)
         case .font:
             try context.registry.registerBridge(for: Font.self, namespace: namespace)
+        case .image:
+            try context.registry.registerBridge(for: Image.self, namespace: namespace)
         }
     }
 }
