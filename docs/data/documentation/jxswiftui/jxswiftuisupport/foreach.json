@@ -126,7 +126,7 @@
           "code" : [
             "- (item) => { itemId }: A function accepting an item and returning its ID",
             "- 'id': The name of a property holding each item's ID",
-            "- If omitted, we assume each item has an 'id' property"
+            "- If omitted, we assume each item is one of the supported ID types or has an 'id' property"
           ],
           "syntax" : null,
           "type" : "codeListing"
