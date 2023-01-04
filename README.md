@@ -41,9 +41,9 @@ Browse the [API Documentation].
     - Pass JS state var to other JS view as binding.
     - Pass JS state var to native view as binding.
 - Allow JS views to pass JS content views to custom native container views.
-- Supply context and error handler to downstream native views that want to bridge back to JavaScript with a `JXView`.
 - JS support for checking platform (iOS vs. macOS, etc).
 - String localization.
-- Custom color and resource loading plugins.
+- Custom color, image, and resource loading plugins.
 - Performance testing and optimizations.
 - Support .modifier() and pluggable modifier types and functions.
+- Previews integration.
