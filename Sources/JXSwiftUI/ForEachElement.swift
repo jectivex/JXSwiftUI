@@ -11,7 +11,7 @@ extension JXSwiftUISupport {
     ///     - ForEach([items], 'id', (item) => { content })
     ///     - ForEach([items], (item) => { content })
     ///
-    /// Item IDs can be JavaScript booleans, strings, numbers, symbols, dates, or any native `Hashable` value. Supported ways of getting each item ID:
+    /// Item IDs can be JavaScript booleans, strings, numbers, dates, or any bridged `Hashable` objects. Supported ways of getting each item ID:
     ///
     ///     - (item) => { itemId }: A function accepting an item and returning its ID
     ///     - 'id': The name of a property holding each item's ID
@@ -132,7 +132,7 @@ function(items, idOrContent, content) {
             }
             break
         case .symbol:
-            return try idValue.string
+            break
         case .promise:
             break
         case .error:

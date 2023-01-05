@@ -12,7 +12,7 @@ extension JXSwiftUISupport {
     ///
     /// Supported `selection`:
     ///
-    ///     - `Binding` to a Bool, Date, Double, or String
+    ///     - `Binding` to a Bool, Date, Double, String, or any bridged `Hashable` object
     ///
     /// Supported `content`. Use the `tabItem` modifier to configure the tab for each item:
     ///
@@ -50,6 +50,8 @@ struct TabViewElement: Element {
         case .double(let binding):
             return TabView(selection: binding) { contentView }
         case .string(let binding):
+            return TabView(selection: binding) { contentView }
+        case .hashable(let binding):
             return TabView(selection: binding) { contentView }
         }
     }

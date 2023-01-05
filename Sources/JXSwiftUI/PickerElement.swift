@@ -11,7 +11,7 @@ extension JXSwiftUISupport {
     ///
     /// Supported `selection`:
     ///
-    ///     - `Binding` to a Bool, Date, Double, or String
+    ///     - `Binding` to a Bool, Date, Double, String, or bridged `Hashable` object
     ///
     /// Supported `label`:
     ///
@@ -53,6 +53,8 @@ struct PickerElement: Element {
         case .double(let binding):
             return Picker(selection: binding) { contentView } label: { labelView }
         case .string(let binding):
+            return Picker(selection: binding) { contentView } label: { labelView }
+        case .hashable(let binding):
             return Picker(selection: binding) { contentView } label: { labelView }
         }
     }

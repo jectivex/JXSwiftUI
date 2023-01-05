@@ -8,6 +8,7 @@ enum HashableBinding {
     case date(Binding<Date>)
     case double(Binding<Double>)
     case string(Binding<String>)
+    case hashable(Binding<AnyHashable>)
 }
 
 extension HashableBinding: JXConvertible {
@@ -22,6 +23,8 @@ extension HashableBinding: JXConvertible {
             return try .double(Binding<Double>.fromJX(value))
         } else if currentValue.isString {
             return try .string(Binding<String>.fromJX(value))
+        } else if try currentValue.bridged != nil {
+            return try .hashable(Binding<AnyHashable>.fromJX(value))
         } else if try currentValue.isDate {
             // Check this last because it is the most expensive to test
             return try .date(Binding<Date>.fromJX(value))
@@ -39,6 +42,8 @@ extension HashableBinding: JXConvertible {
         case .double(let binding):
             return try context.convey(binding)
         case .string(let binding):
+            return try context.convey(binding)
+        case .hashable(let binding):
             return try context.convey(binding)
         }
     }
