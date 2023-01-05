@@ -26,6 +26,11 @@ struct FontModifier: SingleValueModifier {
     }
     
     func apply(to view: any View, errorHandler: ErrorHandler) -> any View {
-        return view.font(value)
+        // Keep Text chaining alive
+        if let text = view as? Text {
+            return text.font(value)
+        } else {
+            return view.font(value)
+        }
     }
 }

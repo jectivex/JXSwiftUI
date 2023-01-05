@@ -2575,6 +2575,11 @@
                 "type" : "enum"
               },
               {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/contentmode",
+                "title" : "JXSwiftUISupport.ContentMode",
+                "type" : "enum"
+              },
+              {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/edgeinsets",
                 "title" : "JXSwiftUISupport.EdgeInsets",
                 "type" : "enum"
@@ -2605,7 +2610,7 @@
                 "type" : "enum"
               },
               {
-                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/fontweight",
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/fontweight-3xim0",
                 "title" : "JXSwiftUISupport.FontWeight",
                 "type" : "enum"
               },
@@ -2775,6 +2780,11 @@
                 "type" : "enum"
               },
               {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/aspectratio",
+                "title" : "JXSwiftUISupport.aspectRatio",
+                "type" : "enum"
+              },
+              {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/background",
                 "title" : "JXSwiftUISupport.background",
                 "type" : "enum"
@@ -2790,8 +2800,23 @@
                 "type" : "enum"
               },
               {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/clipped",
+                "title" : "JXSwiftUISupport.clipped",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/cornerradius",
+                "title" : "JXSwiftUISupport.cornerRadius",
+                "type" : "enum"
+              },
+              {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/font-38880",
                 "title" : "JXSwiftUISupport.font",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/fontweight-wns",
+                "title" : "JXSwiftUISupport.fontWeight",
                 "type" : "enum"
               },
               {
@@ -2847,6 +2872,16 @@
               {
                 "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/pickerstyle-9wfq7",
                 "title" : "JXSwiftUISupport.pickerStyle",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/scaledtofill",
+                "title" : "JXSwiftUISupport.scaledToFill",
+                "type" : "enum"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/scaledtofit",
+                "title" : "JXSwiftUISupport.scaledToFit",
                 "type" : "enum"
               },
               {

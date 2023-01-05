@@ -94,13 +94,14 @@
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Button",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/ButtonRole",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Color",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/ContentMode",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/EdgeInsets",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/EdgeSet",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/EmptyView",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Font-1fsn4",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/FontDesign",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/FontTextStyle",
-        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/FontWeight",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/FontWeight-3xim0",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/ForEach",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Form",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Group",
@@ -134,10 +135,14 @@
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/VerticalAlignment",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/ZStack",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/allowsTightening",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/aspectRatio",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/background",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/badge",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/border",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/clipped",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/cornerRadius",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/font-38880",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/fontWeight-wns",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/foregroundColor",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/frame",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/labelStyle-9qr33",
@@ -149,6 +154,8 @@
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/onTapGesture",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/padding",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/pickerStyle-9wfq7",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/scaledToFill",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/scaledToFit",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/submitScope",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/tabItem",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/tag",
@@ -452,6 +459,48 @@
   "title" : "JXSwiftUISupport.Color",
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/color"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/ContentMode": {
+  "abstract" : [
+    {
+      "text" : "Use a JavaScript string to name any standard ",
+      "type" : "text"
+    },
+    {
+      "code" : "ContentMode",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " value, e.g. ‘fit’.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ContentMode"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/ContentMode",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ContentMode"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.ContentMode",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/contentmode"
 },
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/EdgeInsets": {
   "abstract" : [
@@ -761,7 +810,7 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/fonttextstyle"
 },
-"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/FontWeight": {
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/FontWeight-3xim0": {
   "abstract" : [
     {
       "text" : "Use a JavaScript string to name any standard ",
@@ -798,7 +847,7 @@
       "text" : "FontWeight"
     }
   ],
-  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/FontWeight",
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/FontWeight-3xim0",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
@@ -809,7 +858,7 @@
   "role" : "symbol",
   "title" : "JXSwiftUISupport.FontWeight",
   "type" : "topic",
-  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/fontweight"
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/fontweight-3xim0"
 },
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/ForEach": {
   "abstract" : [
@@ -2261,6 +2310,40 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/allowstightening"
 },
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/aspectRatio": {
+  "abstract" : [
+    {
+      "text" : "Sets the aspect ratio of a target view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "aspectRatio"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/aspectRatio",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "aspectRatio"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.aspectRatio",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/aspectratio"
+},
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/background": {
   "abstract" : [
     {
@@ -2363,6 +2446,74 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/border"
 },
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/clipped": {
+  "abstract" : [
+    {
+      "text" : "Clips a target view to fit.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "clipped"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/clipped",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "clipped"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.clipped",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/clipped"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/cornerRadius": {
+  "abstract" : [
+    {
+      "text" : "Sets the corner radius on a target view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "cornerRadius"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/cornerRadius",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "cornerRadius"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.cornerRadius",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/cornerradius"
+},
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/font-38880": {
   "abstract" : [
     {
@@ -2396,6 +2547,40 @@
   "title" : "JXSwiftUISupport.font",
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/font-38880"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/fontWeight-wns": {
+  "abstract" : [
+    {
+      "text" : "Sets a font weight on a target view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "fontWeight"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/fontWeight-wns",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "fontWeight"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.fontWeight",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/fontweight-wns"
 },
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/foregroundColor": {
   "abstract" : [
@@ -2771,10 +2956,78 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/pickerstyle-9wfq7"
 },
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/scaledToFill": {
+  "abstract" : [
+    {
+      "text" : "Scales a target view to fill.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "scaledToFill"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/scaledToFill",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "scaledToFill"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.scaledToFill",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/scaledtofill"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/scaledToFit": {
+  "abstract" : [
+    {
+      "text" : "Scales a target view to fit.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "scaledToFit"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/scaledToFit",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "scaledToFit"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.scaledToFit",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/scaledtofit"
+},
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/submitScope": {
   "abstract" : [
     {
-      "text" : "Prevents submission of the target view from triggering ",
+      "text" : "Prevents submission of a target view from triggering ",
       "type" : "text"
     },
     {
@@ -2850,7 +3103,7 @@
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/tag": {
   "abstract" : [
     {
-      "text" : "Tags the target view.",
+      "text" : "Tags a target view.",
       "type" : "text"
     }
   ],

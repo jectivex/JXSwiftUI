@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Tags the target view.",
+      "text" : "Tags a target view.",
       "type" : "text"
     }
   ],
@@ -202,7 +202,7 @@
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/tag": {
   "abstract" : [
     {
-      "text" : "Tags the target view.",
+      "text" : "Tags a target view.",
       "type" : "text"
     }
   ],

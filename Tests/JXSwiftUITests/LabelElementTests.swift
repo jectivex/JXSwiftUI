@@ -32,4 +32,26 @@ final class LabelElementTests: JXSwiftUITestsBase {
             let _ = label.view(errorHandler: errorHandler)
         }
     }
+
+    func testStringLabel() throws {
+        var jxValue = try context.eval("jxswiftui.Label('text', {systemImage: 'pencil'})")
+        var label = try LabelElement(jxValue: jxValue)
+        let _ = label.view(errorHandler: errorHandler)
+
+        expectingError {
+            jxValue = try context.eval("jxswiftui.Label('text')")
+            label = try LabelElement(jxValue: jxValue)
+            let _ = label.view(errorHandler: errorHandler)
+        }
+    }
+
+    func testLabelContent() throws {
+        var jxValue = try context.eval("jxswiftui.Label({systemImage: 'pencil'}, 'text')")
+        var label = try LabelElement(jxValue: jxValue)
+        let _ = label.view(errorHandler: errorHandler)
+
+        jxValue = try context.eval("jxswiftui.Label({systemImage: 'pencil'}, jxswiftui.Text('text'))")
+        label = try LabelElement(jxValue: jxValue)
+        let _ = label.view(errorHandler: errorHandler)
+    }
 }

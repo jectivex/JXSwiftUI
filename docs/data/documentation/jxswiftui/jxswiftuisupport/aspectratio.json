@@ -1,23 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Use a JavaScript string to name any standard ",
-      "type" : "text"
-    },
-    {
-      "code" : "Font.Weight",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " value, e.g. ",
-      "type" : "text"
-    },
-    {
-      "code" : "'bold'",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Sets the aspect ratio of a target view.",
       "type" : "text"
     }
   ],
@@ -31,12 +15,12 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/FontWeight"
+    "url" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/aspectRatio"
   },
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "JXSwiftUI",
-    "externalID" : "s:9JXSwiftUI0A9UISupportO10FontWeightO",
+    "externalID" : "s:9JXSwiftUI0A9UISupportO11aspectRatioO",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -48,7 +32,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "FontWeight"
+        "text" : "aspectRatio"
       }
     ],
     "modules" : [
@@ -59,13 +43,13 @@
     "navigatorTitle" : [
       {
         "kind" : "identifier",
-        "text" : "FontWeight"
+        "text" : "aspectRatio"
       }
     ],
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
-    "title" : "JXSwiftUISupport.FontWeight"
+    "title" : "JXSwiftUISupport.aspectRatio"
   },
   "primaryContentSections" : [
     {
@@ -88,12 +72,41 @@
             },
             {
               "kind" : "identifier",
-              "text" : "FontWeight"
+              "text" : "aspectRatio"
             }
           ]
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Supported calls:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "- .aspectRatio(ContentMode)",
+            "- .aspectRatio(ratio, ContentMode)",
+            "- .aspectRatio(size, ContentMode)"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -107,7 +120,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/jxswiftui\/jxswiftuisupport\/fontweight"
+        "\/documentation\/jxswiftui\/jxswiftuisupport\/aspectratio"
       ],
       "traits" : [
         {
@@ -163,26 +176,10 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport"
 },
-"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/FontWeight": {
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/aspectRatio": {
   "abstract" : [
     {
-      "text" : "Use a JavaScript string to name any standard ",
-      "type" : "text"
-    },
-    {
-      "code" : "Font.Weight",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " value, e.g. ",
-      "type" : "text"
-    },
-    {
-      "code" : "'bold'",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Sets the aspect ratio of a target view.",
       "type" : "text"
     }
   ],
@@ -197,21 +194,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "FontWeight"
+      "text" : "aspectRatio"
     }
   ],
-  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/FontWeight",
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/aspectRatio",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "FontWeight"
+      "text" : "aspectRatio"
     }
   ],
   "role" : "symbol",
-  "title" : "JXSwiftUISupport.FontWeight",
+  "title" : "JXSwiftUISupport.aspectRatio",
   "type" : "topic",
-  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/fontweight"
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/aspectratio"
 }
 }
 }

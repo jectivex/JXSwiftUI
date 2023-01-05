@@ -1,15 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "SwiftUI.Label",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Clips a target view to fit.",
       "type" : "text"
     }
   ],
@@ -23,12 +15,12 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Label"
+    "url" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/clipped"
   },
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "JXSwiftUI",
-    "externalID" : "s:9JXSwiftUI0A9UISupportO5LabelO",
+    "externalID" : "s:9JXSwiftUI0A9UISupportO7clippedO",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -40,7 +32,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "Label"
+        "text" : "clipped"
       }
     ],
     "modules" : [
@@ -51,13 +43,13 @@
     "navigatorTitle" : [
       {
         "kind" : "identifier",
-        "text" : "Label"
+        "text" : "clipped"
       }
     ],
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
-    "title" : "JXSwiftUISupport.Label"
+    "title" : "JXSwiftUISupport.clipped"
   },
   "primaryContentSections" : [
     {
@@ -80,7 +72,7 @@
             },
             {
               "kind" : "identifier",
-              "text" : "Label"
+              "text" : "clipped"
             }
           ]
         }
@@ -98,7 +90,7 @@
         {
           "inlineContent" : [
             {
-              "text" : "Supported usage:",
+              "text" : "Supported calls:",
               "type" : "text"
             }
           ],
@@ -106,36 +98,7 @@
         },
         {
           "code" : [
-            "- Label({props})",
-            "- Label('label', {props})",
-            "- Label({props}, content)"
-          ],
-          "syntax" : null,
-          "type" : "codeListing"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "Supported ",
-              "type" : "text"
-            },
-            {
-              "code" : "props",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ":",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "code" : [
-            "- label: String or content",
-            "- systemImage: SF Symbol image name",
-            "- image: Image or image resource name",
-            "- icon: Content"
+            "- .clipped()"
           ],
           "syntax" : null,
           "type" : "codeListing"
@@ -155,7 +118,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/jxswiftui\/jxswiftuisupport\/label"
+        "\/documentation\/jxswiftui\/jxswiftuisupport\/clipped"
       ],
       "traits" : [
         {
@@ -211,18 +174,10 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport"
 },
-"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/Label": {
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/clipped": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "SwiftUI.Label",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Clips a target view to fit.",
       "type" : "text"
     }
   ],
@@ -237,21 +192,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "Label"
+      "text" : "clipped"
     }
   ],
-  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Label",
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/clipped",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "Label"
+      "text" : "clipped"
     }
   ],
   "role" : "symbol",
-  "title" : "JXSwiftUISupport.Label",
+  "title" : "JXSwiftUISupport.clipped",
   "type" : "topic",
-  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/label"
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/clipped"
 }
 }
 }

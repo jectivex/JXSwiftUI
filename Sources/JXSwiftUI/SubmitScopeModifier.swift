@@ -1,7 +1,7 @@
 import SwiftUI
 
 extension JXSwiftUISupport {
-    /// Prevents submission of the target view from triggering `onSubmit` actions higher up the view hierarchy.
+    /// Prevents submission of a target view from triggering `onSubmit` actions higher up the view hierarchy.
     ///
     /// Supported calls:
     ///

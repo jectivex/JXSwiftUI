@@ -53,7 +53,7 @@ struct ButtonElement: Element {
             if args.count < 3 {
                 let labelValue = try args[0]["label"]
                 guard !labelValue.isUndefined else {
-                    throw JXError.missingContent()
+                    throw JXError.missingContent(for: "label")
                 }
                 self.content = try Content(jxValue: labelValue)
             } else {

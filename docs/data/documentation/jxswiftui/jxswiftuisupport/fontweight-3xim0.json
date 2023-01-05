@@ -1,11 +1,19 @@
 {
   "abstract" : [
     {
-      "text" : "A ",
+      "text" : "Use a JavaScript string to name any standard ",
       "type" : "text"
     },
     {
-      "code" : "SwiftUI.Label",
+      "code" : "Font.Weight",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " value, e.g. ",
+      "type" : "text"
+    },
+    {
+      "code" : "'bold'",
       "type" : "codeVoice"
     },
     {
@@ -23,12 +31,12 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Label"
+    "url" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/FontWeight-3xim0"
   },
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "JXSwiftUI",
-    "externalID" : "s:9JXSwiftUI0A9UISupportO5LabelO",
+    "externalID" : "s:9JXSwiftUI0A9UISupportO10FontWeightO",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -40,7 +48,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "Label"
+        "text" : "FontWeight"
       }
     ],
     "modules" : [
@@ -51,13 +59,13 @@
     "navigatorTitle" : [
       {
         "kind" : "identifier",
-        "text" : "Label"
+        "text" : "FontWeight"
       }
     ],
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
-    "title" : "JXSwiftUISupport.Label"
+    "title" : "JXSwiftUISupport.FontWeight"
   },
   "primaryContentSections" : [
     {
@@ -80,68 +88,12 @@
             },
             {
               "kind" : "identifier",
-              "text" : "Label"
+              "text" : "FontWeight"
             }
           ]
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "overview",
-          "level" : 2,
-          "text" : "Overview",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "Supported usage:",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "code" : [
-            "- Label({props})",
-            "- Label('label', {props})",
-            "- Label({props}, content)"
-          ],
-          "syntax" : null,
-          "type" : "codeListing"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "Supported ",
-              "type" : "text"
-            },
-            {
-              "code" : "props",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ":",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "code" : [
-            "- label: String or content",
-            "- systemImage: SF Symbol image name",
-            "- image: Image or image resource name",
-            "- icon: Content"
-          ],
-          "syntax" : null,
-          "type" : "codeListing"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -155,7 +107,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/jxswiftui\/jxswiftuisupport\/label"
+        "\/documentation\/jxswiftui\/jxswiftuisupport\/fontweight-3xim0"
       ],
       "traits" : [
         {
@@ -211,14 +163,22 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport"
 },
-"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/Label": {
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/FontWeight-3xim0": {
   "abstract" : [
     {
-      "text" : "A ",
+      "text" : "Use a JavaScript string to name any standard ",
       "type" : "text"
     },
     {
-      "code" : "SwiftUI.Label",
+      "code" : "Font.Weight",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " value, e.g. ",
+      "type" : "text"
+    },
+    {
+      "code" : "'bold'",
       "type" : "codeVoice"
     },
     {
@@ -237,21 +197,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "Label"
+      "text" : "FontWeight"
     }
   ],
-  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Label",
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/FontWeight-3xim0",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "Label"
+      "text" : "FontWeight"
     }
   ],
   "role" : "symbol",
-  "title" : "JXSwiftUISupport.Label",
+  "title" : "JXSwiftUISupport.FontWeight",
   "type" : "topic",
-  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/label"
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/fontweight-3xim0"
 }
 }
 }

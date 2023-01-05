@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Prevents submission of the target view from triggering ",
+      "text" : "Prevents submission of a target view from triggering ",
       "type" : "text"
     },
     {
@@ -186,7 +186,7 @@
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/submitScope": {
   "abstract" : [
     {
-      "text" : "Prevents submission of the target view from triggering ",
+      "text" : "Prevents submission of a target view from triggering ",
       "type" : "text"
     },
     {
