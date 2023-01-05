@@ -33,13 +33,17 @@ enum ElementType: String, CaseIterable {
 
     // Modifiers
     case allowsTighteningModifier = "allowsTightening"
+    case aspectRatioModifier = "aspectRatio"
 #if !os(macOS)
     case autocorrectionDisabledModifier = "autocorrectionDisabled"
 #endif
     case backgroundModifier = "background"
     case badgeModifier = "badge"
     case borderModifier = "border"
+    case clippedModifier = "clipped"
+    case cornerRadiusModifier = "cornerRadius"
     case fontModifier = "font"
+    case fontWeightModifier = "fontWeight"
     case foregroundColorModifier = "foregroundColor"
     case frameModifier = "frame"
 #if !os(macOS)
@@ -52,6 +56,8 @@ enum ElementType: String, CaseIterable {
     case navigationTitleModifier = "navigationTitle"
     case paddingModifier = "padding"
     case pickerStyleModifier = "pickerStyle"
+    case scaledToFillModifier = "scaledToFill"
+    case scaledToFitModifier = "scaledToFit"
     case submitModifier = "onSubmit"
     case submitScopeModifier = "submitScope"
     case tabItemModifier = "tabItem"
@@ -120,6 +126,8 @@ enum ElementType: String, CaseIterable {
         case .zstack:
             return ZStackElement.self
 
+        case .aspectRatioModifier:
+            return AspectRatioModifier.self
         case .allowsTighteningModifier:
             return AllowsTighteningModifier.self
 #if !os(macOS)
@@ -132,8 +140,14 @@ enum ElementType: String, CaseIterable {
             return BadgeModifier.self
         case .borderModifier:
             return BorderModifier.self
+        case .clippedModifier:
+            return ClippedModifier.self
+        case .cornerRadiusModifier:
+            return CornerRadiusModifier.self
         case .fontModifier:
             return FontModifier.self
+        case .fontWeightModifier:
+            return FontWeightModifier.self
         case .foregroundColorModifier:
             return ForegroundColorModifier.self
         case .frameModifier:
@@ -156,6 +170,10 @@ enum ElementType: String, CaseIterable {
             return PaddingModifier.self
         case .pickerStyleModifier:
             return PickerStyleModifier.self
+        case .scaledToFillModifier:
+            return ScaledToFillModifier.self
+        case .scaledToFitModifier:
+            return ScaledToFitModifier.self
         case .submitModifier:
             return SubmitModifier.self
         case .submitScopeModifier:

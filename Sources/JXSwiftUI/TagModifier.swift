@@ -3,7 +3,7 @@ import JXKit
 import SwiftUI
 
 extension JXSwiftUISupport {
-    /// Tags the target view.
+    /// Tags a target view.
     ///
     /// Supported calls:
     ///

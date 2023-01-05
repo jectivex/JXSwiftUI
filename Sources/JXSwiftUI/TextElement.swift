@@ -25,8 +25,6 @@ extension JXSwiftUISupport {
     public enum Text {}
 }
 
-// TODO: Test that .font() and .foregroundColor() can be used when the caller expects Text, e.g. on navigationTitle
-
 struct TextElement: Element {
     private let text: LocalizedStringKey?
     private let verbatim: String?

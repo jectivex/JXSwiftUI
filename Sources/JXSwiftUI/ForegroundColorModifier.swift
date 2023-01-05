@@ -22,6 +22,11 @@ struct ForegroundColorModifier: SingleValueModifier {
     }
 
     func apply(to view: any View, errorHandler: ErrorHandler) -> any View {
-        return view.foregroundColor(value)
+        // Keep Text chaining alive
+        if let text = view as? Text {
+            return text.foregroundColor(value)
+        } else {
+            return view.foregroundColor(value)
+        }
     }
 }

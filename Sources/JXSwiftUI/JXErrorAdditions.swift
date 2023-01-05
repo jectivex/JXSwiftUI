@@ -12,4 +12,8 @@ extension JXError {
     static func missingContent() -> JXError {
         return JXError(message: "JXSwiftUI content is missing or has a null value. Did you forget to 'return' a value from a function?")
     }
+
+    static func missingContent(for attr: String) -> JXError {
+        return JXError(message: "JXSwiftUI content for '\(attr)' is missing or has a null value")
+    }
 }

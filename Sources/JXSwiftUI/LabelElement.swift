@@ -8,10 +8,12 @@ extension JXSwiftUISupport {
     /// Supported usage:
     ///
     ///     - Label({props})
+    ///     - Label('label', {props})
+    ///     - Label({props}, content)
     ///
     /// Supported `props`:
     ///
-    ///     - label: String or content. Required
+    ///     - label: String or content
     ///     - systemImage: SF Symbol image name
     ///     - image: Image or image resource name
     ///     - icon: Content
@@ -23,14 +25,12 @@ struct LabelElement: Element {
     private let icon: Content
 
     init(jxValue: JXValue) throws {
+        self.label = try Content(jxValue: jxValue["label"])
+
         let propsValue = try jxValue["props"]
         guard !propsValue.isUndefined else {
-            throw JXError.missingContent()
+            throw JXError.missingContent(for: "image")
         }
-
-        let labelValue = try propsValue["label"]
-        self.label = try Content(jxValue: labelValue)
-
         let systemImageValue = try propsValue["systemImage"]
         if !systemImageValue.isUndefined {
             self.icon = try Content(view: Image(systemName: systemImageValue.string))
@@ -43,7 +43,7 @@ struct LabelElement: Element {
             } else {
                 let iconValue = try propsValue["icon"]
                 guard !iconValue.isUndefined else {
-                    throw JXError(message: "'systemImage', 'image', or 'icon' prop is required")
+                    throw JXError.missingContent(for: "image")
                 }
                 self.icon = try Content(jxValue: iconValue)
             }
@@ -66,9 +66,18 @@ struct LabelElement: Element {
 
     static func js(namespace: JXNamespace) -> String? {
         """
-function(props) {
+function(labelOrProps, propsOrContent, content) {
     const e = new \(JSCodeGenerator.elementClass)('\(ElementType.label.rawValue)');
-    e.props = props;
+    if (typeof(labelOrProps) === 'string') {
+        e.label = labelOrProps;
+        e.props = propsOrContent;
+    } else if (propsOrContent === undefined) {
+        e.label = labelOrProps.label;
+        e.props = labelOrProps;
+    } else {
+        e.label = propsOrContent;
+        e.props = labelOrProps;
+    }
     return e;
 }
 """

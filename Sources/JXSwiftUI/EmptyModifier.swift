@@ -2,28 +2,18 @@ import JXBridge
 import JXKit
 import SwiftUI
 
-/// Protocol with default implementations for modifiers that accept a single argument.
-protocol SingleValueModifier: Element {
-    associatedtype T
-
+/// Protocol with default implementations for modifiers that have no arguments.
+protocol EmptyModifier: Element {
     static var type: ElementType { get }
-    static func convert(_ value: JXValue) throws -> T
-
     var target: Content { get }
-    var value: T { get }
-    init(target: Content, value: T)
+    init(target: Content)
     func apply(to view: any View, errorHandler: ErrorHandler) -> any View
 }
 
-extension SingleValueModifier {
+extension EmptyModifier {
     init(jxValue: JXValue) throws {
         let target = try Content(jxValue: jxValue["target"])
-        let value = try Self.convert(jxValue["value"])
-        self.init(target: target, value: value)
-    }
-
-    static func convert(_ value: JXValue) throws -> T {
-        return try value.convey(to: T.self)
+        self.init(target: target)
     }
 
     func view(errorHandler: ErrorHandler) -> any View {
@@ -33,10 +23,9 @@ extension SingleValueModifier {
 
     static func modifierJS(namespace: JXNamespace) -> String? {
         return """
-function(value) {
+function() {
     const e = new \(JSCodeGenerator.elementClass)('\(type.rawValue)');
     e.target = this;
-    e.value = value;
     return e;
 }
 """
