@@ -16,13 +16,18 @@ struct FontWeightModifier: SingleValueModifier {
     let value: Font.Weight
 
     func apply(to view: any View, errorHandler: ErrorHandler) -> any View {
+#if os(macOS)
+        if let text = view as? Text {
+            return text.fontWeight(value)
+        }
+#else
         if #available(iOS 16.0, *) {
             return view.fontWeight(value)
         } else if let text = view as? Text {
             return text.fontWeight(value)
-        } else {
-            errorHandler.in(.fontWeightModifier).handle(JXError(message: "'fontWeight' must be called on a 'Text' element before iOS 16"))
-            return view
         }
+#endif
+        errorHandler.in(.fontWeightModifier).handle(JXError(message: "'fontWeight' must be called on a 'Text' element before iOS 16"))
+        return view
     }
 }
