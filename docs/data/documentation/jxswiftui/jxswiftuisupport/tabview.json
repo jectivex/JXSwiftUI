@@ -106,6 +106,7 @@
         },
         {
           "code" : [
+            "- TabView(content)",
             "- TabView($selection, content)"
           ],
           "syntax" : null,
@@ -130,7 +131,7 @@
         },
         {
           "code" : [
-            "- `Binding` to a Bool, Date, Double, or String"
+            "- `Binding` to a Bool, Date, Double, String, or any bridged `Hashable` object"
           ],
           "syntax" : null,
           "type" : "codeListing"

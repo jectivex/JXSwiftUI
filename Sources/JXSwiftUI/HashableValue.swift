@@ -8,6 +8,7 @@ enum HashableValue {
     case date(Date)
     case double(Double)
     case string(String)
+    case hashable(AnyHashable)
 }
 
 extension HashableValue: JXConvertible {
@@ -18,6 +19,8 @@ extension HashableValue: JXConvertible {
             return try .double(value.double)
         } else if value.isString {
             return try .string(value.string)
+        } else if let hashable = try value.bridged as? AnyHashable {
+            return .hashable(hashable)
         } else if try value.isDate {
             // Check this last because it is the most expensive to test
             return try .date(value.date)
@@ -36,6 +39,8 @@ extension HashableValue: JXConvertible {
             return context.number(value)
         case .string(let value):
             return context.string(value)
+        case .hashable(let value):
+            return try context.convey(value)
         }
     }
 }

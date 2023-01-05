@@ -7,11 +7,12 @@ extension JXSwiftUISupport {
     ///
     /// Supported usage:
     ///
+    ///     - TabView(content)
     ///     - TabView($selection, content)
     ///
     /// Supported `selection`:
     ///
-    ///     - `Binding` to a Bool, Date, Double, or String
+    ///     - `Binding` to a Bool, Date, Double, String, or any bridged `Hashable` object
     ///
     /// Supported `content`. Use the `tabItem` modifier to configure the tab for each item:
     ///
@@ -21,11 +22,16 @@ extension JXSwiftUISupport {
 }
 
 struct TabViewElement: Element {
-    private let selection: HashableBinding
+    private let selection: HashableBinding?
     private let content: Content
 
     init(jxValue: JXValue) throws {
-        self.selection = try jxValue["selection"].convey()
+        let selectionValue = try jxValue["selection"]
+        if selectionValue.isNullOrUndefined {
+            self.selection = nil
+        } else {
+            self.selection = try selectionValue.convey(to: HashableBinding.self)
+        }
         self.content = try Content(jxValue: jxValue["content"])
     }
 
@@ -33,6 +39,9 @@ struct TabViewElement: Element {
         let errorHandler = errorHandler.in(.tabView)
         let contentView = content.elementArray(errorHandler: errorHandler)
             .containerView(errorHandler: errorHandler)
+        guard let selection else {
+            return TabView { contentView }
+        }
         switch selection {
         case .bool(let binding):
             return TabView(selection: binding) { contentView }
@@ -42,15 +51,21 @@ struct TabViewElement: Element {
             return TabView(selection: binding) { contentView }
         case .string(let binding):
             return TabView(selection: binding) { contentView }
+        case .hashable(let binding):
+            return TabView(selection: binding) { contentView }
         }
     }
 
     static func js(namespace: JXNamespace) -> String? {
 """
-function(selection, content) {
+function(selectionOrContent, content) {
     const e = new \(JSCodeGenerator.elementClass)('\(ElementType.tabView.rawValue)');
-    e.selection = selection;
-    e.content = content;
+    if (content === undefined) {
+        e.content = selectionOrContent;
+    } else {
+        e.selection = selectionOrContent;
+        e.content = content;
+    }
     return e;
 }
 """

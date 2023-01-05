@@ -59,6 +59,7 @@ extension Color: JXStaticBridging {
                 return try Color(hue: hueValue.double, saturation: saturationValue.double, brightness: brightnessValue.double, opacity: opacity)
             }
             .static.func.custom { (name: String) -> Color in Color(name) }
+            .var.description { \.description }
             .func.opacity { Color.opacity }
             .static.var.black { Color.black }
             .static.var.blue { Color.blue }

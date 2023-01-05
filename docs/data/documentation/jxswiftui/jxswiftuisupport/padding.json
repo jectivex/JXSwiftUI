@@ -100,8 +100,8 @@
           "code" : [
             "- .padding()",
             "- .padding(number)",
-            "- .padding([Edge])",
-            "- .padding([Edge], number)",
+            "- .padding([Edge.Set])",
+            "- .padding([Edge.Set], number)",
             "- .padding(EdgeInsets)"
           ],
           "syntax" : null,

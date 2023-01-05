@@ -106,8 +106,9 @@
         },
         {
           "code" : [
-            "- Image.named('name', {props}) to load from an asset catalog",
-            "- Image.system('name') to load SF Symbols",
+            "- Image.named('name') \/\/ Load from an asset catalog",
+            "- Image.named('name', {props})",
+            "- Image.system('name') \/\/ Load SF Symbol",
             "- Image.system('name', {props})"
           ],
           "syntax" : null,
@@ -133,7 +134,7 @@
         {
           "code" : [
             "- variableValue: A number between 0.0 and 1.0 that the rendered image may use to customize its appearance",
-            "- label: SwiftUI uses this value for accessibility. Required for images loaded from an asset catalog"
+            "- label: SwiftUI uses this value for accessibility"
           ],
           "syntax" : null,
           "type" : "codeListing"

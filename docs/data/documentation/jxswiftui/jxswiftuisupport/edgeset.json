@@ -5,7 +5,7 @@
       "type" : "text"
     },
     {
-      "code" : "SwiftUI.Edge",
+      "code" : "SwiftUI.Edge.Set",
       "type" : "codeVoice"
     },
     {
@@ -31,12 +31,12 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Edge"
+    "url" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/EdgeSet"
   },
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "JXSwiftUI",
-    "externalID" : "s:9JXSwiftUI0A9UISupportO4EdgeO",
+    "externalID" : "s:9JXSwiftUI0A9UISupportO7EdgeSetO",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -48,7 +48,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "Edge"
+        "text" : "EdgeSet"
       }
     ],
     "modules" : [
@@ -59,13 +59,13 @@
     "navigatorTitle" : [
       {
         "kind" : "identifier",
-        "text" : "Edge"
+        "text" : "EdgeSet"
       }
     ],
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
-    "title" : "JXSwiftUISupport.Edge"
+    "title" : "JXSwiftUISupport.EdgeSet"
   },
   "primaryContentSections" : [
     {
@@ -88,7 +88,7 @@
             },
             {
               "kind" : "identifier",
-              "text" : "Edge"
+              "text" : "EdgeSet"
             }
           ]
         }
@@ -107,7 +107,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/jxswiftui\/jxswiftuisupport\/edge"
+        "\/documentation\/jxswiftui\/jxswiftuisupport\/edgeset"
       ],
       "traits" : [
         {
@@ -163,14 +163,14 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport"
 },
-"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/Edge": {
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/EdgeSet": {
   "abstract" : [
     {
       "text" : "Use a JavaScript string to name any ",
       "type" : "text"
     },
     {
-      "code" : "SwiftUI.Edge",
+      "code" : "SwiftUI.Edge.Set",
       "type" : "codeVoice"
     },
     {
@@ -197,21 +197,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "Edge"
+      "text" : "EdgeSet"
     }
   ],
-  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Edge",
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/EdgeSet",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "Edge"
+      "text" : "EdgeSet"
     }
   ],
   "role" : "symbol",
-  "title" : "JXSwiftUISupport.Edge",
+  "title" : "JXSwiftUISupport.EdgeSet",
   "type" : "topic",
-  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/edge"
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/edgeset"
 }
 }
 }

@@ -2575,13 +2575,13 @@
                 "type" : "enum"
               },
               {
-                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/edge",
-                "title" : "JXSwiftUISupport.Edge",
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/edgeinsets",
+                "title" : "JXSwiftUISupport.EdgeInsets",
                 "type" : "enum"
               },
               {
-                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/edgeinsets",
-                "title" : "JXSwiftUISupport.EdgeInsets",
+                "path" : "\/documentation\/jxswiftui\/jxswiftuisupport\/edgeset",
+                "title" : "JXSwiftUISupport.EdgeSet",
                 "type" : "enum"
               },
               {

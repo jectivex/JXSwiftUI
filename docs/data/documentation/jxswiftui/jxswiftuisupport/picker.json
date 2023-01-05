@@ -130,7 +130,7 @@
         },
         {
           "code" : [
-            "- `Binding` to a Bool, Date, Double, or String"
+            "- `Binding` to a Bool, Date, Double, String, or bridged `Hashable` object"
           ],
           "syntax" : null,
           "type" : "codeListing"

@@ -42,24 +42,21 @@ extension Binding: JXConvertible {
 }
 
 extension JXSwiftUISupport {
-    /// Use a JavaScript string to name any `SwiftUI.Edge` value, e.g. `'top'`.
-    public enum Edge {}
+    /// Use a JavaScript string to name any `SwiftUI.Edge.Set` value, e.g. `'top'`.
+    public enum EdgeSet {}
 }
 
 /// - Note: `Edge` already conforms to `RawRepresentable` as a number, so use `JXConvertible` for readable string values.
-extension Edge: JXConvertible {
-    public static func fromJX(_ value: JXValue) throws -> Edge {
-        switch try value.string {
-        case "top":
-            return .top
-        case "bottom":
-            return .bottom
-        case "leading":
-            return .leading
-        case "trailing":
-            return .trailing
-        default:
-            throw JXError(message: "'\(try value.string)' is not a valid 'Edge' value")
+extension Edge.Set: JXConvertible {
+    public static func fromJX(_ value: JXValue) throws -> Edge.Set {
+        guard !value.isString else {
+            return try fromString(value.string)
+        }
+        guard value.isArray else {
+            throw JXError(message: "'\(value)' is neither a 'Edge.Set' string nor an array of 'Edge.Set' strings")
+        }
+        return try value.array.reduce(into: Edge.Set()) { result, value in
+            try result.insert(fromString(value.string))
         }
     }
     
@@ -73,6 +70,51 @@ extension Edge: JXConvertible {
             return context.string("leading")
         case .trailing:
             return context.string("trailing")
+        case .all:
+            return context.string("all")
+        case .horizontal:
+            return context.string("horizontal")
+        case .vertical:
+            return context.string("vertical")
+        default:
+            let array: [Edge.Set] = [.top, .bottom, .leading, .trailing].filter { self.contains($0) }
+            return try context.array(array.map(Self.toString))
+        }
+    }
+
+    private static func fromString(_ string: String) throws -> Edge.Set {
+        switch string {
+        case "top":
+            return .top
+        case "bottom":
+            return .bottom
+        case "leading":
+            return .leading
+        case "trailing":
+            return .trailing
+        case "all":
+            return .all
+        case "horizontal":
+            return .horizontal
+        case "vertical":
+            return .vertical
+        default:
+            throw JXError(message: "'\(string)' is not a valid 'Edge.Set' value")
+        }
+    }
+
+    private static func toString(_ value: Edge.Set) -> String {
+        switch value {
+        case .top:
+            return "top"
+        case .bottom:
+            return "bottom"
+        case .leading:
+            return "leading"
+        case .trailing:
+            return "trailing"
+        default:
+            return "unknown"
         }
     }
 }

@@ -9,7 +9,7 @@ extension JXSwiftUISupport {
     ///
     ///     - .tag(value)
     ///
-    /// The `value` should be a bool, number, string, or date.
+    /// The `value` should be a JavaScript boolean, number, string, date, or bridged `Hashable` object.
     ///
     /// - Seealso: `Picker`
     public enum tag {}
@@ -33,6 +33,8 @@ struct TagModifier: SingleValueModifier {
         case .double(let value):
             return view.tag(value)
         case .string(let value):
+            return view.tag(value)
+        case .hashable(let value):
             return view.tag(value)
         }
     }

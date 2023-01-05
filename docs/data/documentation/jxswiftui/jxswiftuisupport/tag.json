@@ -114,7 +114,15 @@
               "type" : "codeVoice"
             },
             {
-              "text" : " should be a bool, number, string, or date.",
+              "text" : " should be a JavaScript boolean, number, string, date, or bridged ",
+              "type" : "text"
+            },
+            {
+              "code" : "Hashable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " object.",
               "type" : "text"
             }
           ],

@@ -94,8 +94,8 @@
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Button",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/ButtonRole",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Color",
-        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Edge",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/EdgeInsets",
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/EdgeSet",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/EmptyView",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Font-1fsn4",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/FontDesign",
@@ -453,56 +453,6 @@
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/color"
 },
-"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/Edge": {
-  "abstract" : [
-    {
-      "text" : "Use a JavaScript string to name any ",
-      "type" : "text"
-    },
-    {
-      "code" : "SwiftUI.Edge",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " value, e.g. ",
-      "type" : "text"
-    },
-    {
-      "code" : "'top'",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "enum"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Edge"
-    }
-  ],
-  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/Edge",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Edge"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "JXSwiftUISupport.Edge",
-  "type" : "topic",
-  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/edge"
-},
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/EdgeInsets": {
   "abstract" : [
     {
@@ -576,6 +526,56 @@
   "title" : "JXSwiftUISupport.EdgeInsets",
   "type" : "topic",
   "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/edgeinsets"
+},
+"doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/EdgeSet": {
+  "abstract" : [
+    {
+      "text" : "Use a JavaScript string to name any ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftUI.Edge.Set",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " value, e.g. ",
+      "type" : "text"
+    },
+    {
+      "code" : "'top'",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EdgeSet"
+    }
+  ],
+  "identifier" : "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUISupport\/EdgeSet",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EdgeSet"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "JXSwiftUISupport.EdgeSet",
+  "type" : "topic",
+  "url" : "\/documentation\/jxswiftui\/jxswiftuisupport\/edgeset"
 },
 "doc://JXSwiftUI/documentation/JXSwiftUI/JXSwiftUISupport/EmptyView": {
   "abstract" : [
