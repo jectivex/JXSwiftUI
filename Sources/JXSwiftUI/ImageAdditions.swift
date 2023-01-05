@@ -7,14 +7,15 @@ extension JXSwiftUISupport {
     ///
     /// Supported usage:
     ///
-    ///     - Image.named('name', {props}) to load from an asset catalog
-    ///     - Image.system('name') to load SF Symbols
+    ///     - Image.named('name') // Load from an asset catalog
+    ///     - Image.named('name', {props})
+    ///     - Image.system('name') // Load SF Symbol
     ///     - Image.system('name', {props})
     ///
     /// Supported `props`:
     ///
     ///     - variableValue: A number between 0.0 and 1.0 that the rendered image may use to customize its appearance
-    ///     - label: SwiftUI uses this value for accessibility. Required for images loaded from an asset catalog
+    ///     - label: SwiftUI uses this value for accessibility
     ///
     /// Supported functions:
     ///
@@ -36,27 +37,39 @@ extension Image: JXStaticBridging {
             // Use static funcs to replace Image constructors to hide the use of 'new', which is
             // incongruous with our other SwiftUI elements
 
+            .static.func.named { (name: String) throws -> Image in
+                return Image(name)
+            }
             .static.func.named { (name: String, props: JXValue) throws -> Image in
                 let labelValue = try props["label"]
-                guard labelValue.isString else {
-                    throw JXError(message: "'Image.named' requires a 'label' string in props")
-                }
-                let label = try Text(labelValue.string)
+                let label = labelValue.isNullOrUndefined ? nil : try Text(labelValue.string)
                 let variableValueValue = try props["variableValue"]
                 let variableValue = try variableValueValue.isNullOrUndefined ? nil : variableValueValue.double
 #if os(macOS) // Couldn't get the #available check to compile on Mac
                 guard variableValue == nil else {
                     throw JXError(message: "'variableValue' is only supported in iOS 16+")
                 }
-                return Image(name, label: label)
+                if let label {
+                    return Image(name, label: label)
+                } else {
+                    return Image(name)
+                }
 #else
                 if #available(iOS 16.0, *) {
-                    return Image(name, variableValue: variableValue, label: label)
+                    if let label {
+                        return Image(name, variableValue: variableValue, label: label)
+                    } else {
+                        return Image(name, variableValue: variableValue)
+                    }
                 } else {
                     guard variableValue == nil else {
                         throw JXError(message: "'variableValue' is only supported in iOS 16+ / macOS 13+")
                     }
-                    return Image(name, label: label)
+                    if let label {
+                        return Image(name, label: label)
+                    } else {
+                        return Image(name)
+                    }
                 }
 #endif
             }

@@ -9,8 +9,8 @@ extension JXSwiftUISupport {
     ///
     ///     - .padding()
     ///     - .padding(number)
-    ///     - .padding([Edge])
-    ///     - .padding([Edge], number)
+    ///     - .padding([Edge.Set])
+    ///     - .padding([Edge.Set], number)
     ///     - .padding(EdgeInsets)
     public enum padding {}
 }
@@ -27,12 +27,10 @@ struct PaddingModifier: Element {
         } else if args[0].isNumber {
             let amount = try args[0].double
             self.padding = { $0.padding(amount) }
-        } else if args[0].isArray {
-            let edges = try args[0].array.map { try $0.convey(to: Edge.self) }
-            let rawValue = edges.reduce(0) { $0 | $1.rawValue }
-            let edgesSet = Edge.Set(rawValue: Int8(rawValue))
+        } else if args[0].isArray || args[0].isString {
+            let edgesSet = try args[0].convey(to: Edge.Set.self)
             if args.count > 1 {
-                let amount = try args[0].double
+                let amount = try args[1].double
                 self.padding = { $0.padding(edgesSet, amount) }
             } else {
                 self.padding = { $0.padding(edgesSet) }

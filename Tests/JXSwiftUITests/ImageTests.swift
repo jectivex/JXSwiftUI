@@ -6,6 +6,8 @@ import XCTest
 
 final class ImageTests: JXSwiftUITestsBase {
     func testNamed() throws {
+        let _ = try context.eval("jxswiftui.Image.named('name')")
+        let _ = try context.eval("jxswiftui.Image.named('name', {})")
         let _ = try context.eval("jxswiftui.Image.named('name', {label: 'label'})")
 #if os(macOS)
         expectingError {
@@ -20,12 +22,6 @@ final class ImageTests: JXSwiftUITestsBase {
             }
         }
 #endif
-        expectingError {
-            let _ = try context.eval("jxswiftui.Image.named('name')") // Missing label
-        }
-        expectingError {
-            let _ = try context.eval("jxswiftui.Image.named('name', {})") // Missing label
-        }
     }
 
     func testSystem() throws {
