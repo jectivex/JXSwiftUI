@@ -5,7 +5,8 @@ import SwiftUI
 
 /// A SwiftUI view that displays content defined in JavaScript.
 public struct JXView: View {
-    @Environment(\.jx) private var jxEnvironment: JXEnvironment
+    @Environment(\.jx) private var inheritedJXEnvironment: JXEnvironment?
+    @StateObject private var effectiveJXEnvironment = EffectiveJXEnvironment()
     @StateObject private var scriptsObservable = ViewScriptsObservable()
     private let context: JXContext?
     private let errorHandler: ((Error) -> Void)?
@@ -24,15 +25,16 @@ public struct JXView: View {
     }
     
     public var body: some View {
-        let jxErrorHandler = ErrorHandler(handler: errorHandler ?? jxEnvironment.errorHandler, elementPath: [])
+        effectiveJXEnvironment.initialize(context: context, errorHandler: errorHandler, environment: inheritedJXEnvironment)
+        let jxErrorHandler = ErrorHandler(handler: effectiveJXEnvironment.environment.errorHandler, elementPath: [])
         return contentElement(errorHandler: jxErrorHandler)
             .view(errorHandler: jxErrorHandler)
             .eraseToAnyView()
-            .jxEnvironment(context ?? jxEnvironment.context, errorHandler: errorHandler ?? jxEnvironment.errorHandler)
+            .jxEnvironment(effectiveJXEnvironment.environment)
     }
     
     private func contentElement(errorHandler: ErrorHandler) -> Element {
-        let context = context ?? jxEnvironment.context
+        let context = effectiveJXEnvironment.environment.context
         do {
             if context.registry.module(for: .jxswiftui) == nil {
                 try context.registry.register(JXSwiftUI())
@@ -56,6 +58,27 @@ public struct JXView: View {
         }
     }
 }
+
+/// Used to hold the context and error handler in effect.
+private class EffectiveJXEnvironment: ObservableObject {
+    func initialize(context: JXContext?, errorHandler: ((Error) -> Void)?, environment: JXEnvironment?) {
+        guard _environment == nil else {
+            return
+        }
+        _environment = JXEnvironment(context: context ?? environment?.context, errorHandler: errorHandler ?? environment?.errorHandler)
+    }
+
+    var environment: JXEnvironment {
+        if let environment = _environment {
+            return environment
+        }
+        let environment = JXEnvironment()
+        _environment = environment
+        return environment
+    }
+    var _environment: JXEnvironment?
+}
+
 
 /// Used to update each view if any accessed scripts change.
 private class ViewScriptsObservable: ObservableObject {

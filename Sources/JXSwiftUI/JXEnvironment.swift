@@ -15,12 +15,12 @@ public struct JXEnvironment {
 
 /// Key for local `JXEnvironment`.
 private struct JXEnvironmentKey: EnvironmentKey {
-    static let defaultValue = JXEnvironment()
+    static let defaultValue: JXEnvironment? = nil
 }
 
 extension EnvironmentValues {
     /// Access the local ``JXEnvironment``.
-    public var jx: JXEnvironment {
+    public var jx: JXEnvironment? {
         get {
             return self[JXEnvironmentKey.self]
         }
@@ -34,5 +34,9 @@ extension View {
     /// Supply JX environment values to ``JXView``.
     public func jxEnvironment(_ context: JXContext? = nil, errorHandler: ((Error) -> Void)? = nil) -> some View {
         return self.environment(\.jx, JXEnvironment(context: context, errorHandler: errorHandler))
+    }
+
+    func jxEnvironment(_ environment: JXEnvironment) -> some View {
+        return self.environment(\.jx, environment)
     }
 }
