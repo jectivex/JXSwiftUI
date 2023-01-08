@@ -13,9 +13,11 @@ public struct JXSwiftUI: JXModule {
     public init() {
     }
     
-    public let namespace: JXNamespace = JXNamespace.jxswiftui
-    
+    public static let namespace: JXNamespace = JXNamespace.jxswiftui
+
     public func initialize(in context: JXContext) throws {
+        let namespace = Self.namespace
+
         // Function elements trigger to load a modifier that the code has called but does not yet exist
         let addModifierFunction = JXValue(newFunctionIn: context) { context, this, args in
             guard args.count == 1 else {
@@ -74,7 +76,7 @@ public struct JXSwiftUI: JXModule {
     public func define(for instance: Any, in context: JXContext) throws -> Bool {
         for symbol in SwiftUISymbol.allCases {
             if symbol.isInstance(instance) {
-                try symbol.define(in: context, namespace: namespace)
+                try symbol.define(in: context, namespace: Self.namespace)
                 return true
             }
         }
