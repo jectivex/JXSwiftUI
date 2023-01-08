@@ -49,15 +49,6 @@
                 "type" : "init"
               },
               {
-                "title" : "Instance Properties",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/jxswiftui\/jxswiftui\/namespace",
-                "title" : "let namespace: JXNamespace",
-                "type" : "property"
-              },
-              {
                 "title" : "Instance Methods",
                 "type" : "groupMarker"
               },
@@ -80,6 +71,15 @@
                 "path" : "\/documentation\/jxswiftui\/jxswiftui\/initialize(in:)",
                 "title" : "func initialize(in: JXContext) throws",
                 "type" : "method"
+              },
+              {
+                "title" : "Type Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/jxswiftui\/jxswiftui\/namespace",
+                "title" : "static let namespace: JXNamespace",
+                "type" : "property"
               },
               {
                 "title" : "Default Implementations",

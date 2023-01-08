@@ -113,18 +113,18 @@
     },
     {
       "identifiers" : [
-        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUI\/namespace"
-      ],
-      "title" : "Instance Properties"
-    },
-    {
-      "identifiers" : [
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUI\/define(for:in:)",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUI\/define(symbol:namespace:in:)",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUI\/defineAll(namespace:in:)",
         "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUI\/initialize(in:)"
       ],
       "title" : "Instance Methods"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/JXSwiftUI\/documentation\/JXSwiftUI\/JXSwiftUI\/namespace"
+      ],
+      "title" : "Type Properties"
     },
     {
       "generated" : true,
@@ -537,6 +537,14 @@
 
   ],
   "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
     {
       "kind" : "keyword",
       "text" : "let"
